@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
+		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
+		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
+		71D28B0819294F970047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
+		71D28B0E19294F970047F291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B0C19294F970047F291 /* InfoPlist.strings */; };
+		71D28B1019294F970047F291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B0F19294F970047F291 /* main.m */; };
+		71D28B1419294F970047F291 /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1319294F970047F291 /* ADAppDelegate.m */; };
+		71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
+		71D28B1919294F970047F291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
+		71D28B2019294F970047F291 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B1F19294F970047F291 /* XCTest.framework */; };
+		71D28B2119294F980047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
+		71D28B2219294F980047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
+		71D28B2319294F980047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
+		71D28B2B19294F980047F291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B2919294F980047F291 /* InfoPlist.strings */; };
+		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71D28B2419294F980047F291 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71D28AF619294F970047F291 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71D28AFD19294F970047F291;
+			remoteInfo = alldayDO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		71D28AFE19294F970047F291 /* alldayDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alldayDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D28B0119294F970047F291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		71D28B0319294F970047F291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		71D28B0519294F970047F291 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		71D28B0719294F970047F291 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		71D28B0B19294F970047F291 /* alldayDO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDO-Info.plist"; sourceTree = "<group>"; };
+		71D28B0D19294F970047F291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		71D28B0F19294F970047F291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71D28B1119294F970047F291 /* alldayDO-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO-Prefix.pch"; sourceTree = "<group>"; };
+		71D28B1219294F970047F291 /* ADAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
+		71D28B1319294F970047F291 /* ADAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
+		71D28B1619294F970047F291 /* alldayDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alldayDO.xcdatamodel; sourceTree = "<group>"; };
+		71D28B1819294F970047F291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		71D28B1E19294F970047F291 /* alldayDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldayDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D28B1F19294F970047F291 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		71D28B2819294F980047F291 /* alldayDOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDOTests-Info.plist"; sourceTree = "<group>"; };
+		71D28B2A19294F980047F291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71D28AFB19294F970047F291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */,
+				71D28B0819294F970047F291 /* CoreData.framework in Frameworks */,
+				71D28B0619294F970047F291 /* UIKit.framework in Frameworks */,
+				71D28B0219294F970047F291 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D28B1B19294F970047F291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B2019294F970047F291 /* XCTest.framework in Frameworks */,
+				71D28B2319294F980047F291 /* CoreData.framework in Frameworks */,
+				71D28B2219294F980047F291 /* UIKit.framework in Frameworks */,
+				71D28B2119294F980047F291 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71D28AF519294F970047F291 = {
+			isa = PBXGroup;
+			children = (
+				71D28B0919294F970047F291 /* alldayDO */,
+				71D28B2619294F980047F291 /* alldayDOTests */,
+				71D28B0019294F970047F291 /* Frameworks */,
+				71D28AFF19294F970047F291 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71D28AFF19294F970047F291 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71D28AFE19294F970047F291 /* alldayDO.app */,
+				71D28B1E19294F970047F291 /* alldayDOTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71D28B0019294F970047F291 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71D28B0119294F970047F291 /* Foundation.framework */,
+				71D28B0319294F970047F291 /* CoreGraphics.framework */,
+				71D28B0519294F970047F291 /* UIKit.framework */,
+				71D28B0719294F970047F291 /* CoreData.framework */,
+				71D28B1F19294F970047F291 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71D28B0919294F970047F291 /* alldayDO */ = {
+			isa = PBXGroup;
+			children = (
+				71D28B1219294F970047F291 /* ADAppDelegate.h */,
+				71D28B1319294F970047F291 /* ADAppDelegate.m */,
+				71D28B1819294F970047F291 /* Images.xcassets */,
+				71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */,
+				71D28B0A19294F970047F291 /* Supporting Files */,
+			);
+			path = alldayDO;
+			sourceTree = "<group>";
+		};
+		71D28B0A19294F970047F291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71D28B0B19294F970047F291 /* alldayDO-Info.plist */,
+				71D28B0C19294F970047F291 /* InfoPlist.strings */,
+				71D28B0F19294F970047F291 /* main.m */,
+				71D28B1119294F970047F291 /* alldayDO-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71D28B2619294F980047F291 /* alldayDOTests */ = {
+			isa = PBXGroup;
+			children = (
+				71D28B2C19294F980047F291 /* alldayDOTests.m */,
+				71D28B2719294F980047F291 /* Supporting Files */,
+			);
+			path = alldayDOTests;
+			sourceTree = "<group>";
+		};
+		71D28B2719294F980047F291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71D28B2819294F980047F291 /* alldayDOTests-Info.plist */,
+				71D28B2919294F980047F291 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71D28AFD19294F970047F291 /* alldayDO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D28B3019294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDO" */;
+			buildPhases = (
+				71D28AFA19294F970047F291 /* Sources */,
+				71D28AFB19294F970047F291 /* Frameworks */,
+				71D28AFC19294F970047F291 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = alldayDO;
+			productName = alldayDO;
+			productReference = 71D28AFE19294F970047F291 /* alldayDO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71D28B1D19294F970047F291 /* alldayDOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D28B3319294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDOTests" */;
+			buildPhases = (
+				71D28B1A19294F970047F291 /* Sources */,
+				71D28B1B19294F970047F291 /* Frameworks */,
+				71D28B1C19294F970047F291 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71D28B2519294F980047F291 /* PBXTargetDependency */,
+			);
+			name = alldayDOTests;
+			productName = alldayDOTests;
+			productReference = 71D28B1E19294F970047F291 /* alldayDOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71D28AF619294F970047F291 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AD;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Fábio Nogueira ";
+				TargetAttributes = {
+					71D28B1D19294F970047F291 = {
+						TestTargetID = 71D28AFD19294F970047F291;
+					};
+				};
+			};
+			buildConfigurationList = 71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 71D28AF519294F970047F291;
+			productRefGroup = 71D28AFF19294F970047F291 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71D28AFD19294F970047F291 /* alldayDO */,
+				71D28B1D19294F970047F291 /* alldayDOTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71D28AFC19294F970047F291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B0E19294F970047F291 /* InfoPlist.strings in Resources */,
+				71D28B1919294F970047F291 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D28B1C19294F970047F291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B2B19294F980047F291 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71D28AFA19294F970047F291 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
+				71D28B1019294F970047F291 /* main.m in Sources */,
+				71D28B1419294F970047F291 /* ADAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D28B1A19294F970047F291 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71D28B2519294F980047F291 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71D28AFD19294F970047F291 /* alldayDO */;
+			targetProxy = 71D28B2419294F980047F291 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		71D28B0C19294F970047F291 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71D28B0D19294F970047F291 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		71D28B2919294F980047F291 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71D28B2A19294F980047F291 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71D28B2E19294F980047F291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		71D28B2F19294F980047F291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71D28B3119294F980047F291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
+				INFOPLIST_FILE = "alldayDO/alldayDO-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		71D28B3219294F980047F291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
+				INFOPLIST_FILE = "alldayDO/alldayDO-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		71D28B3419294F980047F291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "alldayDOTests/alldayDOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		71D28B3519294F980047F291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
+				INFOPLIST_FILE = "alldayDOTests/alldayDOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D28B2E19294F980047F291 /* Debug */,
+				71D28B2F19294F980047F291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71D28B3019294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D28B3119294F980047F291 /* Debug */,
+				71D28B3219294F980047F291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		71D28B3319294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D28B3419294F980047F291 /* Debug */,
+				71D28B3519294F980047F291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				71D28B1619294F970047F291 /* alldayDO.xcdatamodel */,
+			);
+			currentVersion = 71D28B1619294F970047F291 /* alldayDO.xcdatamodel */;
+			path = alldayDO.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 71D28AF619294F970047F291 /* Project object */;
+}
