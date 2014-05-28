@@ -18,26 +18,25 @@
 @interface ADNewReminderViewController ()
 
 - (void)_dismissKeyboard;
+- (void)_initialization;
+- (void)_addGesturesRecognizer;
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
 
 @end
 
 @implementation ADNewReminderViewController
 
+#pragma mark - Getter Methods -
 
 #pragma mark - UIViewController Methods -
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.descriptionText becomeFirstResponder];
-    self.descriptionText.delegate = self;
+    [self _initialization];
     
-    [self _refreshTimeLabel:self.timePicker];
+    [self _addGesturesRecognizer];
     
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_dismissKeyboard)];
-    gesture.delegate = self;
-    [self.view addGestureRecognizer:gesture];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -47,21 +46,42 @@
 
 #pragma mark - Private Methods -
 
+- (void)_addGesturesRecognizer {
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_dismissKeyboard)];
+    gesture.delegate = self;
+    [self.view addGestureRecognizer:gesture];
+}
+
 - (void)_dismissKeyboard {
     [self.view endEditing:YES];
 }
 
+- (void)_initialization {
+    self.descriptionTextField.delegate = self;
+    [self.descriptionTextField becomeFirstResponder];
+    
+    UIDatePicker *dataPicker = [[UIDatePicker alloc] init];
+    dataPicker.datePickerMode = UIDatePickerModeTime;
+    [dataPicker addTarget:self
+                   action:@selector(_refreshTimeLabel:)
+         forControlEvents:UIControlEventAllEvents];
+    self.dataTextField.delegate = self;
+    self.dataTextField.inputView = dataPicker;
+}
+
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker {
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    
     [outputFormatter setDateFormat:@"hh"];
-    self.horaLabel.text = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
+    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
     
     [outputFormatter setDateFormat:@"mm"];
-    self.minutosLabel.text = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
-    
+    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
+
     [outputFormatter setDateFormat:@"a"];
-    self.periodoLabel.text = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
+    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:datePicker.date]];
     
+    self.dataTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
 }
 
 #pragma mark - UITextFieldDelegate Methods -
@@ -75,10 +95,10 @@
 
 - (IBAction)addReminderTouched:(id)sender {
     
-    if (![self.descriptionText.text isEqual:@""]) {
+    if (![self.descriptionTextField.text isEqual:@""]) {
         ADLembrete *lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];
-        lembrete.data = self.timePicker.date;
-        lembrete.descricao = self.descriptionText.text;
+//        lembrete.data = self.timePicker.date;
+        lembrete.descricao = self.descriptionTextField.text;
 
 #warning arrumar label de periodo
 //        lembrete.periodo = [NSNumber numberWithInt:1];

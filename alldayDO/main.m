@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ADAppDelegate.h"
+#import "MALazykit.h"
 
 int main(int argc, char * argv[])
 {

@@ -10,11 +10,8 @@
 
 @interface ADNewReminderViewController : UIViewController <UIGestureRecognizerDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *horaLabel;
-@property (weak, nonatomic) IBOutlet UILabel *minutosLabel;
-@property (weak, nonatomic) IBOutlet UILabel *periodoLabel;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionText;
-@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (weak, nonatomic) IBOutlet UITextField *dataTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 - (IBAction)cancelarTouched:(id)sender;
 - (IBAction)horaChangedTouched:(id)sender;
