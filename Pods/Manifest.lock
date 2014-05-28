@@ -1,0 +1,16 @@
+PODS:
+  - ACPReminder (1.0.0)
+  - GoogleAnalytics-iOS-SDK (3.0.7)
+  - MALazykit (HEAD based on 0.1.10)
+
+DEPENDENCIES:
+  - ACPReminder
+  - GoogleAnalytics-iOS-SDK
+  - MALazykit (HEAD)
+
+SPEC CHECKSUMS:
+  ACPReminder: 2b17978fc8831c11f69419654b79a96dd8d6a08a
+  GoogleAnalytics-iOS-SDK: 594702aaf93e6ee497140fd31e758c2e2fa44315
+  MALazykit: 7a3c9c4004f85f8db26962c4b041e18f4f64b9dc
+
+COCOAPODS: 0.32.1
