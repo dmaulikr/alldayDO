@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2764006270DD4EC9BE47CA1B"
-               BuildableName = "libPods-MALazykit.a"
-               BlueprintName = "Pods-MALazykit"
+               BlueprintIdentifier = "5A7DDABADB074188A2C411BB"
+               BuildableName = "libPods-JVFloatLabeledTextField.a"
+               BlueprintName = "Pods-JVFloatLabeledTextField"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

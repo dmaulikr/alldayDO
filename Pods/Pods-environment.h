@@ -18,6 +18,18 @@
 #define COCOAPODS_VERSION_MINOR_GoogleAnalytics_iOS_SDK 0
 #define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 7
 
+// JVFloatLabeledTextField
+#define COCOAPODS_POD_AVAILABLE_JVFloatLabeledTextField
+#define COCOAPODS_VERSION_MAJOR_JVFloatLabeledTextField 0
+#define COCOAPODS_VERSION_MINOR_JVFloatLabeledTextField 0
+#define COCOAPODS_VERSION_PATCH_JVFloatLabeledTextField 8
+
+// LBBlurredImage
+#define COCOAPODS_POD_AVAILABLE_LBBlurredImage
+#define COCOAPODS_VERSION_MAJOR_LBBlurredImage 0
+#define COCOAPODS_VERSION_MINOR_LBBlurredImage 2
+#define COCOAPODS_VERSION_PATCH_LBBlurredImage 0
+
 // MALazykit
 #define COCOAPODS_POD_AVAILABLE_MALazykit
 #define COCOAPODS_VERSION_MAJOR_MALazykit 0

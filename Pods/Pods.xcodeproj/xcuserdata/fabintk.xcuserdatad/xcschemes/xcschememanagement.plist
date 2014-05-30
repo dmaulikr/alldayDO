@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MALazykit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>39F60949575D4F7894BD8A78</key>
+		<key>2764006270DD4EC9BE47CA1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D26C09388AB44C359DD6C907</key>
+		<key>4ACC76027D3744B2A5FF8A22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E096C681D78F458B99283DCE</key>
+		<key>5A7DDABADB074188A2C411BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E551ECD705A3424BA31628C9</key>
+		<key>9EB849F5FF0848F6933F9372</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE931C047AC24CDA973208D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1CB95F3BCFC42538241EA11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

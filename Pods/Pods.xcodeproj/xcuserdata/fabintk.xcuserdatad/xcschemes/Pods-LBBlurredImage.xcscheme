@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2764006270DD4EC9BE47CA1B"
-               BuildableName = "libPods-MALazykit.a"
-               BlueprintName = "Pods-MALazykit"
+               BlueprintIdentifier = "D1CB95F3BCFC42538241EA11"
+               BuildableName = "libPods-LBBlurredImage.a"
+               BlueprintName = "Pods-LBBlurredImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

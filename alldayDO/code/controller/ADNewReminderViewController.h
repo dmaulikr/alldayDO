@@ -10,9 +10,6 @@
 
 @interface ADNewReminderViewController : UIViewController <UIGestureRecognizerDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *dataTextField;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
-
 - (IBAction)cancelarTouched:(id)sender;
 - (IBAction)horaChangedTouched:(id)sender;
 - (IBAction)addReminderTouched:(id)sender;

@@ -14,8 +14,14 @@
 #import "NSEntityDescription+ADToolkitAdditions.h"
 #import "UILocalNotification+ADToolkitAdditions.h"
 
+#import <JVFloatLabeledTextField.h>
+
 
 @interface ADNewReminderViewController ()
+
+@property (nonatomic, strong) JVFloatLabeledTextField *descriptionTextField;
+@property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
+@property (nonatomic, strong) JVFloatLabeledTextField *dataTextField;
 
 - (void)_dismissKeyboard;
 - (void)_initialization;
@@ -28,6 +34,49 @@
 
 #pragma mark - Getter Methods -
 
+- (JVFloatLabeledTextField *)descriptionTextField {
+    if (!_descriptionTextField) {
+        _descriptionTextField = [[JVFloatLabeledTextField alloc] init];
+        _descriptionTextField.frame = CGRectMake(0.f,
+                                                 40.f,
+                                                 self.view.frame.size.width,
+                                                 44.f);
+        [_descriptionTextField setPlaceholder:@"Do que que você precisa ser lembrado?"
+                            floatingTitle:@"Iremos te lembrar da atividade"];
+        _descriptionTextField.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+    }
+    return _descriptionTextField;
+}
+
+- (JVFloatLabeledTextField *)periodoTextField {
+    if (!_periodoTextField) {
+        _periodoTextField = [[JVFloatLabeledTextField alloc] init];
+        _periodoTextField.frame = CGRectMake(0.f,
+                                             80.f,
+                                             self.view.frame.size.width,
+                                             44.f);
+        [_periodoTextField setPlaceholder:@"Qual a periodicidade?"
+                            floatingTitle:@"Entre os intervalos de"];
+        _periodoTextField.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+    }
+    return _periodoTextField;
+}
+
+- (JVFloatLabeledTextField *)dataTextField {
+    if (!_dataTextField) {
+        _dataTextField = [[JVFloatLabeledTextField alloc] init];
+        _dataTextField.frame = CGRectMake(0.f,
+                                          120.f,
+                                          self.view.frame.size.width,
+                                          44.f);
+        [_dataTextField setPlaceholder:@"Qual o horário"
+                            floatingTitle:@"No horário das"];
+        _dataTextField.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+    }
+    return _dataTextField;
+}
+
+
 #pragma mark - UIViewController Methods -
 
 - (void)viewDidLoad {
@@ -36,6 +85,10 @@
     [self _initialization];
     
     [self _addGesturesRecognizer];
+    
+    [self.view addSubview:self.descriptionTextField];
+    [self.view addSubview:self.periodoTextField];
+    [self.view addSubview:self.dataTextField];
     
 }
 

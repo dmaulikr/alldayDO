@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E551ECD705A3424BA31628C9"
+               BlueprintIdentifier = "4ACC76027D3744B2A5FF8A22"
                BuildableName = "libPods-ACPReminder.a"
                BlueprintName = "Pods-ACPReminder"
                ReferencedContainer = "container:Pods.xcodeproj">
