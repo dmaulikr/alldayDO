@@ -13,6 +13,8 @@
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		711894B9193A6CDC0058A20B /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 711894B8193A6CDC0058A20B /* ADAppDelegate.m */; };
+		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
+		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
 		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
 		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
@@ -54,6 +56,10 @@
 		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711894B7193A6CDC0058A20B /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
 		711894B8193A6CDC0058A20B /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
+		7174F868193A779600DEB9D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
+		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
+		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
+		7174F86B193A779600DEB9D0 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
 		71D28AFE19294F970047F291 /* alldayDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alldayDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B0119294F970047F291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71D28B0319294F970047F291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,6 +117,7 @@
 		71018AAA192967D500660C17 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				7174F867193A777D00DEB9D0 /* ViewAnimation */,
 				71018AAB192967F300660C17 /* Category */,
 			);
 			name = Support;
@@ -127,6 +134,18 @@
 			);
 			name = Category;
 			path = category;
+			sourceTree = "<group>";
+		};
+		7174F867193A777D00DEB9D0 /* ViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				7174F868193A779600DEB9D0 /* DismissingAnimator.h */,
+				7174F869193A779600DEB9D0 /* DismissingAnimator.m */,
+				7174F86A193A779600DEB9D0 /* PresentingAnimator.h */,
+				7174F86B193A779600DEB9D0 /* PresentingAnimator.m */,
+			);
+			name = ViewAnimation;
+			path = viewAnimation;
 			sourceTree = "<group>";
 		};
 		71D28AF519294F970047F291 = {
@@ -393,11 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */,
+				7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */,
 				71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */,
 				71D28B3A192950950047F291 /* ADRemindersTableViewController.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */,
+				7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */,
 				711894B9193A6CDC0058A20B /* ADAppDelegate.m in Sources */,
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
