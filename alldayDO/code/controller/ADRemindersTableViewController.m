@@ -7,10 +7,11 @@
 //
 
 #import "ADRemindersTableViewController.h"
-#import "ACPReminder.h"
 
 #import "ADLembrete.h"
 #import "ADModel.h"
+
+#import "ADNewReminderViewController.h"
 
 @interface ADRemindersTableViewController ()
 
@@ -84,4 +85,14 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)newReminderTouched:(id)sender {
+    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
+
+    [self presentViewController:newReminderViewController animated:YES completion:nil];
+    
+//    newReminderViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+//    [self.navigationController presentViewController:newReminderViewController
+//                                            animated:YES
+//                                          completion:NULL];
+}
 @end
