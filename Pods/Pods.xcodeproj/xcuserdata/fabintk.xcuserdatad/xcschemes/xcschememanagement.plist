@@ -2,39 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>Pods-ACPReminder.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JVFloatLabeledTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-LBBlurredImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MALazykit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>232C8071A3E14A5D96590918</key>
@@ -42,27 +9,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2764006270DD4EC9BE47CA1B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4ACC76027D3744B2A5FF8A22</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5A7DDABADB074188A2C411BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>671563C9FCF64CE1B166F973</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9EB849F5FF0848F6933F9372</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +24,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE931C047AC24CDA973208D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B59A1D34A41C4F379D1E14F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B78D6098B39640E1A2BE68F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D1CB95F3BCFC42538241EA11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

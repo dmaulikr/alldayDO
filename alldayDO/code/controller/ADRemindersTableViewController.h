@@ -10,4 +10,7 @@
 
 @interface ADRemindersTableViewController : UITableViewController
 
+
+- (IBAction)newReminderTouched:(id)sender;
+
 @end

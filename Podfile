@@ -1,7 +1,7 @@
-platform :ios, 6.0
+platform :ios, 7.0
 
 pod 'MALazykit', :head
 pod 'GoogleAnalytics-iOS-SDK'
-pod 'ACPReminder'
-pod 'LBBlurredImage'
+pod 'uiview-frame-helpers'
 pod 'JVFloatLabeledTextField'
+pod 'pop'

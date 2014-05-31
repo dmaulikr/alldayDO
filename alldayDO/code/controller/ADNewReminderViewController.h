@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ADNewReminderViewController : UIViewController <UIGestureRecognizerDelegate, UITextFieldDelegate>
-
-- (IBAction)cancelarTouched:(id)sender;
-- (IBAction)horaChangedTouched:(id)sender;
-- (IBAction)addReminderTouched:(id)sender;
+@interface ADNewReminderViewController : UIViewController 
 
 @end

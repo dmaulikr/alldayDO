@@ -7,12 +7,16 @@
 //
 
 #import "ADRemindersTableViewController.h"
-#import "ACPReminder.h"
 
 #import "ADLembrete.h"
 #import "ADModel.h"
 
-@interface ADRemindersTableViewController ()
+#import "ADNewReminderViewController.h"
+
+#import "PresentingAnimator.h"
+#import "DismissingAnimator.h"
+
+@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
@@ -82,6 +86,25 @@
         NSLog(@"Error: %@", error);
     }
     [self.tableView reloadData];
+}
+
+- (IBAction)newReminderTouched:(id)sender {
+    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
+    
+    newReminderViewController.transitioningDelegate = self;
+    newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:newReminderViewController animated:YES completion:NULL];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate Methods -
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [PresentingAnimator new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [DismissingAnimator new];
 }
 
 @end

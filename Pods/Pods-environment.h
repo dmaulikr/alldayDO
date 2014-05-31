@@ -6,12 +6,6 @@
 // project.
 
 
-// ACPReminder
-#define COCOAPODS_POD_AVAILABLE_ACPReminder
-#define COCOAPODS_VERSION_MAJOR_ACPReminder 1
-#define COCOAPODS_VERSION_MINOR_ACPReminder 0
-#define COCOAPODS_VERSION_PATCH_ACPReminder 0
-
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
@@ -24,15 +18,21 @@
 #define COCOAPODS_VERSION_MINOR_JVFloatLabeledTextField 0
 #define COCOAPODS_VERSION_PATCH_JVFloatLabeledTextField 8
 
-// LBBlurredImage
-#define COCOAPODS_POD_AVAILABLE_LBBlurredImage
-#define COCOAPODS_VERSION_MAJOR_LBBlurredImage 0
-#define COCOAPODS_VERSION_MINOR_LBBlurredImage 2
-#define COCOAPODS_VERSION_PATCH_LBBlurredImage 0
-
 // MALazykit
 #define COCOAPODS_POD_AVAILABLE_MALazykit
 #define COCOAPODS_VERSION_MAJOR_MALazykit 0
 #define COCOAPODS_VERSION_MINOR_MALazykit 1
 #define COCOAPODS_VERSION_PATCH_MALazykit 10
+
+// pop
+#define COCOAPODS_POD_AVAILABLE_pop
+#define COCOAPODS_VERSION_MAJOR_pop 1
+#define COCOAPODS_VERSION_MINOR_pop 0
+#define COCOAPODS_VERSION_PATCH_pop 5
+
+// uiview-frame-helpers
+#define COCOAPODS_POD_AVAILABLE_uiview_frame_helpers
+#define COCOAPODS_VERSION_MAJOR_uiview_frame_helpers 0
+#define COCOAPODS_VERSION_MINOR_uiview_frame_helpers 1
+#define COCOAPODS_VERSION_PATCH_uiview_frame_helpers 1
 
