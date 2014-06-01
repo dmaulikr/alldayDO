@@ -24,6 +24,8 @@ typedef enum {
 } ADCycleType;
 
 #define PADDING 10.f
+#define ACTIVE_COLOR [UIColor colorWithRed:0.55 green:0.25 blue:0.72 alpha:1]
+#define DEFAULT_COLOR [UIColor colorWithRed:0.29 green:0.13 blue:0.38 alpha:1]
 
 
 @interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
@@ -35,6 +37,7 @@ typedef enum {
 @property (nonatomic, strong) UIDatePicker *dataPicker;
 @property (nonatomic, strong) UIPickerView *periodoPickerView;
 
+@property (nonatomic, strong) UIButton *iconButton;
 @property (nonatomic, strong) UIButton *cancelarButton;
 @property (nonatomic, strong) UIButton *salvarButton;
 
@@ -57,9 +60,13 @@ typedef enum {
 - (id)init {
     self = [super init];
     if (self) {
-        self.view.frame = CGRectMake(0, 0, 300, 440);
+        self.view.frame = CGRectMake(0, 0, 300, 400);
         self.view.layer.cornerRadius = 6.f;
         self.view.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.700];
+        
+        [self _addGesturesRecognizer];
+        [self _addInputViewForTextField];
+        [self _addSubViews];
     }
     return self;
 }
@@ -71,8 +78,10 @@ typedef enum {
         _descriptionTextField = [[JVFloatLabeledTextField alloc] init];
         _descriptionTextField.delegate = self;
         _descriptionTextField.returnKeyType = UIReturnKeyNext;
+        _descriptionTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
+        _descriptionTextField.floatingLabelTextColor = DEFAULT_COLOR;
         _descriptionTextField.frame = CGRectMake(PADDING, PADDING, self.view.width - PADDING, 44.f);
-        [_descriptionTextField setPlaceholder:@"Do que que você precisa ser lembrado?"
+        [_descriptionTextField setPlaceholder:@"Qual atividade precisa ser lembrada?"
                             floatingTitle:@"Iremos te lembrar da atividade"];
     }
     return _descriptionTextField;
@@ -83,6 +92,8 @@ typedef enum {
         _periodoTextField = [[JVFloatLabeledTextField alloc] init];
         _periodoTextField.delegate = self;
         _periodoTextField.frame = CGRectMake(PADDING, self.descriptionTextField.maxY, self.view.width, 44.f);
+        _periodoTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
+        _periodoTextField.floatingLabelTextColor = DEFAULT_COLOR;
         [_periodoTextField setPlaceholder:@"Qual a periodicidade?"
                             floatingTitle:@"Entre os intervalos de"];
     }
@@ -94,7 +105,9 @@ typedef enum {
         _dataTextField = [[JVFloatLabeledTextField alloc] init];
         _dataTextField.delegate = self;
         _dataTextField.frame = CGRectMake(PADDING, self.periodoTextField.maxY, self.view.width, 44.f);
-        [_dataTextField setPlaceholder:@"Qual o horário"
+        _dataTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
+        _dataTextField.floatingLabelTextColor = DEFAULT_COLOR;
+        [_dataTextField setPlaceholder:@"Qual o horário?"
                             floatingTitle:@"No horário das"];
     }
     return _dataTextField;
@@ -120,11 +133,25 @@ typedef enum {
     return _periodoPickerView;
 }
 
+- (UIButton *)iconButton {
+    if (!_iconButton) {
+        _iconButton = [UIButton buttonWithType:UIButtonTypeRoundedRect frame:CGRectMake(0, 0, 90.f, 90.f)];
+        _iconButton.tintColor = [UIColor darkGrayColor];
+        _iconButton.center = self.view.center;
+        [_iconButton setY:(self.salvarButton.y - self.dataTextField.maxY) - PADDING];
+        [_iconButton setImage:[UIImage imageNamed:@"newHexacon"] forState:UIControlStateNormal];
+    }
+    return _iconButton;
+}
+
 - (UIButton *)cancelarButton {
     if (!_cancelarButton) {
-        _cancelarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(0, 300, self.view.width, 44.f)];
+        _cancelarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(self.salvarButton.maxX,
+                                                                            self.view.maxY - 60.f,
+                                                                            self.view.width / 2,
+                                                                            60.f)];
         [_cancelarButton setTitle:@"Cancelar" forState:UIControlStateNormal];
-        _cancelarButton.backgroundColor = [UIColor magentaColor];
+        [_cancelarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventAllEvents];
     }
     return _cancelarButton;
@@ -132,22 +159,18 @@ typedef enum {
 
 - (UIButton *)salvarButton {
     if (!_salvarButton) {
-        _salvarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(0, 340, self.view.width, 44.f)];
+        _salvarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(0,
+                                                                          self.view.maxY - 60.f,
+                                                                          self.view.width / 2,
+                                                                          60.f)];
         [_salvarButton setTitle:@"Salvar" forState:UIControlStateNormal];
-        _salvarButton.backgroundColor = [UIColor colorWithRed:1.000 green:0.000 blue:1.000 alpha:0.560];
+        [_salvarButton setTitleColor:[UIColor colorWithRed:0.29 green:0.13 blue:0.38 alpha:1] forState:UIControlStateNormal];
         [_salvarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventAllEvents];
     }
     return _salvarButton;
 }
 
 #pragma mark - UIViewController Methods -
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self _addGesturesRecognizer];
-    [self _addInputViewForTextField];
-    [self _addSubViews];
-}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -171,6 +194,7 @@ typedef enum {
     [self.view addSubview:self.descriptionTextField];
     [self.view addSubview:self.periodoTextField];
     [self.view addSubview:self.dataTextField];
+    [self.view addSubview:self.iconButton];
     [self.view addSubview:self.salvarButton];
     [self.view addSubview:self.cancelarButton];
 }
@@ -281,7 +305,7 @@ typedef enum {
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return sizeof(ADCycleType) - 1;
+    return sizeof(ADCycleType);
 }
 
 #pragma mark - UIPickerViewDelegate Methods -
