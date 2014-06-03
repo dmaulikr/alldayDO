@@ -13,6 +13,7 @@
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		711894B9193A6CDC0058A20B /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 711894B8193A6CDC0058A20B /* ADAppDelegate.m */; };
+		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
 		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711894B7193A6CDC0058A20B /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
 		711894B8193A6CDC0058A20B /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
+		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		7174F868193A779600DEB9D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
 		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */,
 				71FC67DD19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.h */,
 				71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */,
+				714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */,
+				714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */,
 			);
 			name = Category;
 			path = category;
@@ -414,6 +419,7 @@
 				71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */,
 				7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */,
 				71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */,
+				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71D28B3A192950950047F291 /* ADRemindersTableViewController.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,

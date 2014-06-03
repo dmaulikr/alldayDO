@@ -7,6 +7,7 @@
 //
 
 #import "UILocalNotification+ADToolkitAdditions.h"
+#import "ADLembrete+ADToolkitAdditions.h"
 
 #define ALERT_BODY @"Você lembrou de %@?"
 #define LocalNotificationDomain @"mobi.fabionogueira.alldayDO"
@@ -16,7 +17,7 @@
 + (instancetype)defaultLocalNotificationWith:(ADLembrete *)lembrete {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = lembrete.data;
-    localNotification.repeatInterval = lembrete.periodo.intValue;
+    localNotification.repeatInterval = [lembrete repeatInterval];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.alertAction = @"Não esqueça!";
     localNotification.alertBody = [NSString stringWithFormat:ALERT_BODY, lembrete.descricao];;

@@ -62,7 +62,7 @@ typedef enum {
     if (self) {
         self.view.frame = CGRectMake(0, 0, 300, 400);
         self.view.layer.cornerRadius = 6.f;
-        self.view.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.700];
+        self.view.backgroundColor = [UIColor colorWithWhite:0.910 alpha:0.950];
         
         [self _addGesturesRecognizer];
         [self _addInputViewForTextField];
@@ -81,8 +81,8 @@ typedef enum {
         _descriptionTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
         _descriptionTextField.floatingLabelTextColor = DEFAULT_COLOR;
         _descriptionTextField.frame = CGRectMake(PADDING, PADDING, self.view.width - PADDING, 44.f);
-        [_descriptionTextField setPlaceholder:@"Qual atividade precisa ser lembrada?"
-                            floatingTitle:@"Iremos te lembrar da atividade"];
+        [_descriptionTextField setPlaceholder:@"O que precisamos te lembrar?"
+                            floatingTitle:@"Você não pode esquecer de"];
     }
     return _descriptionTextField;
 }
@@ -94,8 +94,8 @@ typedef enum {
         _periodoTextField.frame = CGRectMake(PADDING, self.descriptionTextField.maxY, self.view.width, 44.f);
         _periodoTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
         _periodoTextField.floatingLabelTextColor = DEFAULT_COLOR;
-        [_periodoTextField setPlaceholder:@"Qual a periodicidade?"
-                            floatingTitle:@"Entre os intervalos de"];
+        [_periodoTextField setPlaceholder:@"Quando?"
+                            floatingTitle:@"No periodo de"];
     }
     return _periodoTextField;
 }
@@ -107,8 +107,8 @@ typedef enum {
         _dataTextField.frame = CGRectMake(PADDING, self.periodoTextField.maxY, self.view.width, 44.f);
         _dataTextField.floatingLabelActiveTextColor = ACTIVE_COLOR;
         _dataTextField.floatingLabelTextColor = DEFAULT_COLOR;
-        [_dataTextField setPlaceholder:@"Qual o horário?"
-                            floatingTitle:@"No horário das"];
+        [_dataTextField setPlaceholder:@"Que horas?"
+                            floatingTitle:@"às"];
     }
     return _dataTextField;
 }
@@ -165,7 +165,7 @@ typedef enum {
                                                                           60.f)];
         [_salvarButton setTitle:@"Salvar" forState:UIControlStateNormal];
         [_salvarButton setTitleColor:[UIColor colorWithRed:0.29 green:0.13 blue:0.38 alpha:1] forState:UIControlStateNormal];
-        [_salvarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventAllEvents];
+        [_salvarButton addTarget:self action:@selector(_addReminderTouched) forControlEvents:UIControlEventAllEvents];
     }
     return _salvarButton;
 }
@@ -229,16 +229,16 @@ typedef enum {
     
     switch (cycleType) {
         case ADCycleTypeDay:
-            text = @"Diário";
+            text = @"Diáriamente";
             break;
         case ADCycleTypeWeek:
-            text = @"Semanal";
+            text = @"Semanalmente";
             break;
         case ADCycleTypeMonth:
-            text = @"Mensal";
+            text = @"Mensalmente";
             break;
         case ADCycleTypeYear:
-            text = @"Anual";
+            text = @"Anualmente";
             break;
     }
     
@@ -278,11 +278,10 @@ typedef enum {
     
     if (![self.descriptionTextField.text isEqual:@""]) {
         ADLembrete *lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];
-//        lembrete.data = self.timePicker.date;
         lembrete.descricao = self.descriptionTextField.text;
-
-#warning arrumar label de periodo
-//        lembrete.periodo = [NSNumber numberWithInt:1];
+        lembrete.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
+        lembrete.data = self.dataPicker.date;
+    
         [[ADModel sharedInstance] saveChanges];
 
         UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:lembrete];
@@ -291,7 +290,6 @@ typedef enum {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
 
 - (void)_cancelarTouched {
     [self dismissViewControllerAnimated:YES completion:nil];

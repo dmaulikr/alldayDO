@@ -48,7 +48,7 @@
     [super viewDidLoad];
     [self _executeFetchRequest];
     
-    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
 }
 
