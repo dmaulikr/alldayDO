@@ -2,34 +2,207 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MALazykit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMAddressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMBadgeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMCategories.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMCircleProgressView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMGradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMHUDView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMLoadingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMRateLimit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAMWebView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SSToolkit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-iOS-blur.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uiview-frame-helpers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>232C8071A3E14A5D96590918</key>
+		<key>01DEED2344F94A49BC8CDADF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>671563C9FCF64CE1B166F973</key>
+		<key>14583ABB022148D098A89543</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A2471B71BB174B9ABC12B16A</key>
+		<key>1796419568F14A1599DDE186</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9AD54C594394FB199901836</key>
+		<key>37AD9E830FD44AD1AFB539BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B59A1D34A41C4F379D1E14F0</key>
+		<key>42D3B80E59DE4891901FA0F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B78D6098B39640E1A2BE68F4</key>
+		<key>485BDFF4C5294060817C2329</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CAEAC6DF6014870A223241B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4F7901A06F6A47C18864890F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57C21E5011C74497B22845C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75118FBDECE34701862D5254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F8C3243AB384E05AEC4EF4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8177F5BFC3DF4C00870E1220</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9FD3BADE8DB34583BD54BF01</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6342A60E6D84AB4B3D69AF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C09EFBDAEC5A42B49D3B0EDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C23B957DCE2A4637ACB16FD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C414F6C17F4D4CEAA70D61B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB55A09CED744EE0B9168543</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD567D369F0244669880CE89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5C16F84829A4907B40BDC67</key>
 		<dict>
 			<key>primary</key>
 			<true/>

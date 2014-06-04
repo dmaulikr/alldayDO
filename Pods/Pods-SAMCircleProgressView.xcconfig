@@ -1,0 +1,1 @@
+PODS_SAMCIRCLEPROGRESSVIEW_OTHER_LDFLAGS = -framework CoreGraphics -framework UIKit

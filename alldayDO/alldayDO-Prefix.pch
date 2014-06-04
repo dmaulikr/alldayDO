@@ -16,4 +16,5 @@
     #import <CoreData/CoreData.h>
     #import <MALazykit/MALazykit.h>
     #import <uiview-frame-helpers/UIView+CBFrameHelpers.h>
+    #import <SSToolkit/SSToolkit.h>
 #endif
