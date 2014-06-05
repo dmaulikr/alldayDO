@@ -32,6 +32,7 @@
 		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
 		71D28B3A192950950047F291 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B39192950950047F291 /* ADRemindersTableViewController.m */; };
 		71D28B3F192954BD0047F291 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B3E192954BD0047F291 /* Storyboard.storyboard */; };
+		71E9325519401803007C96D4 /* ADRemindersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */; };
 		71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DB19298F0F0073A5CD /* ADNotification.m */; };
 		71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,8 @@
 		71D28B38192950950047F291 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
 		71D28B39192950950047F291 /* ADRemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersTableViewController.m; sourceTree = "<group>"; };
 		71D28B3E192954BD0047F291 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		71E9325319401803007C96D4 /* ADRemindersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersCollectionViewController.h; sourceTree = "<group>"; };
+		71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersCollectionViewController.m; sourceTree = "<group>"; };
 		71FC67DA19298F0F0073A5CD /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
 		71FC67DB19298F0F0073A5CD /* ADNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNotification.m; sourceTree = "<group>"; };
 		71FC67DD19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				71D28B39192950950047F291 /* ADRemindersTableViewController.m */,
 				71018AA1192960C000660C17 /* ADNewReminderViewController.h */,
 				71018AA2192960C000660C17 /* ADNewReminderViewController.m */,
+				71E9325319401803007C96D4 /* ADRemindersCollectionViewController.h */,
+				71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */,
 			);
 			name = Controller;
 			path = controller;
@@ -429,6 +434,7 @@
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
 				71018AA6192966CD00660C17 /* ADLembrete.m in Sources */,
+				71E9325519401803007C96D4 /* ADRemindersCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
