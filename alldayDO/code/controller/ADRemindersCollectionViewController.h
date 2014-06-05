@@ -10,4 +10,6 @@
 
 @interface ADRemindersCollectionViewController : UICollectionViewController
 
+- (IBAction)newReminderTouched:(id)sender;
+
 @end
