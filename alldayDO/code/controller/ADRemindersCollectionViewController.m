@@ -10,6 +10,7 @@
 
 #import "ADLembrete.h"
 #import "ADModel.h"
+#import "ADReminderCell.h"
 
 #import "ADNewReminderViewController.h"
 
@@ -47,6 +48,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
     [self _executeFetchRequest];
 }
 
@@ -74,15 +79,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"rememberCell" forIndexPath:indexPath];
+    ADReminderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reminderCell" forIndexPath:indexPath];
     
-    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    UILabel *descriptionLabel = [UILabel labelWithFrame:cell.bounds];
-    descriptionLabel.numberOfLines = 0;
-    descriptionLabel.text = [NSString stringWithFormat:@"%@", lembrete.descricao];
-    
-    [cell addSubview:descriptionLabel];
+//    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    UILabel *descriptionLabel = [UILabel labelWithFrame:cell.bounds];
+//    descriptionLabel.numberOfLines = 0;
+//    descriptionLabel.text = [NSString stringWithFormat:@"%@", lembrete.descricao];
+//    [cell addSubview:descriptionLabel];
+
     return cell;
 }
 

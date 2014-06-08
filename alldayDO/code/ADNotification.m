@@ -7,8 +7,6 @@
 //
 
 #import "ADNotification.h"
-#import "UILocalNotification+ADToolkitAdditions.h"
-
 #import "ADModel.h"
 
 @interface ADNotification ()

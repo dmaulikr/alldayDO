@@ -9,6 +9,7 @@
 #import "ADAppDelegate.h"
 #import "ADModel.h"
 #import "ADNotification.h"
+#import "ADStyleSheet.h"
 
 @interface ADAppDelegate ()
 
@@ -37,6 +38,9 @@
 #pragma mark - UIApplication Methods -
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [ADStyleSheet initStyles];
+    
     return YES;
 }
 

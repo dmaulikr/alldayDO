@@ -7,16 +7,14 @@
 //
 
 #import "ADNewReminderViewController.h"
+
+#import <JVFloatLabeledTextField.h>
+#import <JCRBlurView.h>
+
 #import "ADLembrete.h"
 #import "ADModel.h"
 #import "ADNotification.h"
-
-#import "NSEntityDescription+ADToolkitAdditions.h"
-#import "UILocalNotification+ADToolkitAdditions.h"
-
-#import <JVFloatLabeledTextField.h>
-
-#import <JCRBlurView.h>
+#import "ADBadgeCell.h"
 
 typedef enum {
     ADCycleTypeDay,
@@ -27,10 +25,12 @@ typedef enum {
 
 #define PADDING 10.f
 #define ACTIVE_COLOR [UIColor sam_colorWithHex:@"#A459C1"];
-#define DEFAULT_COLOR [UIColor sam_colorWithHex:@"#603172"];
+#define DEFAULT_COLOR [UIColor sam_colorWithHex:@"#655BB3"];
+
+#define NUMBER_OF_ICONS 42
 
 
-@interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) JVFloatLabeledTextField *descriptionTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
@@ -39,11 +39,18 @@ typedef enum {
 @property (nonatomic, strong) UIDatePicker *dataPicker;
 @property (nonatomic, strong) UIPickerView *periodoPickerView;
 
-@property (nonatomic, strong) UIButton *iconButton;
+@property (nonatomic, strong) UIView *iconView;
 @property (nonatomic, strong) UIButton *cancelarButton;
 @property (nonatomic, strong) UIButton *salvarButton;
 
 @property (nonatomic, strong) UIToolbar *toolbarKeyboard;
+
+@property (nonatomic, strong) UIView *badgeView;
+@property (nonatomic, strong) UICollectionView *badgeCollectionView;
+@property (nonatomic, strong) UIImageView *badgeImageView;
+@property (nonatomic, strong) UIImageView *badgeIconImageView;
+
+@property (nonatomic, strong) NSMutableArray *icons;
 
 - (void)_addBlurView;
 - (void)_addReminderTouched;
@@ -54,6 +61,8 @@ typedef enum {
 - (void)_dismissKeyboard;
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
 - (NSString *)_textForCycleType:(NSInteger)cycleType;
+
+- (void)_displayBadgeView;
 
 @end
 
@@ -141,15 +150,23 @@ typedef enum {
     return _periodoPickerView;
 }
 
-- (UIButton *)iconButton {
-    if (!_iconButton) {
-        _iconButton = [UIButton buttonWithType:UIButtonTypeRoundedRect frame:CGRectMake(0, 0, 90.f, 90.f)];
-        _iconButton.tintColor = [UIColor darkGrayColor];
-        _iconButton.center = self.view.center;
-        [_iconButton setY:(self.salvarButton.y - self.dataTextField.maxY) - PADDING];
-        [_iconButton setImage:[UIImage imageNamed:@"newHexacon"] forState:UIControlStateNormal];
+- (UIView *)iconView {
+    if (!_iconView) {
+        _iconView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 90.f, 90.f)];
+        _iconView.center = self.view.center;
+        [_iconView setY:(self.salvarButton.y - self.dataTextField.maxY) - PADDING];
+        UITapGestureRecognizer *iconGestureRecognizer = [UITapGestureRecognizer gestureRecognizerWithTarget:self
+                                                                                                     action:@selector(_displayBadgeView)];
+        [_iconView addGestureRecognizer:iconGestureRecognizer];
+        
+        
+        self.badgeImageView = [UIImageView imageViewWithImage:[UIImage imageNamed:@"newHexacon"]];
+        [_iconView addSubview:self.badgeImageView];
+        
+        self.badgeIconImageView.center = self.badgeImageView.center;
+        [_iconView addSubview:self.badgeIconImageView];
     }
-    return _iconButton;
+    return _iconView;
 }
 
 - (UIButton *)cancelarButton {
@@ -160,7 +177,7 @@ typedef enum {
                                                                             60.f)];
         [_cancelarButton setTitle:@"Cancelar" forState:UIControlStateNormal];
         [_cancelarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventAllEvents];
+        [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelarButton;
 }
@@ -173,7 +190,7 @@ typedef enum {
                                                                           60.f)];
         [_salvarButton setTitle:@"Salvar" forState:UIControlStateNormal];
         [_salvarButton setTitleColor:[UIColor colorWithRed:0.29 green:0.13 blue:0.38 alpha:1] forState:UIControlStateNormal];
-        [_salvarButton addTarget:self action:@selector(_addReminderTouched) forControlEvents:UIControlEventAllEvents];
+        [_salvarButton addTarget:self action:@selector(_dismissKeyboard) forControlEvents:UIControlEventTouchUpInside];
     }
     return _salvarButton;
 }
@@ -194,6 +211,51 @@ typedef enum {
     return _toolbarKeyboard;
 }
 
+- (UIView *)badgeView {
+    if (!_badgeView) {
+        _badgeView = [UIView viewWithFrame:self.view.bounds];
+        _badgeView.layer.cornerRadius = 6.f;
+        _badgeView.alpha = 0.f;
+    }
+    return _badgeView;
+}
+
+- (UICollectionView *)badgeCollectionView {
+    if (!_badgeCollectionView) {
+        UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
+        collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        collectionViewLayout.itemSize = CGSizeMake(40.f, 40.f);
+        collectionViewLayout.sectionInset = UIEdgeInsetsMake(20.f, 20.f, 20.f, 20.f);
+        _badgeCollectionView = [UICollectionView collectionViewWithFrame:self.badgeView.bounds
+                                                                  layout:collectionViewLayout];
+        _badgeCollectionView.dataSource = self;
+        _badgeCollectionView.delegate = self;
+        _badgeCollectionView.layer.cornerRadius = 6.f;
+        _badgeCollectionView.backgroundColor = [UIColor whiteColor];
+        _badgeCollectionView.allowsSelection = YES;
+    }
+    return _badgeCollectionView;
+}
+
+- (UIImageView *)badgeIconImageView {
+    if (!_badgeIconImageView) {
+        _badgeIconImageView = [[UIImageView alloc] init];
+        _badgeIconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
+    }
+    return _badgeIconImageView;
+}
+
+- (NSMutableArray *)icons {
+    if (!_icons) {
+        _icons = [NSMutableArray array];
+        
+        for (int i = 1; i <= NUMBER_OF_ICONS; i++) {
+            [_icons addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%i.png", i]]];
+        }
+    }
+    return _icons;
+}
+
 #pragma mark - UIViewController Methods -
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -211,8 +273,7 @@ typedef enum {
 }
 
 - (void)_addReminderTouched {
-    
-    if (![self.descriptionTextField.text isEqual:@""]) {
+        if (![self.descriptionTextField.text isEqual:@""]) {
         ADLembrete *lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];
         lembrete.descricao = self.descriptionTextField.text;
         lembrete.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
@@ -242,9 +303,11 @@ typedef enum {
     [self.view addSubview:self.descriptionTextField];
     [self.view addSubview:self.periodoTextField];
     [self.view addSubview:self.dataTextField];
-    [self.view addSubview:self.iconButton];
+    [self.view addSubview:self.iconView];
     [self.view addSubview:self.salvarButton];
     [self.view addSubview:self.cancelarButton];
+    [self.view addSubview:self.badgeView];
+    [self.badgeView addSubview:self.badgeCollectionView];
 }
 
 - (void)_cancelarTouched {
@@ -297,6 +360,14 @@ typedef enum {
     return text;
 }
 
+- (void)_displayBadgeView {
+    [self _dismissKeyboard];
+    [UIView animateWithDuration:0.4f animations:^{
+        self.badgeView.alpha = 1.f;
+        [self.badgeCollectionView reloadData];
+    }];
+}
+
 #pragma mark - UITextFieldDelegate Methods -
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -344,6 +415,39 @@ typedef enum {
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.periodoTextField.text = [self _textForCycleType:row];
+}
+
+
+#pragma mark - UICollectionViewDataSource Methods -
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return NUMBER_OF_ICONS;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = [NSString stringWithFormat:@"badgeCell-%@", indexPath];
+    
+    [collectionView registerClass:[ADBadgeCell class] forCellWithReuseIdentifier:identifier];
+    
+    ADBadgeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    cell.iconImageView.image = [self.icons objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate Methods -
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [UIView animateWithDuration:0.4f animations:^{
+        self.badgeView.alpha = 0.0f;
+    }];
+
+    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]];
+    self.badgeIconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor whiteColor]];
 }
 
 @end
