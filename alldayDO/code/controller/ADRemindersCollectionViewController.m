@@ -13,12 +13,14 @@
 #import "ADReminderCell.h"
 
 #import "ADNewReminderViewController.h"
+#import "ADNewReminderViewControllerDelegate.h"
 
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-@interface ADRemindersCollectionViewController () <UIViewControllerTransitioningDelegate>
+@interface ADRemindersCollectionViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (void)_executeFetchRequest;
@@ -49,21 +51,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.toolbar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
+                  forToolbarPosition:UIBarPositionAny
+                          barMetrics:UIBarMetricsDefault];
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
     [self _executeFetchRequest];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - Private Interface -
 
 - (void)_executeFetchRequest {
-    NSError *error = nil;
-    [self.fetchedResultsController performFetch:&error];
-    if (error) {
-        NSLog(@"Error: %@", error);
-    }
-    [self.collectionView reloadData];
+    [self.fetchedResultsController performFetch:nil];
 }
 
 #pragma mark - UICollectionViewDataSource Methods -
@@ -80,13 +82,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reminderCell" forIndexPath:indexPath];
-    
-//    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    UILabel *descriptionLabel = [UILabel labelWithFrame:cell.bounds];
-//    descriptionLabel.numberOfLines = 0;
-//    descriptionLabel.text = [NSString stringWithFormat:@"%@", lembrete.descricao];
-//    [cell addSubview:descriptionLabel];
-
+    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.iconImageView.image = [UIImage imageWithData:lembrete.imagem];
     return cell;
 }
 
@@ -97,7 +94,7 @@
 
 - (IBAction)newReminderTouched:(id)sender {
     ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
-    
+    newReminderViewController.delegate = self;
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
@@ -112,6 +109,31 @@
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return [DismissingAnimator new];
+}
+
+#pragma mark - ADNewReminderViewControllerDelegate Methods -
+
+- (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
+                  didSaveReminder:(ADLembrete *)reminder {
+    [newReminderViewController dismissViewControllerAnimated:YES completion:^{
+        [self _executeFetchRequest];
+        
+#warning ARRUMAR ESSA PORRA DE ANIMAÇÃO - CODIGO COPIADO
+        NSArray *newData = [[NSArray alloc] initWithObjects:reminder, nil];
+        [self.collectionView performBatchUpdates:^{
+            int resultsSize = [self.collectionView numberOfItemsInSection:0]; 
+            NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
+            for (int i = resultsSize; i < resultsSize + newData.count; i++)
+            {
+                [arrayWithIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+            }
+            [self.collectionView insertItemsAtIndexPaths:arrayWithIndexPaths];
+        }
+                                        completion:nil];
+        
+        
+    }];
+
 }
 
 @end

@@ -13,6 +13,7 @@
 + (void)initStyles {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                        forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 @end

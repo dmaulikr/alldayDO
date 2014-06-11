@@ -20,7 +20,7 @@
 
 - (UIImageView *)hexaconImageView {
     if (!_hexaconImageView) {
-        _hexaconImageView = [UIImageView imageViewWithImage:[[UIImage imageNamed:@"newHexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]]];
+        _hexaconImageView = [UIImageView imageViewWithImage:[[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]]];
     }
     return _hexaconImageView;
 }
@@ -28,7 +28,7 @@
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
         _iconImageView = [UIImageView imageViewWithImageNamed:nil];
-        _iconImageView.frame = CGRectMake(0, 0, 44, 44);
+        _iconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
         _iconImageView.center = self.hexaconImageView.center;
     }
     return _iconImageView;

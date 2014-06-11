@@ -25,45 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-453" y="53"/>
         </scene>
-        <!--Badge View Controller-->
-        <scene sceneID="Hj9-WO-evV">
-            <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="bae-XJ-gcF" customClass="ADBadgeViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="r5H-t8-O81">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZgY-ay-ieS">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="badgeCell" id="vgm-yi-rA6">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="bae-XJ-gcF" id="v1w-Zi-cXj"/>
-                            <outlet property="delegate" destination="bae-XJ-gcF" id="v9N-iR-D8d"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qyE-c7-nMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="11" y="-646"/>
-        </scene>
         <!--Reminders Collection View Controller - alldayDO-->
         <scene sceneID="BnB-dZ-Ivc">
             <objects>
-                <viewController id="3YN-mW-c4m" customClass="ADRemindersCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="remindersCollectionViewController" id="3YN-mW-c4m" customClass="ADRemindersCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qUp-22-vGh"/>
                         <viewControllerLayoutGuide type="bottom" id="QKd-UN-YEx"/>
@@ -95,56 +60,35 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abB-oU-qpI">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="pxY-NT-ACb"/>
+                                    <barButtonItem systemItem="add" id="Et2-d2-ddm">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="newReminderTouched:" destination="3YN-mW-c4m" id="8Sn-ox-SCY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="alldayDO" id="ra9-O7-X6i">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Et2-d2-ddm">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="newReminderTouched:" destination="3YN-mW-c4m" id="8Sn-ox-SCY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="alldayDO" id="ra9-O7-X6i"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="3uZ-0F-rLc" id="A1e-Br-i31"/>
+                        <outlet property="toolbar" destination="abB-oU-qpI" id="HzT-6Q-g45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11" y="37"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Z3W-TZ-5cd">
-            <objects>
-                <viewController id="ntg-8v-GNN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Iow-Ay-Hds"/>
-                        <viewControllerLayoutGuide type="bottom" id="nC2-Ow-ei1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BqG-nu-ivO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHM-mB-oop">
-                                <rect key="frame" x="65" y="338" width="145" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Hexacon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p0n-kO-yQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="398" y="-10"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="Hexacon" width="90" height="90"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

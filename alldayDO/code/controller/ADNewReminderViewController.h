@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ADNewReminderViewControllerDelegate.h"
+
 @interface ADNewReminderViewController : UIViewController 
+
+@property (nonatomic, strong) id<ADNewReminderViewControllerDelegate> delegate;
 
 @end
