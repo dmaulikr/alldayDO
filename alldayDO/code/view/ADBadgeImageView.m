@@ -14,7 +14,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.image = [UIImage imageNamed:@"newHexacon"];
-        self.badgeIconImageView.center = self.center;
         [self addSubview:self.badgeIconImageView];
     }
     return self;
@@ -26,6 +25,7 @@
     if (!_badgeIconImageView) {
         _badgeIconImageView = [[UIImageView alloc] init];
         _badgeIconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
+        _badgeIconImageView.center = self.center;
     }
     return _badgeIconImageView;
 }

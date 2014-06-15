@@ -53,6 +53,11 @@
     [self.collectionView reloadData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.collectionView reloadData];
+}
+
 #pragma mark - Private Methods -
 
 - (void)_presentNewReminderViewController {
@@ -78,7 +83,7 @@
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
     
-    cell.badgeImageView.image = self.viewModel.imagem;
+    cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
     
     return cell;
 }

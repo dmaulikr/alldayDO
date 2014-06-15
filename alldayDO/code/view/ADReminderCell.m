@@ -18,13 +18,10 @@
 
 #pragma mark - Getter Methods -
 
-- (UIImageView *)badgeImageView {
+- (ADBadgeImageView *)badgeImageView {
     if (!_badgeImageView) {
+        _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:self.frame];
         _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]];
-        
-        _badgeImageView.badgeIconImageView = [UIImageView imageViewWithImageNamed:nil];
-        _badgeImageView.badgeIconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
-        _badgeImageView.badgeIconImageView.center = self.badgeImageView.center;
     }
     return _badgeImageView;
 }

@@ -269,6 +269,11 @@
 
 #pragma mark - UIViewController Methods -
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.viewModel = nil;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self _dismissKeyboard];
