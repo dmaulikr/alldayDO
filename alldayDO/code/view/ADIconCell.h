@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ADBadgeIconCell : UICollectionViewCell
+@interface ADIconCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIImageView *iconImageView;
 

@@ -14,7 +14,7 @@
 #import "ADLembrete.h"
 #import "ADModel.h"
 #import "ADNotification.h"
-#import "ADBadgeIconCell.h"
+#import "ADIconCell.h"
 #import "ADBadgeImageView.h"
 
 #define PADDING 10.f
@@ -22,13 +22,6 @@
 #define DEFAULT_COLOR @"#655BB3"
 
 #define NUMBER_OF_ICONS 42
-
-typedef enum {
-    ADCycleTypeDay,
-    ADCycleTypeWeek,
-    ADCycleTypeMonth,
-    ADCycleTypeYear,
-} ADCycleType;
 
 @interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -54,6 +47,9 @@ typedef enum {
 
 @property (nonatomic, strong) UITapGestureRecognizer *dismissKeyboardGesture;
 
+@property (nonatomic, strong) ADNewReminderViewModel *viewModel;
+
+
 - (void)_salvarTouched;
 
 - (void)_addBlurView;
@@ -68,8 +64,6 @@ typedef enum {
 - (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker;
 
 - (void)_displayBadgeIconView;
-
-- (NSString *)_textForCycleType:(NSInteger)cycleType;
 
 @end
 
@@ -266,6 +260,13 @@ typedef enum {
     return _dismissKeyboardGesture;
 }
 
+- (ADNewReminderViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[ADNewReminderViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
 #pragma mark - UIViewController Methods -
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -372,32 +373,11 @@ typedef enum {
     [self _removeGestureRecognizer];
 }
 
-- (NSString *)_textForCycleType:(NSInteger)cycleType {
-    NSString *text;
-    
-    switch (cycleType) {
-        case ADCycleTypeDay:
-            text = @"Diáriamente";
-            break;
-        case ADCycleTypeWeek:
-            text = @"Semanalmente";
-            break;
-        case ADCycleTypeMonth:
-            text = @"Mensalmente";
-            break;
-        case ADCycleTypeYear:
-            text = @"Anualmente";
-            break;
-    }
-    
-    return text;
-}
-
 #pragma mark - UITextFieldDelegate Methods -
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.periodoTextField) {
-        self.periodoTextField.text = [self _textForCycleType:0];
+        self.periodoTextField.text = [self.viewModel textForCycleType:0];
     } else if (textField == self.horaTextField) {
         [self _refreshTimeLabel:nil];
     } else if (textField == self.dataTextField) {
@@ -431,17 +411,17 @@ typedef enum {
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-   return sizeof(ADCycleType);
+    return self.viewModel.cycleType.count;
 }
 
 #pragma mark - UIPickerViewDelegate Methods -
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self _textForCycleType:row];
+    return [self.viewModel textForCycleType:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.periodoTextField.text = [self _textForCycleType:row];
+    self.periodoTextField.text = [self.viewModel textForCycleType:row];
 }
 
 
@@ -458,9 +438,9 @@ typedef enum {
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = [NSString stringWithFormat:@"badgeCell-%@", indexPath];
     
-    [collectionView registerClass:[ADBadgeIconCell class] forCellWithReuseIdentifier:identifier];
+    [collectionView registerClass:[ADIconCell class] forCellWithReuseIdentifier:identifier];
     
-    ADBadgeIconCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    ADIconCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     cell.iconImageView.image = [self.icons objectAtIndex:indexPath.row];
     
     return cell;

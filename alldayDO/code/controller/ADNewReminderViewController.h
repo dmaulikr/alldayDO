@@ -15,6 +15,4 @@
 
 @property (nonatomic, strong) id<ADNewReminderViewControllerDelegate> delegate;
 
-@property (nonatomic, strong) ADNewReminderViewModel *viewModel;
-
 @end

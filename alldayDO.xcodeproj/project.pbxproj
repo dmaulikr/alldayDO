@@ -11,11 +11,10 @@
 		71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADNewReminderViewController.m */; };
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
-		711894B9193A6CDC0058A20B /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 711894B8193A6CDC0058A20B /* ADAppDelegate.m */; };
 		7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */; };
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
 		7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */; };
-		7130CD761944BEE0009AF8D8 /* ADBadgeIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */; };
+		7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADIconCell.m */; };
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
 		71507BD01947F21400884B46 /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71507BCF1947F21400884B46 /* ADLembrete.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
@@ -23,6 +22,7 @@
 		71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */; };
 		71B96AF3194D299C0042023E /* ADNewReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF2194D299C0042023E /* ADNewReminderViewModel.m */; };
 		71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */; };
+		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
 		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
 		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
@@ -60,8 +60,6 @@
 		71018AA8192966E800660C17 /* ADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADModel.m; sourceTree = "<group>"; };
 		71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
-		711894B7193A6CDC0058A20B /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
-		711894B8193A6CDC0058A20B /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
 		7130CD611942D69D009AF8D8 /* UIImage+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		7130CD67194369C6009AF8D8 /* PDToolkitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDToolkitAdditions.h; sourceTree = "<group>"; };
@@ -69,8 +67,8 @@
 		7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADStyleSheet.m; sourceTree = "<group>"; };
 		7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADReminderCell.h; sourceTree = "<group>"; };
 		7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
-		7130CD741944BEE0009AF8D8 /* ADBadgeIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeIconCell.h; sourceTree = "<group>"; };
-		7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeIconCell.m; sourceTree = "<group>"; };
+		7130CD741944BEE0009AF8D8 /* ADIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADIconCell.h; sourceTree = "<group>"; };
+		7130CD751944BEE0009AF8D8 /* ADIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADIconCell.m; sourceTree = "<group>"; };
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		71507BCE1947F21400884B46 /* ADLembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLembrete.h; sourceTree = "<group>"; };
@@ -86,6 +84,8 @@
 		71B96AF2194D299C0042023E /* ADNewReminderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNewReminderViewModel.m; sourceTree = "<group>"; };
 		71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeImageView.h; sourceTree = "<group>"; };
 		71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeImageView.m; sourceTree = "<group>"; };
+		71B96AFE194D4DC90042023E /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
+		71B96AFF194D4DC90042023E /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
 		71D28AFE19294F970047F291 /* alldayDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alldayDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B0119294F970047F291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71D28B0319294F970047F291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -304,8 +304,8 @@
 		71D28B3B1929510A0047F291 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				711894B7193A6CDC0058A20B /* ADAppDelegate.h */,
-				711894B8193A6CDC0058A20B /* ADAppDelegate.m */,
+				71B96AFE194D4DC90042023E /* ADAppDelegate.h */,
+				71B96AFF194D4DC90042023E /* ADAppDelegate.m */,
 				7130CD6B1943724E009AF8D8 /* ADStyleSheet.h */,
 				7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */,
 			);
@@ -329,13 +329,13 @@
 		71D28B3D192954950047F291 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71D28B3E192954BD0047F291 /* Storyboard.storyboard */,
-				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
-				7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */,
-				7130CD741944BEE0009AF8D8 /* ADBadgeIconCell.h */,
-				7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */,
 				71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */,
 				71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */,
+				7130CD741944BEE0009AF8D8 /* ADIconCell.h */,
+				7130CD751944BEE0009AF8D8 /* ADIconCell.m */,
+				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
+				7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */,
+				71D28B3E192954BD0047F291 /* Storyboard.storyboard */,
 			);
 			name = View;
 			path = view;
@@ -481,14 +481,14 @@
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
-				7130CD761944BEE0009AF8D8 /* ADBadgeIconCell.m in Sources */,
+				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
 				7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */,
 				71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */,
+				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */,
 				71B96AF3194D299C0042023E /* ADNewReminderViewModel.m in Sources */,
 				7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */,
-				711894B9193A6CDC0058A20B /* ADAppDelegate.m in Sources */,
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
 				7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */,

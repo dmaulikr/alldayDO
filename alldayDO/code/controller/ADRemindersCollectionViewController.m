@@ -20,23 +20,34 @@
 
 @interface ADRemindersCollectionViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
+@property (nonatomic, strong) ADRemindersViewModel *viewModel;
+
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
 
 @implementation ADRemindersCollectionViewController
 
+#pragma mark - Getter Methods -
+
+- (ADRemindersViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[ADRemindersViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
 #pragma mark - UIView Lifecycle Methods -
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
     [self.toolbar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                   forToolbarPosition:UIBarPositionAny
                           barMetrics:UIBarMetricsDefault];
-    
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
     
     [self.viewModel executeFetchRequest];    
     [self.collectionView reloadData];

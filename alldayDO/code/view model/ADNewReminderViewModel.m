@@ -11,7 +11,28 @@
 #import "ADModel.h"
 #import "ADLembrete+ADToolkitAdditions.h"
 
+typedef enum {
+    ADCycleTypeDay,
+    ADCycleTypeWeek,
+    ADCycleTypeMonth,
+    ADCycleTypeYear,
+} ADCycleType;
+
 @implementation ADNewReminderViewModel
+
+#pragma mark - Getter Methods -
+
+- (NSArray *)cycleType {
+    if(!_cycleType){
+        _cycleType = @[
+                    @"Diáriamente",
+                    @"Semanalmente",
+                    @"Mensalmente",
+                    @"Anualmente"
+                ];
+    }
+    return _cycleType;
+}
 
 #pragma mark - Public Methods -
 
@@ -27,6 +48,10 @@
     
     UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:lembrete];
     [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+}
+
+- (NSString *)textForCycleType:(NSInteger)cycleType {
+    return [self.cycleType objectAtIndex:cycleType];
 }
 
 @end

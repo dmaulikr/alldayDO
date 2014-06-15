@@ -14,8 +14,6 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *nagivationBar;
 
-@property (nonatomic, strong) ADRemindersViewModel *viewModel;
-
 - (IBAction)newReminderTouched:(id)sender;
 
 @end

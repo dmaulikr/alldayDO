@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADBadgeIconCell.h"
+#import "ADIconCell.h"
 
-@interface ADBadgeIconCell ()
+@interface ADIconCell ()
 
 - (void)_initialize;
 
 @end
 
-@implementation ADBadgeIconCell
+@implementation ADIconCell
 
 #pragma mark - Getter Methods -
 

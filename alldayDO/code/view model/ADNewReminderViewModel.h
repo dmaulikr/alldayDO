@@ -16,6 +16,10 @@
 @property (nonatomic, strong) NSData * imagem;
 @property (nonatomic, strong) NSDate * dataInicial;
 
+@property (nonatomic, strong) NSArray *cycleType;
+
 - (void)saveChanges;
+
+- (NSString *)textForCycleType:(NSInteger)cycleType;
 
 @end
