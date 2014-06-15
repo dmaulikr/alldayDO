@@ -62,7 +62,7 @@
 
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
 - (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker;
-
+- (BOOL)_requiredValidation;
 - (void)_displayBadgeIconView;
 
 @end
@@ -282,15 +282,14 @@
 #pragma mark - Private Methods -
 
 - (void)_salvarTouched {
-    if (![self.descriptionTextField.text isEqual:@""]) {
-        
+    if ([self _requiredValidation]) {
         self.viewModel.descricao = self.descriptionTextField.text;
         self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
         self.viewModel.data = self.horaPicker.date;
         self.viewModel.dataInicial = self.dataPicker.date;
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
-        
+
         [self.delegate newReminderViewController:self
                                  didSaveReminder:(ADLembrete *)self.viewModel];
     }
@@ -367,6 +366,36 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterFullStyle];
     self.dataTextField.text = [formatter stringFromDate:date];
+}
+- (BOOL)_requiredValidation {
+    BOOL sucess = YES;
+    
+    UIColor *requiredColor = [UIColor sam_colorWithHex:@"#E1BCC1"];
+    
+    UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
+    
+    if ([self.descriptionTextField.text isEqualToString:@""]) {
+        [self.descriptionTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        sucess = NO;
+        
+    } else if ([self.periodoTextField.text isEqualToString:@""]){
+        [self.periodoTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        sucess = NO;
+        
+    } else if ([self.horaTextField.text isEqualToString:@""]) {
+        [self.horaTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        sucess = NO;
+        
+    } else if ([self.dataTextField.text isEqualToString:@""]) {
+        [self.dataTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        sucess = NO;
+        
+    } else if (!iconImage) {
+        self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
+        sucess = NO;
+    }
+    
+    return sucess;
 }
 
 - (void)_displayBadgeIconView {
