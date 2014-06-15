@@ -67,7 +67,7 @@
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
     
-    cell.iconImageView.image = self.viewModel.imagem;
+    cell.badgeImageView.image = self.viewModel.imagem;
     
     return cell;
 }

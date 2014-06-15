@@ -10,15 +10,12 @@
 
 @interface ADNewReminderViewModel : NSObject
 
-@property (nonatomic, retain) NSDate * data;
-@property (nonatomic, retain) NSString * descricao;
-@property (nonatomic, retain) NSNumber * periodo;
-@property (nonatomic, retain) NSData * imagem;
-@property (nonatomic, retain) NSDate * dataInicial;
+@property (nonatomic, strong) NSDate * data;
+@property (nonatomic, strong) NSString * descricao;
+@property (nonatomic, strong) NSNumber * periodo;
+@property (nonatomic, strong) NSData * imagem;
+@property (nonatomic, strong) NSDate * dataInicial;
 
 - (void)saveChanges;
-
-- (NSString *)textForCycleType:(NSInteger)cycleType;
-- (NSInteger)numberOfRowsInPickerView;
 
 @end

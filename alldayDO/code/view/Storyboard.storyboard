@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3uZ-0F-rLc">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3uZ-0F-rLc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abB-oU-qpI">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abB-oU-qpI">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -75,6 +75,15 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3uZ-0F-rLc" secondAttribute="trailing" id="ea3-ei-97V"/>
+                            <constraint firstItem="3uZ-0F-rLc" firstAttribute="leading" secondItem="abB-oU-qpI" secondAttribute="leading" id="eh3-yU-gaA"/>
+                            <constraint firstItem="abB-oU-qpI" firstAttribute="bottom" secondItem="3uZ-0F-rLc" secondAttribute="bottom" id="hez-D5-d6O"/>
+                            <constraint firstAttribute="bottom" secondItem="abB-oU-qpI" secondAttribute="bottom" id="mp7-qN-xBV"/>
+                            <constraint firstItem="3uZ-0F-rLc" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="tfa-dv-Dtr"/>
+                            <constraint firstItem="3uZ-0F-rLc" firstAttribute="trailing" secondItem="abB-oU-qpI" secondAttribute="trailing" id="w0n-cq-r17"/>
+                            <constraint firstItem="3uZ-0F-rLc" firstAttribute="top" secondItem="WLG-HH-LLG" secondAttribute="top" id="zX1-RH-sj5"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="alldayDO" id="ra9-O7-X6i"/>

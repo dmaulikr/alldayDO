@@ -34,7 +34,7 @@
     [transitionContext.containerView addSubview:toView];
 
     POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    positionAnimation.toValue = @(transitionContext.containerView.center.y - 30.f);
+    positionAnimation.toValue = @(transitionContext.containerView.center.y - 20.f);
     positionAnimation.springBounciness = 10;
     [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
         [transitionContext completeTransition:YES];

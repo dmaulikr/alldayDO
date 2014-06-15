@@ -18,20 +18,15 @@
 
 #pragma mark - Getter Methods -
 
-- (UIImageView *)hexaconImageView {
-    if (!_hexaconImageView) {
-        _hexaconImageView = [UIImageView imageViewWithImage:[[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]]];
+- (UIImageView *)badgeImageView {
+    if (!_badgeImageView) {
+        _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]];
+        
+        _badgeImageView.badgeIconImageView = [UIImageView imageViewWithImageNamed:nil];
+        _badgeImageView.badgeIconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
+        _badgeImageView.badgeIconImageView.center = self.badgeImageView.center;
     }
-    return _hexaconImageView;
-}
-
-- (UIImageView *)iconImageView {
-    if (!_iconImageView) {
-        _iconImageView = [UIImageView imageViewWithImageNamed:nil];
-        _iconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
-        _iconImageView.center = self.hexaconImageView.center;
-    }
-    return _iconImageView;
+    return _badgeImageView;
 }
 
 #pragma mark - Designator Initialize
@@ -55,8 +50,7 @@
 #pragma mark - Private Methods -
 
 - (void)_initialize {
-    [self addSubview:self.hexaconImageView];
-    [self.hexaconImageView addSubview:self.iconImageView];
+    [self addSubview:self.badgeImageView];
 }
 
 @end

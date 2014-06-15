@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ADBadgeImageView.h"
 
 @interface ADReminderCell : UICollectionViewCell
 
-@property (nonatomic, strong) UIImageView *hexaconImageView;
-@property (nonatomic, strong) UIImageView *iconImageView;
+@property (nonatomic, strong) ADBadgeImageView *badgeImageView;
 
 @end

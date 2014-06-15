@@ -15,7 +15,7 @@
 		7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */; };
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
 		7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */; };
-		7130CD761944BEE0009AF8D8 /* ADBadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADBadgeCell.m */; };
+		7130CD761944BEE0009AF8D8 /* ADBadgeIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */; };
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
 		71507BD01947F21400884B46 /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71507BCF1947F21400884B46 /* ADLembrete.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
@@ -69,8 +69,8 @@
 		7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADStyleSheet.m; sourceTree = "<group>"; };
 		7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADReminderCell.h; sourceTree = "<group>"; };
 		7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
-		7130CD741944BEE0009AF8D8 /* ADBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeCell.h; sourceTree = "<group>"; };
-		7130CD751944BEE0009AF8D8 /* ADBadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeCell.m; sourceTree = "<group>"; };
+		7130CD741944BEE0009AF8D8 /* ADBadgeIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeIconCell.h; sourceTree = "<group>"; };
+		7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeIconCell.m; sourceTree = "<group>"; };
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		71507BCE1947F21400884B46 /* ADLembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLembrete.h; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 				71D28B3E192954BD0047F291 /* Storyboard.storyboard */,
 				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
 				7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */,
-				7130CD741944BEE0009AF8D8 /* ADBadgeCell.h */,
-				7130CD751944BEE0009AF8D8 /* ADBadgeCell.m */,
+				7130CD741944BEE0009AF8D8 /* ADBadgeIconCell.h */,
+				7130CD751944BEE0009AF8D8 /* ADBadgeIconCell.m */,
 				71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */,
 				71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */,
 			);
@@ -481,7 +481,7 @@
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
-				7130CD761944BEE0009AF8D8 /* ADBadgeCell.m in Sources */,
+				7130CD761944BEE0009AF8D8 /* ADBadgeIconCell.m in Sources */,
 				7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */,
 				71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
