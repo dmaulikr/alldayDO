@@ -15,13 +15,7 @@
 #import "ADModel.h"
 #import "ADNotification.h"
 #import "ADBadgeCell.h"
-
-typedef enum {
-    ADCycleTypeDay,
-    ADCycleTypeWeek,
-    ADCycleTypeMonth,
-    ADCycleTypeYear,
-} ADCycleType;
+#import "ADBadgeImageView.h"
 
 #define PADDING 10.f
 #define ACTIVE_COLOR @"#A459C1"
@@ -41,14 +35,14 @@ typedef enum {
 @property (nonatomic, strong) UIDatePicker *horaPicker;
 @property (nonatomic, strong) UIDatePicker *dataPicker;
 
-@property (nonatomic, strong) UIView *iconView;
+@property (nonatomic, strong) UIView *badgeView;
+@property (nonatomic, strong) ADBadgeImageView *badgeImageView;
+
 @property (nonatomic, strong) UIButton *cancelarButton;
 @property (nonatomic, strong) UIButton *salvarButton;
 
-@property (nonatomic, strong) UIView *badgeView;
-@property (nonatomic, strong) UICollectionView *badgeCollectionView;
-@property (nonatomic, strong) UIImageView *badgeImageView;
-@property (nonatomic, strong) UIImageView *badgeIconImageView;
+@property (nonatomic, strong) UIView *badgeIconView;
+@property (nonatomic, strong) UICollectionView *badgeIconCollectionView;
 
 @property (nonatomic, strong) NSMutableArray *icons;
 
@@ -67,9 +61,7 @@ typedef enum {
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
 - (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker;
 
-- (NSString *)_textForCycleType:(NSInteger)cycleType;
-
-- (void)_displayBadgeView;
+- (void)_displayBadgeIconView;
 
 @end
 
@@ -179,25 +171,21 @@ typedef enum {
     return _dataPicker;
 }
 
-- (UIView *)iconView {
-    if (!_iconView) {
-        _iconView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 90.f, 90.f)];
-        _iconView.center = self.view.center;
+- (UIView *)badgeView {
+    if (!_badgeView) {
+        _badgeView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 90.f, 90.f)];
+        _badgeView.center = self.view.center;
         
-        CGFloat yBetweenDataTextAndSalvarButton = self.dataTextField.maxY + (((self.salvarButton.y - self.dataTextField.maxY) / 2) - _iconView.height / 2);
-        [_iconView setY:yBetweenDataTextAndSalvarButton];
+        CGFloat yBetweenDataTextAndSalvarButton = self.dataTextField.maxY + (((self.salvarButton.y - self.dataTextField.maxY) / 2) - _badgeView.height / 2);
+        [_badgeView setY:yBetweenDataTextAndSalvarButton];
         UITapGestureRecognizer *iconGestureRecognizer = [UITapGestureRecognizer gestureRecognizerWithTarget:self
-                                                                                                     action:@selector(_displayBadgeView)];
-        [_iconView addGestureRecognizer:iconGestureRecognizer];
+                                                                                                     action:@selector(_displayBadgeIconView)];
+        [_badgeView addGestureRecognizer:iconGestureRecognizer];
         
-        
-        self.badgeImageView = [UIImageView imageViewWithImage:[UIImage imageNamed:@"newHexacon"]];
-        [_iconView addSubview:self.badgeImageView];
-        
-        self.badgeIconImageView.center = self.badgeImageView.center;
-        [_iconView addSubview:self.badgeIconImageView];
+        self.badgeImageView = [[ADBadgeImageView alloc] initWithFrame:_badgeView.bounds];
+        [_badgeView addSubview:self.badgeImageView];
     }
-    return _iconView;
+    return _badgeView;
 }
 
 - (UIButton *)cancelarButton {
@@ -226,37 +214,29 @@ typedef enum {
     return _salvarButton;
 }
 
-- (UIView *)badgeView {
-    if (!_badgeView) {
-        _badgeView = [UIView viewWithFrame:self.view.bounds];
-        _badgeView.layer.cornerRadius = 6.f;
-        _badgeView.alpha = 0.f;
+- (UIView *)badgeIconView {
+    if (!_badgeIconView) {
+        _badgeIconView = [UIView viewWithFrame:self.view.bounds];
+        _badgeIconView.layer.cornerRadius = 6.f;
+        _badgeIconView.alpha = 0.f;
     }
-    return _badgeView;
+    return _badgeIconView;
 }
 
-- (UICollectionView *)badgeCollectionView {
-    if (!_badgeCollectionView) {
+- (UICollectionView *)badgeIconCollectionView {
+    if (!_badgeIconCollectionView) {
         UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
         collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         collectionViewLayout.itemSize = CGSizeMake(40.f, 40.f);
         collectionViewLayout.sectionInset = UIEdgeInsetsMake(20.f, 20.f, 20.f, 20.f);
-        _badgeCollectionView = [UICollectionView collectionViewWithFrame:self.badgeView.frame
+        _badgeIconCollectionView = [UICollectionView collectionViewWithFrame:self.badgeIconView.frame
                                                                   layout:collectionViewLayout];
-        _badgeCollectionView.dataSource = self;
-        _badgeCollectionView.delegate = self;
-        _badgeCollectionView.layer.cornerRadius = 6.f;
-        _badgeCollectionView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.800];
+        _badgeIconCollectionView.dataSource = self;
+        _badgeIconCollectionView.delegate = self;
+        _badgeIconCollectionView.layer.cornerRadius = 6.f;
+        _badgeIconCollectionView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.800];
     }
-    return _badgeCollectionView;
-}
-
-- (UIImageView *)badgeIconImageView {
-    if (!_badgeIconImageView) {
-        _badgeIconImageView = [[UIImageView alloc] init];
-        _badgeIconImageView.frame = CGRectMake(0.f, 0.f, 32.f, 32.f);
-    }
-    return _badgeIconImageView;
+    return _badgeIconCollectionView;
 }
 
 - (NSMutableArray *)icons {
@@ -289,20 +269,16 @@ typedef enum {
 
 - (void)_salvarTouched {
     if (![self.descriptionTextField.text isEqual:@""]) {
-        ADLembrete *lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];
-        lembrete.descricao = self.descriptionTextField.text;
-        lembrete.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
-        lembrete.data = self.horaPicker.date;
-        lembrete.dataInicial = self.dataPicker.date;
-        lembrete.imagem = UIImagePNGRepresentation(self.badgeIconImageView.image);
         
-        [[ADModel sharedInstance] saveChanges];
-        
-        UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:lembrete];
-        [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+        self.viewModel.descricao = self.descriptionTextField.text;
+        self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
+        self.viewModel.data = self.horaPicker.date;
+        self.viewModel.dataInicial = self.dataPicker.date;
+        self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
+        [self.viewModel saveChanges];
         
         [self.delegate newReminderViewController:self
-                                 didSaveReminder:lembrete];
+                                 didSaveReminder:(ADLembrete *)self.viewModel];
     }
 }
 
@@ -332,11 +308,11 @@ typedef enum {
     [self.view addSubview:self.periodoTextField];
     [self.view addSubview:self.horaTextField];
     [self.view addSubview:self.dataTextField];
-    [self.view addSubview:self.iconView];
+    [self.view addSubview:self.badgeView];
     [self.view addSubview:self.salvarButton];
     [self.view addSubview:self.cancelarButton];
-    [self.view addSubview:self.badgeView];
-    [self.badgeView addSubview:self.badgeCollectionView];
+    [self.view addSubview:self.badgeIconView];
+    [self.badgeIconView addSubview:self.badgeIconCollectionView];
 }
 
 - (void)_cancelarTouched {
@@ -379,32 +355,11 @@ typedef enum {
     self.dataTextField.text = [formatter stringFromDate:date];
 }
 
-- (NSString *)_textForCycleType:(NSInteger)cycleType {
-    NSString *text;
-    
-    switch (cycleType) {
-        case ADCycleTypeDay:
-            text = @"Diáriamente";
-            break;
-        case ADCycleTypeWeek:
-            text = @"Semanalmente";
-            break;
-        case ADCycleTypeMonth:
-            text = @"Mensalmente";
-            break;
-        case ADCycleTypeYear:
-            text = @"Anualmente";
-            break;
-    }
-    
-    return text;
-}
-
-- (void)_displayBadgeView {
+- (void)_displayBadgeIconView {
     [self _dismissKeyboard];
     [UIView animateWithDuration:0.4f animations:^{
-        self.badgeView.alpha = 1.f;
-        [self.badgeCollectionView reloadData];
+        self.badgeIconView.alpha = 1.f;
+        [self.badgeIconCollectionView reloadData];
     }];
     [self _removeGestureRecognizer];
 }
@@ -413,7 +368,7 @@ typedef enum {
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.periodoTextField) {
-        self.periodoTextField.text = [self _textForCycleType:0];
+        self.periodoTextField.text = [self.viewModel textForCycleType:0];
     } else if (textField == self.horaTextField) {
         [self _refreshTimeLabel:nil];
     } else if (textField == self.dataTextField) {
@@ -447,17 +402,17 @@ typedef enum {
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return sizeof(ADCycleType);
+    return [self.viewModel numberOfRowsInPickerView];
 }
 
 #pragma mark - UIPickerViewDelegate Methods -
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self _textForCycleType:row];
+    return [self.viewModel textForCycleType:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.periodoTextField.text = [self _textForCycleType:row];
+    self.periodoTextField.text = [self.viewModel textForCycleType:row];
 }
 
 
@@ -487,11 +442,11 @@ typedef enum {
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [UIView animateWithDuration:0.4f animations:^{
-        self.badgeView.alpha = 0.0f;
+        self.badgeIconView.alpha = 0.0f;
     }];
 
     self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]];
-    self.badgeIconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor whiteColor]];
+    self.badgeImageView.badgeIconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor whiteColor]];
     
     [self _addGesturesRecognizer];
 }

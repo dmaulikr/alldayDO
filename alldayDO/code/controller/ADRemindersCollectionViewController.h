@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ADRemindersViewModel.h"
 
 @interface ADRemindersCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *nagivationBar;
+
+@property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
 - (IBAction)newReminderTouched:(id)sender;
 

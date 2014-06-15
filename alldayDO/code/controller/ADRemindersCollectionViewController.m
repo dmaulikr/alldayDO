@@ -21,30 +21,10 @@
 @interface ADRemindersCollectionViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-
-- (void)_executeFetchRequest;
 
 @end
 
 @implementation ADRemindersCollectionViewController
-
-#pragma mark - Getter Methods -
-
-- (NSFetchedResultsController *)fetchedResultsController {
-    if (!_fetchedResultsController) {
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADLembrete"];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
-        
-        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:[ADModel sharedInstance].managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:@"reminders_cache"];
-    }
-    
-    return _fetchedResultsController;
-}
-
 
 #pragma mark - UIView Lifecycle Methods -
 
@@ -58,32 +38,37 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    [self _executeFetchRequest];
+    [self.viewModel executeFetchRequest];    
     [self.collectionView reloadData];
 }
 
-#pragma mark - Private Interface -
+#pragma mark - Private Methods -
 
-- (void)_executeFetchRequest {
-    [self.fetchedResultsController performFetch:nil];
+- (void)_presentNewReminderViewController {
+    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
+    newReminderViewController.delegate = self;
+    newReminderViewController.transitioningDelegate = self;
+    newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:newReminderViewController animated:YES completion:NULL];
 }
 
 #pragma mark - UICollectionViewDataSource Methods -
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
-    return sectionInfo.numberOfObjects;
-
+    return [self.viewModel numberOfItemsInSection:section];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return [self.viewModel numberOfSections];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reminderCell" forIndexPath:indexPath];
-    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.iconImageView.image = [UIImage imageWithData:lembrete.imagem];
+    
+    [self.viewModel fetchObjectAtIndexPath:indexPath];
+    
+    cell.iconImageView.image = self.viewModel.imagem;
+    
     return cell;
 }
 
@@ -93,11 +78,7 @@
 #pragma mark - IBOutlet Methods -
 
 - (IBAction)newReminderTouched:(id)sender {
-    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
-    newReminderViewController.delegate = self;
-    newReminderViewController.transitioningDelegate = self;
-    newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
-    [self presentViewController:newReminderViewController animated:YES completion:NULL];
+    [self _presentNewReminderViewController];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate Methods -
@@ -116,24 +97,20 @@
 - (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
-        [self _executeFetchRequest];
-        
-#warning ARRUMAR ESSA PORRA DE ANIMAÇÃO - CODIGO COPIADO
-        NSArray *newData = [[NSArray alloc] initWithObjects:reminder, nil];
+        [self.viewModel executeFetchRequest];
         [self.collectionView performBatchUpdates:^{
-            int resultsSize = [self.collectionView numberOfItemsInSection:0]; 
+            int numberOfItems = [self.collectionView numberOfItemsInSection:0];
+            
             NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
-            for (int i = resultsSize; i < resultsSize + newData.count; i++)
-            {
+            NSArray *newReminder = @[reminder];
+            
+            for (int i = numberOfItems; i < numberOfItems + newReminder.count; i++) {
                 [arrayWithIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
             }
+            
             [self.collectionView insertItemsAtIndexPaths:arrayWithIndexPaths];
-        }
-                                        completion:nil];
-        
-        
+        } completion:nil];
     }];
-
 }
 
 @end

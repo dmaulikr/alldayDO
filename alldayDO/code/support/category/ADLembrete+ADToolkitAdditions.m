@@ -14,7 +14,7 @@
     NSInteger repeatInterval;
     switch (self.periodo.intValue) {
         case 0:
-            repeatInterval = kCFCalendarUnitMinute;
+            repeatInterval = kCFCalendarUnitDay;
             break;
         case 1:
             repeatInterval = kCFCalendarUnitWeek;

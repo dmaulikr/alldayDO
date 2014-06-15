@@ -19,14 +19,14 @@
     localNotification.fireDate = lembrete.data;
     localNotification.repeatInterval = [lembrete repeatInterval];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.alertAction = @"Não esqueça!";
+    localNotification.alertAction = @"não esquecer!";
     localNotification.alertBody = [NSString stringWithFormat:ALERT_BODY, lembrete.descricao];;
     localNotification.applicationIconBadgeNumber =+1;
     localNotification.timeZone = [NSTimeZone localTimeZone];
     
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:lembrete.descricao forKey:LocalNotificationDomain];
     localNotification.userInfo = infoDict;
-    
+
     return localNotification;
 }
 
