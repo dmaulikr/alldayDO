@@ -35,6 +35,10 @@
     return _fetchedResultsController;
 }
 
+- (NSString *)descricao {
+    return self.lembrete.descricao;
+}
+
 - (UIImage *)imagem {
     return [UIImage imageWithData:self.lembrete.imagem];
 }

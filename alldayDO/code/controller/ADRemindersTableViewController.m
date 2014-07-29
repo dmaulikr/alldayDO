@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADRemindersCollectionViewController.h"
+#import "ADRemindersTableViewController.h"
 
 #import "ADLembrete.h"
 #import "ADModel.h"
@@ -18,7 +18,7 @@
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-@interface ADRemindersCollectionViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
+@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation ADRemindersCollectionViewController
+@implementation ADRemindersTableViewController
 
 #pragma mark - Getter Methods -
 
@@ -42,20 +42,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    
-    [self.toolbar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                  forToolbarPosition:UIBarPositionAny
-                          barMetrics:UIBarMetricsDefault];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     [self.viewModel executeFetchRequest];    
-    [self.collectionView reloadData];
+
+    [self.tableView reloadData];
+    [self.tableView setBackgroundColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.collectionView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Private Methods -
@@ -70,26 +68,30 @@
 
 #pragma mark - UICollectionViewDataSource Methods -
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewModel numberOfItemsInSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
+    
+    [self.viewModel fetchObjectAtIndexPath:indexPath];
+    
+    cell.nomeLabel.text = self.viewModel.descricao;    
+    cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
+    cell.timelineContentView.layer.cornerRadius = 5.f;
+    
+    if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
+        cell.lineView.hidden = YES;
+    }
+    
+    return cell;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return [self.viewModel numberOfSections];
 }
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ADReminderCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reminderCell" forIndexPath:indexPath];
-    
-    [self.viewModel fetchObjectAtIndexPath:indexPath];
-    
-    cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
-    
-    return cell;
-}
-
-#pragma mark - UICollectionViewDelegate Methods -
-
 
 #pragma mark - IBOutlet Methods -
 
@@ -114,18 +116,7 @@
                   didSaveReminder:(ADLembrete *)reminder {
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         [self.viewModel executeFetchRequest];
-        [self.collectionView performBatchUpdates:^{
-            int numberOfItems = [self.collectionView numberOfItemsInSection:0];
-            
-            NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
-            NSArray *newReminder = @[reminder];
-            
-            for (int i = numberOfItems; i < numberOfItems + newReminder.count; i++) {
-                [arrayWithIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-            }
-            
-            [self.collectionView insertItemsAtIndexPaths:arrayWithIndexPaths];
-        } completion:nil];
+        [self.tableView reloadData];
     }];
 }
 

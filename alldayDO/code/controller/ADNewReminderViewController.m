@@ -18,8 +18,8 @@
 #import "ADBadgeImageView.h"
 
 #define PADDING 10.f
-#define ACTIVE_COLOR @"#A459C1"
-#define DEFAULT_COLOR @"#655BB3"
+#define ACTIVE_COLOR @"#5E82B6"
+#define DEFAULT_COLOR @"#5B91B6"
 
 #define NUMBER_OF_ICONS 42
 
@@ -488,7 +488,7 @@
         self.badgeIconView.alpha = 0.0f;
     }];
 
-    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#655BB3"]];
+    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR]];
     self.badgeImageView.badgeIconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor whiteColor]];
     
     [self _addGesturesRecognizer];

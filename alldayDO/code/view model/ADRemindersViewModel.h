@@ -10,6 +10,8 @@
 
 @interface ADRemindersViewModel : NSObject
 
+@property (nonatomic, readonly) NSString *descricao;
+@property (nonatomic, readonly) NSString *periodo;
 @property (nonatomic, readonly) UIImage *imagem;
 
 - (NSInteger)numberOfSections;

@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ADBadgeImageView.h"
 
-@interface ADReminderCell : UICollectionViewCell
+@interface ADReminderCell : UITableViewCell
 
 @property (nonatomic, strong) ADBadgeImageView *badgeImageView;
+
+@property (weak, nonatomic) IBOutlet UIView *timelineContentView;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
+
+@property (weak, nonatomic) IBOutlet UILabel *nomeLabel;
 
 @end

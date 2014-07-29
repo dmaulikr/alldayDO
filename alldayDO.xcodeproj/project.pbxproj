@@ -13,7 +13,6 @@
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */; };
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
-		7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */; };
 		7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADIconCell.m */; };
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
 		71507BD01947F21400884B46 /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71507BCF1947F21400884B46 /* ADLembrete.m */; };
@@ -38,7 +37,8 @@
 		71D28B2B19294F980047F291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B2919294F980047F291 /* InfoPlist.strings */; };
 		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
 		71D28B3F192954BD0047F291 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B3E192954BD0047F291 /* Storyboard.storyboard */; };
-		71E9325519401803007C96D4 /* ADRemindersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */; };
+		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
+		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
 		71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DB19298F0F0073A5CD /* ADNotification.m */; };
 		71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */; };
 /* End PBXBuildFile section */
@@ -66,7 +66,6 @@
 		7130CD6B1943724E009AF8D8 /* ADStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStyleSheet.h; sourceTree = "<group>"; };
 		7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADStyleSheet.m; sourceTree = "<group>"; };
 		7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADReminderCell.h; sourceTree = "<group>"; };
-		7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
 		7130CD741944BEE0009AF8D8 /* ADIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADIconCell.h; sourceTree = "<group>"; };
 		7130CD751944BEE0009AF8D8 /* ADIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADIconCell.m; sourceTree = "<group>"; };
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -103,8 +102,9 @@
 		71D28B2A19294F980047F291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
 		71D28B3E192954BD0047F291 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		71E9325319401803007C96D4 /* ADRemindersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersCollectionViewController.h; sourceTree = "<group>"; };
-		71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersCollectionViewController.m; sourceTree = "<group>"; };
+		71DD14E8197DD46C003F9059 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
+		71E9325319401803007C96D4 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
+		71E9325419401803007C96D4 /* ADRemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersTableViewController.m; sourceTree = "<group>"; };
 		71FC67DA19298F0F0073A5CD /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
 		71FC67DB19298F0F0073A5CD /* ADNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNotification.m; sourceTree = "<group>"; };
 		71FC67DD19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -294,8 +294,8 @@
 			children = (
 				71018AA1192960C000660C17 /* ADNewReminderViewController.h */,
 				71018AA2192960C000660C17 /* ADNewReminderViewController.m */,
-				71E9325319401803007C96D4 /* ADRemindersCollectionViewController.h */,
-				71E9325419401803007C96D4 /* ADRemindersCollectionViewController.m */,
+				71E9325319401803007C96D4 /* ADRemindersTableViewController.h */,
+				71E9325419401803007C96D4 /* ADRemindersTableViewController.m */,
 			);
 			name = Controller;
 			path = controller;
@@ -334,7 +334,7 @@
 				7130CD741944BEE0009AF8D8 /* ADIconCell.h */,
 				7130CD751944BEE0009AF8D8 /* ADIconCell.m */,
 				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
-				7130CD6F1943B0AF009AF8D8 /* ADReminderCell.m */,
+				71DD14E8197DD46C003F9059 /* ADReminderCell.m */,
 				71D28B3E192954BD0047F291 /* Storyboard.storyboard */,
 			);
 			name = View;
@@ -482,8 +482,8 @@
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
-				7130CD701943B0AF009AF8D8 /* ADReminderCell.m in Sources */,
 				71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */,
+				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */,
@@ -492,7 +492,7 @@
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
 				7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */,
-				71E9325519401803007C96D4 /* ADRemindersCollectionViewController.m in Sources */,
+				71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
