@@ -42,6 +42,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.hexacon1.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    self.hexacon2.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    self.hexacon3.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -84,6 +88,8 @@
     
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineView.hidden = YES;
+    } else {
+        cell.lineView.hidden = NO;
     }
     
     return cell;
@@ -116,7 +122,7 @@
                   didSaveReminder:(ADLembrete *)reminder {
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         [self.viewModel executeFetchRequest];
-        [self.tableView reloadData];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
     }];
 }
 

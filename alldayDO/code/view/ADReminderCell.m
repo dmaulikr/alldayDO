@@ -45,6 +45,14 @@
     return self;
 }
 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self _initialize];
+    }
+    return self;
+}
+
 #pragma mark - Private Methods -
 
 - (void)_initialize {

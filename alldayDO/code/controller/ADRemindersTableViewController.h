@@ -15,4 +15,7 @@
 
 - (IBAction)newReminderTouched:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *hexacon1;
+@property (weak, nonatomic) IBOutlet UIImageView *hexacon2;
+@property (weak, nonatomic) IBOutlet UIImageView *hexacon3;
 @end
