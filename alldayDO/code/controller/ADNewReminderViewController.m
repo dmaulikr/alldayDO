@@ -18,8 +18,8 @@
 #import "ADBadgeImageView.h"
 
 #define PADDING 10.f
-#define ACTIVE_COLOR @"#5E82B6"
-#define DEFAULT_COLOR @"#5B91B6"
+#define ACTIVE_COLOR_HEX @"#5E82B6"
+#define DEFAULT_COLOR_HEX @"#5B91B6"
 
 #define NUMBER_OF_ICONS 42
 
@@ -49,6 +49,8 @@
 
 @property (nonatomic, strong) ADNewReminderViewModel *viewModel;
 
+@property (nonatomic, strong) UIToolbar *toolbar;
+
 
 - (void)_salvarTouched;
 
@@ -59,6 +61,7 @@
 - (void)_addSubViews;
 - (void)_cancelarTouched;
 - (void)_dismissKeyboard;
+- (void)_nextFieldText;
 
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
 - (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker;
@@ -91,11 +94,12 @@
         _descriptionTextField = [[JVFloatLabeledTextField alloc] init];
         _descriptionTextField.delegate = self;
         _descriptionTextField.returnKeyType = UIReturnKeyNext;
-        _descriptionTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR];
-        _descriptionTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR];
+        _descriptionTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        _descriptionTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         _descriptionTextField.frame = CGRectMake(PADDING, PADDING, self.view.width - PADDING, 44.f);
         [_descriptionTextField setPlaceholder:@"O que precisamos te lembrar?"
                             floatingTitle:@"Você não pode esquecer de"];
+        _descriptionTextField.inputAccessoryView = self.toolbar;
     }
     return _descriptionTextField;
 }
@@ -105,10 +109,11 @@
         _periodoTextField = [[JVFloatLabeledTextField alloc] init];
         _periodoTextField.delegate = self;
         _periodoTextField.frame = CGRectMake(PADDING, self.descriptionTextField.maxY, self.view.width, 44.f);
-        _periodoTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR];
-        _periodoTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR];
+        _periodoTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        _periodoTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_periodoTextField setPlaceholder:@"Quando?"
                             floatingTitle:@"Te lembraremos"];
+        _periodoTextField.inputAccessoryView = self.toolbar;
     }
     return _periodoTextField;
 }
@@ -118,10 +123,11 @@
         _horaTextField = [[JVFloatLabeledTextField alloc] init];
         _horaTextField.delegate = self;
         _horaTextField.frame = CGRectMake(PADDING, self.periodoTextField.maxY, self.view.width, 44.f);
-        _horaTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR];
-        _horaTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR];
+        _horaTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        _horaTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_horaTextField setPlaceholder:@"Que horas?"
                             floatingTitle:@"às"];
+        _horaTextField.inputAccessoryView = self.toolbar;
     }
     return _horaTextField;
 }
@@ -131,10 +137,11 @@
         _dataTextField = [[JVFloatLabeledTextField alloc] init];
         _dataTextField.delegate = self;
         _dataTextField.frame = CGRectMake(PADDING, self.horaTextField.maxY, self.view.width, 44.f);
-        _dataTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR];
-        _dataTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR];
+        _dataTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        _dataTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_dataTextField setPlaceholder:@"Começando no dia?"
                          floatingTitle:@"a partir do dia"];
+        _dataTextField.inputAccessoryView = self.toolbar;
     }
     return _dataTextField;
 }
@@ -210,7 +217,7 @@
                                                                           self.view.width / 2,
                                                                           50.f)];
         [_salvarButton setTitle:@"Salvar" forState:UIControlStateNormal];
-        [_salvarButton setTitleColor:[UIColor sam_colorWithHex:DEFAULT_COLOR] forState:UIControlStateNormal];
+        [_salvarButton setTitleColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX] forState:UIControlStateNormal];
         [_salvarButton addTarget:self action:@selector(_salvarTouched) forControlEvents:UIControlEventTouchUpInside];
     }
     return _salvarButton;
@@ -265,6 +272,24 @@
         _viewModel = [[ADNewReminderViewModel alloc] init];
     }
     return _viewModel;
+}
+
+- (UIToolbar *)toolbar {
+    if (!_toolbar) {
+        _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44.f)];
+        _toolbar.translucent = YES;
+        _toolbar.tintColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
+        
+        UIBarButtonItem *spaceButtonItem = [UIBarButtonItem barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                          target:self
+                                                                                          action:NULL];
+        UIBarButtonItem *nextButtonItem = [UIBarButtonItem barButtonItemWithTitle:@"Próximo"
+                                                                            style:UIBarButtonItemStyleBordered
+                                                                           target:self
+                                                                           action:@selector(_nextFieldText)];
+        _toolbar.items = @[spaceButtonItem, nextButtonItem];
+    }
+    return _toolbar;
 }
 
 #pragma mark - UIViewController Methods -
@@ -338,6 +363,21 @@
 
 - (void)_dismissKeyboard {
     [self.view endEditing:YES];
+}
+
+- (void)_nextFieldText {
+    if (self.descriptionTextField.isFirstResponder) {
+        [self.periodoTextField becomeFirstResponder];
+        
+    } else if (self.periodoTextField.isFirstResponder) {
+        [self.horaTextField becomeFirstResponder];
+        
+    } else if (self.horaTextField.isFirstResponder) {
+        [self.dataTextField becomeFirstResponder];
+        
+    } else if (self.dataTextField.isFirstResponder) {
+        [self _dismissKeyboard];
+    }
 }
 
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker {
@@ -492,7 +532,7 @@
         self.badgeIconView.alpha = 0.0f;
     }];
 
-    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR]];
+    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
     self.badgeImageView.badgeIconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor whiteColor]];
     
     [self _addGesturesRecognizer];
