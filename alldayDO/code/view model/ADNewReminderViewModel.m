@@ -25,7 +25,7 @@ typedef enum {
 - (NSArray *)cycleType {
     if(!_cycleType){
         _cycleType = @[
-                    @"Diáriamente",
+                    @"Diariamente",
                     @"Semanalmente",
                     @"Mensalmente",
                     @"Anualmente"

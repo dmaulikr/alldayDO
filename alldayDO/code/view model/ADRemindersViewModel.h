@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) NSString *periodo;
 @property (nonatomic, readonly) UIImage *imagem;
 
+- (void)deleteRow:(NSIndexPath *)indexPath;
+
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 

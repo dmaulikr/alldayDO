@@ -110,4 +110,9 @@
     [self.managedObjectContext rollback];
 }
 
+- (void)deleteObject:(id)object {
+    [self.managedObjectContext deleteObject:object];
+    [self saveChanges];
+}
+
 @end

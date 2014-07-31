@@ -23,7 +23,7 @@
 
 #define NUMBER_OF_ICONS 42
 
-@interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) JVFloatLabeledTextField *descriptionTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
@@ -108,7 +108,7 @@
         _periodoTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR];
         _periodoTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR];
         [_periodoTextField setPlaceholder:@"Quando?"
-                            floatingTitle:@"No periodo de"];
+                            floatingTitle:@"Te lembraremos"];
     }
     return _periodoTextField;
 }
@@ -329,7 +329,11 @@
 }
 
 - (void)_cancelarTouched {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[UIAlertView alertViewWithTitle:nil
+                             message:@"Você realmente deseja cancelar?"
+                            delegate:self
+                   cancelButtonTitle:@"Não"
+                   otherButtonTitles:@"Sim", nil] show];
 }
 
 - (void)_dismissKeyboard {
@@ -493,5 +497,16 @@
     
     [self _addGesturesRecognizer];
 }
+
+#pragma mark - UIAlertViewDelegate Methods - 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 1:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+    }
+}
+                                                                                        
 
 @end

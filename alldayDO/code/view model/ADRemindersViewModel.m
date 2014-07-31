@@ -45,6 +45,10 @@
 
 #pragma mark - Public Methods
 
+- (void)deleteRow:(NSIndexPath *)indexPath {
+    [[ADModel sharedInstance] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+}
+
 - (NSInteger)numberOfSections {
     return 1;
 }

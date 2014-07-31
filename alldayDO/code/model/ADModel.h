@@ -20,4 +20,6 @@
 - (void)saveChanges;
 - (void)cancelChanges;
 
+- (void)deleteObject:(id)object;
+
 @end

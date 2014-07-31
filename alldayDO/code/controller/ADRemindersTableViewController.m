@@ -70,7 +70,7 @@
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
 }
 
-#pragma mark - UICollectionViewDataSource Methods -
+#pragma mark - UITableViewDataSource Methods -
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,10 +95,11 @@
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [self.viewModel numberOfSections];
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.viewModel deleteRow:indexPath];
+    [self.viewModel executeFetchRequest];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
 #pragma mark - IBOutlet Methods -
 
 - (IBAction)newReminderTouched:(id)sender {
