@@ -24,6 +24,9 @@
 
 @property (nonatomic, strong) UIView *blurView;
 
+- (void)_presentNewReminderViewController;
+- (void)_showBlurViewWithAnimation;
+
 @end
 
 @implementation ADRemindersTableViewController
@@ -75,13 +78,23 @@
 #pragma mark - Private Methods -
 
 - (void)_presentNewReminderViewController {
-    [self.view bringSubviewToFront:self.blurView];
-    
     ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
     newReminderViewController.delegate = self;
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
+
+    [self _showBlurViewWithAnimation];
+    
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
+}
+
+- (void)_showBlurViewWithAnimation {
+    [self.view bringSubviewToFront:self.blurView];
+    
+    self.blurView.alpha = 0.0f;
+    [UIView animateWithDuration:0.5f animations:^{
+        self.blurView.alpha = 1.0f;
+    }];
 }
 
 #pragma mark - UITableViewDataSource Methods -
