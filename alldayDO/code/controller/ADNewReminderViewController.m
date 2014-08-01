@@ -544,6 +544,7 @@
     switch (buttonIndex) {
         case 1:
             [self dismissViewControllerAnimated:YES completion:nil];
+            [self.delegate newReminderViewControllerDidCancelReminder:self];
             break;
     }
 }

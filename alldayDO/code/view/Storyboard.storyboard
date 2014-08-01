@@ -197,7 +197,6 @@
                         <outlet property="hexacon2" destination="adh-DW-C7m" id="0fb-u6-VV9"/>
                         <outlet property="hexacon3" destination="xyt-aL-8Ml" id="gVn-Ue-iaX"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
-                        <outlet property="toolbar" destination="fyx-Rs-yMg" id="WHW-wc-N0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>

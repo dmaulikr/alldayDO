@@ -13,7 +13,11 @@
 
 @protocol ADNewReminderViewControllerDelegate <NSObject>
 
+@required
+
 - (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder;
+
+- (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController;
 
 @end

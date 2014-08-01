@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, strong) UIView *blurView;
 
 @end
 
@@ -37,10 +37,22 @@
     return _viewModel;
 }
 
+- (UIView *)blurView {
+    if (!_blurView) {
+        _blurView = [UIView viewWithFrame:self.view.frame];
+        _blurView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.300];
+    }
+    
+    return _blurView;
+}
+
 #pragma mark - UIView Lifecycle Methods -
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addSubview:self.blurView];
+    [self.view sendSubviewToBack:self.blurView];
     
     self.hexacon1.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
     self.hexacon2.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
@@ -63,6 +75,8 @@
 #pragma mark - Private Methods -
 
 - (void)_presentNewReminderViewController {
+    [self.view bringSubviewToFront:self.blurView];
+    
     ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
     newReminderViewController.delegate = self;
     newReminderViewController.transitioningDelegate = self;
@@ -121,10 +135,15 @@
 
 - (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
+    [self.view sendSubviewToBack:self.blurView];
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         [self.viewModel executeFetchRequest];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
     }];
+}
+
+- (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController {
+        [self.view sendSubviewToBack:self.blurView];
 }
 
 @end
