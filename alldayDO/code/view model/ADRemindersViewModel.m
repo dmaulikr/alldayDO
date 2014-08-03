@@ -9,6 +9,9 @@
 #import "ADRemindersViewModel.h"
 #import "ADModel.h"
 
+#import "UILocalNotification+ADToolkitAdditions.h"
+#import "NSDate+ADToolkitAdditions.h"
+
 @interface ADRemindersViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembrete;
@@ -24,7 +27,7 @@
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADLembrete"];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
         
         _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[ADModel sharedInstance].managedObjectContext
@@ -59,11 +62,24 @@
 }
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath {
-    self.lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSArray *reminders = [self.fetchedResultsController fetchedObjects];
+    NSArray *remindersSorted = [reminders sortedArrayUsingComparator:
+                                            ^(id obj1, id obj2) {
+                                                ADLembrete *lembrete1 = (ADLembrete *)obj1;
+                                                ADLembrete *lembrete2 = (ADLembrete *)obj2;
+                                                return [lembrete1.nextFireDate compare:lembrete2.nextFireDate];
+                                            }];
+    self.lembrete = [remindersSorted objectAtIndex:indexPath.row];
 }
 
 - (void)executeFetchRequest {
     [self.fetchedResultsController performFetch:nil];
+}
+
+- (NSString *)nextReminderFormated {
+    NSString *message = @"O seu próximo lembrete será em";
+    NSString *dateAsString = [[NSDate date] dateAsStringFromDate:self.lembrete.nextFireDate extended:YES];
+    return [NSString stringWithFormat:@"%@ %@", message, dateAsString];
 }
 
 @end

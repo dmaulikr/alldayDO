@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ADLembrete.h"
 
+#define LocalNotificationDomain @"mobi.fabionogueira.alldayDO"
+
 @interface UILocalNotification (ADToolkitAdditions)
 
 + (instancetype)defaultLocalNotificationWith:(ADLembrete *)lembrete;
+
+- (NSDate *)myNextFireDateAfterDate:(NSDate *)afterDate;
 
 @end

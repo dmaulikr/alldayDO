@@ -11,5 +11,6 @@
 @interface ADLembrete (ADToolkitAdditions)
 
 - (NSInteger)repeatInterval;
+- (NSDate *)nextFireDate;
 
 @end

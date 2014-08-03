@@ -11,6 +11,8 @@
 #import "ADNotification.h"
 #import "ADStyleSheet.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @interface ADAppDelegate ()
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -38,6 +40,7 @@
 #pragma mark - UIApplication Methods -
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Crashlytics startWithAPIKey:@"ba0eee4e53729a8c93fd47ad94835d6be7ec81c8"];
     
     [ADStyleSheet initStyles];
     

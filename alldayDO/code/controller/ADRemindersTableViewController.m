@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) UIView *blurView;
 
+- (void)_addSubView;
+- (void)_initStyle;
 - (void)_presentNewReminderViewController;
 - (void)_showBlurViewWithAnimation;
 
@@ -54,20 +56,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.blurView];
-    [self.view sendSubviewToBack:self.blurView];
-    
-    self.hexacon1.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    self.hexacon2.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    self.hexacon3.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [self.viewModel executeFetchRequest];    
-
+    [self _initStyle];
+    [self _addSubView];
+    
+    [self.viewModel executeFetchRequest];
     [self.tableView reloadData];
-    [self.tableView setBackgroundColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,6 +72,19 @@
 }
 
 #pragma mark - Private Methods -
+
+- (void)_addSubView {
+    [self.view addSubview:self.blurView];
+    [self.view sendSubviewToBack:self.blurView];
+}
+
+- (void)_initStyle {
+    self.hexacon1.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    self.hexacon2.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    self.hexacon3.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+    
+    [self.tableView setBackgroundColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
+}
 
 - (void)_presentNewReminderViewController {
     ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
@@ -99,7 +108,6 @@
 
 #pragma mark - UITableViewDataSource Methods -
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewModel numberOfItemsInSection:section];
 }
@@ -109,7 +117,8 @@
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
     
-    cell.nomeLabel.text = self.viewModel.descricao;    
+    cell.nomeLabel.text = self.viewModel.descricao;
+    cell.nextReminderLabel.text = [NSString stringWithFormat:@"%@", [self.viewModel nextReminderFormated]];
     cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
     cell.timelineContentView.layer.cornerRadius = 5.f;
     

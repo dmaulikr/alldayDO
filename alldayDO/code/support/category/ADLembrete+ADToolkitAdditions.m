@@ -32,4 +32,17 @@
     return repeatInterval;
 }
 
+- (NSDate *)nextFireDate {
+    NSDate *nextFireDate = [NSDate date];
+    
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    for (UILocalNotification *notification in notifications) {
+        if ([[notification.userInfo objectForKey:LocalNotificationDomain] isEqualToString:self.descricao]) {
+            nextFireDate = [notification myNextFireDateAfterDate:[NSDate date]];
+        }
+    }
+    
+    return nextFireDate;
+}
+
 @end

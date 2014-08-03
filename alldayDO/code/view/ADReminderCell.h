@@ -18,4 +18,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nomeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *nextReminderLabel;
 @end

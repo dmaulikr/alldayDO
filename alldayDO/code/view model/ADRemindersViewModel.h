@@ -22,4 +22,6 @@
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath;
 - (void)executeFetchRequest;
 
+- (NSString *)nextReminderFormated;
+
 @end

@@ -11,6 +11,11 @@
 		71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADNewReminderViewController.m */; };
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
+		711F983D198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */; };
+		711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */; };
+		711F9843198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */; };
+		711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */; };
+		711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */; };
 		7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */; };
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
 		7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADIconCell.m */; };
@@ -38,6 +43,7 @@
 		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
 		71D28B3F192954BD0047F291 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B3E192954BD0047F291 /* Storyboard.storyboard */; };
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
+		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
 		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
 		71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DB19298F0F0073A5CD /* ADNotification.m */; };
 		71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */; };
@@ -60,6 +66,16 @@
 		71018AA8192966E800660C17 /* ADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADModel.m; sourceTree = "<group>"; };
 		71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		711F983B198DA8B40097AA22 /* NSDate+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		711F9841198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		711F9844198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		711F9847198DAB700097AA22 /* NSString+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		7130CD611942D69D009AF8D8 /* UIImage+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		7130CD67194369C6009AF8D8 /* PDToolkitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDToolkitAdditions.h; sourceTree = "<group>"; };
@@ -103,6 +119,7 @@
 		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
 		71D28B3E192954BD0047F291 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		71DD14E8197DD46C003F9059 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
+		71E18B92198C59E2007C7467 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		71E9325319401803007C96D4 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
 		71E9325419401803007C96D4 /* ADRemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersTableViewController.m; sourceTree = "<group>"; };
 		71FC67DA19298F0F0073A5CD /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
@@ -122,6 +139,7 @@
 				71D28B0819294F970047F291 /* CoreData.framework in Frameworks */,
 				71D28B0619294F970047F291 /* UIKit.framework in Frameworks */,
 				71D28B0219294F970047F291 /* Foundation.framework in Frameworks */,
+				71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */,
 				1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +181,16 @@
 				7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */,
 				71FC67DD19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.h */,
 				71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */,
+				711F983B198DA8B40097AA22 /* NSDate+ADToolkitAdditions.h */,
+				711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */,
+				711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */,
+				711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */,
+				711F9841198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.h */,
+				711F9847198DAB700097AA22 /* NSString+ADToolkitAdditions.h */,
+				711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */,
+				711F9844198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.h */,
+				711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */,
+				711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */,
 			);
 			name = Category;
 			path = category;
@@ -224,6 +252,7 @@
 		71D28B0019294F970047F291 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71E18B92198C59E2007C7467 /* Crashlytics.framework */,
 				71D28B0119294F970047F291 /* Foundation.framework */,
 				71D28B0319294F970047F291 /* CoreGraphics.framework */,
 				71D28B0519294F970047F291 /* UIKit.framework */,
@@ -353,6 +382,7 @@
 				71D28AFB19294F970047F291 /* Frameworks */,
 				71D28AFC19294F970047F291 /* Resources */,
 				CB0FBEA6EA74429898023F2A /* Copy Pods Resources */,
+				711F983A198D9E7D0097AA22 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -439,6 +469,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		711F983A198D9E7D0097AA22 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run ba0eee4e53729a8c93fd47ad94835d6be7ec81c8 2528283f91789f2c490e8cadb68eeecee0135adf9e6e3be669a7ad903559bc6e\n";
+		};
 		CB0FBEA6EA74429898023F2A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,7 +520,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */,
+				711F983D198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m in Sources */,
+				711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */,
 				7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */,
+				711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */,
 				71507BD01947F21400884B46 /* ADLembrete.m in Sources */,
 				71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */,
 				7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */,
@@ -485,10 +531,12 @@
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
+				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
 				71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */,
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
+				711F9843198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */,
 				71B96AF3194D299C0042023E /* ADNewReminderViewModel.m in Sources */,
 				7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */,
@@ -614,6 +662,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
 				INFOPLIST_FILE = "alldayDO/alldayDO-Info.plist";
@@ -630,6 +682,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
 				INFOPLIST_FILE = "alldayDO/alldayDO-Info.plist";
