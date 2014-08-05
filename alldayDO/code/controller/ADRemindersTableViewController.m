@@ -24,9 +24,13 @@
 
 @property (nonatomic, strong) UIView *blurView;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 - (void)_addSubView;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
+- (void)_refreshTableView;
+- (void)_reloadData;
 - (void)_showBlurViewWithAnimation;
 
 @end
@@ -51,6 +55,14 @@
     return _blurView;
 }
 
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [[UIRefreshControl alloc] init];
+        [_refreshControl addTarget:self action:@selector(_refreshTableView) forControlEvents:UIControlEventValueChanged];
+    }
+    return _refreshControl;
+}
+
 #pragma mark - UIView Lifecycle Methods -
 
 - (void)viewDidLoad {
@@ -62,13 +74,12 @@
     [self _initStyle];
     [self _addSubView];
     
-    [self.viewModel executeFetchRequest];
-    [self.tableView reloadData];
+    [self _reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    [self _reloadData];
 }
 
 #pragma mark - Private Methods -
@@ -76,6 +87,7 @@
 - (void)_addSubView {
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
+    [self.tableView addSubview:self.refreshControl];
 }
 
 - (void)_initStyle {
@@ -91,6 +103,17 @@
     [self _showBlurViewWithAnimation];
     
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
+}
+
+- (void)_refreshTableView {
+    [self.refreshControl beginRefreshing];
+    [self _reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+- (void)_reloadData {
+    [self.viewModel executeFetchRequest];
+    [self.tableView reloadData];
 }
 
 - (void)_showBlurViewWithAnimation {
