@@ -21,7 +21,7 @@
 
 - (ADBadgeImageView *)badgeImageView {
     if (!_badgeImageView) {
-        _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 60.f, 60.f)];
+        _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 50.f, 50.f)];
         _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#5E82B6"]];
     }
     return _badgeImageView;
@@ -58,7 +58,7 @@
 - (void)_initialize {
     [self addSubview:self.badgeImageView];
         
-    [self.badgeImageView setX:20.f andY:16.f];
+    [self.badgeImageView setX:7.f andY:13.f];
     [self.badgeImageView.badgeIconImageView setW:22.f andH:22.f];
     [self.badgeImageView.badgeIconImageView centerWith:self.badgeImageView];
 }

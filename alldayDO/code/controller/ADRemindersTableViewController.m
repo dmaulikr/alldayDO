@@ -112,19 +112,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
+
+#warning Criar metodo para definir estilo da celula
+    cell.borderTimelineContentView.layer.cornerRadius = 5.f;
+    cell.timelineContentView.layer.cornerRadius = 5.f;
+    
+    if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
+        cell.lineBottomView.hidden = YES;
+    } else {
+        cell.lineBottomView.hidden = NO;
+    }
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
     
     cell.nomeLabel.text = self.viewModel.descricao;
     cell.nextReminderLabel.text = [NSString stringWithFormat:@"%@", [self.viewModel nextReminderFormated]];
     cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
-    cell.timelineContentView.layer.cornerRadius = 5.f;
-    
-    if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
-        cell.lineView.hidden = YES;
-    } else {
-        cell.lineView.hidden = NO;
-    }
     
     return cell;
 }

@@ -12,9 +12,13 @@
 @interface ADReminderCell : UITableViewCell
 
 @property (nonatomic, strong) ADBadgeImageView *badgeImageView;
+@property (strong, nonatomic) IBOutlet UIView *borderTimelineContentView;
 
 @property (weak, nonatomic) IBOutlet UIView *timelineContentView;
-@property (weak, nonatomic) IBOutlet UIView *lineView;
+
+@property (strong, nonatomic) IBOutlet UIView *lineTopView;
+
+@property (weak, nonatomic) IBOutlet UIView *lineBottomView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nomeLabel;
 

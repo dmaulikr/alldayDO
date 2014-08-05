@@ -77,7 +77,7 @@
 }
 
 - (NSString *)nextReminderFormated {
-    NSString *message = @"O seu próximo lembrete será em";
+    NSString *message = @"Lembrete em";
     NSString *dateAsString = [[NSDate date] dateAsStringFromDate:self.lembrete.nextFireDate extended:YES];
     return [NSString stringWithFormat:@"%@ %@", message, dateAsString];
 }
