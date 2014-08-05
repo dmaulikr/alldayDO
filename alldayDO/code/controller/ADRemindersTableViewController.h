@@ -19,4 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *hexacon2;
 @property (weak, nonatomic) IBOutlet UIImageView *hexacon3;
 
+@property (weak, nonatomic) IBOutlet UILabel *totalRemindersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *doneReminders;
+@property (weak, nonatomic) IBOutlet UILabel *undoneReminders;
 @end

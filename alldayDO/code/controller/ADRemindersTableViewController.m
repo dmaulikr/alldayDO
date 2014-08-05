@@ -79,10 +79,6 @@
 }
 
 - (void)_initStyle {
-    self.hexacon1.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    self.hexacon2.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    self.hexacon3.image = [self.hexacon1.image tintedImageWithColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
-    
     [self.tableView setBackgroundColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
 }
 
@@ -109,7 +105,9 @@
 #pragma mark - UITableViewDataSource Methods -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.viewModel numberOfItemsInSection:section];
+    NSInteger numberOfReminders = [self.viewModel numberOfItemsInSection:section];
+    self.totalRemindersLabel.text = [NSString stringWithFormat:@"%ld", (long)numberOfReminders];
+    return numberOfReminders;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

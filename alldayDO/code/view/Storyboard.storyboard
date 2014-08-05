@@ -130,22 +130,64 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon" translatesAutoresizingMaskIntoConstraints="NO" id="adh-DW-C7m">
-                                        <rect key="frame" x="134" y="6" width="54" height="54"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon_check" translatesAutoresizingMaskIntoConstraints="NO" id="adh-DW-C7m">
+                                        <rect key="frame" x="115" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon" translatesAutoresizingMaskIntoConstraints="NO" id="8Q7-1S-kuG">
-                                        <rect key="frame" x="20" y="6" width="54" height="54"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_all" translatesAutoresizingMaskIntoConstraints="NO" id="8Q7-1S-kuG">
+                                        <rect key="frame" x="5" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="ud8-zv-9yO"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-aL-8Ml">
-                                        <rect key="frame" x="240" y="6" width="54" height="54"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_undone" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-aL-8Ml">
+                                        <rect key="frame" x="225" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="Rpa-q2-n62"/>
+                                        </constraints>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-HI-qmt">
+                                        <rect key="frame" x="59" y="14" width="39" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="C76-H0-HkB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXY-6o-cuj">
+                                        <rect key="frame" x="169" y="14" width="36" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tek-XX-n2X">
+                                        <rect key="frame" x="279" y="14" width="36" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="XCP-Pq-ctC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.35686274509803922" green="0.56862745098039214" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="8Q7-1S-kuG" firstAttribute="centerY" secondItem="1eR-HI-qmt" secondAttribute="centerY" id="4Ln-Ia-eiX"/>
+                                    <constraint firstItem="xyt-aL-8Ml" firstAttribute="leading" secondItem="8Q7-1S-kuG" secondAttribute="trailing" constant="166" id="AoE-fA-IFA"/>
+                                    <constraint firstItem="8Q7-1S-kuG" firstAttribute="leading" secondItem="FQn-EG-PKv" secondAttribute="leading" constant="5" id="BBc-v2-TGb"/>
                                     <constraint firstAttribute="height" constant="66" id="EQL-mQ-eeq"/>
+                                    <constraint firstItem="1eR-HI-qmt" firstAttribute="leading" secondItem="8Q7-1S-kuG" secondAttribute="trailing" id="Ixq-Pb-Em8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tek-XX-n2X" secondAttribute="bottom" constant="14" id="QKa-oR-stF"/>
+                                    <constraint firstItem="Tek-XX-n2X" firstAttribute="leading" secondItem="xyt-aL-8Ml" secondAttribute="trailing" id="SCk-XZ-fJ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="xyt-aL-8Ml" secondAttribute="bottom" constant="6" id="e6d-fX-5A0"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Q7-1S-kuG" secondAttribute="bottom" constant="6" id="jFg-Fo-ZUb"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tek-XX-n2X" secondAttribute="trailing" constant="5" id="pLM-Rj-A2a"/>
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Rs-yMg">
@@ -174,9 +216,11 @@
                             <constraint firstItem="BxK-cQ-Umf" firstAttribute="leading" secondItem="FQn-EG-PKv" secondAttribute="leading" id="GS6-Ol-SKr"/>
                             <constraint firstItem="fyx-Rs-yMg" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" id="HEX-bz-CYF"/>
                             <constraint firstAttribute="trailing" secondItem="FQn-EG-PKv" secondAttribute="trailing" id="HVz-sM-LxS"/>
+                            <constraint firstItem="Tek-XX-n2X" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="14" id="HWH-iz-G70"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="Hr0-SM-LBk"/>
                             <constraint firstItem="fyx-Rs-yMg" firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="MiU-ph-j9g"/>
                             <constraint firstItem="ieF-Gz-5Sz" firstAttribute="top" secondItem="FQn-EG-PKv" secondAttribute="bottom" id="N5p-AF-TBR"/>
+                            <constraint firstItem="8Q7-1S-kuG" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="6" id="RlT-Rz-Roa"/>
                             <constraint firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="V3c-eO-oax"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="WcW-EK-f25"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="X5f-J9-HaA"/>
@@ -188,16 +232,20 @@
                             <constraint firstItem="BxK-cQ-Umf" firstAttribute="top" secondItem="WLG-HH-LLG" secondAttribute="top" id="o7y-Jr-Eec"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="BxK-cQ-Umf" secondAttribute="leading" id="oAd-Mc-loO"/>
                             <constraint firstAttribute="trailing" secondItem="BxK-cQ-Umf" secondAttribute="trailing" id="tKA-ga-0XV"/>
+                            <constraint firstItem="xyt-aL-8Ml" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="6" id="yYt-GZ-Y59"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="g4T-W5-tic"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="doneReminders" destination="QXY-6o-cuj" id="O9g-vE-VpT"/>
                         <outlet property="hexacon1" destination="8Q7-1S-kuG" id="tsL-yO-Hgh"/>
                         <outlet property="hexacon2" destination="adh-DW-C7m" id="0fb-u6-VV9"/>
                         <outlet property="hexacon3" destination="xyt-aL-8Ml" id="gVn-Ue-iaX"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
+                        <outlet property="totalRemindersLabel" destination="1eR-HI-qmt" id="7FE-HQ-bIu"/>
+                        <outlet property="undoneReminders" destination="Tek-XX-n2X" id="zmx-0q-JWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,7 +254,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Hexacon" width="90" height="90"/>
+        <image name="Hexacon_all" width="90" height="90"/>
+        <image name="Hexacon_check" width="90" height="90"/>
+        <image name="Hexacon_undone" width="90" height="90"/>
         <image name="progressBar" width="479" height="39"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
