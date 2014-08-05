@@ -49,7 +49,12 @@
 #pragma mark - Public Methods
 
 - (void)deleteRow:(NSIndexPath *)indexPath {
-    [[ADModel sharedInstance] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:lembrete];
+    [[UIApplication sharedApplication] cancelLocalNotification:newNotification];
+
+    [[ADModel sharedInstance] deleteObject:lembrete];
 }
 
 - (NSInteger)numberOfSections {

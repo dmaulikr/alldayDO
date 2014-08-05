@@ -48,9 +48,6 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    
     [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
     
     NSLog(@"\n Notificações applicationDidEnterBackground = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
@@ -58,10 +55,18 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    
     [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
     
     NSLog(@"\n Notificações applicationDidBecomeActive = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 }
+
+#pragma mark - UIApplication Methods - Local Notification - 
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+#warning implementar alert para exibir lembrete quando o app estiver aberto
+    NSLog(@"%@", notification);
+}
+
+
 
 @end

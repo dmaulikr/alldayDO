@@ -54,6 +54,13 @@
         date = [date stringByAppendingString:noDias];
     }
     
+    if (!date.isPresent) {
+        if (self.second && self.second != INT_MAX) {
+            NSString *noDias = [NSString stringWithFormat:@"%d s", self.second];
+            date = [date stringByAppendingString:noDias];
+        }
+    }
+    
     return date;
 }
 
@@ -129,6 +136,17 @@
             daylabel = @"minutos";
         }
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.minute, daylabel];
+        date = [date stringByAppendingString:noDias];
+    }
+    
+    if (!date.isPresent) {
+        NSString *daylabel = nil;
+        if (self.second == 1) {
+            daylabel = @"segundo";
+        } else {
+            daylabel = @"segundos";
+        }
+        NSString *noDias = [NSString stringWithFormat:@"%d %@", self.second, daylabel];
         date = [date stringByAppendingString:noDias];
     }
     
