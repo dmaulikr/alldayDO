@@ -18,8 +18,8 @@
 #import "ADBadgeImageView.h"
 
 #define PADDING 10.f
-#define ACTIVE_COLOR_HEX @"#5E82B6"
-#define DEFAULT_COLOR_HEX @"#5B91B6"
+#define ACTIVE_COLOR_HEX @"#3B89C6"
+#define DEFAULT_COLOR_HEX @"#487BAF"
 
 #define NUMBER_OF_ICONS 42
 
@@ -414,7 +414,7 @@
 - (BOOL)_requiredValidation {
     BOOL sucess = YES;
     
-    UIColor *requiredColor = [UIColor sam_colorWithHex:@"#E1BCC1"];
+    UIColor *requiredColor = [UIColor sam_colorWithHex:@"#b1515e"];
     
     UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
     

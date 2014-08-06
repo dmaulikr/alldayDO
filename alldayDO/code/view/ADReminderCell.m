@@ -22,7 +22,7 @@
 - (ADBadgeImageView *)badgeImageView {
     if (!_badgeImageView) {
         _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 50.f, 50.f)];
-        _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#5E82B6"]];
+        _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#3B89C6"]];
     }
     return _badgeImageView;
 }

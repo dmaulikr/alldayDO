@@ -32,7 +32,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
                                                     <rect key="frame" x="32" y="60" width="1" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.36862745098039218" green="0.50980392156862742" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="B6T-RK-8gS"/>
                                                         <constraint firstAttribute="height" constant="60" id="pSa-kn-c0i"/>
@@ -41,7 +41,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
                                                     <rect key="frame" x="32" y="0.0" width="1" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="QsN-Wk-un5"/>
                                                         <constraint firstAttribute="width" constant="1" id="hLc-pa-u2x"/>
@@ -139,7 +139,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.36862745098039218" green="0.50980392156862742" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.28235294117647058" green="0.4823529411764706" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4sV-EA-7mv" firstAttribute="leading" secondItem="BxK-cQ-Umf" secondAttribute="leading" constant="20" symbolic="YES" id="12F-eq-AFe"/>
                                     <constraint firstAttribute="height" constant="66" id="bAV-HL-OpU"/>
@@ -197,7 +197,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.35686274509803922" green="0.56862745098039214" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.53725490196078429" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8Q7-1S-kuG" firstAttribute="centerY" secondItem="1eR-HI-qmt" secondAttribute="centerY" id="4Ln-Ia-eiX"/>
                                     <constraint firstItem="xyt-aL-8Ml" firstAttribute="leading" secondItem="8Q7-1S-kuG" secondAttribute="trailing" constant="166" id="AoE-fA-IFA"/>
@@ -214,7 +214,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Rs-yMg">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WuL-7t-TPb"/>
                                     <barButtonItem systemItem="add" id="nKL-4Y-Tv4">
@@ -280,6 +280,7 @@
         <image name="Hexacon_undone" width="90" height="90"/>
         <image name="progressBar" width="479" height="39"/>
     </resources>
+    <color key="tintColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
