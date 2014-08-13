@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C342DAE7F9404DE4B305DC50 /* libPods.a */; };
+		708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */; };
 		71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADNewReminderViewController.m */; };
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		708481E8199BC90B008BF6A5 /* ADDetailReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDetailReminderViewController.h; sourceTree = "<group>"; };
+		708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDetailReminderViewController.m; sourceTree = "<group>"; };
 		71018AA1192960C000660C17 /* ADNewReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNewReminderViewController.h; sourceTree = "<group>"; };
 		71018AA2192960C000660C17 /* ADNewReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNewReminderViewController.m; sourceTree = "<group>"; };
 		71018AA7192966E800660C17 /* ADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADModel.h; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				71018AA2192960C000660C17 /* ADNewReminderViewController.m */,
 				71E9325319401803007C96D4 /* ADRemindersTableViewController.h */,
 				71E9325419401803007C96D4 /* ADRemindersTableViewController.m */,
+				708481E8199BC90B008BF6A5 /* ADDetailReminderViewController.h */,
+				708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */,
 			);
 			name = Controller;
 			path = controller;
@@ -531,6 +536,7 @@
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
+				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,
 				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
 				71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */,
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
