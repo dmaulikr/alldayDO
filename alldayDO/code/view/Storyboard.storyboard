@@ -409,15 +409,21 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
                                         <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Done">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Do" backgroundImage="navigation_second_color_bg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" title="Done" backgroundImage="background_selected_button">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTouched:" destination="aGT-1s-pi3" eventType="touchUpInside" id="lYG-Vn-nO2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.94509803921568625" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,6 +475,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="borderContentView" destination="ZtU-ch-gCX" id="T8V-ch-Lyc"/>
+                        <outlet property="doneButton" destination="cYc-jf-303" id="a5Z-vM-MWa"/>
                         <outlet property="inLineBorderContentView" destination="f7s-Dz-0nx" id="fm3-Eo-r9S"/>
                         <outlet property="inLineContentView" destination="9MT-Uw-dxE" id="uDm-eQ-lk9"/>
                         <outlet property="monthContentView" destination="3N6-Ud-rk1" id="uWY-of-PMq"/>
@@ -484,6 +491,8 @@
         <image name="Hexacon_all" width="90" height="90"/>
         <image name="Hexacon_check" width="90" height="90"/>
         <image name="Hexacon_undone" width="90" height="90"/>
+        <image name="background_selected_button" width="1" height="1"/>
+        <image name="navigation_second_color_bg" width="1" height="1"/>
         <image name="progressBar" width="479" height="39"/>
     </resources>
     <color key="tintColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>

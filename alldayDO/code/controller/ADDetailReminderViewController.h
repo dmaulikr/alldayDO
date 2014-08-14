@@ -16,8 +16,10 @@
 
 @property (strong, nonatomic) IBOutlet UIView *inLineContentView;
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)editButtonTouched:(id)sender;
+- (IBAction)doneButtonTouched:(id)sender;
 
 @end

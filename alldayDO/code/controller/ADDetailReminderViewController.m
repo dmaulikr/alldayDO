@@ -30,4 +30,8 @@
 - (IBAction)editButtonTouched:(id)sender {
 }
 
+- (IBAction)doneButtonTouched:(id)sender {
+    self.doneButton.selected = !self.doneButton.selected;
+}
+
 @end
