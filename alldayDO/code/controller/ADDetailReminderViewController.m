@@ -31,6 +31,17 @@
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
+    ADLembreteConfirmado *lembreteConfirmado = [[ADLembreteConfirmado alloc] init];
+    lembreteConfirmado.data = [NSDate date];
+    
+    if (self.doneButton.selected) {
+        [self.lembrete removeLembreteConfirmadoObject:lembreteConfirmado];
+    } else {
+        ADLembreteConfirmado *lembreteConfirmado = [[ADLembreteConfirmado alloc] init];
+        lembreteConfirmado.data = [NSDate date];
+        [self.lembrete addLembreteConfirmadoObject:lembreteConfirmado];
+    }
+    
     self.doneButton.selected = !self.doneButton.selected;
 }
 

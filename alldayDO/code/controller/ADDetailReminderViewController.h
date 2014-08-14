@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ADLembrete.h"
+#import "ADLembreteConfirmado.h"
 
 @interface ADDetailReminderViewController : UIViewController
 
@@ -17,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet UIView *inLineContentView;
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
+
+@property (strong, nonatomic) ADLembrete *lembrete;
 
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)editButtonTouched:(id)sender;

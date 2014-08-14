@@ -132,7 +132,7 @@
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
                                             <outlet property="timelineContentView" destination="nym-vk-oar" id="nmX-7b-s51"/>
-                                            <segue destination="HPc-XV-9zd" kind="modal" id="8yW-PX-lUb"/>
+                                            <segue destination="HPc-XV-9zd" kind="modal" identifier="detailReminderSegue" id="8yW-PX-lUb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -406,7 +406,7 @@
                                             <constraint firstAttribute="height" constant="86" id="Fqs-A4-mlR"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
                                         <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -414,11 +414,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Do" backgroundImage="navigation_second_color_bg">
+                                        <state key="normal" title="Você lembrou?" backgroundImage="navigation_second_color_bg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="selected" title="Done" backgroundImage="background_selected_button">
+                                        <state key="selected" title="Eu lembrei de fazer a atividade" backgroundImage="background_selected_button">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>

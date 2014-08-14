@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ADLembrete.h"
 
 @interface ADRemindersViewModel : NSObject
 
@@ -23,5 +24,8 @@
 - (void)executeFetchRequest;
 
 - (NSString *)nextReminderFormated;
+
+#warning NÃO DEIXAR ESSA PROPRIEDADE PUBLICA
+@property (nonatomic, strong) ADLembrete *lembrete;
 
 @end

@@ -14,8 +14,6 @@
 
 @interface ADRemindersViewModel ()
 
-@property (nonatomic, strong) ADLembrete *lembrete;
-
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

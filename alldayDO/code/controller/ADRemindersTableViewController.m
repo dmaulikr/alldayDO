@@ -15,6 +15,8 @@
 #import "ADNewReminderViewController.h"
 #import "ADNewReminderViewControllerDelegate.h"
 
+#import "ADDetailReminderViewController.h"
+
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
@@ -136,7 +138,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
 
-#warning Criar metodo para definir estilo da celula
+    #warning Criar metodo para definir estilo da celula
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;
     cell.timelineContentView.layer.cornerRadius = 5.f;
     
@@ -190,6 +192,21 @@
 
 - (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController {
         [self.view sendSubviewToBack:self.blurView];
+}
+
+#pragma mark - UIStoryboard Methods -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"detailReminderSegue"]) {
+        
+//        ADReminderCell *reminderCell = (ADReminderCell *)sender;
+        
+        [self.viewModel fetchObjectAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    
+        ADDetailReminderViewController *detailViewController = [segue destinationViewController];
+        detailViewController.lembrete = self.viewModel.lembrete;
+        
+    }
 }
 
 @end
