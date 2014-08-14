@@ -11,10 +11,8 @@
 @interface ADDetailReminderViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIView *monthContentView;
-@property (strong, nonatomic) IBOutlet UIView *monthBorderContentView;
-
 @property (strong, nonatomic) IBOutlet UIView *weekContentView;
-@property (strong, nonatomic) IBOutlet UIView *weekBorderContentView;
+@property (strong, nonatomic) IBOutlet UIView *borderContentView;
 
 @property (strong, nonatomic) IBOutlet UIView *inLineContentView;
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
