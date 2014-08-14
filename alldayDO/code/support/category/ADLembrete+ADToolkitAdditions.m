@@ -37,7 +37,7 @@
     
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     for (UILocalNotification *notification in notifications) {
-        if ([[notification.userInfo objectForKey:LocalNotificationDomain] isEqualToString:self.descricao]) {
+        if ([[notification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN] isEqualToString:self.descricao]) {
             nextFireDate = [notification myNextFireDateAfterDate:[NSDate date]];
         }
     }

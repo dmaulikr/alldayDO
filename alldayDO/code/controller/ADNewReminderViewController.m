@@ -538,7 +538,7 @@
     [self _addGesturesRecognizer];
 }
 
-#pragma mark - UIAlertViewDelegate Methods - 
+#pragma mark - UIAlertViewDelegate Methods -
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
@@ -546,6 +546,8 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             [self.delegate newReminderViewControllerDidCancelReminder:self];
             break;
+        default:
+        break;
     }
 }
                                                                                         

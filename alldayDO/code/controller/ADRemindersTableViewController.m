@@ -18,7 +18,7 @@
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
+@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -27,6 +27,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (void)_addSubView;
+- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
 - (void)_refreshTableView;
@@ -68,6 +69,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotification:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:NULL];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -88,6 +93,16 @@
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
     [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification {
+    UILocalNotification *localNotification = notification.object;
+
+    [[UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
+                             message:localNotification.alertBody
+                            delegate:self
+                   cancelButtonTitle:@"Não"
+                   otherButtonTitles:@"Sim", nil] show];
 }
 
 - (void)_initStyle {
@@ -190,6 +205,18 @@
 
 - (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController {
         [self.view sendSubviewToBack:self.blurView];
+}
+
+#pragma mark - UIAlertViewDelegate Methods -
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 1:
+#warning TODO - USUARIO TERÁ QUE FAZER O DONE
+            break;
+        default:
+            break;
+    }
 }
 
 @end
