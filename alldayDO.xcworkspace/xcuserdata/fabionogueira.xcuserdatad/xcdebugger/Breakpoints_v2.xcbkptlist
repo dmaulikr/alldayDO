@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "alldayDO/code/controller/ADRemindersTableViewController.m"
-            timestampString = "429745072.021819"
+            timestampString = "429812700.232625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-_refreshTableView"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,29 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/controller/ADDetailReminderViewController.m"
-            timestampString = "429745603.221794"
+            filePath = "alldayDO/code/view model/ADDetailReminderViewModel.m"
+            timestampString = "429816992.418072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-doneButtonTouched:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/controller/ADRemindersTableViewController.m"
-            timestampString = "429745722.225367"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-removeLembreteConfirmado"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

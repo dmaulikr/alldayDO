@@ -6,13 +6,14 @@
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imagem" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="periodo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="lembreteConfirmado" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ADLembreteConfirmado" syncable="YES"/>
+        <relationship name="lembreteConfirmado" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ADLembreteConfirmado" inverseName="lembrete" inverseEntity="ADLembreteConfirmado" syncable="YES"/>
     </entity>
     <entity name="ADLembreteConfirmado" representedClassName="ADLembreteConfirmado" syncable="YES">
-        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="data" attributeType="Date" syncable="YES"/>
+        <relationship name="lembrete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ADLembrete" inverseName="lembreteConfirmado" inverseEntity="ADLembrete" syncable="YES"/>
     </entity>
     <elements>
         <element name="ADLembrete" positionX="-63" positionY="-18" width="117" height="133"/>
-        <element name="ADLembreteConfirmado" positionX="142" positionY="-18" width="128" height="58"/>
+        <element name="ADLembreteConfirmado" positionX="142" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

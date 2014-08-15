@@ -81,6 +81,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self _reloadData];
 }
 
@@ -202,8 +203,7 @@
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
         ADDetailReminderViewController *detailViewController = (ADDetailReminderViewController *)[segue destinationViewController];
-        [detailViewController setLembrete:[self.viewModel lembreteAtIndexPath:indexPath]];
-        
+        [detailViewController.viewModel lembreteDetail:[self.viewModel lembreteAtIndexPath:indexPath]];
     }
 }
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "ADLembrete.h"
 #import "ADLembreteConfirmado.h"
+#import "ADDetailReminderViewModel.h"
 
 @interface ADDetailReminderViewController : UIViewController
 
@@ -20,7 +22,11 @@
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
-@property (strong, nonatomic) ADLembrete *lembrete;
+@property (strong, nonatomic) IBOutlet UILabel *monthLabel;
+@property (strong, nonatomic) IBOutlet UILabel *weekLabel;
+@property (strong, nonatomic) IBOutlet UILabel *inLineLabel;
+
+@property (nonatomic, strong) ADDetailReminderViewModel *viewModel;
 
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)editButtonTouched:(id)sender;

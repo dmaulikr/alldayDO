@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3YN-mW-c4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jAA-iV-Qtm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -7,14 +7,17 @@
         <!--Navigation Controller-->
         <scene sceneID="xd0-sM-zCx">
             <objects>
-                <navigationController definesPresentationContext="YES" id="jAA-iV-Qtm" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tDT-0t-b9Y">
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="jAA-iV-Qtm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tDT-0t-b9Y">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="3YN-mW-c4m" kind="relationship" relationship="rootViewController" id="XzB-WA-i2C"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gm-We-HHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1166" y="167"/>
+            <point key="canvasLocation" x="-486" y="112"/>
         </scene>
         <!--Reminders Table View Controller-->
         <scene sceneID="BnB-dZ-Ivc">
@@ -34,11 +37,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="120" id="6hs-ir-LQe" customClass="ADReminderCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="120" id="6hs-ir-LQe" customClass="ADReminderCell">
                                         <rect key="frame" x="0.0" y="1" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
@@ -132,7 +135,7 @@
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
                                             <outlet property="timelineContentView" destination="nym-vk-oar" id="nmX-7b-s51"/>
-                                            <segue destination="aGT-1s-pi3" kind="modal" identifier="detailReminderSegue" id="MCV-9j-JxL"/>
+                                            <segue destination="aGT-1s-pi3" kind="push" identifier="detailReminderSegue" id="MCV-9j-JxL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -241,7 +244,6 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fyx-Rs-yMg" firstAttribute="leading" secondItem="ieF-Gz-5Sz" secondAttribute="leading" id="4aH-3a-etC"/>
@@ -284,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-389" y="112"/>
+            <point key="canvasLocation" x="-11" y="112"/>
         </scene>
         <!--Detail Reminder View Controller-->
         <scene sceneID="pzQ-be-cqv">
@@ -390,8 +392,8 @@
                                             <constraint firstAttribute="height" constant="86" id="Fqs-A4-mlR"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
-                                        <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
+                                        <rect key="frame" x="-1" y="508" width="321" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
@@ -447,14 +449,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gCI-uv-yBa">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="cancelButtonTouched:" destination="aGT-1s-pi3" id="6UW-cR-lRK"/>
+                                <action selector="cancelButtonTouched:" destination="aGT-1s-pi3" id="RoC-H9-LEW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RUe-NX-dvU">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="editButtonTouched:" destination="aGT-1s-pi3" id="lXM-fJ-7P2"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -462,8 +461,11 @@
                         <outlet property="doneButton" destination="cYc-jf-303" id="a5Z-vM-MWa"/>
                         <outlet property="inLineBorderContentView" destination="f7s-Dz-0nx" id="fm3-Eo-r9S"/>
                         <outlet property="inLineContentView" destination="9MT-Uw-dxE" id="uDm-eQ-lk9"/>
+                        <outlet property="inLineLabel" destination="apK-VK-AYe" id="ZdI-la-DuT"/>
                         <outlet property="monthContentView" destination="3N6-Ud-rk1" id="uWY-of-PMq"/>
+                        <outlet property="monthLabel" destination="FXS-4M-yEN" id="YLW-Rx-ozl"/>
                         <outlet property="weekContentView" destination="36e-fq-2Sw" id="qtY-gH-vSH"/>
+                        <outlet property="weekLabel" destination="ghP-7f-1tj" id="DEf-NL-byb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXp-pG-10V" userLabel="First Responder" sceneMemberID="firstResponder"/>

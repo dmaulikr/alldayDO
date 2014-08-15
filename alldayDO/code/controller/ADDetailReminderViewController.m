@@ -8,46 +8,59 @@
 
 #import "ADDetailReminderViewController.h"
 
-#import "ADModel.h"
-
 @interface ADDetailReminderViewController ()
+
+- (void)_updateInterface;
 
 @end
 
 @implementation ADDetailReminderViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+#pragma mark - UIView Lifecycle Methods -
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.translucent = NO;
+    
+    [self _updateInterface];
+}
+
+#pragma mark - Getter Methods -
+
+- (ADDetailReminderViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[ADDetailReminderViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
+#pragma mark - Private Methods -
+
+- (void)_updateInterface {
+    self.monthLabel.text = [NSString stringWithFormat:@"%ld", (long)self.viewModel.quantidadeConfirmacaoPorMes];
+    self.weekLabel.text = [NSString stringWithFormat:@"%ld", (long)self.viewModel.quantidadeConfirmacaoPorSemama];
+    self.inLineLabel.text = [NSString stringWithFormat:@"%ld", (long)self.viewModel.quantidadeConfirmacaoSeguidos];
+    [self.doneButton setSelected:self.viewModel.isLembreteConfirmated];
 }
 
 #pragma mark - IBAction Methods -
 
 - (IBAction)cancelButtonTouched:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)editButtonTouched:(id)sender {
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
-    
-#warning CRIAR VIEW MODEL PARA ESSA CLASSE
-    
-    ADLembreteConfirmado *lembreteConfirmado = [NSEntityDescription insertNewObjectForEntityADLembreteConfirmado];
-    lembreteConfirmado.data = [NSDate date];
-    
     if (self.doneButton.selected) {
-        [self.lembrete removeLembreteConfirmadoObject:lembreteConfirmado];
+        [self.viewModel removeLembreteConfirmado];
     } else {
-        [self.lembrete addLembreteConfirmadoObject:lembreteConfirmado];
+        [self.viewModel addLembreteConfirmado];
     }
     
-    [[ADModel sharedInstance] saveChanges];
-    
-    self.doneButton.selected = !self.doneButton.selected;
+    [self _updateInterface];
 }
 
 @end
