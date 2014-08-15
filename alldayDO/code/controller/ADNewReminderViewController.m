@@ -20,6 +20,7 @@
 #define PADDING 10.f
 #define ACTIVE_COLOR_HEX @"#3B89C6"
 #define DEFAULT_COLOR_HEX @"#487BAF"
+#define ERROR_COLOR_HEX @"bb3c45"
 
 #define NUMBER_OF_ICONS 42
 
@@ -414,7 +415,7 @@
 - (BOOL)_requiredValidation {
     BOOL sucess = YES;
     
-    UIColor *requiredColor = [UIColor sam_colorWithHex:@"#b1515e"];
+    UIColor *requiredColor = [UIColor sam_colorWithHex:ERROR_COLOR_HEX];
     
     UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
     

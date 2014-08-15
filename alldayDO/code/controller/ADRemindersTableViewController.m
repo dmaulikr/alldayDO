@@ -15,10 +15,12 @@
 #import "ADNewReminderViewController.h"
 #import "ADNewReminderViewControllerDelegate.h"
 
+#import "ADDetailReminderViewController.h"
+
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate, UIAlertViewDelegate>
+@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -27,7 +29,6 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (void)_addSubView;
-- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
 - (void)_refreshTableView;
@@ -69,10 +70,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotification:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:NULL];
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -93,16 +90,6 @@
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
     [self.tableView addSubview:self.refreshControl];
-}
-
-- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification {
-    UILocalNotification *localNotification = notification.object;
-
-    [[UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
-                             message:localNotification.alertBody
-                            delegate:self
-                   cancelButtonTitle:@"Não"
-                   otherButtonTitles:@"Sim", nil] show];
 }
 
 - (void)_initStyle {
@@ -151,7 +138,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
 
-#warning Criar metodo para definir estilo da celula
+    #warning Criar metodo para definir estilo da celula
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;
     cell.timelineContentView.layer.cornerRadius = 5.f;
     
@@ -207,15 +194,18 @@
         [self.view sendSubviewToBack:self.blurView];
 }
 
-#pragma mark - UIAlertViewDelegate Methods -
+#pragma mark - UIStoryboard Methods -
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 1:
-#warning TODO - USUARIO TERÁ QUE FAZER O DONE
-            break;
-        default:
-            break;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"detailReminderSegue"]) {
+        
+//        ADReminderCell *reminderCell = (ADReminderCell *)sender;
+        
+        [self.viewModel fetchObjectAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    
+        ADDetailReminderViewController *detailViewController = [segue destinationViewController];
+        detailViewController.lembrete = self.viewModel.lembrete;
+        
     }
 }
 
