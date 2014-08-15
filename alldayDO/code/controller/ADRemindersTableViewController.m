@@ -199,12 +199,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"detailReminderSegue"]) {
         
-//        ADReminderCell *reminderCell = (ADReminderCell *)sender;
-        
-        [self.viewModel fetchObjectAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-        ADDetailReminderViewController *detailViewController = [segue destinationViewController];
-        detailViewController.lembrete = self.viewModel.lembrete;
+        ADDetailReminderViewController *detailViewController = (ADDetailReminderViewController *)[segue destinationViewController];
+        [detailViewController setLembrete:[self.viewModel lembreteAtIndexPath:indexPath]];
         
     }
 }

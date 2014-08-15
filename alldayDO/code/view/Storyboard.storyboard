@@ -34,11 +34,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="120" id="6hs-ir-LQe" customClass="ADReminderCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="120" id="6hs-ir-LQe" customClass="ADReminderCell">
                                         <rect key="frame" x="0.0" y="1" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
@@ -132,7 +132,7 @@
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
                                             <outlet property="timelineContentView" destination="nym-vk-oar" id="nmX-7b-s51"/>
-                                            <segue destination="HPc-XV-9zd" kind="modal" identifier="detailReminderSegue" id="8yW-PX-lUb"/>
+                                            <segue destination="aGT-1s-pi3" kind="modal" identifier="detailReminderSegue" id="MCV-9j-JxL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -285,22 +285,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-389" y="112"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="NTj-NO-Cax">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="HPc-XV-9zd" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="qIV-fn-kmF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SGk-Vk-UIn">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="aGT-1s-pi3" kind="relationship" relationship="rootViewController" id="qV9-S0-ci8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GkP-o5-CEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="112"/>
         </scene>
         <!--Detail Reminder View Controller-->
         <scene sceneID="pzQ-be-cqv">

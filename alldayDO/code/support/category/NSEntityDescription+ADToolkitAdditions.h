@@ -12,5 +12,6 @@
 @interface NSEntityDescription (ADToolkitAdditions)
 
 + (id)insertNewObjectForEntityADLembrete;
++ (id)insertNewObjectForEntityADLembreteConfirmado;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ADDetailReminderViewController.h"
 
+#import "ADModel.h"
+
 @interface ADDetailReminderViewController ()
 
 @end
@@ -31,16 +33,19 @@
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
-    ADLembreteConfirmado *lembreteConfirmado = [[ADLembreteConfirmado alloc] init];
+    
+#warning CRIAR VIEW MODEL PARA ESSA CLASSE
+    
+    ADLembreteConfirmado *lembreteConfirmado = [NSEntityDescription insertNewObjectForEntityADLembreteConfirmado];
     lembreteConfirmado.data = [NSDate date];
     
     if (self.doneButton.selected) {
         [self.lembrete removeLembreteConfirmadoObject:lembreteConfirmado];
     } else {
-        ADLembreteConfirmado *lembreteConfirmado = [[ADLembreteConfirmado alloc] init];
-        lembreteConfirmado.data = [NSDate date];
         [self.lembrete addLembreteConfirmadoObject:lembreteConfirmado];
     }
+    
+    [[ADModel sharedInstance] saveChanges];
     
     self.doneButton.selected = !self.doneButton.selected;
 }

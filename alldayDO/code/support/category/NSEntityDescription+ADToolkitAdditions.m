@@ -15,4 +15,8 @@
     return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembrete" inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
 }
 
++ (id)insertNewObjectForEntityADLembreteConfirmado {
+    return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembreteConfirmado" inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
+}
+
 @end

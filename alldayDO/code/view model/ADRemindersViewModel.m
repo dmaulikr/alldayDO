@@ -14,6 +14,8 @@
 
 @interface ADRemindersViewModel ()
 
+@property (nonatomic, strong) ADLembrete *lembrete;
+
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
@@ -83,6 +85,11 @@
     NSString *message = @"Lembrete em";
     NSString *dateAsString = [[NSDate date] dateAsStringFromDate:self.lembrete.nextFireDate extended:YES];
     return [NSString stringWithFormat:@"%@ %@", message, dateAsString];
+}
+
+- (ADLembrete *)lembreteAtIndexPath:(NSIndexPath *)indexPath {
+    [self fetchObjectAtIndexPath:indexPath];
+    return self.lembrete;
 }
 
 @end

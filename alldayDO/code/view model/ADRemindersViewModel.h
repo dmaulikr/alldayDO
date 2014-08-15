@@ -25,7 +25,6 @@
 
 - (NSString *)nextReminderFormated;
 
-#warning NÃO DEIXAR ESSA PROPRIEDADE PUBLICA
-@property (nonatomic, strong) ADLembrete *lembrete;
+- (ADLembrete *)lembreteAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
