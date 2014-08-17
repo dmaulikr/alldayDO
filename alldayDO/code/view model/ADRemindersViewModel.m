@@ -9,9 +9,6 @@
 #import "ADRemindersViewModel.h"
 #import "ADModel.h"
 
-#import "UILocalNotification+ADToolkitAdditions.h"
-#import "NSDate+ADToolkitAdditions.h"
-
 @interface ADRemindersViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembrete;

@@ -10,7 +10,6 @@
 #import "ADModel.h"
 #import "ADNotification.h"
 #import "ADStyleSheet.h"
-#import "UILocalNotification+ADToolkitAdditions.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -64,7 +63,6 @@
 #pragma mark - UIApplication Methods - Local Notification - 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-#warning implementar alert para exibir lembrete quando o app estiver aberto
     [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:notification];
     
     NSLog(@"%@", notification);

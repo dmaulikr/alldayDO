@@ -9,7 +9,6 @@
 #import "ADNewReminderViewModel.h"
 
 #import "ADModel.h"
-#import "ADLembrete+ADToolkitAdditions.h"
 
 typedef enum {
     ADCycleTypeDay,

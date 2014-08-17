@@ -7,6 +7,7 @@
 //
 
 #import "ADDetailReminderViewController.h"
+#import "ADNewReminderViewController.h"
 
 @interface ADDetailReminderViewController ()
 

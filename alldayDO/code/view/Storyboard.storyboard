@@ -8,7 +8,7 @@
         <scene sceneID="xd0-sM-zCx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gm-We-HHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="jAA-iV-Qtm" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="jAA-iV-Qtm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tDT-0t-b9Y">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -28,11 +28,11 @@
                         <viewControllerLayoutGuide type="bottom" id="QKd-UN-YEx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WLG-HH-LLG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
-                                <rect key="frame" x="0.0" y="132" width="320" height="392"/>
+                                <rect key="frame" x="0.0" y="132" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,7 +228,7 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Rs-yMg">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
@@ -297,11 +297,11 @@
                         <viewControllerLayoutGuide type="bottom" id="j2G-Uj-yH2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UNd-9P-UZ8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-sg-uUm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtU-ch-gCX" userLabel="borderContentView">
@@ -393,7 +393,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
-                                        <rect key="frame" x="-1" y="508" width="321" height="60"/>
+                                        <rect key="frame" x="-1" y="444" width="321" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
@@ -452,8 +452,11 @@
                                 <action selector="cancelButtonTouched:" destination="aGT-1s-pi3" id="RoC-H9-LEW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RUe-NX-dvU">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="RUe-NX-dvU">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="editButtonTouched:" destination="aGT-1s-pi3" id="9Eq-Ot-d8k"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
