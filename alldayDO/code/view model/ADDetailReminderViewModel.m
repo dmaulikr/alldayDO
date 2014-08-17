@@ -9,9 +9,6 @@
 #import "ADDetailReminderViewModel.h"
 #import "ADModel.h"
 
-#import "ADLembrete.h"
-#import "ADLembreteConfirmado.h"
-
 @interface ADDetailReminderViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembrete;
@@ -47,22 +44,33 @@
 
 - (void)addLembreteConfirmado {
     [self _setTodayDate];
-    [self.lembrete addLembreteConfirmadoObject:self.lembreteConfirmado];
+    [self.lembrete addLembretesConfirmadosObject:self.lembreteConfirmado];
+    
+    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
+        if (lembreteConfirmado.data.yesterday) {
+            self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue + 1];
+        }
+    }
+    
+    
     [[ADModel sharedInstance] saveChanges];
 }
 
 - (void)removeLembreteConfirmado {
     ADLembreteConfirmado *lembreteConfirmadoToRemove = nil;
     
-    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembreteConfirmado) {
+    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
         if (lembreteConfirmado.data.isToday) {
             lembreteConfirmadoToRemove = lembreteConfirmado;
         }
     }
     
-    [self.lembrete removeLembreteConfirmadoObject:lembreteConfirmadoToRemove];
+    self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue - 1];
+    [self.lembrete removeLembretesConfirmadosObject:lembreteConfirmadoToRemove];
     [[ADModel sharedInstance] deleteObject:lembreteConfirmadoToRemove];
     [[ADModel sharedInstance] saveChanges];
+    
+    self.lembreteConfirmado = nil;
 }
 
 - (void)lembreteDetail:(ADLembrete *)lembrete {
@@ -70,21 +78,37 @@
 }
 
 - (NSInteger)quantidadeConfirmacaoPorMes {
-    return 22;
+    NSInteger quantidadeConfirmados = 0;
+    
+    NSArray *lembretesConfirmados = self.lembrete.lembretesConfirmados.allObjects;
+    for (ADLembreteConfirmado *lembreteConfirmado in lembretesConfirmados) {
+        if ([lembreteConfirmado.data isCurrentMonth]) {
+            quantidadeConfirmados++;
+        }
+    }
+    return quantidadeConfirmados;
 }
 
 - (NSInteger)quantidadeConfirmacaoPorSemama {
-    return 11;
+    NSInteger quantidadeConfirmados = 0;
+    
+    NSArray *lembretesConfirmados = self.lembrete.lembretesConfirmados.allObjects;
+    for (ADLembreteConfirmado *lembreteConfirmado in lembretesConfirmados) {
+        if ([lembreteConfirmado.data isCurrentWeek]) {
+            quantidadeConfirmados++;
+        }
+    }
+    return quantidadeConfirmados;
 }
 
 - (NSInteger)quantidadeConfirmacaoSeguidos {
-    return 00;
+    return self.lembrete.seguidos.intValue;
 }
 
 - (BOOL)isLembreteConfirmated {
     BOOL isToday = NO;
     
-    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembreteConfirmado) {
+    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
         if (lembreteConfirmado.data.isToday) {
             isToday = YES;
         }

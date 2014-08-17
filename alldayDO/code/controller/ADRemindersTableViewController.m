@@ -103,7 +103,7 @@
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
 
-    [self _showBlurViewWithAnimation];
+//    [self _showBlurViewWithAnimation];
     
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
 }

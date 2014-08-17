@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ADLembrete.h"
+#import "ADLembreteConfirmado.h"
+
 @interface ADDetailReminderViewModel : NSObject
 
 - (void)addLembreteConfirmado;

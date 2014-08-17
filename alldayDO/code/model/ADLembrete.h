@@ -2,7 +2,7 @@
 //  ADLembrete.h
 //  alldayDO
 //
-//  Created by Fábio Almeida on 8/15/14.
+//  Created by Fábio Nogueira  on 16/08/14.
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
@@ -18,14 +18,15 @@
 @property (nonatomic, retain) NSString * descricao;
 @property (nonatomic, retain) NSData * imagem;
 @property (nonatomic, retain) NSNumber * periodo;
-@property (nonatomic, retain) NSSet *lembreteConfirmado;
+@property (nonatomic, retain) NSNumber * seguidos;
+@property (nonatomic, retain) NSSet *lembretesConfirmados;
 @end
 
 @interface ADLembrete (CoreDataGeneratedAccessors)
 
-- (void)addLembreteConfirmadoObject:(ADLembreteConfirmado *)value;
-- (void)removeLembreteConfirmadoObject:(ADLembreteConfirmado *)value;
-- (void)addLembreteConfirmado:(NSSet *)values;
-- (void)removeLembreteConfirmado:(NSSet *)values;
+- (void)addLembretesConfirmadosObject:(ADLembreteConfirmado *)value;
+- (void)removeLembretesConfirmadosObject:(ADLembreteConfirmado *)value;
+- (void)addLembretesConfirmados:(NSSet *)values;
+- (void)removeLembretesConfirmados:(NSSet *)values;
 
 @end

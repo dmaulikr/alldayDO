@@ -71,9 +71,11 @@ typedef NSUInteger ADWeekday;
 
 - (BOOL)compareComponents:(NSUInteger)unitFlags withDate:(NSDate *)date;
 - (BOOL)isToday;
+- (BOOL)isCurrentWeek;
 - (BOOL)isCurrentMonth;
 - (BOOL)isCurrentYear;
 - (BOOL)isSameDay:(NSDate *)date;
+- (BOOL)isSameWeek:(NSDate *)date;
 - (BOOL)isSameMonth:(NSDate *)date;
 
 - (BOOL)isPast;

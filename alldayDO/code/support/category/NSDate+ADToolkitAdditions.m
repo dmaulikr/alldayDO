@@ -244,6 +244,10 @@
     return [self isSameDay:[NSDate date]];
 }
 
+- (BOOL)isCurrentWeek {
+    return [self isSameWeek:[NSDate date]];
+}
+
 - (BOOL)isCurrentMonth {
     return [self isSameMonth:[NSDate date]];
 }
@@ -255,6 +259,11 @@
 - (BOOL)isSameDay:(NSDate *)date {
     NSInteger dayMonthYear = NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit;
     return [self compareComponents:dayMonthYear withDate:date];
+}
+
+- (BOOL)isSameWeek:(NSDate *)date {
+    NSInteger weekMonthYear = NSWeekOfMonthCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit;
+    return [self compareComponents:weekMonthYear withDate:date];
 }
 
 - (BOOL)isSameMonth:(NSDate *)date {
