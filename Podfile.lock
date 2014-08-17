@@ -1,12 +1,12 @@
 PODS:
-  - GoogleAnalytics-iOS-SDK (3.0.7)
+  - GoogleAnalytics-iOS-SDK (3.0.9)
   - iOS-blur (0.0.5)
-  - JVFloatLabeledTextField (0.0.8)
+  - JVFloatLabeledTextField (0.0.9)
   - MALazykit (HEAD based on 0.1.10)
-  - pop (1.0.5)
+  - pop (1.0.6)
   - SAMAddressBar (0.1.0)
   - SAMBadgeView (0.1.0)
-  - SAMCategories (0.5.1)
+  - SAMCategories (0.5.2)
   - SAMCircleProgressView (0.1.1)
   - SAMGradientView (0.2.1)
   - SAMHUDView (0.1.3)
@@ -41,14 +41,14 @@ DEPENDENCIES:
   - uiview-frame-helpers
 
 SPEC CHECKSUMS:
-  GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
+  GoogleAnalytics-iOS-SDK: d9e198b1f955259a72886769be7377cdfcdb2250
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
-  JVFloatLabeledTextField: 16dea87b899a7b62026eb8d8cf9902c08b1953da
+  JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
-  pop: 75fa2b33934200a8a68abb449ac1726fcf7e43b9
+  pop: e518794da38942c05255eb64b36d894e70cb4f00
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
   SAMBadgeView: 6f29c18e5dc4ddf6d843c3c5e9c9207028c2e8a8
-  SAMCategories: b11ba511a3a43e572add39eea91b5ba294d34c7f
+  SAMCategories: dc26f9dc67d371d22f391ee2173bc607a887912e
   SAMCircleProgressView: 8ec885aeaf60bd1ab717d82da166d3a807c63931
   SAMGradientView: 37ef027b0da8b5fd85bfdfef49801b5262160998
   SAMHUDView: d16d5814ab1a2e86a0c6c5aba8d67bbd845d78b1

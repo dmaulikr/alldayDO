@@ -10,13 +10,13 @@
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
 #define COCOAPODS_VERSION_MINOR_GoogleAnalytics_iOS_SDK 0
-#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 7
+#define COCOAPODS_VERSION_PATCH_GoogleAnalytics_iOS_SDK 9
 
 // JVFloatLabeledTextField
 #define COCOAPODS_POD_AVAILABLE_JVFloatLabeledTextField
 #define COCOAPODS_VERSION_MAJOR_JVFloatLabeledTextField 0
 #define COCOAPODS_VERSION_MINOR_JVFloatLabeledTextField 0
-#define COCOAPODS_VERSION_PATCH_JVFloatLabeledTextField 8
+#define COCOAPODS_VERSION_PATCH_JVFloatLabeledTextField 9
 
 // MALazykit
 #define COCOAPODS_POD_AVAILABLE_MALazykit
@@ -40,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_SAMCategories
 #define COCOAPODS_VERSION_MAJOR_SAMCategories 0
 #define COCOAPODS_VERSION_MINOR_SAMCategories 5
-#define COCOAPODS_VERSION_PATCH_SAMCategories 1
+#define COCOAPODS_VERSION_PATCH_SAMCategories 2
 
 // SAMCircleProgressView
 #define COCOAPODS_POD_AVAILABLE_SAMCircleProgressView
@@ -112,7 +112,7 @@
 #define COCOAPODS_POD_AVAILABLE_pop
 #define COCOAPODS_VERSION_MAJOR_pop 1
 #define COCOAPODS_VERSION_MINOR_pop 0
-#define COCOAPODS_VERSION_PATCH_pop 5
+#define COCOAPODS_VERSION_PATCH_pop 6
 
 // uiview-frame-helpers
 #define COCOAPODS_POD_AVAILABLE_uiview_frame_helpers
