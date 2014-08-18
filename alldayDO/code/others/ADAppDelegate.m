@@ -41,14 +41,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Crashlytics startWithAPIKey:@"ba0eee4e53729a8c93fd47ad94835d6be7ec81c8"];
-    
     [ADStyleSheet initStyles];
     
     return YES;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];    
     [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
     
     NSLog(@"\n Notificações applicationDidEnterBackground = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
@@ -64,7 +62,12 @@
 #pragma mark - UIApplication Methods - Local Notification - 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:notification];
+    if (application.applicationState == UIApplicationStateInactive ) {
+        NSLog(@"app not running");
+    } else if (application.applicationState == UIApplicationStateActive ) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:notification];
+    }
+    
 }
 
 @end
