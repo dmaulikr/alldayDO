@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ADLembrete.h"
 
-#define APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION @"ApplicationDidReceiveLocalNotification"
+#define APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE @"ApplicationDidReceiveLocalNotificationActive"
+#define APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND @"ApplicationDidReceiveLocalNotificationBackground"
 
 #define LOCAL_NOTIFICATION_DOMAIN @"mobi.fabionogueira.alldayDO"
 

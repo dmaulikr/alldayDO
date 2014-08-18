@@ -62,8 +62,9 @@
 #pragma mark - UIApplication Methods - Local Notification - 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    if (application.applicationState == UIApplicationStateInactive ) {
-        NSLog(@"app not running");
+    if (application.applicationState == UIApplicationStateInactive ||
+        application.applicationState == UIApplicationStateBackground ) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND object:notification];
     } else if (application.applicationState == UIApplicationStateActive ) {
             [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:notification];
     }
