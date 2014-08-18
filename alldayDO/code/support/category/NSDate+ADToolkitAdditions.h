@@ -41,6 +41,7 @@ typedef NSUInteger ADWeekday;
 - (NSDate *)noon;
 - (NSDate *)tomorrow;
 - (NSDate *)yesterday;
+- (NSDate *)nextWeek;
 - (NSDate *)nextMonth;
 - (NSDate *)lastMonth;
 - (NSDate *)nextYear;

@@ -116,6 +116,10 @@
     return [self dateByAddingDays:-1];
 }
 
+- (NSDate *)nextWeek {
+    return [self dateByAddingDays:7];
+}
+
 - (NSDate *)nextMonth {
     return [self dateByAddingMonths:1];
 }

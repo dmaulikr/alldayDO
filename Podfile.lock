@@ -3,6 +3,8 @@ PODS:
   - iOS-blur (0.0.5)
   - JVFloatLabeledTextField (0.0.9)
   - MALazykit (HEAD based on 0.1.10)
+  - PNChart (0.5):
+    - UICountingLabel (~> 1.0.0)
   - pop (1.0.6)
   - SAMAddressBar (0.1.0)
   - SAMBadgeView (0.1.0)
@@ -29,6 +31,7 @@ PODS:
     - SAMTextField
     - SAMTextView
     - SAMWebView
+  - UICountingLabel (1.0.0)
   - uiview-frame-helpers (0.1.1)
 
 DEPENDENCIES:
@@ -36,6 +39,7 @@ DEPENDENCIES:
   - iOS-blur
   - JVFloatLabeledTextField
   - MALazykit (HEAD)
+  - PNChart
   - pop
   - SSToolkit
   - uiview-frame-helpers
@@ -45,6 +49,7 @@ SPEC CHECKSUMS:
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
   JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
+  PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
   pop: e518794da38942c05255eb64b36d894e70cb4f00
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
   SAMBadgeView: 6f29c18e5dc4ddf6d843c3c5e9c9207028c2e8a8
@@ -59,6 +64,7 @@ SPEC CHECKSUMS:
   SAMTextView: 1062a784ba7b2080b0c17748001c416b53010b4b
   SAMWebView: e615d50d3683b9b4fd3e10da9d079ed03230ee24
   SSToolkit: 64d8bb043b4f36da68936ddbb4ec4e8cb3c5a8df
+  UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
   uiview-frame-helpers: 68ff15193c81e40695cb50f7eedee88e57077efc
 
 COCOAPODS: 0.33.1

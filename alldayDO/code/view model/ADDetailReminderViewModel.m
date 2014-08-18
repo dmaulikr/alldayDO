@@ -29,6 +29,37 @@
     return _lembreteConfirmado;
 }
 
+- (NSArray *)calendario {
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+                                                        fromDate:self.dataLembretesConfirmados.firstObject
+                                                          toDate:[NSDate date].nextWeek
+                                                         options:0];
+    
+    NSMutableArray *calendario = [NSMutableArray array];
+    for (int i = 1; i < components.day + 1; i++) {
+        NSDate *date = [self.dataLembretesConfirmados.firstObject dateByAddingDays:i];
+        if (date) {
+            [calendario addObject:date];
+        }
+    }
+    
+    return calendario;
+}
+
+
+- (NSArray *)dataLembretesConfirmados {
+    NSSortDescriptor *sortDescriptor =[[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObject: sortDescriptor];
+
+    NSMutableArray *lembretesConfirmados = [NSMutableArray array];
+    for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados.allObjects) {
+        [lembretesConfirmados addObject:lembreteConfirmado.data];
+    }
+
+    return [lembretesConfirmados sortedArrayUsingDescriptors:descriptors];
+}
+
 #pragma mark - Private Methods - 
 
 - (void)_setTodayDate {
@@ -115,6 +146,19 @@
     }
     
     return isToday;
+}
+
+- (NSUInteger)chartDataItemCount {
+    return self.calendario.count;
+}
+
+- (NSArray *)chartDataXLabels {
+    NSMutableArray *datasCalendarioLabels = [NSMutableArray array];
+    for (NSDate *dataConfirmada in self.calendario) {
+        [datasCalendarioLabels addObject:[NSString stringWithFormat:@"%ld", (long)dataConfirmada.day]];
+    }
+    
+    return datasCalendarioLabels;
 }
 
 @end

@@ -20,6 +20,9 @@
 
 @property (strong, nonatomic) IBOutlet UIView *inLineContentView;
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
+
+@property (weak, nonatomic) IBOutlet UIView *chartContentView;
+
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (strong, nonatomic) IBOutlet UILabel *monthLabel;

@@ -10,8 +10,12 @@
 
 #import "ADLembrete.h"
 #import "ADLembreteConfirmado.h"
+#import "PNLineChartDataItem.h"
 
 @interface ADDetailReminderViewModel : NSObject
+
+@property (nonatomic, strong, readonly) NSArray *calendario;
+@property (nonatomic, strong, readonly) NSArray *dataLembretesConfirmados;
 
 - (void)addLembreteConfirmado;
 - (void)removeLembreteConfirmado;
@@ -23,5 +27,8 @@
 - (NSInteger)quantidadeConfirmacaoSeguidos;
 
 - (BOOL)isLembreteConfirmated;
+
+- (NSUInteger)chartDataItemCount;
+- (NSArray *)chartDataXLabels;
 
 @end
