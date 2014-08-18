@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) PNLineChart *lineChart;
 
+- (void)_animationToPortraitRotationChartView;
+- (void)_animationToLandscapeRotationChartView;
 - (void)_updateInterface;
 - (void)_updateChart;
 
@@ -53,6 +55,27 @@
 }
 
 #pragma mark - Private Methods -
+
+- (void)_animationToPortraitRotationChartView {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.lineChart.center = self.view.center;
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        self.lineChart.bounds = self.chartContentView.bounds;
+        [self _updateChart];
+    }];
+}
+
+- (void)_animationToLandscapeRotationChartView {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.lineChart.center = self.view.center;
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        self.lineChart.bounds = self.view.bounds;
+        [self.lineChart setX:0.f andY:0.f];
+        [self _updateChart];
+    }];
+}
 
 - (void)_updateInterface {
     self.monthLabel.text = [NSString stringWithFormat:@"%ld", (long)self.viewModel.quantidadeConfirmacaoPorMes];
@@ -100,6 +123,17 @@
     }
     
     [self _updateInterface];
+}
+
+
+#pragma mark - UIInterfaceOrientation Methods
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self afterDelay:duration];
+    } else {
+        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self afterDelay:duration];
+    }
 }
 
 @end

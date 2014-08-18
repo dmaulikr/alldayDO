@@ -48,6 +48,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];    
     [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
     
     NSLog(@"\n Notificações applicationDidEnterBackground = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
@@ -64,10 +65,6 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION object:notification];
-    
-    NSLog(@"%@", notification);
 }
-
-
 
 @end
