@@ -57,8 +57,7 @@
 
 - (void)_initialize {
     [self addSubview:self.badgeImageView];
-        
-    [self.badgeImageView setX:7.f andY:13.f];
+    [self.badgeImageView setX:7.f];
     [self.badgeImageView.badgeIconImageView setW:22.f andH:22.f];
     [self.badgeImageView.badgeIconImageView centerWith:self.badgeImageView];
 }

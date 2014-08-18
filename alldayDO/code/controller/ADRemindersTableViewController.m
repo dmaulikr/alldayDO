@@ -160,7 +160,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
-    
+ 
+    [cell.badgeImageView centerYWith:cell.timelineContentView];
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;
     cell.timelineContentView.layer.cornerRadius = 5.f;
     
@@ -227,7 +228,6 @@
             break;
     }
 }
-
 
 #pragma mark - UIStoryboard Methods -
 

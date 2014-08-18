@@ -10,6 +10,7 @@
                 <navigationController definesPresentationContext="YES" id="jAA-iV-Qtm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tDT-0t-b9Y">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="3YN-mW-c4m" kind="relationship" relationship="rootViewController" id="XzB-WA-i2C"/>
@@ -19,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-486" y="112"/>
         </scene>
-        <!--Reminders Table View Controller-->
+        <!--Reminders Table View Controller - alldayDO-->
         <scene sceneID="BnB-dZ-Ivc">
             <objects>
-                <viewController storyboardIdentifier="remindersCollectionViewController" id="3YN-mW-c4m" customClass="ADRemindersTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="remindersCollectionViewController" title="alldayDO" id="3YN-mW-c4m" customClass="ADRemindersTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qUp-22-vGh"/>
                         <viewControllerLayoutGuide type="bottom" id="QKd-UN-YEx"/>
@@ -31,26 +32,26 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
                                 <rect key="frame" x="0.0" y="132" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="120" id="6hs-ir-LQe" customClass="ADReminderCell">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="120"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="85" id="6hs-ir-LQe" customClass="ADReminderCell">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
-                                                    <rect key="frame" x="32" y="60" width="1" height="60"/>
+                                                    <rect key="frame" x="32" y="60" width="1" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="B6T-RK-8gS"/>
-                                                        <constraint firstAttribute="height" constant="60" id="pSa-kn-c0i"/>
+                                                        <constraint firstAttribute="height" constant="25" id="pSa-kn-c0i"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
@@ -124,7 +125,6 @@
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerX" secondItem="nym-vk-oar" secondAttribute="centerX" id="ihM-SY-ufT"/>
                                                 <constraint firstItem="nym-vk-oar" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="10" id="mU9-Sa-CJA"/>
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerY" secondItem="nym-vk-oar" secondAttribute="centerY" id="sCx-xF-gqn"/>
-                                                <constraint firstAttribute="bottom" secondItem="nym-vk-oar" secondAttribute="bottom" constant="38" id="zRt-zd-Ih3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -464,12 +464,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dZ2-PL-4qx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gCI-uv-yBa">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="cancelButtonTouched:" destination="aGT-1s-pi3" id="RoC-H9-LEW"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="RUe-NX-dvU">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

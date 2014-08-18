@@ -108,10 +108,6 @@
 
 #pragma mark - IBAction Methods -
 
-- (IBAction)cancelButtonTouched:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)editButtonTouched:(id)sender {
 }
 

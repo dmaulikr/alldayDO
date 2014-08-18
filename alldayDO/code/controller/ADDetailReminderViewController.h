@@ -31,7 +31,6 @@
 
 @property (nonatomic, strong) ADDetailReminderViewModel *viewModel;
 
-- (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)editButtonTouched:(id)sender;
 - (IBAction)doneButtonTouched:(id)sender;
 
