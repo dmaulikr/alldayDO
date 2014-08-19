@@ -12,7 +12,8 @@
 
 + (void)initStyles {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                                       forBarMetrics:UIBarMetricsDefault];   
+                                       forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 @end

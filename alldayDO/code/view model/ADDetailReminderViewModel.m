@@ -60,6 +60,10 @@
     return [lembretesConfirmados sortedArrayUsingDescriptors:descriptors];
 }
 
+- (NSString *)title {
+    return self.lembrete.descricao;
+}
+
 #pragma mark - Private Methods - 
 
 - (void)_setTodayDate {

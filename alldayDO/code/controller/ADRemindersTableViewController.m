@@ -37,6 +37,7 @@
 - (void)_presentNewReminderViewController;
 - (void)_refreshTableView;
 - (void)_reloadData;
+- (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_showBlurViewWithAnimation;
 
 @end
@@ -113,6 +114,9 @@
 
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification {
     UILocalNotification *localNotification = notification.object;
+
+    NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
+    [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
     [[UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
                              message:localNotification.alertBody
@@ -126,12 +130,7 @@
     UILocalNotification *localNotification = notification.object;
     
     NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
-    
-    NSIndexPath *indePath = [self.viewModel indexPathForLembreteWithDescricao:descricaoLembrete];
-    
-    [self.tableView selectRowAtIndexPath:indePath
-                                animated:YES
-                          scrollPosition:UITableViewScrollPositionMiddle];
+    [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
     [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:nil];
 }
@@ -160,6 +159,13 @@
 - (void)_reloadData {
     [self.viewModel executeFetchRequest];
     [self.tableView reloadData];
+}
+
+- (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao {
+    NSIndexPath *indePath = [self.viewModel indexPathForLembreteWithDescricao:descricao];
+    [self.tableView selectRowAtIndexPath:indePath
+                                animated:YES
+                          scrollPosition:UITableViewScrollPositionMiddle];
 }
 
 - (void)_showBlurViewWithAnimation {
