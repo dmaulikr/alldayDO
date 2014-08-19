@@ -19,6 +19,8 @@
 - (void)_updateInterface;
 - (void)_updateChart;
 
+- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
+
 @end
 
 @implementation ADDetailReminderViewController
@@ -28,6 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.lineChart];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(willRotateToInterfaceOrientation:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -131,13 +138,15 @@
 
 #pragma mark - UIInterfaceOrientation Methods
 
-//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-//    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
-//        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self afterDelay:duration];
-//    } else {
-//        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self afterDelay:duration];
-//    }
-//}
-
+- (void)willRotateToInterfaceOrientation:(NSNotification *)notification {
+    UIDevice *device = notification.object;
+    
+    if (device.orientation == UIInterfaceOrientationPortrait ||
+        device.orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self];
+    } else {
+        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
+    }
+}
 
 @end
