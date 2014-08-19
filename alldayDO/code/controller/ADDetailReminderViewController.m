@@ -33,8 +33,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"] forBarMetrics:UIBarMetricsDefault];
-
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"]
+                                                  forBarMetrics:UIBarMetricsDefault];
     [self _updateInterface];
 }
 
@@ -50,6 +50,7 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.frame];
+        _lineChart.showLabel = NO;
     }
     return _lineChart;
 }
@@ -62,6 +63,7 @@
     
     [UIView animateWithDuration:0.3f animations:^{
         self.lineChart.bounds = self.chartContentView.bounds;
+        self.lineChart.showLabel = NO;
         [self _updateChart];
     }];
 }
@@ -73,6 +75,7 @@
     [UIView animateWithDuration:0.25f animations:^{
         self.lineChart.bounds = self.view.bounds;
         [self.lineChart setX:0.f andY:0.f];
+        self.lineChart.showLabel = YES;
         [self _updateChart];
     }];
 }
@@ -87,22 +90,25 @@
 }
 
 - (void)_updateChart {
-    PNLineChartData *chartData = [PNLineChartData new];
-    chartData.color = PNFreshGreen;
-    chartData.itemCount = [self.viewModel chartDataItemCount];
-    chartData.getData = ^(NSUInteger index) {
-        NSUInteger valorY = 1;
+    PNLineChartData *lineChartData = [PNLineChartData new];
+    lineChartData.color = PNFreshGreen;
+    lineChartData.itemCount = [self.viewModel chartDataItemCount];
     
-        NSDate *data = [self.viewModel.calendario objectAtIndex:index];
-        if ([self.viewModel.dataLembretesConfirmados containsObject:data]) {
+    NSArray *calendario = self.viewModel.calendario;
+    NSArray *lembretesConfirmados = self.viewModel.dataLembretesConfirmados;
+    
+    lineChartData.getData = ^(NSUInteger index) {
+        NSUInteger valorY = 1;
+        
+        NSDate *data = [calendario objectAtIndex:index];
+        if ([lembretesConfirmados containsObject:data]) {
             valorY = 0;
         }
-    
+        
         return [PNLineChartDataItem dataItemWithY:valorY];
     };
     
-    self.lineChart.showLabel = NO;
-    self.lineChart.chartData = @[chartData];
+    self.lineChart.chartData = @[lineChartData];
     [self.lineChart setXLabels:[self.viewModel chartDataXLabels]];
     [self.lineChart strokeChart];
 }
@@ -132,18 +138,6 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self afterDelay:duration];
 //    }
 //}
-//
 
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscape;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
-}
-
-- (BOOL)shouldAutorotate{
-    return YES;
-}
 
 @end

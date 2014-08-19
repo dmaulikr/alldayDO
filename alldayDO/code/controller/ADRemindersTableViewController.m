@@ -26,6 +26,8 @@
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
+@property (nonatomic, strong) UIAlertView *alertView;
+
 @property (nonatomic, strong) UIView *blurView;
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -51,6 +53,17 @@
         _viewModel = [[ADRemindersViewModel alloc] init];
     }
     return _viewModel;
+}
+
+- (UIAlertView *)alertView {
+    if (!_alertView) {
+        _alertView = [UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
+                                             message:nil
+                                            delegate:self
+                                   cancelButtonTitle:@"Não"
+                                   otherButtonTitles:@"Sim", nil];
+    }
+    return _alertView;
 }
 
 - (UIView *)blurView {
@@ -118,12 +131,11 @@
     NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
     [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
-    [[UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
-                             message:localNotification.alertBody
-                            delegate:self
-                   cancelButtonTitle:@"Não"
-                   otherButtonTitles:@"Sim", nil] show];
-
+    self.alertView.message = localNotification.alertBody;
+    
+    if (!self.alertView.isVisible) {
+        [self.alertView show];
+    }
 }
 
 - (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification {
@@ -132,7 +144,7 @@
     NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
     [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
-    [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:nil];
+    [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:self];
 }
 
 - (void)_initStyle {
@@ -164,7 +176,7 @@
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao {
     NSIndexPath *indePath = [self.viewModel indexPathForLembreteWithDescricao:descricao];
     [self.tableView selectRowAtIndexPath:indePath
-                                animated:YES
+                                animated:NO
                           scrollPosition:UITableViewScrollPositionMiddle];
 }
 
@@ -249,7 +261,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 1:
-            [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:nil];
+            [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:self];
             break;
         default:
             break;

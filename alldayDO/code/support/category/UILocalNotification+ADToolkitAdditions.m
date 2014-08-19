@@ -20,7 +20,7 @@
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.alertAction = @"concluir a tarefa";
     localNotification.alertBody = [NSString stringWithFormat:ALERT_BODY, lembrete.descricao];
-    localNotification.applicationIconBadgeNumber =+1;
+    localNotification.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
     localNotification.timeZone = [NSTimeZone localTimeZone];
     
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:lembrete.descricao forKey:LOCAL_NOTIFICATION_DOMAIN];

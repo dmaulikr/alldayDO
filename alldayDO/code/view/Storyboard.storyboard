@@ -32,14 +32,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="5" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="6" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
                                 <rect key="frame" x="0.0" y="132" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="80" id="6hs-ir-LQe" customClass="ADReminderCell">
-                                        <rect key="frame" x="0.0" y="5" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="6" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
