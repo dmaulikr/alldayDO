@@ -89,4 +89,32 @@
     return self.lembrete;
 }
 
+- (ADLembrete *)lembreteWithDescricao:(NSString *)descricao {
+    ADLembrete *lembreteWithDescricao = nil;
+    
+    NSArray *reminders = [self.fetchedResultsController fetchedObjects];
+    for (ADLembrete *lembrete in reminders) {
+        if ([lembrete.descricao isEqualToString:descricao]) {
+            lembreteWithDescricao = lembrete;
+            break;
+        }
+    }
+
+    return lembreteWithDescricao;
+}
+
+- (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao {
+    NSIndexPath *indexPath = nil;
+    
+    NSArray *reminders = [self.fetchedResultsController fetchedObjects];
+    for (ADLembrete *lembrete in reminders) {
+        if ([lembrete.descricao isEqualToString:descricao]) {
+            indexPath = [NSIndexPath indexPathForRow:[reminders indexOfObject:lembrete] inSection:0];
+            break;
+        }
+    }
+    
+    return indexPath;
+}
+
 @end

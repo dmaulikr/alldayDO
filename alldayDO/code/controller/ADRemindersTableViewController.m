@@ -31,7 +31,8 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (void)_addSubView;
-- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification;
+- (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification;
+- (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
 - (void)_refreshTableView;
@@ -76,14 +77,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotification:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION
-                                               object:NULL];
-    
-
-    
-    
     [self _initStyle];
     [self _addSubView];
     
@@ -94,6 +87,20 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self _reloadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
+                                               object:NULL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
+                                               object:NULL];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    #warning verificar se precisa cancelar as notificações
 }
 
 #pragma mark - Private Methods -
@@ -104,7 +111,7 @@
     [self.tableView addSubview:self.refreshControl];
 }
 
-- (void)_applicationDidReceiveLocalNotification:(NSNotification *)notification {
+- (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification {
     UILocalNotification *localNotification = notification.object;
     
     [[UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
@@ -113,6 +120,20 @@
                    cancelButtonTitle:@"Não"
                    otherButtonTitles:@"Sim", nil] show];
 
+}
+
+- (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification {
+    UILocalNotification *localNotification = notification.object;
+    
+    NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
+    
+    NSIndexPath *indePath = [self.viewModel indexPathForLembreteWithDescricao:descricaoLembrete];
+    
+    [self.tableView selectRowAtIndexPath:indePath
+                                animated:YES
+                          scrollPosition:UITableViewScrollPositionMiddle];
+    
+    [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:nil];
 }
 
 - (void)_initStyle {

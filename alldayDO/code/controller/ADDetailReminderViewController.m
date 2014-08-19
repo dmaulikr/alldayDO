@@ -124,12 +124,25 @@
 
 #pragma mark - UIInterfaceOrientation Methods
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
-        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self afterDelay:duration];
-    } else {
-        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self afterDelay:duration];
-    }
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
+//        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self afterDelay:duration];
+//    } else {
+//        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self afterDelay:duration];
+//    }
+//}
+//
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
+- (BOOL)shouldAutorotate{
+    return YES;
 }
 
 @end
