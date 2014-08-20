@@ -48,8 +48,6 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *dismissKeyboardGesture;
 
-@property (nonatomic, strong) ADNewReminderViewModel *viewModel;
-
 @property (nonatomic, strong) UIToolbar *toolbar;
 
 
@@ -57,9 +55,10 @@
 
 - (void)_addBlurView;
 - (void)_addGesturesRecognizer;
-- (void)_removeGestureRecognizer;
 - (void)_addInputViewForTextField;
 - (void)_addSubViews;
+- (void)_editReminderMode;
+- (void)_removeGestureRecognizer;
 - (void)_cancelarTouched;
 - (void)_dismissKeyboard;
 - (void)_nextFieldText;
@@ -297,7 +296,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.viewModel = nil;
+    
+    if (self.actionMode == ADEditMode) {
+        [self _editReminderMode];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -332,10 +335,6 @@
     [self.view addGestureRecognizer:self.dismissKeyboardGesture];
 }
 
-- (void)_removeGestureRecognizer {
-    [self.view removeGestureRecognizer:self.dismissKeyboardGesture];
-}
-
 - (void)_addInputViewForTextField {
     self.periodoTextField.inputView = self.periodoPickerView;
     self.horaTextField.inputView = self.horaPicker;
@@ -352,6 +351,35 @@
     [self.view addSubview:self.cancelarButton];
     [self.view addSubview:self.badgeIconView];
     [self.badgeIconView addSubview:self.badgeIconCollectionView];
+}
+
+- (void)_editReminderMode {
+    self.descriptionTextField.text = self.viewModel.descricao;
+    self.periodoTextField.text = [self.viewModel textForCycleType:self.viewModel.periodo.integerValue];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterFullStyle];
+    self.dataTextField.text = [formatter stringFromDate:self.viewModel.dataInicial];
+    
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"hh"];
+    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    
+    [outputFormatter setDateFormat:@"mm"];
+    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    
+    [outputFormatter setDateFormat:@"a"];
+    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    
+    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    
+    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
+    self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagem] tintedImageWithColor:[UIColor whiteColor]];
+}
+
+- (void)_removeGestureRecognizer {
+    [self.view removeGestureRecognizer:self.dismissKeyboardGesture];
 }
 
 - (void)_cancelarTouched {
@@ -551,6 +579,5 @@
         break;
     }
 }
-                                                                                        
 
 @end

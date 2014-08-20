@@ -156,6 +156,7 @@
     newReminderViewController.delegate = self;
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
+    newReminderViewController.actionMode = ADAddMode;
 
 //    [self _showBlurViewWithAnimation];
     

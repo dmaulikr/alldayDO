@@ -11,7 +11,16 @@
 #import "ADNewReminderViewModel.h"
 #import "ADNewReminderViewControllerDelegate.h"
 
+typedef enum {
+    ADAddMode,
+    ADEditMode
+} ADActionMode;
+
 @interface ADNewReminderViewController : UIViewController 
+
+@property (nonatomic) ADActionMode actionMode;
+
+@property (nonatomic, strong) ADNewReminderViewModel *viewModel;
 
 @property (nonatomic, strong) id<ADNewReminderViewControllerDelegate> delegate;
 

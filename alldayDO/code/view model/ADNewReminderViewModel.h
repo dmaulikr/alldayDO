@@ -18,8 +18,11 @@
 
 @property (nonatomic, strong) NSArray *cycleType;
 
+- (void)editChanges;
 - (void)saveChanges;
 
 - (NSString *)textForCycleType:(NSInteger)cycleType;
+
+- (void)lembreteEdit:(ADLembrete *)lembrete;
 
 @end

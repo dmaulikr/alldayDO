@@ -10,7 +10,10 @@
 #import "ADNewReminderViewController.h"
 #import "PNChart.h"
 
-@interface ADDetailReminderViewController ()
+#import "PresentingAnimator.h"
+#import "DismissingAnimator.h"
+
+@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
 
 @property (nonatomic, strong) PNLineChart *lineChart;
 
@@ -18,8 +21,9 @@
 - (void)_animationToLandscapeRotationChartView;
 - (void)_updateInterface;
 - (void)_updateChart;
+- (void)_presentNewReminderViewController;
 
-- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
+//- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
 
 @end
 
@@ -31,10 +35,10 @@
     [super viewDidLoad];
     [self.view addSubview:self.lineChart];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(willRotateToInterfaceOrientation:)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(willRotateToInterfaceOrientation:)
+//                                                 name:UIDeviceOrientationDidChangeNotification
+//                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +96,7 @@
     [self _updateChart];
 }
 
-- (void)_updateChart {
+- (void)_updateChart { 
     PNLineChartData *lineChartData = [PNLineChartData new];
     lineChartData.color = PNFreshGreen;
     lineChartData.itemCount = [self.viewModel chartDataItemCount];
@@ -116,9 +120,23 @@
     [self.lineChart strokeChart];
 }
 
+- (void)_presentNewReminderViewController {
+    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
+    newReminderViewController.delegate = self;
+    newReminderViewController.transitioningDelegate = self;
+    newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
+    newReminderViewController.actionMode = ADEditMode;
+    
+    #warning Mudar essa forma de enviar o lembrete para uma melhor
+    [newReminderViewController.viewModel lembreteEdit:self.viewModel.lembrete];
+    
+    [self presentViewController:newReminderViewController animated:YES completion:NULL];
+}
+
 #pragma mark - IBAction Methods -
 
 - (IBAction)editButtonTouched:(id)sender {
+    [self _presentNewReminderViewController];
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
@@ -131,10 +149,35 @@
     [self _updateInterface];
 }
 
+#pragma mark - UIViewControllerTransitioningDelegate Methods -
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+    return [PresentingAnimator new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [DismissingAnimator new];
+}
+
+#pragma mark - ADNewReminderViewControllerDelegate Methods -
+
+- (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
+                  didSaveReminder:(ADLembrete *)reminder {
+//    [self.view sendSubviewToBack:self.blurView];
+    [newReminderViewController dismissViewControllerAnimated:YES completion:^{
+        self.title = reminder.descricao;
+    }];
+}
+
+- (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController {
+//    [self.view sendSubviewToBack:self.blurView];
+}
 
 #pragma mark - UIInterfaceOrientation Methods
 
-- (void)willRotateToInterfaceOrientation:(NSNotification *)notification {
+//- (void)willRotateToInterfaceOrientation:(NSNotification *)notification {
 //    UIDevice *device = notification.object;
 //    
 //    if (device.orientation == UIInterfaceOrientationPortrait ||
@@ -143,6 +186,6 @@
 //    } else {
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
-}
+//}
 
 @end

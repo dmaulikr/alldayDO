@@ -17,6 +17,12 @@ typedef enum {
     ADCycleTypeYear,
 } ADCycleType;
 
+@interface ADNewReminderViewModel ()
+
+@property (nonatomic, strong) ADLembrete *lembreteEdit;
+
+@end
+
 @implementation ADNewReminderViewModel
 
 #pragma mark - Getter Methods -
@@ -35,6 +41,24 @@ typedef enum {
 
 #pragma mark - Public Methods -
 
+- (void)editChanges {
+    self.lembreteEdit.descricao = self.descricao;
+    self.lembreteEdit.periodo = self.periodo;
+    self.lembreteEdit.data = self.data;
+    self.lembreteEdit.dataInicial = self.dataInicial;
+    self.lembreteEdit.imagem = self.imagem;
+    
+    [[ADModel sharedInstance] saveChanges];
+    
+    NSLog(@"\n Notificações EditChange Before = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
+    
+    #warning Verificar comportamento da noticação alterada
+    UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:self.lembreteEdit];
+    [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+    
+    NSLog(@"\n Notificações EditChange After = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
+}
+
 - (void)saveChanges {
     ADLembrete *lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];
     lembrete.descricao = self.descricao;
@@ -51,6 +75,15 @@ typedef enum {
 
 - (NSString *)textForCycleType:(NSInteger)cycleType {
     return [self.cycleType objectAtIndex:cycleType];
+}
+
+- (void)lembreteEdit:(ADLembrete *)lembrete {
+    self.lembreteEdit = lembrete;
+    self.descricao = lembrete.descricao;
+    self.periodo = lembrete.periodo;
+    self.data = lembrete.data;
+    self.dataInicial = lembrete.dataInicial;
+    self.imagem = lembrete.imagem;
 }
 
 @end

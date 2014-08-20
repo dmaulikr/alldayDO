@@ -11,7 +11,6 @@
 
 @interface ADDetailReminderViewModel ()
 
-@property (nonatomic, strong) ADLembrete *lembrete;
 @property (nonatomic, strong) ADLembreteConfirmado *lembreteConfirmado;
 
 - (void)_setTodayDate;

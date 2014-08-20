@@ -14,6 +14,8 @@
 
 @interface ADDetailReminderViewModel : NSObject
 
+@property (nonatomic, strong) ADLembrete *lembrete;
+
 @property (nonatomic, readonly) NSArray *calendario;
 @property (nonatomic, readonly) NSArray *dataLembretesConfirmados;
 @property (nonatomic, readonly) NSString *title;
