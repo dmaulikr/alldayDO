@@ -66,23 +66,19 @@
 
 - (void)_animationToPortraitRotationChartView {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.lineChart.center = self.view.center;
     
     [UIView animateWithDuration:0.3f animations:^{
-        self.lineChart.bounds = self.chartContentView.bounds;
-        self.lineChart.showLabel = NO;
+        self.lineChart.frame = self.chartContentView.frame;
         [self _updateChart];
     }];
 }
 
 - (void)_animationToLandscapeRotationChartView {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.lineChart.center = self.view.center;
     
-    [UIView animateWithDuration:0.25f animations:^{
-        self.lineChart.bounds = self.view.bounds;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.lineChart.frame = self.view.frame;
         [self.lineChart setX:0.f andY:0.f];
-        self.lineChart.showLabel = YES;
         [self _updateChart];
     }];
 }
@@ -139,14 +135,14 @@
 #pragma mark - UIInterfaceOrientation Methods
 
 - (void)willRotateToInterfaceOrientation:(NSNotification *)notification {
-    UIDevice *device = notification.object;
-    
-    if (device.orientation == UIInterfaceOrientationPortrait ||
-        device.orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self];
-    } else {
-        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
-    }
+//    UIDevice *device = notification.object;
+//    
+//    if (device.orientation == UIInterfaceOrientationPortrait ||
+//        device.orientation == UIInterfaceOrientationPortraitUpsideDown) {
+//        [self performSelector:@selector(_animationToPortraitRotationChartView) withObject:self];
+//    } else {
+//        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
+//    }
 }
 
 @end
