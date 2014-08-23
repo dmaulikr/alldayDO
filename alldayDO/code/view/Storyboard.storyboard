@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="80" id="6hs-ir-LQe" customClass="ADReminderCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="80" id="6hs-ir-LQe" customClass="ADReminderCell">
                                         <rect key="frame" x="0.0" y="6" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
@@ -393,9 +393,9 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-io-jtq" userLabel="chartBorderContentView">
-                                        <rect key="frame" x="0.0" y="217" width="320" height="107"/>
+                                        <rect key="frame" x="0.0" y="218" width="320" height="105"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.8862745098" green="0.086194114963503654" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.90588235289999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
                                         <rect key="frame" x="-1" y="356" width="321" height="60"/>
@@ -428,7 +428,7 @@
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" id="0Eu-FQ-koR"/>
                                     <constraint firstItem="bWz-lw-N9p" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="1m1-hD-6H0"/>
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="height" secondItem="3N6-Ud-rk1" secondAttribute="height" constant="2" id="6ev-Ob-elI"/>
-                                    <constraint firstItem="8VZ-io-jtq" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="28" id="7ag-sN-pZN"/>
+                                    <constraint firstItem="8VZ-io-jtq" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="29" id="7ag-sN-pZN"/>
                                     <constraint firstItem="cYc-jf-303" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="7nL-sJ-uUi"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="centerY" secondItem="f7s-Dz-0nx" secondAttribute="centerY" id="8xG-FH-hst"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="height" secondItem="36e-fq-2Sw" secondAttribute="height" id="8yQ-DC-xIH"/>
@@ -443,7 +443,7 @@
                                     <constraint firstAttribute="centerX" secondItem="9MT-Uw-dxE" secondAttribute="centerX" id="SHp-cD-K90"/>
                                     <constraint firstItem="cYc-jf-303" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" id="XoX-Ze-E4O"/>
                                     <constraint firstItem="bWz-lw-N9p" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="30" id="cGe-1d-1NT"/>
-                                    <constraint firstAttribute="bottom" secondItem="8VZ-io-jtq" secondAttribute="bottom" constant="92" id="cgH-uS-6f8"/>
+                                    <constraint firstAttribute="bottom" secondItem="8VZ-io-jtq" secondAttribute="bottom" constant="93" id="cgH-uS-6f8"/>
                                     <constraint firstAttribute="centerX" secondItem="ZtU-ch-gCX" secondAttribute="centerX" id="dKx-N4-tgB"/>
                                     <constraint firstAttribute="trailing" secondItem="8VZ-io-jtq" secondAttribute="trailing" id="k0x-dL-XLD"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="top" secondItem="3N6-Ud-rk1" secondAttribute="bottom" constant="15" id="nOh-LL-uQt"/>
