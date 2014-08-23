@@ -105,11 +105,11 @@
     NSArray *lembretesConfirmados = self.viewModel.dataLembretesConfirmados;
     
     lineChartData.getData = ^(NSUInteger index) {
-        NSUInteger valorY = 1;
+        NSUInteger valorY = 0;
         
         NSDate *data = [calendario objectAtIndex:index];
         if ([lembretesConfirmados containsObject:data]) {
-            valorY = 0;
+            valorY = 1;
         }
         
         return [PNLineChartDataItem dataItemWithY:valorY];
