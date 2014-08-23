@@ -137,10 +137,13 @@
 
 - (NSInteger)quantidadeConfirmacaoSeguidos {
     NSInteger seguidos = 00;
-    
-    if (self.lembrete.seguidos) {
+
+    if (self.lembrete.seguidos < 0) {
+        seguidos = 00;
+    } else if (self.lembrete.seguidos != nil) {
         seguidos = self.lembrete.seguidos.intValue;
     }
+    
     return seguidos;
 }
 
