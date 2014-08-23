@@ -42,21 +42,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Crashlytics startWithAPIKey:@"ba0eee4e53729a8c93fd47ad94835d6be7ec81c8"];
     [ADStyleSheet initStyles];
-    
     return YES;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
-    
-    NSLog(@"\n Notificações applicationDidEnterBackground = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
-    
-    NSLog(@"\n Notificações applicationDidBecomeActive = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 }
 
 #pragma mark - UIApplication Methods - Local Notification - 

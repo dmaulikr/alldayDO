@@ -412,6 +412,10 @@
 - (void)_refreshTimeLabel:(UIDatePicker*)datePicker {
     NSDate *date = [NSDate date];
     
+    if (self.actionMode == ADEditMode) {
+        date = self.viewModel.dataEdit;
+    }
+    
     if (datePicker) {
         date = datePicker.date;
     }
@@ -432,6 +436,10 @@
 
 - (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker {
     NSDate *date = [NSDate date];
+    
+    if (self.actionMode == ADEditMode) {
+        date = self.viewModel.dataInicialEdit;
+    }
     
     if (datePicker) {
         date = datePicker.date;
@@ -484,7 +492,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.periodoTextField) {
-        self.periodoTextField.text = [self.viewModel textForCycleType:0];
+        if (self.actionMode == ADAddMode) {
+            self.periodoTextField.text = [self.viewModel textForCycleType:0];
+        }
     } else if (textField == self.horaTextField) {
         [self _refreshTimeLabel:nil];
     } else if (textField == self.dataTextField) {

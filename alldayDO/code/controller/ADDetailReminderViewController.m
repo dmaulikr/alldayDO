@@ -13,6 +13,8 @@
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+
 @interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate>
 
 @property (nonatomic, strong) PNLineChart *lineChart;
@@ -33,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.lineChart];
+    [self.chartContentView addSubview:self.lineChart];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(willRotateToInterfaceOrientation:)
@@ -60,7 +62,13 @@
 
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
-        _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.frame];
+        _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
+        
+        #warning GAMBIARRA SINISTRA 
+        if (IS_IPHONE5) {
+            [_lineChart setH:_lineChart.height * 1.855];
+        }
+        
         _lineChart.showLabel = NO;
     }
     return _lineChart;

@@ -297,11 +297,11 @@
                         <viewControllerLayoutGuide type="bottom" id="j2G-Uj-yH2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UNd-9P-UZ8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-sg-uUm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtU-ch-gCX" userLabel="borderContentView">
@@ -393,12 +393,12 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-io-jtq" userLabel="chartBorderContentView">
-                                        <rect key="frame" x="-1" y="217" width="320" height="198"/>
+                                        <rect key="frame" x="0.0" y="217" width="320" height="107"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.8862745098" green="0.90588235289999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.086194114963503654" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
-                                        <rect key="frame" x="-1" y="444" width="321" height="60"/>
+                                        <rect key="frame" x="-1" y="356" width="321" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
@@ -417,42 +417,39 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-lw-N9p" userLabel="chartContentView">
-                                        <rect key="frame" x="-1" y="218" width="320" height="195"/>
+                                        <rect key="frame" x="0.0" y="219" width="320" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                        </accessibility>
+                                        <color key="backgroundColor" red="0.93548387099999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.94509803921568625" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="top" secondItem="kgG-sg-uUm" secondAttribute="top" constant="14" id="09a-yi-X0W"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" id="0Eu-FQ-koR"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" constant="-1" id="0cK-mv-xAH"/>
+                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="1m1-hD-6H0"/>
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="height" secondItem="3N6-Ud-rk1" secondAttribute="height" constant="2" id="6ev-Ob-elI"/>
+                                    <constraint firstItem="8VZ-io-jtq" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="28" id="7ag-sN-pZN"/>
                                     <constraint firstItem="cYc-jf-303" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="7nL-sJ-uUi"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="centerY" secondItem="f7s-Dz-0nx" secondAttribute="centerY" id="8xG-FH-hst"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="height" secondItem="36e-fq-2Sw" secondAttribute="height" id="8yQ-DC-xIH"/>
                                     <constraint firstItem="36e-fq-2Sw" firstAttribute="leading" secondItem="3N6-Ud-rk1" secondAttribute="trailing" constant="1" id="9J0-4z-IZB"/>
-                                    <constraint firstItem="8VZ-io-jtq" firstAttribute="leading" secondItem="bWz-lw-N9p" secondAttribute="leading" id="A7R-4y-Ziy"/>
                                     <constraint firstAttribute="trailing" secondItem="cYc-jf-303" secondAttribute="trailing" id="JOd-d5-cYq"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="width" secondItem="f7s-Dz-0nx" secondAttribute="width" id="JYA-nz-iXD"/>
+                                    <constraint firstAttribute="width" secondItem="8VZ-io-jtq" secondAttribute="width" id="KLl-Bq-9in"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="KqB-4b-dIa"/>
                                     <constraint firstItem="36e-fq-2Sw" firstAttribute="top" secondItem="kgG-sg-uUm" secondAttribute="top" constant="15" id="NWw-Mj-iQn"/>
-                                    <constraint firstItem="cYc-jf-303" firstAttribute="top" secondItem="bWz-lw-N9p" secondAttribute="bottom" constant="31" id="PdY-1k-4gP"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="top" secondItem="kgG-sg-uUm" secondAttribute="top" constant="15" id="Pyn-UY-uPq"/>
+                                    <constraint firstItem="cYc-jf-303" firstAttribute="top" secondItem="bWz-lw-N9p" secondAttribute="bottom" constant="34" id="R98-MF-ihe"/>
                                     <constraint firstAttribute="centerX" secondItem="9MT-Uw-dxE" secondAttribute="centerX" id="SHp-cD-K90"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="width" secondItem="8VZ-io-jtq" secondAttribute="width" id="UDe-MI-Ejy"/>
                                     <constraint firstItem="cYc-jf-303" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" id="XoX-Ze-E4O"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="centerY" secondItem="8VZ-io-jtq" secondAttribute="centerY" id="dAN-ff-FWC"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="top" secondItem="9MT-Uw-dxE" secondAttribute="bottom" constant="30" id="dF4-U1-icJ"/>
+                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="30" id="cGe-1d-1NT"/>
+                                    <constraint firstAttribute="bottom" secondItem="8VZ-io-jtq" secondAttribute="bottom" constant="92" id="cgH-uS-6f8"/>
                                     <constraint firstAttribute="centerX" secondItem="ZtU-ch-gCX" secondAttribute="centerX" id="dKx-N4-tgB"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="k2I-Ku-zuN"/>
+                                    <constraint firstAttribute="trailing" secondItem="8VZ-io-jtq" secondAttribute="trailing" id="k0x-dL-XLD"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="top" secondItem="3N6-Ud-rk1" secondAttribute="bottom" constant="15" id="nOh-LL-uQt"/>
                                     <constraint firstAttribute="trailing" secondItem="36e-fq-2Sw" secondAttribute="trailing" constant="1" id="p8j-Sx-KbP"/>
-                                    <constraint firstItem="bWz-lw-N9p" firstAttribute="height" secondItem="8VZ-io-jtq" secondAttribute="height" constant="-3" id="pFN-Hl-uNf"/>
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="sv6-1e-En0"/>
+                                    <constraint firstAttribute="centerX" secondItem="bWz-lw-N9p" secondAttribute="centerX" id="uSD-qy-any"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="centerX" secondItem="f7s-Dz-0nx" secondAttribute="centerX" id="v0d-AZ-tCQ"/>
                                     <constraint firstAttribute="bottom" secondItem="cYc-jf-303" secondAttribute="bottom" id="vwy-x4-cC2"/>
                                 </constraints>
@@ -474,8 +471,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <connections>
                         <outlet property="borderContentView" destination="ZtU-ch-gCX" id="T8V-ch-Lyc"/>
+                        <outlet property="chartBorderContentView" destination="8VZ-io-jtq" id="Nn4-9g-Jli"/>
                         <outlet property="chartContentView" destination="bWz-lw-N9p" id="Bq0-zu-CPn"/>
                         <outlet property="doneButton" destination="cYc-jf-303" id="a5Z-vM-MWa"/>
                         <outlet property="inLineBorderContentView" destination="f7s-Dz-0nx" id="fm3-Eo-r9S"/>

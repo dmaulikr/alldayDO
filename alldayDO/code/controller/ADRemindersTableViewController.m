@@ -114,7 +114,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    #warning verificar se precisa cancelar as notificações
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Private Methods -
@@ -126,6 +126,7 @@
 }
 
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     UILocalNotification *localNotification = notification.object;
 
     NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];

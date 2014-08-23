@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIView *inLineBorderContentView;
 
 @property (weak, nonatomic) IBOutlet UIView *chartContentView;
+@property (weak, nonatomic) IBOutlet UIView *chartBorderContentView;
 
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
