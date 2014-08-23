@@ -136,7 +136,12 @@
 }
 
 - (NSInteger)quantidadeConfirmacaoSeguidos {
-    return self.lembrete.seguidos.intValue;
+    NSInteger seguidos = 00;
+    
+    if (self.lembrete.seguidos) {
+        seguidos = self.lembrete.seguidos.intValue;
+    }
+    return seguidos;
 }
 
 - (BOOL)isLembreteConfirmated {
