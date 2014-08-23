@@ -10,7 +10,7 @@
 		1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C342DAE7F9404DE4B305DC50 /* libPods.a */; };
 		708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */; };
 		70DFE494199E5DE90008EDEF /* ADDetailReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DFE493199E5DE90008EDEF /* ADDetailReminderViewModel.m */; };
-		71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADNewReminderViewController.m */; };
+		71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADEditReminderViewController.m */; };
 		71018AA9192966E800660C17 /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA8192966E800660C17 /* ADModel.m */; };
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		711F983D198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */; };
@@ -24,8 +24,9 @@
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
 		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
+		71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71990A9E19A8153D0056C17C /* ADLocalNotification.m */; };
 		71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */; };
-		71B96AF3194D299C0042023E /* ADNewReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF2194D299C0042023E /* ADNewReminderViewModel.m */; };
+		71B96AF3194D299C0042023E /* ADEditReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF2194D299C0042023E /* ADEditReminderViewModel.m */; };
 		71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */; };
 		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20719A02C8C00EB6EEE /* ADLembreteConfirmado.m */; };
@@ -48,7 +49,6 @@
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
 		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
 		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
-		71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DB19298F0F0073A5CD /* ADNotification.m */; };
 		71FC67DF19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +67,8 @@
 		708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDetailReminderViewController.m; sourceTree = "<group>"; };
 		70DFE492199E5DE90008EDEF /* ADDetailReminderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDetailReminderViewModel.h; sourceTree = "<group>"; };
 		70DFE493199E5DE90008EDEF /* ADDetailReminderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDetailReminderViewModel.m; sourceTree = "<group>"; };
-		71018AA1192960C000660C17 /* ADNewReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNewReminderViewController.h; sourceTree = "<group>"; };
-		71018AA2192960C000660C17 /* ADNewReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNewReminderViewController.m; sourceTree = "<group>"; };
+		71018AA1192960C000660C17 /* ADEditReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewController.h; sourceTree = "<group>"; };
+		71018AA2192960C000660C17 /* ADEditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADEditReminderViewController.m; sourceTree = "<group>"; };
 		71018AA7192966E800660C17 /* ADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADModel.h; sourceTree = "<group>"; };
 		71018AA8192966E800660C17 /* ADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADModel.m; sourceTree = "<group>"; };
 		71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -93,15 +93,17 @@
 		7130CD751944BEE0009AF8D8 /* ADIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADIconCell.m; sourceTree = "<group>"; };
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
-		71507BD41947F50300884B46 /* ADNewReminderViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADNewReminderViewControllerDelegate.h; sourceTree = "<group>"; };
+		71507BD41947F50300884B46 /* ADEditReminderViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewControllerDelegate.h; sourceTree = "<group>"; };
 		7174F868193A779600DEB9D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
 		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
 		7174F86B193A779600DEB9D0 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
+		71990A9D19A8153D0056C17C /* ADLocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLocalNotification.h; sourceTree = "<group>"; };
+		71990A9E19A8153D0056C17C /* ADLocalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADLocalNotification.m; sourceTree = "<group>"; };
 		71B96AEE194CBDEB0042023E /* ADRemindersViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersViewModel.h; sourceTree = "<group>"; };
 		71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersViewModel.m; sourceTree = "<group>"; };
-		71B96AF1194D299C0042023E /* ADNewReminderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNewReminderViewModel.h; sourceTree = "<group>"; };
-		71B96AF2194D299C0042023E /* ADNewReminderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNewReminderViewModel.m; sourceTree = "<group>"; };
+		71B96AF1194D299C0042023E /* ADEditReminderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewModel.h; sourceTree = "<group>"; };
+		71B96AF2194D299C0042023E /* ADEditReminderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADEditReminderViewModel.m; sourceTree = "<group>"; };
 		71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeImageView.h; sourceTree = "<group>"; };
 		71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeImageView.m; sourceTree = "<group>"; };
 		71B96AFE194D4DC90042023E /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
@@ -131,8 +133,6 @@
 		71E18B92198C59E2007C7467 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		71E9325319401803007C96D4 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
 		71E9325419401803007C96D4 /* ADRemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersTableViewController.m; sourceTree = "<group>"; };
-		71FC67DA19298F0F0073A5CD /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
-		71FC67DB19298F0F0073A5CD /* ADNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNotification.m; sourceTree = "<group>"; };
 		71FC67DD19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		71FC67DE19299D250073A5CD /* UILocalNotification+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalNotification+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		C342DAE7F9404DE4B305DC50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +208,7 @@
 		71507BD11947F38100884B46 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				71507BD41947F50300884B46 /* ADNewReminderViewControllerDelegate.h */,
+				71507BD41947F50300884B46 /* ADEditReminderViewControllerDelegate.h */,
 			);
 			name = Delegate;
 			path = delegate;
@@ -231,8 +231,8 @@
 			children = (
 				71B96AEE194CBDEB0042023E /* ADRemindersViewModel.h */,
 				71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */,
-				71B96AF1194D299C0042023E /* ADNewReminderViewModel.h */,
-				71B96AF2194D299C0042023E /* ADNewReminderViewModel.m */,
+				71B96AF1194D299C0042023E /* ADEditReminderViewModel.h */,
+				71B96AF2194D299C0042023E /* ADEditReminderViewModel.m */,
 				70DFE492199E5DE90008EDEF /* ADDetailReminderViewModel.h */,
 				70DFE493199E5DE90008EDEF /* ADDetailReminderViewModel.m */,
 			);
@@ -316,8 +316,6 @@
 		71D28B36192950480047F291 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				71FC67DA19298F0F0073A5CD /* ADNotification.h */,
-				71FC67DB19298F0F0073A5CD /* ADNotification.m */,
 				71D28B37192950700047F291 /* Controller */,
 				71D28B3D192954950047F291 /* View */,
 				71B96AED194CBD970042023E /* View Model */,
@@ -332,8 +330,8 @@
 		71D28B37192950700047F291 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				71018AA1192960C000660C17 /* ADNewReminderViewController.h */,
-				71018AA2192960C000660C17 /* ADNewReminderViewController.m */,
+				71018AA1192960C000660C17 /* ADEditReminderViewController.h */,
+				71018AA2192960C000660C17 /* ADEditReminderViewController.m */,
 				71E9325319401803007C96D4 /* ADRemindersTableViewController.h */,
 				71E9325419401803007C96D4 /* ADRemindersTableViewController.m */,
 				708481E8199BC90B008BF6A5 /* ADDetailReminderViewController.h */,
@@ -365,6 +363,8 @@
 				71018AA7192966E800660C17 /* ADModel.h */,
 				71018AA8192966E800660C17 /* ADModel.m */,
 				71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */,
+				71990A9D19A8153D0056C17C /* ADLocalNotification.h */,
+				71990A9E19A8153D0056C17C /* ADLocalNotification.m */,
 			);
 			name = Model;
 			path = model;
@@ -539,9 +539,9 @@
 				711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */,
 				7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */,
 				711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */,
-				71FC67DC19298F0F0073A5CD /* ADNotification.m in Sources */,
 				70DFE494199E5DE90008EDEF /* ADDetailReminderViewModel.m in Sources */,
 				7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */,
+				71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */,
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
@@ -554,8 +554,8 @@
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				711F9843198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m in Sources */,
 				71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */,
-				71018AA3192960C000660C17 /* ADNewReminderViewController.m in Sources */,
-				71B96AF3194D299C0042023E /* ADNewReminderViewModel.m in Sources */,
+				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
+				71B96AF3194D299C0042023E /* ADEditReminderViewModel.m in Sources */,
 				7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */,
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,
 				71BBA20B19A02C8C00EB6EEE /* ADLembrete.m in Sources */,

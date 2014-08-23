@@ -8,7 +8,7 @@
 
 #import "ADAppDelegate.h"
 #import "ADModel.h"
-#import "ADNotification.h"
+#import "ADLocalNotification.h"
 #import "ADStyleSheet.h"
 
 #import <Crashlytics/Crashlytics.h>
@@ -47,14 +47,14 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
+    [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
     
     NSLog(@"\n Notificações applicationDidEnterBackground = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    [[ADNotification sharedInstance] createLocalNotificationFor:self.fetchedResultsController.fetchedObjects];
+    [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
     
     NSLog(@"\n Notificações applicationDidBecomeActive = %@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
 }

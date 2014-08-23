@@ -8,6 +8,7 @@
 
 #import "ADRemindersViewModel.h"
 #import "ADModel.h"
+#import "ADLocalNotification.h"
 
 @interface ADRemindersViewModel ()
 
@@ -59,11 +60,9 @@
 
 - (void)deleteRow:(NSIndexPath *)indexPath {
     ADLembrete *lembrete = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    UILocalNotification *newNotification = [UILocalNotification defaultLocalNotificationWith:lembrete];
-    [[UIApplication sharedApplication] cancelLocalNotification:newNotification];
-
     [[ADModel sharedInstance] deleteObject:lembrete];
+    
+    [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
 }
 
 - (NSInteger)numberOfSections {

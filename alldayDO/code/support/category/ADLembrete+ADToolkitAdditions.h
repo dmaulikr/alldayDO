@@ -8,6 +8,8 @@
 
 #import "ADLembrete.h"
 
+#define LOCAL_NOTIFICATION_DOMAIN @"mobi.fabionogueira.alldayDO"
+
 @interface ADLembrete (ADToolkitAdditions)
 
 - (NSInteger)repeatInterval;

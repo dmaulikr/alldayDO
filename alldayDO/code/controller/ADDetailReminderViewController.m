@@ -7,13 +7,13 @@
 //
 
 #import "ADDetailReminderViewController.h"
-#import "ADNewReminderViewController.h"
+#import "ADEditReminderViewController.h"
 #import "PNChart.h"
 
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADNewReminderViewControllerDelegate>
+@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate>
 
 @property (nonatomic, strong) PNLineChart *lineChart;
 
@@ -121,13 +121,12 @@
 }
 
 - (void)_presentNewReminderViewController {
-    ADNewReminderViewController *newReminderViewController = [ADNewReminderViewController viewController];
+    ADEditReminderViewController *newReminderViewController = [ADEditReminderViewController viewController];
     newReminderViewController.delegate = self;
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
     newReminderViewController.actionMode = ADEditMode;
     
-    #warning Mudar essa forma de enviar o lembrete para uma melhor
     [newReminderViewController.viewModel lembreteEdit:self.viewModel.lembrete];
     
     [self presentViewController:newReminderViewController animated:YES completion:NULL];
@@ -161,9 +160,9 @@
     return [DismissingAnimator new];
 }
 
-#pragma mark - ADNewReminderViewControllerDelegate Methods -
+#pragma mark - ADEditReminderViewControllerDelegate Methods -
 
-- (void)newReminderViewController:(ADNewReminderViewController *)newReminderViewController
+- (void)newReminderViewController:(ADEditReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
 //    [self.view sendSubviewToBack:self.blurView];
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
@@ -171,7 +170,7 @@
     }];
 }
 
-- (void)newReminderViewControllerDidCancelReminder:(ADNewReminderViewController *)newReminderViewController {
+- (void)newReminderViewControllerDidCancelReminder:(ADEditReminderViewController *)newReminderViewController {
 //    [self.view sendSubviewToBack:self.blurView];
 }
 

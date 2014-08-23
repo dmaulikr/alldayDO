@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADNewReminderViewController.h"
+#import "ADEditReminderViewController.h"
 
 #import <JVFloatLabeledTextField.h>
 #import <JCRBlurView.h>
 
 #import "ADLembrete.h"
 #import "ADModel.h"
-#import "ADNotification.h"
+#import "ADLocalNotification.h"
 #import "ADIconCell.h"
 #import "ADBadgeImageView.h"
 
@@ -24,7 +24,7 @@
 
 #define NUMBER_OF_ICONS 42
 
-@interface ADNewReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
+@interface ADEditReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) JVFloatLabeledTextField *descriptionTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
@@ -70,7 +70,7 @@
 
 @end
 
-@implementation ADNewReminderViewController
+@implementation ADEditReminderViewController
 
 #pragma mark - UIViewController Methods -
 
@@ -267,9 +267,9 @@
     return _dismissKeyboardGesture;
 }
 
-- (ADNewReminderViewModel *)viewModel {
+- (ADEditReminderViewModel *)viewModel {
     if (!_viewModel) {
-        _viewModel = [[ADNewReminderViewModel alloc] init];
+        _viewModel = [[ADEditReminderViewModel alloc] init];
     }
     return _viewModel;
 }
@@ -354,28 +354,28 @@
 }
 
 - (void)_editReminderMode {
-    self.descriptionTextField.text = self.viewModel.descricao;
-    self.periodoTextField.text = [self.viewModel textForCycleType:self.viewModel.periodo.integerValue];
+    self.descriptionTextField.text = self.viewModel.descricaoEdit;
+    self.periodoTextField.text = [self.viewModel textForCycleType:self.viewModel.periodoEdit.integerValue];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterFullStyle];
-    self.dataTextField.text = [formatter stringFromDate:self.viewModel.dataInicial];
+    self.dataTextField.text = [formatter stringFromDate:self.viewModel.dataInicialEdit];
     
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:@"hh"];
-    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"mm"];
-    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.data]];
+    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
     
     self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
-    self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagem] tintedImageWithColor:[UIColor whiteColor]];
+    self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagemEdit] tintedImageWithColor:[UIColor whiteColor]];
 }
 
 - (void)_removeGestureRecognizer {

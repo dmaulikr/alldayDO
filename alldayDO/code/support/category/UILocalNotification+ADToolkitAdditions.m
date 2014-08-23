@@ -9,25 +9,7 @@
 #import "UILocalNotification+ADToolkitAdditions.h"
 #import "ADLembrete+ADToolkitAdditions.h"
 
-#define ALERT_BODY @"Você lembrou de %@?"
-
 @implementation UILocalNotification (ADToolkitAdditions)
-
-+ (instancetype)defaultLocalNotificationWith:(ADLembrete *)lembrete {
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = lembrete.data;
-    localNotification.repeatInterval = [lembrete repeatInterval];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.alertAction = @"concluir a tarefa";
-    localNotification.alertBody = [NSString stringWithFormat:ALERT_BODY, lembrete.descricao];
-    localNotification.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
-    localNotification.timeZone = [NSTimeZone localTimeZone];
-    
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:lembrete.descricao forKey:LOCAL_NOTIFICATION_DOMAIN];
-    localNotification.userInfo = infoDict;
-
-    return localNotification;
-}
 
 // Código Copiado do link - http://stackoverflow.com/questions/20926952/detect-next-uilocalnotification-that-will-fire
 
