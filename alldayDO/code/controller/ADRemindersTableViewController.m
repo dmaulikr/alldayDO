@@ -93,9 +93,7 @@
     
     [self _initStyle];
     [self _addSubView];
-    
-    [self _reloadData];
-    
+        
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
                                                  name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
@@ -196,7 +194,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
+    ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
  
     [cell.badgeImageView centerYWith:cell.timelineContentView];
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;

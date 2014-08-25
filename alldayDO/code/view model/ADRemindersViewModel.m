@@ -13,10 +13,12 @@
 @interface ADRemindersViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembrete;
+@property (nonatomic, readonly) NSArray *lembretes;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (NSArray *)_sortReminders:(NSArray *)reminders;
+
 
 @end
 
@@ -36,6 +38,10 @@
     }
     
     return _fetchedResultsController;
+}
+
+- (NSArray *)lembretes {
+    return [self.fetchedResultsController fetchedObjects];
 }
 
 - (NSString *)descricao {
@@ -75,8 +81,7 @@
 }
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *remindersSorted = [self _sortReminders:[self.fetchedResultsController fetchedObjects]];
-    self.lembrete = [remindersSorted objectAtIndex:indexPath.row];
+    self.lembrete = [[self _sortReminders:self.lembretes] objectAtIndex:indexPath.row];
 }
 
 - (void)executeFetchRequest {
@@ -97,8 +102,7 @@
 - (ADLembrete *)lembreteWithDescricao:(NSString *)descricao {
     ADLembrete *lembreteWithDescricao = nil;
     
-    NSArray *reminders = [self.fetchedResultsController fetchedObjects];
-    for (ADLembrete *lembrete in reminders) {
+    for (ADLembrete *lembrete in self.lembretes) {
         if ([lembrete.descricao isEqualToString:descricao]) {
             lembreteWithDescricao = lembrete;
             break;
@@ -111,7 +115,7 @@
 - (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao {
     NSIndexPath *indexPath = nil;
     
-    NSArray *remindersSorted = [self _sortReminders:[self.fetchedResultsController fetchedObjects]];
+    NSArray *remindersSorted = [self _sortReminders:self.lembretes];
     for (ADLembrete *lembrete in remindersSorted) {
         if ([lembrete.descricao isEqualToString:descricao]) {
             indexPath = [NSIndexPath indexPathForRow:[remindersSorted indexOfObject:lembrete] inSection:0];
