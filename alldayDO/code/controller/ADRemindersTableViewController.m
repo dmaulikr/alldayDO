@@ -95,12 +95,6 @@
     [self _addSubView];
     
     [self _reloadData];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    [self _reloadData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
@@ -113,8 +107,10 @@
                                                object:NULL];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self _reloadData];
 }
 
 #pragma mark - Private Methods -
