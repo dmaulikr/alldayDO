@@ -180,7 +180,7 @@
     [self.view bringSubviewToFront:self.blurView];
     
     self.blurView.alpha = 0.0f;
-    [UIView animateWithDuration:0.3f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         self.blurView.alpha = 1.0f;
     }];
 }
