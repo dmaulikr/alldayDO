@@ -94,7 +94,7 @@
 - (void)_animationToPortraitRotationChartView {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    [UIView animateWithDuration:0.1f animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         self.lineChart.frame = self.chartContentView.frame;
         [self _updateChart];
     }];
