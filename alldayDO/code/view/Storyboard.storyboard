@@ -32,14 +32,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="6" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
                                 <rect key="frame" x="0.0" y="132" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="80" id="6hs-ir-LQe" customClass="ADReminderCell">
-                                        <rect key="frame" x="0.0" y="6" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -64,7 +64,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-2g-0hC" userLabel="borderTimelineContentView">
-                                                    <rect key="frame" x="89" y="4" width="222" height="74"/>
+                                                    <rect key="frame" x="89" y="5" width="222" height="74"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.63921568627450975" green="0.70196078431372544" blue="0.72549019607843135" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -73,7 +73,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nym-vk-oar" userLabel="timelineContentView">
-                                                    <rect key="frame" x="90" y="5" width="220" height="72"/>
+                                                    <rect key="frame" x="90" y="6" width="220" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-mi-Zoo">
@@ -107,7 +107,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Próximo lembrete em 7 horas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-Cs-4fK">
-                                                    <rect key="frame" x="100" y="35" width="200" height="22"/>
+                                                    <rect key="frame" x="100" y="25" width="200" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.47450980390000003" green="0.52549019610000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,7 +123,7 @@
                                                 <constraint firstItem="eW6-et-pnZ" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" id="fUs-gc-fEv"/>
                                                 <constraint firstItem="xKA-Fd-xEK" firstAttribute="leading" secondItem="4eW-PI-vCW" secondAttribute="leading" constant="32" id="hRu-gi-VsF"/>
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerX" secondItem="nym-vk-oar" secondAttribute="centerX" id="ihM-SY-ufT"/>
-                                                <constraint firstItem="nym-vk-oar" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="5" id="mU9-Sa-CJA"/>
+                                                <constraint firstItem="nym-vk-oar" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="6" id="mU9-Sa-CJA"/>
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerY" secondItem="nym-vk-oar" secondAttribute="centerY" id="sCx-xF-gqn"/>
                                             </constraints>
                                         </tableViewCellContentView>

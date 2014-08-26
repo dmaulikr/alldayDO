@@ -152,10 +152,10 @@
     newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
     newReminderViewController.actionMode = ADAddMode;
-
-//    [self _showBlurViewWithAnimation];
     
-    [self presentViewController:newReminderViewController animated:YES completion:NULL];
+    [self presentViewController:newReminderViewController animated:YES completion:^{
+        [self _showBlurViewWithAnimation];
+    }];
 }
 
 - (void)_refreshTableView {
@@ -180,7 +180,7 @@
     [self.view bringSubviewToFront:self.blurView];
     
     self.blurView.alpha = 0.0f;
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         self.blurView.alpha = 1.0f;
     }];
 }
@@ -220,6 +220,7 @@
     [self.viewModel executeFetchRequest];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
 #pragma mark - IBOutlet Methods -
 
 - (IBAction)newReminderTouched:(id)sender {
@@ -234,6 +235,7 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    [self.view sendSubviewToBack:self.blurView];
     return [DismissingAnimator new];
 }
 
@@ -241,7 +243,6 @@
 
 - (void)newReminderViewController:(ADEditReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
-    [self.view sendSubviewToBack:self.blurView];
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         [self.viewModel executeFetchRequest];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
@@ -249,7 +250,6 @@
 }
 
 - (void)newReminderViewControllerDidCancelReminder:(ADEditReminderViewController *)newReminderViewController {
-        [self.view sendSubviewToBack:self.blurView];
 }
 
 #pragma mark - UIAlertViewDelegate Methods -

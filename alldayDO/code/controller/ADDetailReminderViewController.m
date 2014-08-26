@@ -17,6 +17,8 @@
 
 @interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate>
 
+@property (nonatomic, strong) UIView *blurView;
+
 @property (nonatomic, strong) PNLineChart *lineChart;
 
 - (void)_animationToPortraitRotationChartView;
@@ -24,6 +26,7 @@
 - (void)_updateInterface;
 - (void)_updateChart;
 - (void)_presentNewReminderViewController;
+- (void)_showBlurViewWithAnimation;
 
 //- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
 
@@ -36,6 +39,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.chartContentView addSubview:self.lineChart];
+    
+    [self.view addSubview:self.blurView];
+    [self.view sendSubviewToBack:self.blurView];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(willRotateToInterfaceOrientation:)
@@ -58,6 +64,15 @@
         _viewModel = [[ADDetailReminderViewModel alloc] init];
     }
     return _viewModel;
+}
+
+- (UIView *)blurView {
+    if (!_blurView) {
+        _blurView = [UIView viewWithFrame:self.view.frame];
+        _blurView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.300];
+    }
+    
+    return _blurView;
 }
 
 - (PNLineChart *)lineChart {
@@ -137,7 +152,18 @@
     
     [newReminderViewController.viewModel lembreteEdit:self.viewModel.lembrete];
     
-    [self presentViewController:newReminderViewController animated:YES completion:NULL];
+    [self presentViewController:newReminderViewController animated:YES completion:^{
+        [self _showBlurViewWithAnimation];
+    }];
+}
+
+- (void)_showBlurViewWithAnimation {
+    [self.view bringSubviewToFront:self.blurView];
+    
+    self.blurView.alpha = 0.0f;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.blurView.alpha = 1.0f;
+    }];
 }
 
 #pragma mark - IBAction Methods -
@@ -165,6 +191,7 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    [self.view sendSubviewToBack:self.blurView];
     return [DismissingAnimator new];
 }
 
@@ -172,14 +199,12 @@
 
 - (void)newReminderViewController:(ADEditReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
-//    [self.view sendSubviewToBack:self.blurView];
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         self.title = reminder.descricao;
     }];
 }
 
 - (void)newReminderViewControllerDidCancelReminder:(ADEditReminderViewController *)newReminderViewController {
-//    [self.view sendSubviewToBack:self.blurView];
 }
 
 #pragma mark - UIInterfaceOrientation Methods
