@@ -37,7 +37,7 @@
         _labels              = [NSMutableArray array];
         _bars                = [NSMutableArray array];
         _xLabelSkip          = 1;
-        _yLabelSum           = 4;
+        _yLabelSum           = 0;
         _labelMarginTop      = 0;
         _chartMargin         = 15.0;
         _barRadius           = 2.0;

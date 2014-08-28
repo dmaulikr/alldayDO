@@ -11,6 +11,8 @@
 
 @interface ADReminderCell ()
 
+@property (nonatomic) BOOL initialized;
+
 - (void)_initialize;
 
 @end
@@ -60,6 +62,41 @@
     [self.badgeImageView setX:7.f];
     [self.badgeImageView.badgeIconImageView setW:22.f andH:22.f];
     [self.badgeImageView.badgeIconImageView centerWith:self.badgeImageView];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    if (!self.initialized) {
+        self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
+        [self.barChart setX:9.f andY:3.f];
+        
+        self.initialized = YES;
+    }
+}
+
+#pragma mark - Public Methods - 
+
+- (void)initBarChartAlreadyCreated {
+    self.initialized = NO;
+    [self.barChart removeFromSuperview];
+    
+    CGRect frame = CGRectMake(0, 0, self.barChartContentView.frame.size.height, self.barChartContentView.frame.size.width);
+    self.barChart = [[PNBarChart alloc] initWithFrame:frame];
+    
+    self.barChart.chartMargin = 0.f;
+    self.barChart.labelMarginTop = 0.f;
+    
+    self.barChart.yMaxValue = 7;
+    self.barChart.yChartLabelWidth = 0.f;
+    
+    self.barChart.barRadius = 3.f;
+    
+    self.barChart.showLabel = NO;
+    self.barChart.showChartBorder = NO;
+    self.barChart.backgroundColor = [UIColor clearColor];
+    
+    [self.barChartContentView addSubview:self.barChart];
 }
 
 @end

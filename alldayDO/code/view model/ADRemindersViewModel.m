@@ -48,6 +48,10 @@
     return [UIImage imageWithData:self.lembrete.imagem];
 }
 
+- (NSNumber *)seguidos {
+    return self.lembrete.seguidos;
+}
+
 #pragma mark - Private Methods -
 
 - (NSArray *)_sortReminders:(NSArray *)reminders {

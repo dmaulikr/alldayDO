@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *descricao;
 @property (nonatomic, readonly) NSString *periodo;
 @property (nonatomic, readonly) UIImage *imagem;
+@property (nonatomic, readonly) NSNumber *seguidos;
 
 - (void)deleteRow:(NSIndexPath *)indexPath;
 

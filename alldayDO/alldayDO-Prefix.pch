@@ -14,7 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
-    #import <MALazykit/MALazykit.h>
+    #import "MALazykit.h"
     #import <uiview-frame-helpers/UIView+CBFrameHelpers.h>
     #import <SSToolkit/SSToolkit.h>
     #import "PDToolkitAdditions.h"

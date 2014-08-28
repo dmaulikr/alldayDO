@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ADBadgeImageView.h"
 
+#import "PNChart.h"
+
 @interface ADReminderCell : UITableViewCell
 
 @property (nonatomic, strong) ADBadgeImageView *badgeImageView;
@@ -23,4 +25,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *nomeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *nextReminderLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *barChartContentView;
+
+@property (nonatomic, strong) PNBarChart *barChart;
+
+- (void)initBarChartAlreadyCreated;
+
 @end

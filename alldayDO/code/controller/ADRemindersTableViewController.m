@@ -20,6 +20,8 @@
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
+#import "PNChart.h"
+
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
 @interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate>
@@ -32,9 +34,11 @@
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
-- (void)_addSubView;
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification;
 - (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification;
+
+- (void)_addSubView;
+- (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
 - (void)_refreshTableView;
@@ -142,6 +146,38 @@
     [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:self];
 }
 
+- (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos {
+    UIColor *barColor = nil;
+    switch ([seguidos intValue]) {
+        case 1:
+            barColor = PNRed;
+            break;
+        case 2:
+            barColor = PNLightBlue;
+            break;
+        case 3:
+            barColor = PNBlue;
+            break;
+        case 4:
+            barColor = PNYellow;
+            break;
+        case 5:
+            barColor = PNFreshGreen;
+            break;
+        case 6:
+            barColor = PNFreshGreen;
+            break;
+        case 7:
+            barColor = PNGreen;
+            break;
+        default:
+            barColor = PNFreshGreen;
+            break;
+    }
+    
+    return barColor;
+}
+
 - (void)_initStyle {
     [self.tableView setBackgroundColor:[UIColor sam_colorWithHex:@"#EFF2F5"]];
 }
@@ -211,6 +247,11 @@
     cell.nomeLabel.text = self.viewModel.descricao;
     cell.nextReminderLabel.text = [NSString stringWithFormat:@"%@", [self.viewModel nextReminderFormated]];
     cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
+    
+    [cell initBarChartAlreadyCreated];
+    cell.barChart.strokeColor = [self _colorForNumberOfSeguidos:self.viewModel.seguidos];
+    cell.barChart.yValues = @[self.viewModel.seguidos];
+    [cell.barChart strokeChart];
     
     return cell;
 }
