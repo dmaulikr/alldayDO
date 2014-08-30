@@ -15,7 +15,7 @@
 
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 
-@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate>
+@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, PNChartDelegate>
 
 @property (nonatomic, strong) UIView *blurView;
 
@@ -78,6 +78,7 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
+        _lineChart.delegate = self;
         
         #warning GAMBIARRA SINISTRA 
         if (IS_IPHONE5) {
@@ -219,5 +220,20 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
 //}
+
+
+#pragma mark - PNChartDelegate Methods -
+
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {
+    
+}
+
+- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex {
+    
+}
+
+- (void)userClickedOnBarCharIndex:(NSInteger)barIndex {
+    
+}
 
 @end
