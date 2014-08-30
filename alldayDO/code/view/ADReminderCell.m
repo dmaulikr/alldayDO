@@ -59,7 +59,6 @@
 
 - (void)_initialize {
     [self addSubview:self.badgeImageView];
-    [self.badgeImageView setX:7.f];
     [self.badgeImageView.badgeIconImageView setW:22.f andH:22.f];
     [self.badgeImageView.badgeIconImageView centerWith:self.badgeImageView];
 }
@@ -70,6 +69,11 @@
     if (!self.initialized) {
         self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
         [self.barChart setX:9.f andY:3.f];
+        
+        [self.badgeImageView setX:(self.borderTimelineContentView.x - self.badgeImageView.width) / 2.f];
+        [self.badgeImageView centerYWith:self];
+        [self.lineTopView centerXWith:self.badgeImageView];
+        [self.lineBottomView centerXWith:self.badgeImageView];
         
         self.initialized = YES;
     }

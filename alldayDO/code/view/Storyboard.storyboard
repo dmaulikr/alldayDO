@@ -45,23 +45,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
-                                                    <rect key="frame" x="32" y="60" width="1" height="20"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
+                                                    <rect key="frame" x="44" y="60" width="1" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="1" id="B6T-RK-8gS"/>
-                                                        <constraint firstAttribute="height" constant="20" id="pSa-kn-c0i"/>
-                                                    </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
-                                                    <rect key="frame" x="32" y="0.0" width="1" height="40"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
+                                                    <rect key="frame" x="44" y="0.0" width="1" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="QsN-Wk-un5"/>
-                                                        <constraint firstAttribute="width" constant="1" id="hLc-pa-u2x"/>
-                                                    </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-2g-0hC" userLabel="borderTimelineContentView">
                                                     <rect key="frame" x="89" y="5" width="222" height="74"/>
@@ -112,13 +104,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="xKA-Fd-xEK" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="60" id="00R-Qa-OQc"/>
-                                                <constraint firstItem="nym-vk-oar" firstAttribute="leading" secondItem="xKA-Fd-xEK" secondAttribute="trailing" constant="57" id="Lcy-tr-zoX"/>
-                                                <constraint firstItem="eW6-et-pnZ" firstAttribute="leading" secondItem="xKA-Fd-xEK" secondAttribute="leading" id="aGP-k7-nJQ"/>
-                                                <constraint firstItem="eW6-et-pnZ" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" id="fUs-gc-fEv"/>
-                                                <constraint firstItem="xKA-Fd-xEK" firstAttribute="leading" secondItem="4eW-PI-vCW" secondAttribute="leading" constant="32" id="hRu-gi-VsF"/>
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerX" secondItem="nym-vk-oar" secondAttribute="centerX" id="ihM-SY-ufT"/>
                                                 <constraint firstItem="nym-vk-oar" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="6" id="mU9-Sa-CJA"/>
+                                                <constraint firstItem="nym-vk-oar" firstAttribute="leading" secondItem="4eW-PI-vCW" secondAttribute="leading" constant="90" id="rjl-5R-1ab"/>
                                                 <constraint firstItem="NOh-2g-0hC" firstAttribute="centerY" secondItem="nym-vk-oar" secondAttribute="centerY" id="sCx-xF-gqn"/>
                                             </constraints>
                                         </tableViewCellContentView>
