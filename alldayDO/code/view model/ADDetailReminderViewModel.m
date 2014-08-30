@@ -53,7 +53,9 @@
 
     NSMutableArray *lembretesConfirmados = [NSMutableArray array];
     for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados.allObjects) {
-        [lembretesConfirmados addObject:lembreteConfirmado.data];
+        if ([lembreteConfirmado.data isCurrentMonth]) {
+            [lembretesConfirmados addObject:lembreteConfirmado.data];
+        }
     }
 
     return [lembretesConfirmados sortedArrayUsingDescriptors:descriptors];
@@ -87,7 +89,6 @@
             self.lembrete.seguidos = @1;
         }
     }
-    
     
     [[ADModel sharedInstance] saveChanges];
 }
@@ -166,7 +167,9 @@
 - (NSArray *)chartDataXLabels {
     NSMutableArray *datasCalendarioLabels = [NSMutableArray array];
     for (NSDate *dataConfirmada in self.calendario) {
-        [datasCalendarioLabels addObject:[NSString stringWithFormat:@"%ld", (long)dataConfirmada.day]];
+        if ([dataConfirmada isCurrentMonth] || self.calendario.count == 7) {
+            [datasCalendarioLabels addObject:[NSString stringWithFormat:@"%ld", (long)dataConfirmada.day]];
+        }
     }
     
     return datasCalendarioLabels;
