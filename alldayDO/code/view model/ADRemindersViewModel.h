@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) UIImage *imagem;
 @property (nonatomic, readonly) NSNumber *seguidos;
 
+@property (nonatomic, readonly) NSMutableArray *allReminders;
 @property (nonatomic, readonly) NSMutableArray *doneReminders;
 @property (nonatomic, readonly) NSMutableArray *undoneReminders;
 
@@ -27,7 +28,9 @@
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath;
-- (void)executeFetchRequest;
+- (void)executeFetchRequestForAll;
+- (void)executeFetchRequestForDoneReminders;
+- (void)executeFetchRequestForUndoneReminders;
 
 - (NSString *)nextReminderFormated;
 

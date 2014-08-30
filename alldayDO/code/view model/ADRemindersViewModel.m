@@ -13,7 +13,8 @@
 @interface ADRemindersViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembrete;
-@property (nonatomic, strong) NSArray *lembretesSorted;
+@property (nonatomic, strong) NSArray *lembretes;
+@property (nonatomic, strong) NSMutableArray *lembretesTodos;
 @property (nonatomic, strong) NSMutableArray *lembretesCompletados;
 @property (nonatomic, strong) NSMutableArray *lembretesNaoCompletados;
 
@@ -27,6 +28,13 @@
 @implementation ADRemindersViewModel
 
 #pragma mark - Getter Methods -
+
+- (NSMutableArray *)lembretesTodos {
+    if (!_lembretesTodos) {
+        _lembretesTodos = [NSMutableArray array];
+    }
+    return _lembretesTodos;
+}
 
 - (NSMutableArray *)lembretesCompletados {
     if (!_lembretesCompletados) {
@@ -68,6 +76,10 @@
     return self.lembrete.seguidos;
 }
 
+- (NSArray *)allReminders {
+    return self.lembretesTodos;
+}
+
 - (NSArray *)doneReminders {
     return self.lembretesCompletados;
 }
@@ -79,10 +91,7 @@
 #pragma mark - Private Methods -
 
 - (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados {
-    self.lembretesCompletados = nil;
-    self.lembretesNaoCompletados = nil;
-    
-    for (ADLembrete *lembrete in self.lembretesSorted) {
+    for (ADLembrete *lembrete in self.lembretes) {
         BOOL DoneReminder = NO;
         
         for (ADLembreteConfirmado *lembreteConfirmado in lembrete.lembretesConfirmados) {
@@ -109,9 +118,12 @@
 #pragma mark - Public Methods -
 
 - (void)deleteRow:(NSIndexPath *)indexPath {
-    ADLembrete *lembrete = [self.lembretesSorted objectAtIndex:indexPath.row];
-    [[ADModel sharedInstance] deleteObject:lembrete];
+    ADLembrete *lembrete = [self.lembretes objectAtIndex:indexPath.row];
+    [self.lembretesTodos removeObject:lembrete];
+    [self.lembretesCompletados removeObject:lembrete];
+    [self.lembretesNaoCompletados removeObject:lembrete];
     
+    [[ADModel sharedInstance] deleteObject:lembrete];
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
 }
 
@@ -120,18 +132,32 @@
 }
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
-    return sectionInfo.numberOfObjects;
+    return self.lembretes.count;
 }
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath {
-    self.lembrete = [self.lembretesSorted objectAtIndex:indexPath.row];
+    self.lembrete = [self.lembretes objectAtIndex:indexPath.row];
 }
 
-- (void)executeFetchRequest {
+- (void)executeFetchRequestForAll {
+    self.lembretes = nil;
+    self.lembretesTodos = nil;
+    self.lembretesCompletados = nil;
+    self.lembretesNaoCompletados = nil;
+    
     [self.fetchedResultsController performFetch:nil];
-    self.lembretesSorted = [self _sortReminders:[self.fetchedResultsController fetchedObjects]];
+    [self.lembretesTodos addObjectsFromArray:[self _sortReminders:[self.fetchedResultsController fetchedObjects]]];
+     self.lembretes = self.lembretesTodos;
+    
     [self _fetchResultsForLembretesConfirmadosAndNaoConfirmados];
+}
+
+- (void)executeFetchRequestForDoneReminders {
+    self.lembretes = self.lembretesCompletados;
+}
+
+- (void)executeFetchRequestForUndoneReminders {
+    self.lembretes = self.lembretesNaoCompletados;
 }
 
 - (NSString *)nextReminderFormated {
@@ -148,7 +174,7 @@
 - (ADLembrete *)lembreteWithDescricao:(NSString *)descricao {
     ADLembrete *lembreteWithDescricao = nil;
     
-    for (ADLembrete *lembrete in self.lembretesSorted) {
+    for (ADLembrete *lembrete in self.lembretes) {
         if ([lembrete.descricao isEqualToString:descricao]) {
             lembreteWithDescricao = lembrete;
             break;
@@ -161,9 +187,9 @@
 - (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao {
     NSIndexPath *indexPath = nil;
     
-    for (ADLembrete *lembrete in self.lembretesSorted) {
+    for (ADLembrete *lembrete in self.lembretes) {
         if ([lembrete.descricao isEqualToString:descricao]) {
-            indexPath = [NSIndexPath indexPathForRow:[self.lembretesSorted indexOfObject:lembrete] inSection:0];
+            indexPath = [NSIndexPath indexPathForRow:[self.lembretes indexOfObject:lembrete] inSection:0];
             break;
         }
     }

@@ -163,18 +163,18 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon_check" translatesAutoresizingMaskIntoConstraints="NO" id="adh-DW-C7m">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon_check" translatesAutoresizingMaskIntoConstraints="NO" id="adh-DW-C7m">
                                         <rect key="frame" x="115" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_all" translatesAutoresizingMaskIntoConstraints="NO" id="8Q7-1S-kuG">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_all" translatesAutoresizingMaskIntoConstraints="NO" id="8Q7-1S-kuG">
                                         <rect key="frame" x="5" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="ud8-zv-9yO"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_undone" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-aL-8Ml">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_undone" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-aL-8Ml">
                                         <rect key="frame" x="225" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -272,9 +272,9 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="doneReminders" destination="QXY-6o-cuj" id="O9g-vE-VpT"/>
-                        <outlet property="hexacon1" destination="8Q7-1S-kuG" id="tsL-yO-Hgh"/>
-                        <outlet property="hexacon2" destination="adh-DW-C7m" id="0fb-u6-VV9"/>
-                        <outlet property="hexacon3" destination="xyt-aL-8Ml" id="gVn-Ue-iaX"/>
+                        <outlet property="hexaconAll" destination="8Q7-1S-kuG" id="qkM-UW-mTv"/>
+                        <outlet property="hexaconDoneReminders" destination="adh-DW-C7m" id="lGr-MA-9PW"/>
+                        <outlet property="hexaconUndoneReminders" destination="xyt-aL-8Ml" id="vr2-mV-HHi"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
                         <outlet property="totalRemindersLabel" destination="1eR-HI-qmt" id="7FE-HQ-bIu"/>
                         <outlet property="undoneReminders" destination="Tek-XX-n2X" id="zmx-0q-JWE"/>

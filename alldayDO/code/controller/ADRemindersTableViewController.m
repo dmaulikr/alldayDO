@@ -38,6 +38,9 @@
 - (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification;
 
 - (void)_addSubView;
+- (void)_addGestureRecognizer;
+- (void)_addNotificationCenter;
+
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
@@ -45,6 +48,10 @@
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_showBlurViewWithAnimation;
+
+- (void)_fetchRequestForAll;
+- (void)_fetchRequestForDoneReminders;
+- (void)_fetchRequestForUndoneReminders;
 
 @end
 
@@ -91,22 +98,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _initStyle];
+    [self _addSubView];
+    [self _addGestureRecognizer];
+    [self _addNotificationCenter];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    [self _initStyle];
-    [self _addSubView];
-        
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
-                                               object:NULL];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
-                                               object:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -121,6 +119,24 @@
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
     [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)_addGestureRecognizer {
+    [self.hexaconAll addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForAll)]];
+    [self.hexaconDoneReminders addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForDoneReminders)]];
+    [self.hexaconUndoneReminders addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForUndoneReminders)]];
+}
+
+- (void)_addNotificationCenter {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
+                                               object:NULL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
+                                               object:NULL];
 }
 
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification {
@@ -201,7 +217,7 @@
 }
 
 - (void)_reloadData {
-    [self.viewModel executeFetchRequest];
+    [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadData];
 }
 
@@ -221,11 +237,26 @@
     }];
 }
 
+- (void)_fetchRequestForAll {
+    [self.viewModel executeFetchRequestForAll];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+- (void)_fetchRequestForDoneReminders {
+    [self.viewModel executeFetchRequestForDoneReminders];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)_fetchRequestForUndoneReminders {
+    [self.viewModel executeFetchRequestForUndoneReminders];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
+}
+
 #pragma mark - UITableViewDataSource Methods -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger numberOfReminders = [self.viewModel numberOfItemsInSection:section];
-    self.totalRemindersLabel.text = [NSString stringWithFormat:@"%ld", (long)numberOfReminders];
+    self.totalRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.allReminders.count];
     self.doneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
     self.undoneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
     return numberOfReminders;
@@ -259,9 +290,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView beginUpdates];
     [self.viewModel deleteRow:indexPath];
-    [self.viewModel executeFetchRequest];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.viewModel executeFetchRequestForAll];
+    [self.tableView endUpdates];
 }
 
 #pragma mark - IBOutlet Methods -
@@ -287,7 +320,7 @@
 - (void)newReminderViewController:(ADEditReminderViewController *)newReminderViewController
                   didSaveReminder:(ADLembrete *)reminder {
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
-        [self.viewModel executeFetchRequest];
+        [self.viewModel executeFetchRequestForAll];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
     }];
 }
