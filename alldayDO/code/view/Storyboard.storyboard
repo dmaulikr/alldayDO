@@ -151,37 +151,72 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hexacon_check" translatesAutoresizingMaskIntoConstraints="NO" id="adh-DW-C7m">
-                                        <rect key="frame" x="115" y="6" width="54" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_all" translatesAutoresizingMaskIntoConstraints="NO" id="8Q7-1S-kuG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clV-yg-dbR" userLabel="hexacon_all_button">
                                         <rect key="frame" x="5" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="ud8-zv-9yO"/>
+                                            <constraint firstAttribute="width" constant="54" id="2eo-8q-jua"/>
+                                            <constraint firstAttribute="height" constant="54" id="uDf-IH-G1x"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_undone" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-aL-8Ml">
+                                        <state key="normal" title="Button" image="Hexacon_all">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="Hexacon_all_selected"/>
+                                        <state key="highlighted" image="Hexacon_all_selected"/>
+                                        <connections>
+                                            <action selector="hexaconAllTouched:" destination="3YN-mW-c4m" eventType="touchUpInside" id="P2u-Kd-7Zc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfA-Fn-FtX" userLabel="hexacon_done_button">
+                                        <rect key="frame" x="115" y="6" width="54" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="Xsu-fU-KA5"/>
+                                            <constraint firstAttribute="width" constant="54" id="z6W-z7-vnm"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Hexacon_done">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="Hexacon_done_selected"/>
+                                        <state key="highlighted" image="Hexacon_done_selected"/>
+                                        <connections>
+                                            <action selector="hexaconDoneTouched:" destination="3YN-mW-c4m" eventType="touchUpInside" id="hE6-vB-vuj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evj-qa-8Nd" userLabel="hexa_undone_button">
                                         <rect key="frame" x="225" y="6" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="Rpa-q2-n62"/>
+                                            <constraint firstAttribute="width" constant="54" id="3EU-zT-Cpy"/>
+                                            <constraint firstAttribute="height" constant="54" id="MjW-pZ-4a3"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" title="Button" image="Hexacon_undone">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="Hexacon_undone_selected"/>
+                                        <state key="highlighted" image="Hexacon_undone_selected"/>
+                                        <connections>
+                                            <action selector="hexaconUndoneTouched:" destination="3YN-mW-c4m" eventType="touchUpInside" id="3NC-Yo-Z6S"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-HI-qmt">
                                         <rect key="frame" x="59" y="14" width="39" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="C76-H0-HkB"/>
+                                            <constraint firstAttribute="height" constant="38" id="daM-Nn-A6Z"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="rc0-ms-BnF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXY-6o-cuj">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXY-6o-cuj">
                                         <rect key="frame" x="169" y="14" width="36" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="Lrx-j9-QoH"/>
+                                            <constraint firstAttribute="height" constant="38" id="fBP-1y-3hW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -190,7 +225,8 @@
                                         <rect key="frame" x="279" y="14" width="36" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="XCP-Pq-ctC"/>
+                                            <constraint firstAttribute="height" constant="38" id="7r4-qw-gIt"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="t5d-MP-df5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,16 +235,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.53725490196078429" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="8Q7-1S-kuG" firstAttribute="centerY" secondItem="1eR-HI-qmt" secondAttribute="centerY" id="4Ln-Ia-eiX"/>
-                                    <constraint firstItem="xyt-aL-8Ml" firstAttribute="leading" secondItem="8Q7-1S-kuG" secondAttribute="trailing" constant="166" id="AoE-fA-IFA"/>
-                                    <constraint firstItem="8Q7-1S-kuG" firstAttribute="leading" secondItem="FQn-EG-PKv" secondAttribute="leading" constant="5" id="BBc-v2-TGb"/>
+                                    <constraint firstItem="QXY-6o-cuj" firstAttribute="leading" secondItem="IfA-Fn-FtX" secondAttribute="trailing" id="34u-s9-qDy"/>
+                                    <constraint firstItem="clV-yg-dbR" firstAttribute="centerY" secondItem="IfA-Fn-FtX" secondAttribute="centerY" id="4Am-zj-wFl"/>
+                                    <constraint firstItem="evj-qa-8Nd" firstAttribute="leading" secondItem="IfA-Fn-FtX" secondAttribute="trailing" constant="56" id="6gF-iW-bwM"/>
                                     <constraint firstAttribute="height" constant="66" id="EQL-mQ-eeq"/>
-                                    <constraint firstItem="1eR-HI-qmt" firstAttribute="leading" secondItem="8Q7-1S-kuG" secondAttribute="trailing" id="Ixq-Pb-Em8"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tek-XX-n2X" secondAttribute="bottom" constant="14" id="QKa-oR-stF"/>
-                                    <constraint firstItem="Tek-XX-n2X" firstAttribute="leading" secondItem="xyt-aL-8Ml" secondAttribute="trailing" id="SCk-XZ-fJ1"/>
-                                    <constraint firstAttribute="bottom" secondItem="xyt-aL-8Ml" secondAttribute="bottom" constant="6" id="e6d-fX-5A0"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Q7-1S-kuG" secondAttribute="bottom" constant="6" id="jFg-Fo-ZUb"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tek-XX-n2X" secondAttribute="trailing" constant="5" id="pLM-Rj-A2a"/>
+                                    <constraint firstItem="1eR-HI-qmt" firstAttribute="leading" secondItem="clV-yg-dbR" secondAttribute="trailing" id="Ihm-qu-lrY"/>
+                                    <constraint firstItem="clV-yg-dbR" firstAttribute="leading" secondItem="FQn-EG-PKv" secondAttribute="leading" constant="5" id="Kb5-Tv-oD4"/>
+                                    <constraint firstItem="evj-qa-8Nd" firstAttribute="centerY" secondItem="Tek-XX-n2X" secondAttribute="centerY" id="L7i-uh-2LG"/>
+                                    <constraint firstItem="IfA-Fn-FtX" firstAttribute="leading" secondItem="clV-yg-dbR" secondAttribute="trailing" constant="56" id="ad1-ye-KFH"/>
+                                    <constraint firstItem="evj-qa-8Nd" firstAttribute="centerY" secondItem="IfA-Fn-FtX" secondAttribute="centerY" id="dYc-21-ywy"/>
+                                    <constraint firstItem="IfA-Fn-FtX" firstAttribute="centerY" secondItem="QXY-6o-cuj" secondAttribute="centerY" id="oBW-Mx-EoJ"/>
+                                    <constraint firstItem="1eR-HI-qmt" firstAttribute="centerY" secondItem="clV-yg-dbR" secondAttribute="centerY" id="xQb-Cu-MvY"/>
+                                    <constraint firstItem="Tek-XX-n2X" firstAttribute="leading" secondItem="evj-qa-8Nd" secondAttribute="trailing" id="zm4-ER-fCz"/>
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Rs-yMg">
@@ -236,11 +274,9 @@
                             <constraint firstItem="BxK-cQ-Umf" firstAttribute="leading" secondItem="FQn-EG-PKv" secondAttribute="leading" id="GS6-Ol-SKr"/>
                             <constraint firstItem="fyx-Rs-yMg" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" id="HEX-bz-CYF"/>
                             <constraint firstAttribute="trailing" secondItem="FQn-EG-PKv" secondAttribute="trailing" id="HVz-sM-LxS"/>
-                            <constraint firstItem="Tek-XX-n2X" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="14" id="HWH-iz-G70"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="Hr0-SM-LBk"/>
                             <constraint firstItem="fyx-Rs-yMg" firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="MiU-ph-j9g"/>
                             <constraint firstItem="ieF-Gz-5Sz" firstAttribute="top" secondItem="FQn-EG-PKv" secondAttribute="bottom" id="N5p-AF-TBR"/>
-                            <constraint firstItem="8Q7-1S-kuG" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="6" id="RlT-Rz-Roa"/>
                             <constraint firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="V3c-eO-oax"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="WcW-EK-f25"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="X5f-J9-HaA"/>
@@ -248,11 +284,11 @@
                             <constraint firstAttribute="trailing" secondItem="BxK-cQ-Umf" secondAttribute="trailing" id="f4e-fA-YPS"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="fLz-33-pK8"/>
                             <constraint firstItem="ieF-Gz-5Sz" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="l8A-Mn-EG2"/>
+                            <constraint firstItem="clV-yg-dbR" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="6" id="laE-cw-FqX"/>
                             <constraint firstItem="BxK-cQ-Umf" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="mHn-qj-L8f"/>
                             <constraint firstItem="BxK-cQ-Umf" firstAttribute="top" secondItem="WLG-HH-LLG" secondAttribute="top" id="o7y-Jr-Eec"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="BxK-cQ-Umf" secondAttribute="leading" id="oAd-Mc-loO"/>
                             <constraint firstAttribute="trailing" secondItem="BxK-cQ-Umf" secondAttribute="trailing" id="tKA-ga-0XV"/>
-                            <constraint firstItem="xyt-aL-8Ml" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" constant="6" id="yYt-GZ-Y59"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -260,9 +296,9 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="doneReminders" destination="QXY-6o-cuj" id="O9g-vE-VpT"/>
-                        <outlet property="hexaconAll" destination="8Q7-1S-kuG" id="qkM-UW-mTv"/>
-                        <outlet property="hexaconDoneReminders" destination="adh-DW-C7m" id="lGr-MA-9PW"/>
-                        <outlet property="hexaconUndoneReminders" destination="xyt-aL-8Ml" id="vr2-mV-HHi"/>
+                        <outlet property="hexaconAllButton" destination="clV-yg-dbR" id="m0y-PW-cU8"/>
+                        <outlet property="hexaconDoneButton" destination="IfA-Fn-FtX" id="iAf-Oa-J8D"/>
+                        <outlet property="hexaconUndoneButton" destination="evj-qa-8Nd" id="Z4f-25-9Sq"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
                         <outlet property="totalRemindersLabel" destination="1eR-HI-qmt" id="7FE-HQ-bIu"/>
                         <outlet property="undoneReminders" destination="Tek-XX-n2X" id="zmx-0q-JWE"/>
@@ -475,11 +511,31 @@
             </objects>
             <point key="canvasLocation" x="438" y="112"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jey-mZ-rdV">
+            <objects>
+                <viewController id="xXv-DF-QOh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UmZ-Qp-ea3"/>
+                        <viewControllerLayoutGuide type="bottom" id="wac-hW-kGb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfw-rQ-1CP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="en1-rY-Vap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="Hexacon_all" width="90" height="90"/>
-        <image name="Hexacon_check" width="90" height="90"/>
+        <image name="Hexacon_all_selected" width="90" height="90"/>
+        <image name="Hexacon_done" width="90" height="90"/>
+        <image name="Hexacon_done_selected" width="90" height="90"/>
         <image name="Hexacon_undone" width="90" height="90"/>
+        <image name="Hexacon_undone_selected" width="90" height="90"/>
         <image name="background_selected_button" width="1" height="1"/>
         <image name="navigation_second_color_bg" width="1" height="1"/>
     </resources>

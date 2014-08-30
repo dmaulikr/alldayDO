@@ -13,13 +13,20 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction)newReminderTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *hexaconAllButton;
+@property (weak, nonatomic) IBOutlet UIButton *hexaconDoneButton;
+@property (weak, nonatomic) IBOutlet UIButton *hexaconUndoneButton;
 
-@property (weak, nonatomic) IBOutlet UIImageView *hexaconAll;
-@property (weak, nonatomic) IBOutlet UIImageView *hexaconDoneReminders;
-@property (weak, nonatomic) IBOutlet UIImageView *hexaconUndoneReminders;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalRemindersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *doneReminders;
 @property (weak, nonatomic) IBOutlet UILabel *undoneReminders;
+
+- (IBAction)newReminderTouched:(id)sender;
+
+- (IBAction)hexaconAllTouched:(id)sender;
+- (IBAction)hexaconDoneTouched:(id)sender;
+- (IBAction)hexaconUndoneTouched:(id)sender;
+
+
 @end

@@ -38,8 +38,9 @@
 - (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification;
 
 - (void)_addSubView;
-- (void)_addGestureRecognizer;
 - (void)_addNotificationCenter;
+
+- (void)_adjustHexaconSelect:(id)sender;
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
@@ -100,7 +101,6 @@
     [super viewDidLoad];
     [self _initStyle];
     [self _addSubView];
-    [self _addGestureRecognizer];
     [self _addNotificationCenter];
     
     self.tableView.delegate = self;
@@ -115,34 +115,10 @@
 
 #pragma mark - Private Methods -
 
-- (void)_addSubView {
-    [self.view addSubview:self.blurView];
-    [self.view sendSubviewToBack:self.blurView];
-    [self.tableView addSubview:self.refreshControl];
-}
-
-- (void)_addGestureRecognizer {
-    [self.hexaconAll addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForAll)]];
-    [self.hexaconDoneReminders addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForDoneReminders)]];
-    [self.hexaconUndoneReminders addGestureRecognizer:[UITapGestureRecognizer gestureRecognizerWithTarget:self action:@selector(_fetchRequestForUndoneReminders)]];
-}
-
-- (void)_addNotificationCenter {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
-                                               object:NULL];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
-                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
-                                               object:NULL];
-}
-
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     UILocalNotification *localNotification = notification.object;
-
+    
     NSString *descricaoLembrete = [localNotification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN];
     [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
@@ -160,6 +136,39 @@
     [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
     [self performSegueWithIdentifier:DETAIL_REMINDER_NAME_SEGUE sender:self];
+}
+
+- (void)_addSubView {
+    [self.view addSubview:self.blurView];
+    [self.view sendSubviewToBack:self.blurView];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)_addNotificationCenter {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnActive:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE
+                                               object:NULL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
+                                                 name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
+                                               object:NULL];
+}
+
+- (void)_adjustHexaconSelect:(id)sender {
+    BOOL selected = NO;
+    self.hexaconAllButton.selected = selected;
+    self.hexaconDoneButton.selected = selected;
+    self.hexaconUndoneButton.selected = selected;
+    
+    if (sender == self.hexaconAllButton) {
+        self.hexaconAllButton.selected = !selected;;
+    } else if (sender == self.hexaconDoneButton) {
+        self.hexaconDoneButton.selected = !selected;
+    } else {
+        self.hexaconUndoneButton.selected = !selected;
+    }
 }
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos {
@@ -217,6 +226,7 @@
 }
 
 - (void)_reloadData {
+    [self _adjustHexaconSelect:self.hexaconAllButton];
     [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadData];
 }
@@ -301,6 +311,21 @@
 
 - (IBAction)newReminderTouched:(id)sender {
     [self _presentNewReminderViewController];
+}
+
+- (IBAction)hexaconAllTouched:(id)sender {
+    [self _adjustHexaconSelect:sender];
+    [self _fetchRequestForAll];
+}
+
+- (IBAction)hexaconDoneTouched:(id)sender {
+    [self _adjustHexaconSelect:sender];
+    [self _fetchRequestForDoneReminders];
+}
+
+- (IBAction)hexaconUndoneTouched:(id)sender {
+    [self _adjustHexaconSelect:sender];
+    [self _fetchRequestForUndoneReminders];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate Methods -
