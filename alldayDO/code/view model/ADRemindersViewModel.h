@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ADLembrete.h"
+#import "ADLembreteConfirmado.h"
 
 @interface ADRemindersViewModel : NSObject
 
@@ -15,6 +16,10 @@
 @property (nonatomic, readonly) NSString *periodo;
 @property (nonatomic, readonly) UIImage *imagem;
 @property (nonatomic, readonly) NSNumber *seguidos;
+
+@property (nonatomic, readonly) NSMutableArray *doneReminders;
+@property (nonatomic, readonly) NSMutableArray *undoneReminders;
+
 
 - (void)deleteRow:(NSIndexPath *)indexPath;
 

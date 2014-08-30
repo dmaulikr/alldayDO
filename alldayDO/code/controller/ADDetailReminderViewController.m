@@ -80,7 +80,7 @@
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
         _lineChart.delegate = self;
         
-        #warning GAMBIARRA SINISTRA 
+        // GAMBI
         if (IS_IPHONE5) {
             [_lineChart setH:_lineChart.height * 1.855];
         }

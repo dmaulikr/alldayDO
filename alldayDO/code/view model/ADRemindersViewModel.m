@@ -14,17 +14,33 @@
 
 @property (nonatomic, strong) ADLembrete *lembrete;
 @property (nonatomic, strong) NSArray *lembretesSorted;
+@property (nonatomic, strong) NSMutableArray *lembretesCompletados;
+@property (nonatomic, strong) NSMutableArray *lembretesNaoCompletados;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+- (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados;
 - (NSArray *)_sortReminders:(NSArray *)reminders;
-
 
 @end
 
 @implementation ADRemindersViewModel
 
 #pragma mark - Getter Methods -
+
+- (NSMutableArray *)lembretesCompletados {
+    if (!_lembretesCompletados) {
+        _lembretesCompletados = [NSMutableArray array];
+    }
+    return _lembretesCompletados;
+}
+
+- (NSMutableArray *)lembretesNaoCompletados {
+    if (!_lembretesNaoCompletados) {
+        _lembretesNaoCompletados = [NSMutableArray array];
+    }
+    return _lembretesNaoCompletados;
+}
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
@@ -52,7 +68,35 @@
     return self.lembrete.seguidos;
 }
 
+- (NSArray *)doneReminders {
+    return self.lembretesCompletados;
+}
+
+- (NSArray *)undoneReminders {
+    return self.lembretesNaoCompletados;
+}
+
 #pragma mark - Private Methods -
+
+- (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados {
+    self.lembretesCompletados = nil;
+    self.lembretesNaoCompletados = nil;
+    
+    for (ADLembrete *lembrete in self.lembretesSorted) {
+        BOOL DoneReminder = NO;
+        
+        for (ADLembreteConfirmado *lembreteConfirmado in lembrete.lembretesConfirmados) {
+            if ([lembreteConfirmado.data isToday]) {
+                [self.lembretesCompletados addObject:lembrete];
+                DoneReminder = YES;
+            }
+        }
+        
+        if (!DoneReminder) {
+            [self.lembretesNaoCompletados addObject:lembrete];
+        }
+    }
+}
 
 - (NSArray *)_sortReminders:(NSArray *)reminders {
     return [reminders sortedArrayUsingComparator: ^(id obj1, id obj2) {
@@ -87,6 +131,7 @@
 - (void)executeFetchRequest {
     [self.fetchedResultsController performFetch:nil];
     self.lembretesSorted = [self _sortReminders:[self.fetchedResultsController fetchedObjects]];
+    [self _fetchResultsForLembretesConfirmadosAndNaoConfirmados];
 }
 
 - (NSString *)nextReminderFormated {

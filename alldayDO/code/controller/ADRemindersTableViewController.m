@@ -226,6 +226,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger numberOfReminders = [self.viewModel numberOfItemsInSection:section];
     self.totalRemindersLabel.text = [NSString stringWithFormat:@"%ld", (long)numberOfReminders];
+    self.doneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
+    self.undoneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
     return numberOfReminders;
 }
 
