@@ -9,11 +9,11 @@
 #import "ADLocalNotification.h"
 #import "ADModel.h"
 
-#define ALERT_BODY @"Você lembrou de %@?"
-
 @interface ADLocalNotification ()
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, readonly) NSString *alert_body;
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 - (UILocalNotification *)_defaultLocalNotificationWith:(ADLembrete *)lembrete;
 
@@ -34,6 +34,27 @@
 
 
 #pragma mark - Getter Methods - 
+
+- (NSString *)alert_body {
+    NSString *alert_body = nil;
+    
+    NSArray *messages = @[
+        @"Você lembrou de %@?",
+        @"Hey, não esqueceu de %@ né?",
+        @"Tá na hora de %@!",
+        @"Passando pra lembrar que chegou a hora de %@!",
+        @"Não se esqueça de %@ heim?",
+        @"Chegou a hora de %@!",
+        @"Agora é hora de %@!",
+        @"Parem as máquinas! É hora de %@."
+    ];
+    
+    
+    int index = arc4random() % messages.count;
+    alert_body = [messages objectAtIndex:index];
+    
+    return alert_body;
+}
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
@@ -57,7 +78,7 @@
     localNotification.repeatInterval = [lembrete repeatInterval];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.alertAction = @"concluir a tarefa";
-    localNotification.alertBody = [NSString stringWithFormat:ALERT_BODY, lembrete.descricao];
+    localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
     localNotification.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
     localNotification.timeZone = [NSTimeZone localTimeZone];
     
@@ -75,6 +96,7 @@
     [self.fetchedResultsController performFetch:nil];
     for (ADLembrete *lembrete in [self.fetchedResultsController fetchedObjects]) {
         UILocalNotification *localNotification = [self _defaultLocalNotificationWith:lembrete];
+        localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
 }

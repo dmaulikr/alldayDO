@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/view/ADReminderCell.m"
-            timestampString = "431077449.00871"
+            filePath = "alldayDO/code/model/ADLocalNotification.m"
+            timestampString = "431158760.816841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-layoutSubviews"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-_defaultLocalNotificationWith:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "alldayDO/code/model/ADLocalNotification.m"
+            timestampString = "431159382.320353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-scheduleAllLocalNotification"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
