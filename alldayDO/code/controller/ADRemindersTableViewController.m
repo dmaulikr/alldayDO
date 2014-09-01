@@ -29,9 +29,8 @@
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
 @property (nonatomic, strong) UIAlertView *alertView;
-
 @property (nonatomic, strong) UIView *blurView;
-
+@property (nonatomic, strong) UITextView *emptyMessage;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification;
@@ -85,6 +84,20 @@
     }
     
     return _blurView;
+}
+
+- (UITextView *)emptyMessage {
+    if (!_emptyMessage) {
+        _emptyMessage = [[UITextView alloc] initWithFrame:self.tableView.frame];
+        _emptyMessage.center = self.tableView.center;
+        _emptyMessage.backgroundColor = [UIColor clearColor];
+        _emptyMessage.editable = NO;
+        _emptyMessage.textColor = [UIColor sam_colorWithHex:@"#79868F"];
+        _emptyMessage.textAlignment = NSTextAlignmentCenter;
+        _emptyMessage.text = @"Suas atividades ficam aqui. Seus lembretes aparecem aqui e são fáceis de editar e conferir";
+        [self.tableView addSubview:_emptyMessage];
+    }
+    return _emptyMessage;
 }
 
 - (UIRefreshControl *)refreshControl {
@@ -269,6 +282,13 @@
     self.totalRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.allReminders.count];
     self.doneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
     self.undoneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
+    
+    if (numberOfReminders > 0) {
+        self.emptyMessage.hidden = YES;
+    } else {
+        self.emptyMessage.hidden = NO;
+    }
+    
     return numberOfReminders;
 }
 
