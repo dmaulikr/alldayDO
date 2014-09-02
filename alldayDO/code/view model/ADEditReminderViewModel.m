@@ -51,10 +51,10 @@ typedef enum {
 - (NSArray *)cycleType {
     if(!_cycleType){
         _cycleType = @[
-            @"Diariamente",
-            @"Semanalmente",
-            @"Mensalmente",
-            @"Anualmente"
+            NSLocalizedString(@"Diariamente", nil),
+            NSLocalizedString(@"Semanalmente", nil),
+            NSLocalizedString(@"Mensalmente", nil),
+            NSLocalizedString(@"Anualmente", nil)
         ];
     }
     return _cycleType;

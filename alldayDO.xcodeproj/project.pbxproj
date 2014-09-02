@@ -15,13 +15,15 @@
 		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		711F983D198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */; };
 		711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */; };
-		711F9843198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */; };
 		711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */; };
 		711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */; };
 		7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD621942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m */; };
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
 		7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADIconCell.m */; };
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
+		715CDCA819B5548600573981 /* NSLocale+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 715CDCA719B5548600573981 /* NSLocale+ADToolkitAdditions.m */; };
+		715CDCC319B5643500573981 /* LocalizableEnglish.strings in Resources */ = {isa = PBXBuildFile; fileRef = 715CDCC519B5643500573981 /* LocalizableEnglish.strings */; };
+		715CDCC619B5646A00573981 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 715CDCC819B5646A00573981 /* Storyboard.storyboard */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
 		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
 		71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71990A9E19A8153D0056C17C /* ADLocalNotification.m */; };
@@ -35,7 +37,6 @@
 		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
 		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
 		71D28B0819294F970047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
-		71D28B0E19294F970047F291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B0C19294F970047F291 /* InfoPlist.strings */; };
 		71D28B1019294F970047F291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B0F19294F970047F291 /* main.m */; };
 		71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		71D28B1919294F970047F291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
@@ -43,9 +44,7 @@
 		71D28B2119294F980047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
 		71D28B2219294F980047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
 		71D28B2319294F980047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
-		71D28B2B19294F980047F291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B2919294F980047F291 /* InfoPlist.strings */; };
 		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
-		71D28B3F192954BD0047F291 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B3E192954BD0047F291 /* Storyboard.storyboard */; };
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
 		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
 		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
@@ -77,8 +76,6 @@
 		711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ADToolkitAdditions.m"; sourceTree = "<group>"; };
-		711F9841198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+ADToolkitAdditions.h"; sourceTree = "<group>"; };
-		711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711F9844198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711F9847198DAB700097AA22 /* NSString+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -94,6 +91,11 @@
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		71507BD41947F50300884B46 /* ADEditReminderViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewControllerDelegate.h; sourceTree = "<group>"; };
+		715CDCA619B5548600573981 /* NSLocale+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		715CDCA719B5548600573981 /* NSLocale+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		715CDCC419B5643500573981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizableEnglish.strings; sourceTree = "<group>"; };
+		715CDCC919B5647B00573981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		715CDCCC19B5652900573981 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		7174F868193A779600DEB9D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
 		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 		71D28B0519294F970047F291 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		71D28B0719294F970047F291 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		71D28B0B19294F970047F291 /* alldayDO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDO-Info.plist"; sourceTree = "<group>"; };
-		71D28B0D19294F970047F291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71D28B0F19294F970047F291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71D28B1119294F970047F291 /* alldayDO-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO-Prefix.pch"; sourceTree = "<group>"; };
 		71D28B1619294F970047F291 /* alldayDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alldayDO.xcdatamodel; sourceTree = "<group>"; };
@@ -126,9 +127,7 @@
 		71D28B1E19294F970047F291 /* alldayDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldayDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B1F19294F970047F291 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		71D28B2819294F980047F291 /* alldayDOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDOTests-Info.plist"; sourceTree = "<group>"; };
-		71D28B2A19294F980047F291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
-		71D28B3E192954BD0047F291 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		71DD14E8197DD46C003F9059 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
 		71E18B92198C59E2007C7467 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		71E9325319401803007C96D4 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
@@ -181,6 +180,8 @@
 		71018AAB192967F300660C17 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				715CDCA619B5548600573981 /* NSLocale+ADToolkitAdditions.h */,
+				715CDCA719B5548600573981 /* NSLocale+ADToolkitAdditions.m */,
 				7130CD67194369C6009AF8D8 /* PDToolkitAdditions.h */,
 				714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */,
 				714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */,
@@ -194,12 +195,10 @@
 				711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */,
 				711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */,
 				711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */,
-				711F9841198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.h */,
 				711F9847198DAB700097AA22 /* NSString+ADToolkitAdditions.h */,
 				711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */,
 				711F9844198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.h */,
 				711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */,
-				711F9842198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m */,
 			);
 			name = Category;
 			path = category;
@@ -288,9 +287,9 @@
 			isa = PBXGroup;
 			children = (
 				71D28B0B19294F970047F291 /* alldayDO-Info.plist */,
-				71D28B0C19294F970047F291 /* InfoPlist.strings */,
 				71D28B0F19294F970047F291 /* main.m */,
 				71D28B1119294F970047F291 /* alldayDO-Prefix.pch */,
+				715CDCC519B5643500573981 /* LocalizableEnglish.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				71D28B2819294F980047F291 /* alldayDOTests-Info.plist */,
-				71D28B2919294F980047F291 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -373,13 +371,13 @@
 		71D28B3D192954950047F291 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				715CDCC819B5646A00573981 /* Storyboard.storyboard */,
 				71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */,
 				71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */,
 				7130CD741944BEE0009AF8D8 /* ADIconCell.h */,
 				7130CD751944BEE0009AF8D8 /* ADIconCell.m */,
 				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
 				71DD14E8197DD46C003F9059 /* ADReminderCell.m */,
-				71D28B3E192954BD0047F291 /* Storyboard.storyboard */,
 			);
 			name = View;
 			path = view;
@@ -450,6 +448,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				pt,
+				Base,
+				"pt-PT",
+				"en-US",
 			);
 			mainGroup = 71D28AF519294F970047F291;
 			productRefGroup = 71D28AFF19294F970047F291 /* Products */;
@@ -467,9 +469,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D28B0E19294F970047F291 /* InfoPlist.strings in Resources */,
 				71D28B1919294F970047F291 /* Images.xcassets in Resources */,
-				71D28B3F192954BD0047F291 /* Storyboard.storyboard in Resources */,
+				715CDCC319B5643500573981 /* LocalizableEnglish.strings in Resources */,
+				715CDCC619B5646A00573981 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +479,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D28B2B19294F980047F291 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +545,7 @@
 				71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */,
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
+				715CDCA819B5548600573981 /* NSLocale+ADToolkitAdditions.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
 				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,
@@ -552,7 +554,6 @@
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
-				711F9843198DA9AA0097AA22 /* NSLocale+ADToolkitAdditions.m in Sources */,
 				71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */,
 				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
 				71B96AF3194D299C0042023E /* ADEditReminderViewModel.m in Sources */,
@@ -584,20 +585,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		71D28B0C19294F970047F291 /* InfoPlist.strings */ = {
+		715CDCC519B5643500573981 /* LocalizableEnglish.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				71D28B0D19294F970047F291 /* en */,
+				715CDCC419B5643500573981 /* en */,
 			);
-			name = InfoPlist.strings;
+			name = LocalizableEnglish.strings;
 			sourceTree = "<group>";
 		};
-		71D28B2919294F980047F291 /* InfoPlist.strings */ = {
+		715CDCC819B5646A00573981 /* Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				71D28B2A19294F980047F291 /* en */,
+				715CDCC919B5647B00573981 /* Base */,
+				715CDCCC19B5652900573981 /* en */,
 			);
-			name = InfoPlist.strings;
+			name = Storyboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

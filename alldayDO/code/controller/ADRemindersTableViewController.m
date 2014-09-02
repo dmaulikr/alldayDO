@@ -68,11 +68,11 @@
 
 - (UIAlertView *)alertView {
     if (!_alertView) {
-        _alertView = [UIAlertView alertViewWithTitle:@"Não esqueça sua atividade!"
+        _alertView = [UIAlertView alertViewWithTitle:nil
                                              message:nil
                                             delegate:self
-                                   cancelButtonTitle:@"Não"
-                                   otherButtonTitles:@"Sim", nil];
+                                   cancelButtonTitle:NSLocalizedString(@"Não", nil)
+                                   otherButtonTitles:NSLocalizedString(@"Sim", nil), nil];
     }
     return _alertView;
 }
@@ -92,9 +92,16 @@
         _emptyMessage.center = self.tableView.center;
         _emptyMessage.backgroundColor = [UIColor clearColor];
         _emptyMessage.editable = NO;
+
+        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar", nil)];
+        
+        [text setAttributes:@{NSFontAttributeName: [UIFont fontWithName:nil size:24.f],
+                             NSFontAttributeName: [UIColor darkGrayColor]}
+                      range:NSMakeRange(0, 28)];
+        
+        _emptyMessage.attributedText = text;
         _emptyMessage.textColor = [UIColor sam_colorWithHex:@"#79868F"];
         _emptyMessage.textAlignment = NSTextAlignmentCenter;
-        _emptyMessage.text = @"Suas atividades ficam aqui. Seus lembretes aparecem aqui e são fáceis de editar e conferir";
         [self.tableView addSubview:_emptyMessage];
     }
     return _emptyMessage;
@@ -136,7 +143,6 @@
     [self _selectRowAtIndexPathForLembreteDescricao:descricaoLembrete];
     
     self.alertView.message = localNotification.alertBody;
-    
     if (!self.alertView.isVisible) {
         [self.alertView show];
     }

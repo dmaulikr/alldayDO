@@ -97,8 +97,8 @@
         _descriptionTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _descriptionTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         _descriptionTextField.frame = CGRectMake(PADDING, PADDING, self.view.width - PADDING, 44.f);
-        [_descriptionTextField setPlaceholder:@"O que precisamos te lembrar?"
-                            floatingTitle:@"Você não pode esquecer de"];
+        [_descriptionTextField setPlaceholder:NSLocalizedString(@"O que precisamos te lembrar?", nil)
+                            floatingTitle:NSLocalizedString(@"Você não pode esquecer de", nil)];
         _descriptionTextField.inputAccessoryView = self.toolbar;
     }
     return _descriptionTextField;
@@ -111,8 +111,8 @@
         _periodoTextField.frame = CGRectMake(PADDING, self.descriptionTextField.maxY, self.view.width, 44.f);
         _periodoTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _periodoTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
-        [_periodoTextField setPlaceholder:@"Quando?"
-                            floatingTitle:@"Te lembraremos"];
+        [_periodoTextField setPlaceholder:NSLocalizedString(@"Quando?", nil)
+                            floatingTitle:NSLocalizedString(@"Te lembraremos", nil)];
         _periodoTextField.inputAccessoryView = self.toolbar;
     }
     return _periodoTextField;
@@ -125,8 +125,8 @@
         _horaTextField.frame = CGRectMake(PADDING, self.periodoTextField.maxY, self.view.width, 44.f);
         _horaTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _horaTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
-        [_horaTextField setPlaceholder:@"Que horas?"
-                            floatingTitle:@"às"];
+        [_horaTextField setPlaceholder:NSLocalizedString(@"Que horas?", nil)
+                            floatingTitle:NSLocalizedString(@"às", nil)];
         _horaTextField.inputAccessoryView = self.toolbar;
     }
     return _horaTextField;
@@ -139,8 +139,8 @@
         _dataTextField.frame = CGRectMake(PADDING, self.horaTextField.maxY, self.view.width, 44.f);
         _dataTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _dataTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
-        [_dataTextField setPlaceholder:@"Começando no dia?"
-                         floatingTitle:@"a partir do dia"];
+        [_dataTextField setPlaceholder:NSLocalizedString(@"Começando no dia?", nil)
+                         floatingTitle:NSLocalizedString(@"a partir do dia", nil)];
         _dataTextField.inputAccessoryView = self.toolbar;
     }
     return _dataTextField;
@@ -203,7 +203,7 @@
                                                                             self.view.maxY - 50.f,
                                                                             self.view.width / 2,
                                                                             50.f)];
-        [_cancelarButton setTitle:@"Cancelar" forState:UIControlStateNormal];
+        [_cancelarButton setTitle:NSLocalizedString(@"Cancelar", nil) forState:UIControlStateNormal];
         [_cancelarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -216,7 +216,7 @@
                                                                           self.view.maxY - 50.f,
                                                                           self.view.width / 2,
                                                                           50.f)];
-        [_salvarButton setTitle:@"Salvar" forState:UIControlStateNormal];
+        [_salvarButton setTitle:NSLocalizedString(@"Salvar", nil) forState:UIControlStateNormal];
         [_salvarButton setTitleColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX] forState:UIControlStateNormal];
         [_salvarButton addTarget:self action:@selector(_salvarTouched) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -283,7 +283,7 @@
         UIBarButtonItem *spaceButtonItem = [UIBarButtonItem barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                           target:self
                                                                                           action:NULL];
-        UIBarButtonItem *nextButtonItem = [UIBarButtonItem barButtonItemWithTitle:@"Próximo"
+        UIBarButtonItem *nextButtonItem = [UIBarButtonItem barButtonItemWithTitle:NSLocalizedString(@"Próximo", nil)
                                                                             style:UIBarButtonItemStyleBordered
                                                                            target:self
                                                                            action:@selector(_nextFieldText)];
@@ -384,10 +384,10 @@
 
 - (void)_cancelarTouched {
     [[UIAlertView alertViewWithTitle:nil
-                             message:@"Você realmente deseja cancelar?"
+                             message:NSLocalizedString(@"Você realmente deseja cancelar?", nil)
                             delegate:self
-                   cancelButtonTitle:@"Não"
-                   otherButtonTitles:@"Sim", nil] show];
+                   cancelButtonTitle:NSLocalizedString(@"Não", nil)
+                   otherButtonTitles:NSLocalizedString(@"Sim", nil), nil] show];
 }
 
 - (void)_dismissKeyboard {

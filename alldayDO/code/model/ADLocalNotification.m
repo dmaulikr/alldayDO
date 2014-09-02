@@ -39,17 +39,16 @@
     NSString *alert_body = nil;
     
     NSArray *messages = @[
-        @"Você lembrou de %@?",
-        @"Hey, não esqueceu de %@ né?",
-        @"Tá na hora de %@!",
-        @"Passando pra lembrar que chegou a hora de %@!",
-        @"Não se esqueça de %@ heim?",
-        @"Chegou a hora de %@!",
-        @"Agora é hora de %@!",
-        @"Parem as máquinas! É hora de %@."
+        NSLocalizedString(@"Você lembrou de %@?", nil),
+        NSLocalizedString(@"Hey, não esqueceu de %@ né?", nil),
+        NSLocalizedString(@"Tá na hora de %@!", nil),
+        NSLocalizedString(@"Passando pra lembrar que chegou a hora de %@!", nil),
+        NSLocalizedString(@"Não se esqueça de %@ heim?", nil),
+        NSLocalizedString(@"Chegou a hora de %@!", nil),
+        NSLocalizedString(@"Agora é hora de %@!", nil),
+        NSLocalizedString(@"Parem as máquinas! É hora de %@.", nil)
     ];
-    
-    
+
     int index = arc4random() % messages.count;
     alert_body = [messages objectAtIndex:index];
     
@@ -77,7 +76,7 @@
     localNotification.fireDate = lembrete.data;
     localNotification.repeatInterval = [lembrete repeatInterval];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.alertAction = @"concluir a tarefa";
+    localNotification.alertAction = NSLocalizedString(@"concluir a tarefa", nil);
     localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
     localNotification.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
     localNotification.timeZone = [NSTimeZone localTimeZone];

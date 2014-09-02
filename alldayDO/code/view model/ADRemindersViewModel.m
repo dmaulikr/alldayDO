@@ -161,7 +161,7 @@
 }
 
 - (NSString *)nextReminderFormated {
-    NSString *message = @"Lembrete em";
+    NSString *message = NSLocalizedString(@"Lembrete em", nil);
     NSString *dateAsString = [[NSDate date] dateAsStringFromDate:self.lembrete.nextFireDate extended:YES];
     return [NSString stringWithFormat:@"%@ %@", message, dateAsString];
 }

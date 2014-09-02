@@ -71,9 +71,9 @@
         
         NSString *yearLabel = nil;
         if (self.year == 1) {
-            yearLabel = @"ano";
+            yearLabel =NSLocalizedString(@"ano", nil);
         } else {
-            yearLabel = @"anos";
+            yearLabel = NSLocalizedString(@"anos", nil);
         }
         
         date = [NSString stringWithFormat:@"%d %@", self.year, yearLabel];
@@ -86,9 +86,9 @@
         
         NSString *monthLabel = nil;
         if (self.month == 1) {
-            monthLabel = @"mês";
+            monthLabel = NSLocalizedString(@"mês", nil);
         } else {
-            monthLabel = @"meses";
+            monthLabel = NSLocalizedString(@"meses", nil);
         }
         NSString *noMeses = [NSString stringWithFormat:@"%d %@", self.month, monthLabel];
         date = [date stringByAppendingString:noMeses];
@@ -101,9 +101,9 @@
         
         NSString *daylabel = nil;
         if (self.day == 1) {
-            daylabel = @"dia";
+            daylabel = NSLocalizedString(@"dia", nil);
         } else {
-            daylabel = @"dias";
+            daylabel = NSLocalizedString(@"dias", nil);
         }
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.day, daylabel];
         date = [date stringByAppendingString:noDias];
@@ -116,9 +116,9 @@
         
         NSString *daylabel = nil;
         if (self.hour == 1) {
-            daylabel = @"hora";
+            daylabel = NSLocalizedString(@"hora", nil);
         } else {
-            daylabel = @"horas";
+            daylabel = NSLocalizedString(@"horas", nil);
         }
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.hour, daylabel];
         date = [date stringByAppendingString:noDias];
@@ -131,9 +131,9 @@
         
         NSString *daylabel = nil;
         if (self.minute == 1) {
-            daylabel = @"minuto";
+            daylabel = NSLocalizedString(@"minuto", nil);
         } else {
-            daylabel = @"minutos";
+            daylabel = NSLocalizedString(@"minutos", nil);
         }
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.minute, daylabel];
         date = [date stringByAppendingString:noDias];
@@ -142,9 +142,9 @@
     if (!date.isPresent) {
         NSString *daylabel = nil;
         if (self.second == 1) {
-            daylabel = @"segundo";
+            daylabel = NSLocalizedString(@"segundo", nil);
         } else {
-            daylabel = @"segundos";
+            daylabel = NSLocalizedString(@"segundos", nil);
         }
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.second, daylabel];
         date = [date stringByAppendingString:noDias];

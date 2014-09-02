@@ -1,0 +1,78 @@
+/* 
+  LocalizableEnglish.strings
+  alldayDO
+
+  Created by Fábio Nogueira  on 01/09/14.
+  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
+*/
+
+/*
+ Localizable.strings
+ alldayDO
+ 
+ Created by Fábio Nogueira  on 01/09/14.
+ Copyright (c) 2014 Fábio Nogueira . All rights reserved.
+ */
+
+// ADEditReminderViewController
+
+"O que precisamos te lembrar?" = "What do we need to remind you?";
+"Você não pode esquecer de" = "You can't forget to";
+"Quando?" = "When?";
+"Te lembraremos" = "We will remind you";
+"Que horas?" = "What time?";
+"às" = "at";
+"Começando no dia?" = "Starting at?";
+"a partir do dia" = "and we will start at";
+"Cancelar" = "Cancel";
+"Salvar" = "Save";
+"Você realmente deseja cancelar?" = "Do you really want to cancel?";
+"Sim" = "Yes";
+"Não" = "No";
+
+// ADRemindersTableViewController
+
+"Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar" = "Your activities stays here \nYour reminders shows here and they easly changeable";
+
+// ADDetailReminderViewController
+
+// ADRemindersViewModel
+
+"Lembrete em" = "Reminder in";
+
+// ADEditReminderViewModel
+
+"Diariamente" = "Daily";
+"Semanalmente" = "Weekly";
+"Mensalmente" = "Monthly";
+"Anualmente" = "Annually";
+
+"Próximo" = "Next";
+
+// ADLocalNotification
+
+"Você lembrou de %@?" = "Did you remember to %@";
+"Hey, não esqueceu de %@ né?" = "Hey, Didn't you forget to %@, did you?";
+"Tá na hora de %@!" = "It's time to %@!";
+"Passando pra lembrar que chegou a hora de %@!" = "Just checking to remember that's %@ time!";
+"Não se esqueça de %@ heim?" = "Don't forget to %@, ok?";
+"Chegou a hora de %@!" =  "It's time to %@!";
+"Agora é hora de %@!" = "Now it's time to %@!";
+"Parem as máquinas! É hora de %@." = "Stop all the machines! It's time to%@";
+
+"concluir a tarefa" = "complete the task";
+
+// NSDateComponents (ADToolkitAdditions)
+
+"ano" = "year";
+"anos" = "years";
+"mês" = "month";
+"meses" = "months";
+"dia" = "day";
+"dias" = "days";
+"hora" = "hour";
+"horas" = "hours";
+"minuto" = "minute";
+"minutos" = "minutes";
+"segundo" = "second";
+"segundos" = "seconds";
