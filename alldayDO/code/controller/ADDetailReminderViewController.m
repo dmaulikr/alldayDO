@@ -51,6 +51,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"DetailReminderScreen"];
+    [tracker set:kGAIEventCategory value:@"Screen"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -170,13 +175,28 @@
 #pragma mark - IBAction Methods -
 
 - (IBAction)editButtonTouched:(id)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"EditActivity"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     [self _presentNewReminderViewController];
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
     if (self.doneButton.selected) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"RememberQuestionActivity"];
+        [tracker set:kGAIEventCategory value:@"Action"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         [self.viewModel removeLembreteConfirmado];
     } else {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"RememberOkActivity"];
+        [tracker set:kGAIEventCategory value:@"Action"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         [self.viewModel addLembreteConfirmado];
     }
     

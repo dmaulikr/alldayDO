@@ -18,4 +18,7 @@
     #import <uiview-frame-helpers/UIView+CBFrameHelpers.h>
     #import <SSToolkit/SSToolkit.h>
     #import "PDToolkitAdditions.h"
+    #import "GAI.h"
+    #import "GAIFields.h"
+    #import "GAIDictionaryBuilder.h"
 #endif

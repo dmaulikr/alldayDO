@@ -296,6 +296,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"EditReminderScreen"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
     if (self.actionMode == ADEditMode) {
         [self _editReminderMode];
@@ -311,6 +315,11 @@
 #pragma mark - Private Methods -
 
 - (void)_salvarTouched {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"saveActivity"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     if ([self _requiredValidation]) {
         self.viewModel.descricao = self.descriptionTextField.text;
         self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
@@ -383,6 +392,11 @@
 }
 
 - (void)_cancelarTouched {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"CancelActivity"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     [[UIAlertView alertViewWithTitle:nil
                              message:NSLocalizedString(@"Você realmente deseja cancelar?", nil)
                             delegate:self
@@ -395,6 +409,11 @@
 }
 
 - (void)_nextFieldText {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"clickNextField"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     if (self.descriptionTextField.isFirstResponder) {
         [self.periodoTextField becomeFirstResponder];
         
@@ -448,6 +467,7 @@
     [formatter setDateStyle:NSDateFormatterFullStyle];
     self.dataTextField.text = [formatter stringFromDate:date];
 }
+
 - (BOOL)_requiredValidation {
     BOOL sucess = YES;
     
@@ -472,6 +492,11 @@
         sucess = NO;
         
     } else if (!iconImage) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"NolCon"];
+        [tracker set:kGAIEventCategory value:@"Action"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
         sucess = NO;
     }
@@ -491,13 +516,33 @@
 #pragma mark - UITextFieldDelegate Methods -
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (textField == self.periodoTextField) {
+    if (textField == self.descriptionTextField) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"descricaoTextField"];
+        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    } else if (textField == self.periodoTextField) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"periodoTextField"];
+        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         if (self.actionMode == ADAddMode) {
             self.periodoTextField.text = [self.viewModel textForCycleType:0];
         }
     } else if (textField == self.horaTextField) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"horaTextField"];
+        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         [self _refreshTimeLabel:nil];
     } else if (textField == self.dataTextField) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIEventAction value:@"dataTextField"];
+        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        
         [self _refreshDataInicialLabel:nil];
     }
 }
