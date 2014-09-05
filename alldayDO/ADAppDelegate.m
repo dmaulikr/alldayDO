@@ -30,7 +30,6 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:@"reminders_cache"];
     }
-    
     return _fetchedResultsController;
 }
 
