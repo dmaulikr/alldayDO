@@ -19,8 +19,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *totalRemindersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *doneReminders;
-@property (weak, nonatomic) IBOutlet UILabel *undoneReminders;
+@property (weak, nonatomic) IBOutlet UILabel *doneRemindersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *undoneRemindersLabel;
 
 - (IBAction)newReminderTouched:(id)sender;
 

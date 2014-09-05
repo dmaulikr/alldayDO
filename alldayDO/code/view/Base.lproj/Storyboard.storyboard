@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jAA-iV-Qtm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -254,6 +255,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
+                                    <barButtonItem systemItem="organize" id="VcR-8c-i8w">
+                                        <connections>
+                                            <segue destination="nbG-Xz-egh" kind="push" id="M8B-pV-934"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WuL-7t-TPb"/>
                                     <barButtonItem systemItem="add" id="nKL-4Y-Tv4">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -510,6 +516,146 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXp-pG-10V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="438" y="112"/>
+        </scene>
+        <!--View Controller - settings-->
+        <scene sceneID="Max-na-mit">
+            <objects>
+                <viewController title="settings" id="nbG-Xz-egh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="avJ-yA-FxB"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAF-uF-E7w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1n3-n8-D64">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vge-AV-YzW">
+                                <rect key="frame" x="0.0" y="30" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JFm-Ge-DDP"/>
+                                </constraints>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ooC-Zf-Ou6" kind="push" id="HHl-Jm-jcd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gru-gV-uje">
+                                <rect key="frame" x="0.0" y="94" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Send Feedback">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwQ-rw-kGM">
+                                <rect key="frame" x="0.0" y="158" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Rate the app">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-X1-zx7">
+                                <rect key="frame" x="0.0" y="222" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Informatic Website">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfK-Ts-YrU">
+                                <rect key="frame" x="0.0" y="372" width="160" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="w3D-15-Opu"/>
+                                </constraints>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-LA-KMo">
+                                <rect key="frame" x="160" y="372" width="160" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share with Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcY-9E-tmM">
+                                <rect key="frame" x="0.0" y="340" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="pHJ-Ne-dcL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fwQ-rw-kGM" firstAttribute="width" secondItem="ZKD-X1-zx7" secondAttribute="width" id="272-fN-Jbf"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="width" secondItem="fwQ-rw-kGM" secondAttribute="width" id="4hh-rA-gpW"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="centerX" secondItem="vge-AV-YzW" secondAttribute="centerX" id="5w2-Os-hPx"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="height" secondItem="fwQ-rw-kGM" secondAttribute="height" id="6qR-NO-qgb"/>
+                            <constraint firstAttribute="width" secondItem="WcY-9E-tmM" secondAttribute="width" id="Asi-Z2-AQs"/>
+                            <constraint firstItem="9iq-LA-KMo" firstAttribute="height" secondItem="JfK-Ts-YrU" secondAttribute="height" id="ISZ-0a-1ae"/>
+                            <constraint firstItem="fwQ-rw-kGM" firstAttribute="centerX" secondItem="ZKD-X1-zx7" secondAttribute="centerX" id="Jpr-ck-aet"/>
+                            <constraint firstItem="9iq-LA-KMo" firstAttribute="leading" secondItem="JfK-Ts-YrU" secondAttribute="trailing" id="L2m-Zs-OJd"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="centerX" secondItem="fwQ-rw-kGM" secondAttribute="centerX" id="OAw-pj-Yck"/>
+                            <constraint firstItem="vge-AV-YzW" firstAttribute="top" secondItem="avJ-yA-FxB" secondAttribute="bottom" constant="30" id="Shr-QP-JrU"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="height" secondItem="vge-AV-YzW" secondAttribute="height" id="SmS-VX-lh1"/>
+                            <constraint firstItem="ZKD-X1-zx7" firstAttribute="top" secondItem="fwQ-rw-kGM" secondAttribute="bottom" constant="20" id="VMS-q9-AN3"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="top" secondItem="vge-AV-YzW" secondAttribute="bottom" constant="20" id="XSZ-LE-Bci"/>
+                            <constraint firstItem="fwQ-rw-kGM" firstAttribute="height" secondItem="ZKD-X1-zx7" secondAttribute="height" id="Zm7-Uu-VDg"/>
+                            <constraint firstAttribute="centerX" secondItem="WcY-9E-tmM" secondAttribute="centerX" id="ZuA-jT-GM5"/>
+                            <constraint firstItem="gru-gV-uje" firstAttribute="width" secondItem="vge-AV-YzW" secondAttribute="width" id="cRw-d7-k0m"/>
+                            <constraint firstItem="vge-AV-YzW" firstAttribute="width" secondItem="1n3-n8-D64" secondAttribute="width" id="eBE-Q8-f9r"/>
+                            <constraint firstItem="JfK-Ts-YrU" firstAttribute="leading" secondItem="1n3-n8-D64" secondAttribute="leading" id="gns-AW-0b7"/>
+                            <constraint firstItem="9iq-LA-KMo" firstAttribute="width" secondItem="JfK-Ts-YrU" secondAttribute="width" id="p6u-gq-CrT"/>
+                            <constraint firstItem="9iq-LA-KMo" firstAttribute="centerY" secondItem="JfK-Ts-YrU" secondAttribute="centerY" id="pTT-TT-nUN"/>
+                            <constraint firstItem="gAF-uF-E7w" firstAttribute="top" secondItem="JfK-Ts-YrU" secondAttribute="bottom" id="pTx-DI-uG2"/>
+                            <constraint firstItem="JfK-Ts-YrU" firstAttribute="width" secondItem="9iq-LA-KMo" secondAttribute="height" multiplier="40:11" id="pqR-zs-gUa"/>
+                            <constraint firstAttribute="centerX" secondItem="vge-AV-YzW" secondAttribute="centerX" id="sHg-Q4-27h"/>
+                            <constraint firstItem="JfK-Ts-YrU" firstAttribute="top" secondItem="WcY-9E-tmM" secondAttribute="bottom" constant="10" id="wxk-7G-oy3"/>
+                            <constraint firstItem="fwQ-rw-kGM" firstAttribute="top" secondItem="gru-gV-uje" secondAttribute="bottom" constant="20" id="yeJ-GV-pAj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="settings" id="HWU-DR-F5i"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4y-Gs-BUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="699"/>
+        </scene>
+        <!--View Controller - about-->
+        <scene sceneID="1Cc-z6-IJa">
+            <objects>
+                <viewController id="ooC-Zf-Ou6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zM1-iU-q6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="lvM-C3-Lhv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2r-7v-445">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="about" id="dUD-0t-rOh"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSb-WF-L2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="699"/>
         </scene>
     </scenes>
     <resources>
