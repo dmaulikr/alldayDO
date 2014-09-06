@@ -255,9 +255,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem systemItem="organize" id="VcR-8c-i8w">
+                                    <barButtonItem systemItem="action" id="Ff3-t4-70p">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="nbG-Xz-egh" kind="push" id="M8B-pV-934"/>
+                                            <segue destination="nbG-Xz-egh" kind="push" id="RKS-Cg-qXf"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WuL-7t-TPb"/>
@@ -301,13 +302,13 @@
                     <navigationItem key="navigationItem" id="g4T-W5-tic"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="doneReminders" destination="QXY-6o-cuj" id="O9g-vE-VpT"/>
+                        <outlet property="doneReminders" destination="QXY-6o-cuj" id="ExW-Yy-Dsn"/>
                         <outlet property="hexaconAllButton" destination="clV-yg-dbR" id="m0y-PW-cU8"/>
                         <outlet property="hexaconDoneButton" destination="IfA-Fn-FtX" id="iAf-Oa-J8D"/>
                         <outlet property="hexaconUndoneButton" destination="evj-qa-8Nd" id="Z4f-25-9Sq"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
                         <outlet property="totalRemindersLabel" destination="1eR-HI-qmt" id="7FE-HQ-bIu"/>
-                        <outlet property="undoneReminders" destination="Tek-XX-n2X" id="zmx-0q-JWE"/>
+                        <outlet property="undoneReminders" destination="Tek-XX-n2X" id="zNb-Ae-4gn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mna-H3-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXp-pG-10V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="112"/>
+            <point key="canvasLocation" x="619" y="112"/>
         </scene>
         <!--View Controller - settings-->
         <scene sceneID="Max-na-mit">

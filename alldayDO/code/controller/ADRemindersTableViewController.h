@@ -19,14 +19,13 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *totalRemindersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *doneRemindersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *undoneRemindersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *doneReminders;
+@property (weak, nonatomic) IBOutlet UILabel *undoneReminders;
 
 - (IBAction)newReminderTouched:(id)sender;
 
 - (IBAction)hexaconAllTouched:(id)sender;
 - (IBAction)hexaconDoneTouched:(id)sender;
 - (IBAction)hexaconUndoneTouched:(id)sender;
-
 
 @end

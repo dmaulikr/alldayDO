@@ -294,8 +294,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger numberOfReminders = [self.viewModel numberOfItemsInSection:section];
     self.totalRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.allReminders.count];
-    self.doneRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
-    self.undoneRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
+    self.doneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
+    self.undoneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
     
     if (numberOfReminders > 0) {
         self.emptyMessage.hidden = YES;

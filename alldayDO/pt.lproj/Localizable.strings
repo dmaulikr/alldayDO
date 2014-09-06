@@ -1,0 +1,71 @@
+/* 
+  Localizable.strings
+  alldayDO
+
+  Created by Fábio Nogueira  on 05/09/14.
+  Copyright (c) 2014 F√°bio Nogueira . All rights reserved.
+*/
+
+
+// ADEditReminderViewController
+
+"O que precisamos te lembrar?" = "O que precisamos te lembrar?";
+"Você não pode esquecer de" = "Você não pode esquecer de";
+"Quando?" = "Quando?";
+"Te lembraremos" = "Te lembraremos";
+"Que horas?" = "Que horas?";
+"às" = "às";
+"Começando no dia?" = "Começando no dia?";
+"a partir do dia" = "a partir do dia";
+"Cancelar" = "Cancelar";
+"Salvar" = "Salvar";
+"Você realmente deseja cancelar?" = "Você realmente deseja cancelar?";
+"Sim" = "Sim";
+"Não" = "Não";
+
+// ADRemindersTableViewController
+
+"Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar" = "Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar";
+
+// ADDetailReminderViewController
+
+// ADRemindersViewModel
+
+"Lembrete em" = "Lembrete em";
+
+// ADEditReminderViewModel
+
+"Diariamente" = "Diariamente";
+"Semanalmente" = "Semanalmente";
+"Mensalmente" = "Mensalmente";
+"Anualmente" = "Anualmente";
+
+"Próximo" = "Próximo";
+
+// ADLocalNotification
+
+"Você lembrou de %@?" = "Você lembrou de %@?";
+"Hey, não esqueceu de %@ né?" = "Hey, não esqueceu de %@ né?";
+"Tá na hora de %@!" = "Tá na hora de %@!";
+"Passando pra lembrar que chegou a hora de %@!" = "Passando pra lembrar que chegou a hora de %@!";
+"Não se esqueça de %@ heim?" = "Não se esqueça de %@ heim?";
+"Chegou a hora de %@!" =  "Chegou a hora de %@!";
+"Agora é hora de %@!" = "Agora é hora de %@!";
+"Parem as máquinas! É hora de %@." = "Parem as máquinas! É hora de %@.";
+
+"concluir a tarefa" = "concluir a tarefa";
+
+// NSDateComponents (ADToolkitAdditions)
+
+"ano" = "ano";
+"anos" = "anos";
+"mês" = "mês";
+"meses" = "meses";
+"dia" = "dia";
+"dias" = "dias";
+"hora" = "hora";
+"horas" = "horas";
+"minuto" = "minuto";
+"minutos" = "minutos";
+"segundo" = "segundo";
+"segundos" = "segundos";
