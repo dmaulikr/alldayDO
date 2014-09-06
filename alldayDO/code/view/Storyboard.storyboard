@@ -508,10 +508,13 @@
                         <outlet property="inLineBorderContentView" destination="f7s-Dz-0nx" id="fm3-Eo-r9S"/>
                         <outlet property="inLineContentView" destination="9MT-Uw-dxE" id="uDm-eQ-lk9"/>
                         <outlet property="inLineLabel" destination="apK-VK-AYe" id="ZdI-la-DuT"/>
+                        <outlet property="inLineTitleLabel" destination="epP-8k-BjA" id="xvy-Ks-cHi"/>
                         <outlet property="monthContentView" destination="3N6-Ud-rk1" id="uWY-of-PMq"/>
                         <outlet property="monthLabel" destination="FXS-4M-yEN" id="YLW-Rx-ozl"/>
+                        <outlet property="monthTitleLabel" destination="aiV-JA-Wk7" id="tZz-tx-lwy"/>
                         <outlet property="weekContentView" destination="36e-fq-2Sw" id="qtY-gH-vSH"/>
                         <outlet property="weekLabel" destination="ghP-7f-1tj" id="DEf-NL-byb"/>
+                        <outlet property="weekTitleLabel" destination="6yZ-Ux-A9E" id="ew7-oF-xWS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXp-pG-10V" userLabel="First Responder" sceneMemberID="firstResponder"/>

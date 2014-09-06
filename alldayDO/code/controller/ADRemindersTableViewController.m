@@ -223,7 +223,6 @@
             barColor = PNFreshGreen;
             break;
     }
-    
     return barColor;
 }
 

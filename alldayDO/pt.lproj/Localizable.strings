@@ -29,6 +29,12 @@
 
 // ADDetailReminderViewController
 
+"Mês" = "Mês";
+"Semana" = "Semana";
+"Seguidos" = "Seguidos";
+"Você lembrou?" = "Você lembrou?";
+"Eu lembrei de fazer a atividade" = "Eu lembrei de fazer a atividade";
+
 // ADRemindersViewModel
 
 "Lembrete em" = "Lembrete em";

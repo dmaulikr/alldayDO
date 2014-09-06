@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *hexaconDoneButton;
 @property (weak, nonatomic) IBOutlet UIButton *hexaconUndoneButton;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *totalRemindersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *doneReminders;
 @property (weak, nonatomic) IBOutlet UILabel *undoneReminders;

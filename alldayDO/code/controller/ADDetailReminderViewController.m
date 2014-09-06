@@ -27,6 +27,7 @@
 - (void)_updateChart;
 - (void)_presentNewReminderViewController;
 - (void)_showBlurViewWithAnimation;
+- (void)_IBOutletTitle;
 
 //- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
 
@@ -39,9 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.chartContentView addSubview:self.lineChart];
-    
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
+    [self _IBOutletTitle];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(willRotateToInterfaceOrientation:)
@@ -143,7 +144,7 @@
         
         return [PNLineChartDataItem dataItemWithY:valorY];
     };
-    
+        
     self.lineChart.chartData = @[lineChartData];
     [self.lineChart setXLabels:[self.viewModel chartDataXLabels]];
     [self.lineChart strokeChart];
@@ -170,6 +171,14 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.blurView.alpha = 1.0f;
     }];
+}
+
+- (void)_IBOutletTitle {
+    self.monthTitleLabel.text = NSLocalizedString(@"Mês", nil);
+    self.weekTitleLabel.text = NSLocalizedString(@"Semana", nil);
+    self.inLineTitleLabel.text = NSLocalizedString(@"Seguidos", nil);
+    [self.doneButton setTitle:NSLocalizedString(@"Você lembrou?", nil) forState:UIControlStateNormal];
+    [self.doneButton setTitle:NSLocalizedString(@"Eu lembrei de fazer a atividade", nil) forState:UIControlStateSelected];
 }
 
 #pragma mark - IBAction Methods -

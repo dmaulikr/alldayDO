@@ -26,6 +26,10 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *monthTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weekTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inLineTitleLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *monthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *weekLabel;
 @property (strong, nonatomic) IBOutlet UILabel *inLineLabel;
