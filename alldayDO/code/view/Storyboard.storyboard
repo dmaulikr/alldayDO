@@ -521,10 +521,10 @@
             </objects>
             <point key="canvasLocation" x="619" y="112"/>
         </scene>
-        <!--View Controller - settings-->
+        <!--Settings View Controller - settings-->
         <scene sceneID="Max-na-mit">
             <objects>
-                <viewController title="settings" id="nbG-Xz-egh" sceneMemberID="viewController">
+                <viewController title="settings" id="nbG-Xz-egh" customClass="ADSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="avJ-yA-FxB"/>
                         <viewControllerLayoutGuide type="bottom" id="gAF-uF-E7w"/>
@@ -540,7 +540,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JFm-Ge-DDP"/>
                                 </constraints>
-                                <state key="normal" title="About">
+                                <state key="normal" title="about">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -552,7 +552,7 @@
                                 <rect key="frame" x="0.0" y="94" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Send Feedback">
+                                <state key="normal" title="feedback">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -561,7 +561,7 @@
                                 <rect key="frame" x="0.0" y="158" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Rate the app">
+                                <state key="normal" title="rate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -570,7 +570,7 @@
                                 <rect key="frame" x="0.0" y="222" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Informatic Website">
+                                <state key="normal" title="website">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -585,6 +585,9 @@
                                 <state key="normal" title="Twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="twitterTouched:" destination="nbG-Xz-egh" eventType="touchUpInside" id="QzC-M3-zcP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-LA-KMo">
                                 <rect key="frame" x="160" y="372" width="160" height="44"/>
@@ -593,6 +596,9 @@
                                 <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookTouched:" destination="nbG-Xz-egh" eventType="touchUpInside" id="tzX-TW-6cf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share with Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcY-9E-tmM">
                                 <rect key="frame" x="0.0" y="340" width="320" height="22"/>
@@ -634,14 +640,21 @@
                             <constraint firstItem="fwQ-rw-kGM" firstAttribute="top" secondItem="gru-gV-uje" secondAttribute="bottom" constant="20" id="yeJ-GV-pAj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="settings" id="HWU-DR-F5i"/>
+                    <navigationItem key="navigationItem" id="HWU-DR-F5i"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="vge-AV-YzW" id="RJy-F6-D4e"/>
+                        <outlet property="rateButton" destination="fwQ-rw-kGM" id="TBJ-U5-x1h"/>
+                        <outlet property="seedFeedbackButton" destination="gru-gV-uje" id="Vpo-1Y-J4s"/>
+                        <outlet property="shareLabel" destination="WcY-9E-tmM" id="NRR-ze-tvl"/>
+                        <outlet property="websiteButton" destination="ZKD-X1-zx7" id="fH4-TG-0oH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4y-Gs-BUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="438" y="699"/>
         </scene>
-        <!--View Controller - about-->
+        <!--View Controller-->
         <scene sceneID="1Cc-z6-IJa">
             <objects>
                 <viewController id="ooC-Zf-Ou6" sceneMemberID="viewController">
@@ -654,7 +667,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="about" id="dUD-0t-rOh"/>
+                    <navigationItem key="navigationItem" id="dUD-0t-rOh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSb-WF-L2K" userLabel="First Responder" sceneMemberID="firstResponder"/>

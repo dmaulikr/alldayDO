@@ -33,6 +33,7 @@
 		71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20719A02C8C00EB6EEE /* ADLembreteConfirmado.m */; };
 		71BBA20B19A02C8C00EB6EEE /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20A19A02C8C00EB6EEE /* ADLembrete.m */; };
 		71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */; };
+		71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
 		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
 		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
@@ -114,6 +115,8 @@
 		71BBA20919A02C8C00EB6EEE /* ADLembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLembrete.h; sourceTree = "<group>"; };
 		71BBA20A19A02C8C00EB6EEE /* ADLembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADLembrete.m; sourceTree = "<group>"; };
 		71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		71BBFF5B19BAB8FF00BFF5FA /* ADSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSettingsViewController.h; sourceTree = "<group>"; };
+		71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSettingsViewController.m; sourceTree = "<group>"; };
 		71D28AFE19294F970047F291 /* alldayDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alldayDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B0119294F970047F291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71D28B0319294F970047F291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -334,6 +337,8 @@
 				71E9325419401803007C96D4 /* ADRemindersTableViewController.m */,
 				708481E8199BC90B008BF6A5 /* ADDetailReminderViewController.h */,
 				708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */,
+				71BBFF5B19BAB8FF00BFF5FA /* ADSettingsViewController.h */,
+				71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */,
 			);
 			name = Controller;
 			path = controller;
@@ -571,6 +576,7 @@
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */,
 				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
+				71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */,
 				71B96AF3194D299C0042023E /* ADEditReminderViewModel.m in Sources */,
 				7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */,
 				71D28B1719294F970047F291 /* alldayDO.xcdatamodeld in Sources */,

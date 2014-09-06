@@ -49,6 +49,15 @@
 
 "Próximo" = "Next";
 
+// ADFeedbackViewController
+
+"settings" = "Settings";
+"about" = "About";
+"feedback" = "Seed Feedback";
+"rate" = "Rate this App";
+"website" = "Informatic Website";
+"shared" = "Share with friends";
+
 // ADLocalNotification
 
 "Você lembrou de %@?" = "Did you remember to %@";

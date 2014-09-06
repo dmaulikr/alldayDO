@@ -48,6 +48,15 @@
 
 "Próximo" = "Próximo";
 
+// ADFeedbackViewController
+
+"settings" = "Configuração";
+"about" = "Sobre";
+"feedback" = "Envie um Feedback";
+"rate" = "Avalie nosso aplicativo";
+"website" = "Site informátivo";
+"shared" = "Compartilhe com seus amigos";
+
 // ADLocalNotification
 
 "Você lembrou de %@?" = "Você lembrou de %@?";
