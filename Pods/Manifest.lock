@@ -39,7 +39,7 @@ DEPENDENCIES:
   - iOS-blur
   - JVFloatLabeledTextField
   - MALazykit (HEAD)
-  - PNChart (~> 0.5)
+  - PNChart
   - pop
   - SSToolkit
   - uiview-frame-helpers

@@ -199,10 +199,10 @@
 
 - (UIButton *)cancelarButton {
     if (!_cancelarButton) {
-        _cancelarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(self.salvarButton.maxX,
-                                                                            self.view.maxY - 50.f,
-                                                                            self.view.width / 2,
-                                                                            50.f)];
+        _cancelarButton = [[UIButton alloc] initWithFrame:CGRectMake(self.salvarButton.maxX,
+                                                                    self.view.maxY - 50.f,
+                                                                    self.view.width / 2,
+                                                                    50.f)];
         [_cancelarButton setTitle:NSLocalizedString(@"Cancelar", nil) forState:UIControlStateNormal];
         [_cancelarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventTouchUpInside];
@@ -212,10 +212,10 @@
 
 - (UIButton *)salvarButton {
     if (!_salvarButton) {
-        _salvarButton = [UIButton buttonWithCustomTypeAndFrame:CGRectMake(0,
-                                                                          self.view.maxY - 50.f,
-                                                                          self.view.width / 2,
-                                                                          50.f)];
+        _salvarButton = [[UIButton alloc] initWithFrame:CGRectMake(0,
+                                                                  self.view.maxY - 50.f,
+                                                                  self.view.width / 2,
+                                                                  50.f)];
         [_salvarButton setTitle:NSLocalizedString(@"Salvar", nil) forState:UIControlStateNormal];
         [_salvarButton setTitleColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX] forState:UIControlStateNormal];
         [_salvarButton addTarget:self action:@selector(_salvarTouched) forControlEvents:UIControlEventTouchUpInside];
@@ -238,8 +238,8 @@
         collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         collectionViewLayout.itemSize = CGSizeMake(40.f, 40.f);
         collectionViewLayout.sectionInset = UIEdgeInsetsMake(20.f, 20.f, 20.f, 20.f);
-        _badgeIconCollectionView = [UICollectionView collectionViewWithFrame:self.badgeIconView.frame
-                                                                  layout:collectionViewLayout];
+        _badgeIconCollectionView = [[UICollectionView alloc] initWithFrame:self.badgeIconView.frame
+                                                      collectionViewLayout:collectionViewLayout];
         _badgeIconCollectionView.dataSource = self;
         _badgeIconCollectionView.delegate = self;
         _badgeIconCollectionView.layer.cornerRadius = 6.f;

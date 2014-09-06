@@ -58,6 +58,14 @@
 "website" = "Informatic Website";
 "shared" = "Share with friends";
 
+"mailSubject" = "Feedback alldayDO";
+
+"bodyFeedbackEmail" = "Texto Padrão para corpo de email";
+"errorConfigEmail" = "Please configure your email account in the system settings";
+
+"twitterMessageDefault" = "Message Default for Twitter";
+"facebookMessageDefault" = "Message Default for Facebook";
+
 // ADLocalNotification
 
 "Você lembrou de %@?" = "Did you remember to %@";

@@ -57,6 +57,14 @@
 "website" = "Site informátivo";
 "shared" = "Compartilhe com seus amigos";
 
+"mailSubject" = "Feedback alldayDO";
+
+"bodyFeedbackEmail" = "Texto Padrão para corpo de email";
+"errorConfigEmail" = "Por favor configure sua conta de email nos ajustes do sistema";
+
+"twitterMessageDefault" = "Mensagem Padrão para Twitter";
+"facebookMessageDefault" = "Mensagem Padrão para facebook";
+
 // ADLocalNotification
 
 "Você lembrou de %@?" = "Você lembrou de %@?";
