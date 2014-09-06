@@ -78,12 +78,22 @@
 }
 
 - (IBAction)rateTouched:(id)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"rateAppActivity"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     NSString *appID = @"916494166";
     NSString *urlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", appID];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
 - (IBAction)websiteTouched:(id)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIEventAction value:@"websiteActivity"];
+    [tracker set:kGAIEventCategory value:@"Action"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.alldayDO.com"]];
 }
 
