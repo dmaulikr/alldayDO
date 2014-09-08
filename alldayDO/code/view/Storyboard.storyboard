@@ -255,13 +255,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="Ff3-t4-70p">
+                                    <barButtonItem image="config" id="Ff3-t4-70p">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="nbG-Xz-egh" kind="push" id="RKS-Cg-qXf"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WuL-7t-TPb"/>
+                                    <barButtonItem width="228" style="plain" systemItem="fixedSpace" id="WuL-7t-TPb"/>
                                     <barButtonItem systemItem="add" id="nKL-4Y-Tv4">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -425,7 +425,7 @@
                                         <color key="backgroundColor" red="0.8862745098" green="0.90588235289999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-jf-303">
-                                        <rect key="frame" x="-1" y="356" width="321" height="60"/>
+                                        <rect key="frame" x="10" y="346" width="301" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
@@ -456,19 +456,19 @@
                                     <constraint firstItem="bWz-lw-N9p" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="1m1-hD-6H0"/>
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="height" secondItem="3N6-Ud-rk1" secondAttribute="height" constant="2" id="6ev-Ob-elI"/>
                                     <constraint firstItem="8VZ-io-jtq" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="29" id="7ag-sN-pZN"/>
-                                    <constraint firstItem="cYc-jf-303" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="7nL-sJ-uUi"/>
+                                    <constraint firstItem="cYc-jf-303" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" constant="-19" id="7nL-sJ-uUi"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="centerY" secondItem="f7s-Dz-0nx" secondAttribute="centerY" id="8xG-FH-hst"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="height" secondItem="36e-fq-2Sw" secondAttribute="height" id="8yQ-DC-xIH"/>
                                     <constraint firstItem="36e-fq-2Sw" firstAttribute="leading" secondItem="3N6-Ud-rk1" secondAttribute="trailing" constant="1" id="9J0-4z-IZB"/>
-                                    <constraint firstAttribute="trailing" secondItem="cYc-jf-303" secondAttribute="trailing" id="JOd-d5-cYq"/>
+                                    <constraint firstAttribute="trailing" secondItem="cYc-jf-303" secondAttribute="trailing" constant="9" id="JOd-d5-cYq"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="width" secondItem="f7s-Dz-0nx" secondAttribute="width" id="JYA-nz-iXD"/>
                                     <constraint firstAttribute="width" secondItem="8VZ-io-jtq" secondAttribute="width" id="KLl-Bq-9in"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="KqB-4b-dIa"/>
                                     <constraint firstItem="36e-fq-2Sw" firstAttribute="top" secondItem="kgG-sg-uUm" secondAttribute="top" constant="15" id="NWw-Mj-iQn"/>
                                     <constraint firstItem="3N6-Ud-rk1" firstAttribute="top" secondItem="kgG-sg-uUm" secondAttribute="top" constant="15" id="Pyn-UY-uPq"/>
-                                    <constraint firstItem="cYc-jf-303" firstAttribute="top" secondItem="bWz-lw-N9p" secondAttribute="bottom" constant="34" id="R98-MF-ihe"/>
+                                    <constraint firstItem="cYc-jf-303" firstAttribute="top" secondItem="bWz-lw-N9p" secondAttribute="bottom" constant="24" id="R98-MF-ihe"/>
                                     <constraint firstAttribute="centerX" secondItem="9MT-Uw-dxE" secondAttribute="centerX" id="SHp-cD-K90"/>
-                                    <constraint firstItem="cYc-jf-303" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" id="XoX-Ze-E4O"/>
+                                    <constraint firstItem="cYc-jf-303" firstAttribute="leading" secondItem="kgG-sg-uUm" secondAttribute="leading" constant="10" id="XoX-Ze-E4O"/>
                                     <constraint firstItem="bWz-lw-N9p" firstAttribute="top" secondItem="f7s-Dz-0nx" secondAttribute="bottom" constant="30" id="cGe-1d-1NT"/>
                                     <constraint firstAttribute="bottom" secondItem="8VZ-io-jtq" secondAttribute="bottom" constant="93" id="cgH-uS-6f8"/>
                                     <constraint firstAttribute="centerX" secondItem="ZtU-ch-gCX" secondAttribute="centerX" id="dKx-N4-tgB"/>
@@ -478,7 +478,7 @@
                                     <constraint firstItem="ZtU-ch-gCX" firstAttribute="width" secondItem="kgG-sg-uUm" secondAttribute="width" id="sv6-1e-En0"/>
                                     <constraint firstAttribute="centerX" secondItem="bWz-lw-N9p" secondAttribute="centerX" id="uSD-qy-any"/>
                                     <constraint firstItem="9MT-Uw-dxE" firstAttribute="centerX" secondItem="f7s-Dz-0nx" secondAttribute="centerX" id="v0d-AZ-tCQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="cYc-jf-303" secondAttribute="bottom" id="vwy-x4-cC2"/>
+                                    <constraint firstAttribute="bottom" secondItem="cYc-jf-303" secondAttribute="bottom" constant="10" id="vwy-x4-cC2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -692,6 +692,7 @@
         <image name="Hexacon_undone" width="90" height="90"/>
         <image name="Hexacon_undone_selected" width="90" height="90"/>
         <image name="background_selected_button" width="1" height="1"/>
+        <image name="config" width="27" height="29"/>
         <image name="navigation_second_color_bg" width="1" height="1"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

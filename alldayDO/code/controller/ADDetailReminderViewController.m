@@ -43,6 +43,8 @@
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
     [self _IBOutletTitle];
+    self.doneButton.layer.masksToBounds = YES;
+    self.doneButton.layer.cornerRadius = 10.f;
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(willRotateToInterfaceOrientation:)
@@ -52,6 +54,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"DetailReminderScreen"];
     [tracker set:kGAIEventCategory value:@"Screen"];
