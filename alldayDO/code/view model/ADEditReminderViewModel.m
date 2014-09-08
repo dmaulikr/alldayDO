@@ -14,7 +14,8 @@
 typedef enum {
     ADCycleTypeDay,
     ADCycleTypeWeek,
-    ADCycleTypeMonth
+    ADCycleTypeMonth,
+    ADCycleTypeNever
 } ADCycleType;
 
 @interface ADEditReminderViewModel ()
@@ -53,7 +54,8 @@ typedef enum {
         _cycleType = @[
             NSLocalizedString(@"Diariamente", nil),
             NSLocalizedString(@"Semanalmente", nil),
-            NSLocalizedString(@"Mensalmente", nil)
+            NSLocalizedString(@"Mensalmente", nil),
+            NSLocalizedString(@"Nunca", nil)
         ];
     }
     return _cycleType;

@@ -94,7 +94,9 @@
     for (ADLembrete *lembrete in [self.fetchedResultsController fetchedObjects]) {
         UILocalNotification *localNotification = [self _defaultLocalNotificationWith:lembrete];
         localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        if (![lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:3]]) {
+             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];   
+        }
     }
 }
 

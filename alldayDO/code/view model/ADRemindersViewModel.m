@@ -76,6 +76,14 @@
     return self.lembrete.seguidos;
 }
 
+- (BOOL)hasNoReminderAlert {
+    BOOL hasReminderAlert = YES;
+    if ([self.lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:3]]) {
+        hasReminderAlert = NO;
+    }
+    return hasReminderAlert;
+}
+
 - (NSArray *)allReminders {
     return self.lembretesTodos;
 }

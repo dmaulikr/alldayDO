@@ -22,9 +22,6 @@
         case 2:
             repeatInterval = kCFCalendarUnitMonth;
             break;
-        case 3:
-            repeatInterval = kCFCalendarUnitYear;
-            break;
         default:
             repeatInterval = 0;
             break;
