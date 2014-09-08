@@ -372,7 +372,7 @@
     
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setDateFormat:@"hh"];
+    [outputFormatter setDateFormat:@"HH"];
     NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"mm"];
@@ -441,7 +441,7 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     
-    [outputFormatter setDateFormat:@"hh"];
+    [outputFormatter setDateFormat:@"HH"];
     NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:date]];
     
     [outputFormatter setDateFormat:@"mm"];
