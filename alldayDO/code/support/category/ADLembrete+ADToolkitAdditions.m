@@ -17,7 +17,7 @@
             repeatInterval = kCFCalendarUnitDay;
             break;
         case 1:
-            repeatInterval = kCFCalendarUnitWeek;
+            repeatInterval = kCFCalendarUnitWeekday;
             break;
         case 2:
             repeatInterval = kCFCalendarUnitMonth;
@@ -26,9 +26,10 @@
             repeatInterval = kCFCalendarUnitYear;
             break;
         default:
-        repeatInterval = 0;
-        break;
+            repeatInterval = 0;
+            break;
     }
+    
     return repeatInterval;
 }
 

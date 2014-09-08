@@ -301,7 +301,6 @@
     } else {
         self.emptyMessage.hidden = NO;
     }
-    
     return numberOfReminders;
 }
 
@@ -314,6 +313,7 @@
     
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineBottomView.hidden = YES;
+        
     } else {
         cell.lineBottomView.hidden = NO;
     }
@@ -328,7 +328,6 @@
     cell.barChart.strokeColor = [self _colorForNumberOfSeguidos:self.viewModel.seguidos];
     cell.barChart.yValues = @[self.viewModel.seguidos];
     [cell.barChart strokeChart];
-    
     return cell;
 }
 

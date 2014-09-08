@@ -95,6 +95,7 @@
         BOOL DoneReminder = NO;
         
         for (ADLembreteConfirmado *lembreteConfirmado in lembrete.lembretesConfirmados) {
+            
             if ([lembreteConfirmado.data isToday]) {
                 [self.lembretesCompletados addObject:lembrete];
                 DoneReminder = YES;
@@ -102,6 +103,7 @@
         }
         
         if (!DoneReminder) {
+            
             [self.lembretesNaoCompletados addObject:lembrete];
         }
     }
@@ -175,12 +177,12 @@
     ADLembrete *lembreteWithDescricao = nil;
     
     for (ADLembrete *lembrete in self.lembretes) {
+        
         if ([lembrete.descricao isEqualToString:descricao]) {
             lembreteWithDescricao = lembrete;
             break;
         }
     }
-
     return lembreteWithDescricao;
 }
 
@@ -188,12 +190,12 @@
     NSIndexPath *indexPath = nil;
     
     for (ADLembrete *lembrete in self.lembretes) {
+        
         if ([lembrete.descricao isEqualToString:descricao]) {
             indexPath = [NSIndexPath indexPathForRow:[self.lembretes indexOfObject:lembrete] inSection:0];
             break;
         }
     }
-    
     return indexPath;
 }
 

@@ -71,7 +71,7 @@
         
         NSString *yearLabel = nil;
         if (self.year == 1) {
-            yearLabel =NSLocalizedString(@"ano", nil);
+            yearLabel = NSLocalizedString(@"ano", nil);
         } else {
             yearLabel = NSLocalizedString(@"anos", nil);
         }

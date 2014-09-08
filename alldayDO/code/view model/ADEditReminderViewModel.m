@@ -14,8 +14,7 @@
 typedef enum {
     ADCycleTypeDay,
     ADCycleTypeWeek,
-    ADCycleTypeMonth,
-    ADCycleTypeYear,
+    ADCycleTypeMonth
 } ADCycleType;
 
 @interface ADEditReminderViewModel ()
@@ -50,11 +49,11 @@ typedef enum {
 
 - (NSArray *)cycleType {
     if(!_cycleType){
+        
         _cycleType = @[
             NSLocalizedString(@"Diariamente", nil),
             NSLocalizedString(@"Semanalmente", nil),
-            NSLocalizedString(@"Mensalmente", nil),
-            NSLocalizedString(@"Anualmente", nil)
+            NSLocalizedString(@"Mensalmente", nil)
         ];
     }
     return _cycleType;
@@ -66,6 +65,7 @@ typedef enum {
     ADLembrete *lembrete = nil;
     
     if (self.lembreteEdit) {
+        
         lembrete = self.lembreteEdit;
     } else {
         lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];

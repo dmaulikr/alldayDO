@@ -65,7 +65,6 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:@"reminders_cache"];
     }
-    
     return _fetchedResultsController;
 }
 
@@ -83,7 +82,6 @@
     
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:lembrete.descricao forKey:LOCAL_NOTIFICATION_DOMAIN];
     localNotification.userInfo = infoDict;
-    
     return localNotification;
 }
 

@@ -68,14 +68,14 @@
 
 // ADLocalNotification
 
-"Você lembrou de %@?" = "Did you remember to %@";
+"Você lembrou de %@?" = "Did you remember to %@ ?";
 "Hey, não esqueceu de %@ né?" = "Hey, Didn't you forget to %@, did you?";
 "Tá na hora de %@!" = "It's time to %@!";
 "Passando pra lembrar que chegou a hora de %@!" = "Just checking to remember that's %@ time!";
 "Não se esqueça de %@ heim?" = "Don't forget to %@, ok?";
 "Chegou a hora de %@!" =  "It's time to %@!";
 "Agora é hora de %@!" = "Now it's time to %@!";
-"Parem as máquinas! É hora de %@." = "Stop all the machines! It's time to%@";
+"Parem as máquinas! É hora de %@." = "Stop all the machines! It's time to %@.";
 
 "concluir a tarefa" = "complete the task";
 
