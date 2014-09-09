@@ -37,6 +37,10 @@
 "Eu lembrei de fazer a atividade" = "I remembered to do this stuff";
 "Nunca" = "Never";
 
+// ADAboutViewController
+
+"about" = "About";
+
 // ADRemindersViewModel
 
 "Lembrete em" = "Reminder in";

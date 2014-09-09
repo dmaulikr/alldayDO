@@ -663,10 +663,10 @@
             </objects>
             <point key="canvasLocation" x="438" y="699"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="1Cc-z6-IJa">
             <objects>
-                <viewController id="ooC-Zf-Ou6" sceneMemberID="viewController">
+                <viewController id="ooC-Zf-Ou6" customClass="ADAboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zM1-iU-q6V"/>
                         <viewControllerLayoutGuide type="bottom" id="lvM-C3-Lhv"/>
@@ -674,7 +674,61 @@
                     <view key="view" contentMode="scaleToFill" id="Z2r-7v-445">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alldayDO-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-J9-xnu">
+                                <rect key="frame" x="80" y="20" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-Yb-nPe">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Pur-Ke-1uF"/>
+                                </constraints>
+                                <state key="normal" title="@arthurklose">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="arthurTwitterTouched:" destination="ooC-Zf-Ou6" eventType="touchUpInside" id="8CR-yN-Uf9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-Hd-lDC">
+                                <rect key="frame" x="0.0" y="318" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="p7j-z7-zt2"/>
+                                </constraints>
+                                <state key="normal" title="@fabintk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fabioTwitterTouched:" destination="ooC-Zf-Ou6" eventType="touchUpInside" id="cCC-3V-PUg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-La-zeW">
+                                <rect key="frame" x="15" y="195" width="290" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit i</string>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="QYs-Hd-lDC" secondAttribute="centerX" id="2p0-dJ-m8b"/>
+                            <constraint firstItem="Fyo-Yb-nPe" firstAttribute="top" secondItem="QYs-Hd-lDC" secondAttribute="bottom" constant="10" id="Iq8-NS-MpG"/>
+                            <constraint firstAttribute="centerX" secondItem="Fyo-Yb-nPe" secondAttribute="centerX" id="OMR-zI-7ez"/>
+                            <constraint firstAttribute="width" secondItem="Fyo-Yb-nPe" secondAttribute="width" id="iYO-DA-1Lg"/>
+                            <constraint firstAttribute="width" secondItem="QYs-Hd-lDC" secondAttribute="width" id="lzd-N1-3A4"/>
+                            <constraint firstItem="lvM-C3-Lhv" firstAttribute="top" secondItem="Fyo-Yb-nPe" secondAttribute="bottom" id="wTh-bc-U5B"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dUD-0t-rOh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -691,6 +745,7 @@
         <image name="Hexacon_done_selected" width="90" height="90"/>
         <image name="Hexacon_undone" width="90" height="90"/>
         <image name="Hexacon_undone_selected" width="90" height="90"/>
+        <image name="alldayDO-icon" width="100" height="100"/>
         <image name="background_selected_button" width="1" height="1"/>
         <image name="config" width="27" height="29"/>
         <image name="navigation_second_color_bg" width="1" height="1"/>
