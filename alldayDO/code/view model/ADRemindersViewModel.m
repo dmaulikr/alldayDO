@@ -77,9 +77,9 @@
 }
 
 - (BOOL)hasNoReminderAlert {
-    BOOL hasReminderAlert = YES;
+    BOOL hasReminderAlert = NO;
     if ([self.lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:3]]) {
-        hasReminderAlert = NO;
+        hasReminderAlert = YES;
     }
     return hasReminderAlert;
 }

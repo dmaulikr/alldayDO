@@ -26,7 +26,7 @@
 // ADRemindersTableViewController
 
 "Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar" = "Your activities stays here \nYour reminders shows here and they easly changeable";
-"noReminderAlert"= "None scheduled reminder";
+"noReminderAlert"= "None scheduled alert";
 
 // ADDetailReminderViewController
 

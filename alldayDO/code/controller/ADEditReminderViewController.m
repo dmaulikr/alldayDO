@@ -22,7 +22,7 @@
 #define DEFAULT_COLOR_HEX @"#487BAF"
 #define ERROR_COLOR_HEX @"bb3c45"
 
-#define NUMBER_OF_ICONS 42
+#define NUMBER_OF_ICONS 35
 
 @interface ADEditReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
 
@@ -603,8 +603,7 @@
     [collectionView registerClass:[ADIconCell class] forCellWithReuseIdentifier:identifier];
     
     ADIconCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    cell.iconImageView.image = [self.icons objectAtIndex:indexPath.row];
-    
+    cell.iconImageView.image = [[self.icons objectAtIndex:indexPath.row] tintedImageWithColor:[UIColor blackColor]];;
     return cell;
 }
 
