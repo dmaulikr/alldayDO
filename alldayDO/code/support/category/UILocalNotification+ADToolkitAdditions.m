@@ -14,6 +14,7 @@
 // Código Copiado do link - http://stackoverflow.com/questions/20926952/detect-next-uilocalnotification-that-will-fire
 
 - (NSDate *)myNextFireDateAfterDate:(NSDate *)afterDate {
+    
     // Check if fire date is in the future:
     if ([self.fireDate compare:afterDate] == NSOrderedDescending)
         return self.fireDate;
@@ -37,6 +38,12 @@
     // If necessary, add one more:
     if ([nextFireDate compare:afterDate] == NSOrderedAscending) {
         switch (self.repeatInterval) {
+            case NSMonthCalendarUnit:
+                difference.month++;
+                break;
+            case NSWeekCalendarUnit:
+                difference.week++;
+                break;
             case NSDayCalendarUnit:
                 difference.day++;
                 break;

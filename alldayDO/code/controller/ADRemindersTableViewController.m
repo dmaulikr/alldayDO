@@ -320,13 +320,13 @@
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
     
-    cell.nomeLabel.text = self.viewModel.descricao;
-    
     if (self.viewModel.hasNoReminderAlert) {
         cell.nextReminderLabel.text = NSLocalizedString(@"noReminderAlert",nil);
     } else {
         cell.nextReminderLabel.text = [NSString stringWithFormat:@"%@", [self.viewModel nextReminderFormated]];
     }
+    
+    cell.nomeLabel.text = self.viewModel.descricao;
     
     cell.badgeImageView.badgeIconImageView.image = self.viewModel.imagem;
     

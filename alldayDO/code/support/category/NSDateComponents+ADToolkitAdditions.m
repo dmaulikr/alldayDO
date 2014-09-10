@@ -15,7 +15,7 @@
     NSString *date = @"";
     
     if (self.year && self.year != INT_MAX) {
-        date = [NSString stringWithFormat:@"%d a", self.year];
+        date = [NSString stringWithFormat:@"%d %@", self.year, NSLocalizedString(@"a", nil)];
     }
     
     if (self.month && self.month != INT_MAX) {
@@ -36,22 +36,24 @@
         date = [date stringByAppendingString:noDias];
     }
 
-    if (self.hour && self.hour != INT_MAX) {
-        if (date.isPresent) {
-            date = [date stringByAppendingString:@", "];
+    if (!date.isPresent) {
+        if (self.hour && self.hour != INT_MAX) {
+            if (date.isPresent) {
+                date = [date stringByAppendingString:@", "];
+            }
+            
+            NSString *noDias = [NSString stringWithFormat:@"%d h", self.hour];
+            date = [date stringByAppendingString:noDias];
         }
         
-        NSString *noDias = [NSString stringWithFormat:@"%d h", self.hour];
-        date = [date stringByAppendingString:noDias];
-    }
-    
-    if (self.minute && self.minute != INT_MAX) {
-        if (date.isPresent) {
-            date = [date stringByAppendingString:@", "];
+        if (self.minute && self.minute != INT_MAX) {
+            if (date.isPresent) {
+                date = [date stringByAppendingString:@", "];
+            }
+            
+            NSString *noDias = [NSString stringWithFormat:@"%d m", self.minute];
+            date = [date stringByAppendingString:noDias];
         }
-        
-        NSString *noDias = [NSString stringWithFormat:@"%d m", self.minute];
-        date = [date stringByAppendingString:noDias];
     }
     
     if (!date.isPresent) {
@@ -75,7 +77,6 @@
         } else {
             yearLabel = NSLocalizedString(@"anos", nil);
         }
-        
         date = [NSString stringWithFormat:@"%d %@", self.year, yearLabel];
     }
     
@@ -109,34 +110,36 @@
         date = [date stringByAppendingString:noDias];
     }
     
-    if (self.hour && self.hour != INT_MAX) {
-        if (date.isPresent) {
-            date = [date stringByAppendingString:@", "];
+    if (!date.isPresent) {
+        if (self.hour && self.hour != INT_MAX) {
+            if (date.isPresent) {
+                date = [date stringByAppendingString:@", "];
+            }
+            
+            NSString *daylabel = nil;
+            if (self.hour == 1) {
+                daylabel = NSLocalizedString(@"hora", nil);
+            } else {
+                daylabel = NSLocalizedString(@"horas", nil);
+            }
+            NSString *noDias = [NSString stringWithFormat:@"%d %@", self.hour, daylabel];
+            date = [date stringByAppendingString:noDias];
         }
         
-        NSString *daylabel = nil;
-        if (self.hour == 1) {
-            daylabel = NSLocalizedString(@"hora", nil);
-        } else {
-            daylabel = NSLocalizedString(@"horas", nil);
+        if (self.minute && self.minute != INT_MAX) {
+            if (date.isPresent) {
+                date = [date stringByAppendingString:@" e "];
+            }
+            
+            NSString *daylabel = nil;
+            if (self.minute == 1) {
+                daylabel = NSLocalizedString(@"minuto", nil);
+            } else {
+                daylabel = NSLocalizedString(@"minutos", nil);
+            }
+            NSString *noDias = [NSString stringWithFormat:@"%d %@", self.minute, daylabel];
+            date = [date stringByAppendingString:noDias];
         }
-        NSString *noDias = [NSString stringWithFormat:@"%d %@", self.hour, daylabel];
-        date = [date stringByAppendingString:noDias];
-    }
-    
-    if (self.minute && self.minute != INT_MAX) {
-        if (date.isPresent) {
-            date = [date stringByAppendingString:@" e "];
-        }
-        
-        NSString *daylabel = nil;
-        if (self.minute == 1) {
-            daylabel = NSLocalizedString(@"minuto", nil);
-        } else {
-            daylabel = NSLocalizedString(@"minutos", nil);
-        }
-        NSString *noDias = [NSString stringWithFormat:@"%d %@", self.minute, daylabel];
-        date = [date stringByAppendingString:noDias];
     }
     
     if (!date.isPresent) {

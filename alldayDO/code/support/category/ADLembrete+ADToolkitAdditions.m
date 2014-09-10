@@ -17,7 +17,7 @@
             repeatInterval = kCFCalendarUnitDay;
             break;
         case 1:
-            repeatInterval = kCFCalendarUnitWeekday;
+            repeatInterval = kCFCalendarUnitWeek;
             break;
         case 2:
             repeatInterval = kCFCalendarUnitMonth;
@@ -36,7 +36,13 @@
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     for (UILocalNotification *notification in notifications) {
         if ([[notification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN] isEqualToString:self.descricao]) {
-            nextFireDate = [notification myNextFireDateAfterDate:[NSDate date]];
+            
+            NSDate *dateInicial = [NSDate date];
+            
+            if ([self.dataInicial compare:dateInicial] == NSOrderedDescending) {
+                dateInicial = self.dataInicial;
+            }
+            nextFireDate = [notification myNextFireDateAfterDate:dateInicial];
         }
     }
     
