@@ -51,13 +51,11 @@
 #pragma mark - IBOutlet Methods -
 
 - (IBAction)feedbackTouched:(id)sender {
-    if ([MFMailComposeViewController canSendMail]) {
-        NSString *body = NSLocalizedString(@"bodyFeedbackEmail", nil);
-        
+    if ([MFMailComposeViewController canSendMail]) {        
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         [mailViewController setSubject:@"Feedback alldayDO"];
         [mailViewController setToRecipients:@[@"fna.contact@gmail.com"]];
-        [mailViewController setMessageBody:body
+        [mailViewController setMessageBody:nil
                                     isHTML:NO];
         mailViewController.mailComposeDelegate = self;
         mailViewController.navigationBar.tintColor = [UIColor whiteColor];

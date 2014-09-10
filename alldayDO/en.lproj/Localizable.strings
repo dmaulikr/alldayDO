@@ -40,6 +40,7 @@
 // ADAboutViewController
 
 "about" = "About";
+"aboutDescription" = "Made for you, that doesn't want to dismiss anything and be more productive! ;)";
 
 // ADRemindersViewModel
 
@@ -65,11 +66,10 @@
 
 "mailSubject" = "Feedback alldayDO";
 
-"bodyFeedbackEmail" = "Texto Padrão para corpo de email";
 "errorConfigEmail" = "Please configure your email account in the system settings";
 
-"twitterMessageDefault" = "Message Default for Twitter";
-"facebookMessageDefault" = "Message Default for Facebook";
+"twitterMessageDefault" = "Forget something? No more! @alldayDO don't let you forget anything. Download it too and bring productive to your life!";
+"facebookMessageDefault" = "Remember your activities has never been so fast, practical and productive. Download @alldayDO you too!";
 
 // ADLocalNotification
 

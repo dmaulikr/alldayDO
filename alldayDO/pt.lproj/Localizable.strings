@@ -40,6 +40,7 @@
 // ADAboutViewController
 
 "about" = "Sobre";
+"aboutDescription" = "Feito por quem quer uma vida com menos esquecimentos e mais produtividade! ;)";
 
 // ADRemindersViewModel
 
@@ -56,7 +57,7 @@
 
 // ADFeedbackViewController
 
-"settings" = "Configuração";
+"settings" = "Ajustes";
 "about" = "Sobre";
 "feedback" = "Envie um Feedback";
 "rate" = "Avalie nosso aplicativo";
@@ -65,11 +66,10 @@
 
 "mailSubject" = "Feedback alldayDO";
 
-"bodyFeedbackEmail" = "Texto Padrão para corpo de email";
 "errorConfigEmail" = "Por favor configure sua conta de email nos ajustes do sistema";
 
-"twitterMessageDefault" = "Mensagem Padrão para Twitter";
-"facebookMessageDefault" = "Mensagem Padrão para facebook";
+"twitterMessageDefault" = "Esquecer? Jamais! O @alldayDO não te deixa esquecer nada. Baixe você também e deixe seu dia mais produtivo!";
+"facebookMessageDefault" = "Lembrar suas atividades nunca foi tão rápido e prático. Baixe o @alldayDO você produtivo! também!";
 
 // ADLocalNotification
 

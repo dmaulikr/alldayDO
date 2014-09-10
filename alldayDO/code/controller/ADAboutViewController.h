@@ -10,6 +10,8 @@
 
 @interface ADAboutViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 - (IBAction)fabioTwitterTouched:(id)sender;
 - (IBAction)arthurTwitterTouched:(id)sender;
 
