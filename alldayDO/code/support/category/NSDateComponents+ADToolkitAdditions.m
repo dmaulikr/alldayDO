@@ -128,7 +128,7 @@
         
         if (self.minute && self.minute != INT_MAX) {
             if (date.isPresent) {
-                date = [date stringByAppendingString:@" e "];
+                date = [date stringByAppendingString:NSLocalizedString(@" e ", nil)];
             }
             
             NSString *daylabel = nil;

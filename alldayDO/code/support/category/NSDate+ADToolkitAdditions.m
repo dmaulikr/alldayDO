@@ -9,7 +9,6 @@
 #import "NSDate+ADToolkitAdditions.h"
 #import "NSDateComponents+ADToolkitAdditions.h"
 #import "NSDateFormatter+ADToolkitAdditions.h"
-#import "NSLocale+ADToolkitAdditions.h"
 
 @implementation NSDate (ADToolkitAdditions)
 
@@ -166,7 +165,7 @@
 
 - (NSString *)stringWithMonthAndYear {
     NSDateFormatter *formatter = [NSDateFormatter formatterWithMonthAndYearDateFormat];
-    formatter.locale = [NSLocale brazilian];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     NSString *dateString = [formatter stringFromDate:self];
     return [dateString stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[dateString substringToIndex:1] capitalizedString]];
 }
@@ -188,7 +187,7 @@
 
 - (NSString *)stringWithBrazilianDateTimeFormatShowingSeconds:(BOOL)showingSeconds {
     NSDateFormatter *formatter = [NSDateFormatter formatterWithBrazilianDateTimeFormatShowingSeconds:showingSeconds];
-    //    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     return [formatter stringFromDate:self];
 }
 

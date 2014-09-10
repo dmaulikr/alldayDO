@@ -22,7 +22,7 @@
 #define DEFAULT_COLOR_HEX @"#487BAF"
 #define ERROR_COLOR_HEX @"bb3c45"
 
-#define NUMBER_OF_ICONS 49
+#define NUMBER_OF_ICONS 51
 
 @interface ADEditReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
 
@@ -463,6 +463,7 @@
         date = datePicker.date;
     }
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     [formatter setDateStyle:NSDateFormatterFullStyle];
     self.dataTextField.text = [formatter stringFromDate:date];
 }

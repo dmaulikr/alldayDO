@@ -7,7 +7,6 @@
 //
 
 #import "NSDateFormatter+ADToolkitAdditions.h"
-#import "NSLocale+ADToolkitAdditions.h"
 
 @implementation NSDateFormatter (ADToolkitAdditions)
 
@@ -17,7 +16,7 @@
 
 + (NSDateFormatter *)formatterWithFormat:(NSString *)dateFormat {
     NSDateFormatter *formatter = [NSDateFormatter formatter];
-    formatter.calendar = [NSCalendar currentCalendar];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     formatter.dateFormat = dateFormat;
     return formatter;
 }
@@ -26,6 +25,7 @@
     NSDateFormatter *formatter = [NSDateFormatter formatter];
     formatter.dateStyle = dateStyle;
     formatter.timeStyle = timeStyle;
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     return formatter;
 }
 
@@ -39,7 +39,7 @@
 
 + (NSDateFormatter *)formatterWithBrazilianDateFormat {
     NSDateFormatter *formatter = [self formatterWithFormat:@"dd/MM/yyyy"];
-    formatter.locale = [NSLocale brazilian];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     return formatter;
 }
 
@@ -49,21 +49,23 @@
 
 + (NSDateFormatter *)formatterWithBrazilianDateTimeFormatShowingSeconds:(BOOL)showingSeconds {
     NSString *format = @"dd/MM/yyyy HH:mm";
-    if (showingSeconds) format = [format stringByAppendingString:@":ss"];
+    if (showingSeconds) {
+        format = [format stringByAppendingString:@":ss"];   
+    }
     NSDateFormatter *formatter = [NSDateFormatter formatterWithFormat:format];
-    formatter.locale = [NSLocale brazilian];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     return formatter;
 }
 
 + (NSDateFormatter *)formatterWithBrazilianExtention {
-    NSDateFormatter *formattter = [NSDateFormatter formatterWithFormat:@"eee, d 'de' MMM HH:mm"];
-    formattter.locale = [NSLocale brazilian];
-    return formattter;
+    NSDateFormatter *formatter = [NSDateFormatter formatterWithFormat:@"eee, d 'de' MMM HH:mm"];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
+    return formatter;
 }
 
 + (NSDateFormatter *)formatterWithOnlyHours {
     NSDateFormatter *formatter = [NSDateFormatter formatterWithFormat:@"HH:mm"];
-    formatter.locale = [NSLocale brazilian];
+    formatter.locale = [NSLocale autoupdatingCurrentLocale];
     return formatter;
 }
 
