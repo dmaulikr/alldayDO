@@ -304,7 +304,6 @@
     if (self.actionMode == ADEditMode) {
         [self _editReminderMode];
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -529,6 +528,7 @@
         
         if (self.actionMode == ADAddMode) {
             self.periodoTextField.text = [self.viewModel textForCycleType:0];
+            [self.periodoPickerView selectRow:0 inComponent:0 animated:YES];
         }
     } else if (textField == self.horaTextField) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -536,14 +536,20 @@
         [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
         [tracker send:[[GAIDictionaryBuilder createAppView] build]];
         
-        [self _refreshTimeLabel:nil];
+        if (self.actionMode == ADAddMode) {
+            [self _refreshTimeLabel:nil];
+            self.horaPicker.date = [NSDate date];
+        }
     } else if (textField == self.dataTextField) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
         [tracker set:kGAIEventAction value:@"dataTextField"];
         [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
         [tracker send:[[GAIDictionaryBuilder createAppView] build]];
         
-        [self _refreshDataInicialLabel:nil];
+        if (self.actionMode == ADAddMode) {
+            [self _refreshDataInicialLabel:nil];
+            self.dataPicker.date = [NSDate date];
+        }
     }
 }
 
@@ -553,7 +559,6 @@
     if (textField == self.descriptionTextField) {
         edited = YES;
     }
-    
     return edited;
 }
 
@@ -561,7 +566,6 @@
     if (textField == self.descriptionTextField) {
         [self.periodoTextField becomeFirstResponder];
     }
-    
     return YES;
 }
 

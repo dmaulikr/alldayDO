@@ -10,17 +10,17 @@
 
 @interface ADEditReminderViewModel : NSObject
 
-@property (nonatomic, strong) NSString * descricao;
-@property (nonatomic, strong) NSDate * data;
-@property (nonatomic, strong) NSDate * dataInicial;
-@property (nonatomic, strong) NSNumber * periodo;
-@property (nonatomic, strong) NSData * imagem;
+@property (nonatomic, strong) NSString *descricao;
+@property (nonatomic, strong) NSDate *data;
+@property (nonatomic, strong) NSDate *dataInicial;
+@property (nonatomic, strong) NSNumber *periodo;
+@property (nonatomic, strong) NSData *imagem;
 
 @property (nonatomic, readonly) NSString * descricaoEdit;
 @property (nonatomic, readonly) NSDate * dataEdit;
 @property (nonatomic, readonly) NSDate * dataInicialEdit;
-@property (nonatomic, readonly) NSNumber * periodoEdit;
-@property (nonatomic, readonly) NSData * imagemEdit;
+@property (nonatomic, readonly) NSNumber *periodoEdit;
+@property (nonatomic, readonly) NSData *imagemEdit;
 
 @property (nonatomic, strong) NSArray *cycleType;
 
