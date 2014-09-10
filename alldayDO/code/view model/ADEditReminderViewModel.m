@@ -50,7 +50,6 @@ typedef enum {
 
 - (NSArray *)cycleType {
     if(!_cycleType){
-        
         _cycleType = @[
             NSLocalizedString(@"Diariamente", nil),
             NSLocalizedString(@"Semanalmente", nil),

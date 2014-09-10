@@ -28,6 +28,7 @@
 - (void)_presentNewReminderViewController;
 - (void)_showBlurViewWithAnimation;
 - (void)_IBOutletTitle;
+- (NSString *)_doneButtonTitles;
 
 //- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
 
@@ -181,7 +182,22 @@
     self.weekTitleLabel.text = NSLocalizedString(@"Semana", nil);
     self.inLineTitleLabel.text = NSLocalizedString(@"Seguidos", nil);
     [self.doneButton setTitle:NSLocalizedString(@"Você lembrou?", nil) forState:UIControlStateNormal];
-    [self.doneButton setTitle:NSLocalizedString(@"Eu lembrei de fazer a atividade", nil) forState:UIControlStateSelected];
+    [self.doneButton setTitle:[self _doneButtonTitles] forState:UIControlStateSelected];
+}
+
+- (NSString *)_doneButtonTitles {
+    NSString *title = nil;
+    
+    NSArray *titles = @[
+        NSLocalizedString(@"title1", nil),
+        NSLocalizedString(@"title2", nil),
+        NSLocalizedString(@"title3", nil),
+        NSLocalizedString(@"title4", nil),
+    ];
+    
+    int index = arc4random() % titles.count;
+    title = [titles objectAtIndex:index];    
+    return title;
 }
 
 #pragma mark - IBAction Methods -

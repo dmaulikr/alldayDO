@@ -55,6 +55,11 @@
 
 "Próximo" = "Next";
 
+"title1" = "WOW! I did it!";
+"title2" = "Productivity says thanks!";
+"title3" = "One more done activity!";
+"title4" = "alldayDO reminded me";
+
 // ADFeedbackViewController
 
 "settings" = "Settings";

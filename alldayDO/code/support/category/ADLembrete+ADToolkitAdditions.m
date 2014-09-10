@@ -45,7 +45,6 @@
             nextFireDate = [notification myNextFireDateAfterDate:dateInicial];
         }
     }
-    
     return nextFireDate;
 }
 

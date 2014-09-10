@@ -22,10 +22,6 @@
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
     self.title = NSLocalizedString(@"about", nil);
-
-//    self.descriptionLabel.font = [UIFont fontWithName:nil size:16.f];
-//    self.descriptionLabel.textAlignment = NSTextAlignmentCenter;
-//    self.descriptionLabel.textColor = [UIColor lightGrayColor];
     self.descriptionLabel.text = NSLocalizedString(@"aboutDescription", nil);
 }
 

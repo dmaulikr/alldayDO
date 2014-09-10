@@ -63,8 +63,8 @@
 - (void)_dismissKeyboard;
 - (void)_nextFieldText;
 
-- (void)_refreshTimeLabel:(UIDatePicker*)datePicker;
-- (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker;
+- (void)_refreshTimeLabel:(UIDatePicker *)datePicker;
+- (void)_refreshDataInicialLabel:(UIDatePicker *)datePicker;
 - (BOOL)_requiredValidation;
 - (void)_displayBadgeIconView;
 
