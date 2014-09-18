@@ -166,34 +166,6 @@
     return [[NSDateFormatter formatterWithInverseDateFormat] stringFromDate:self];
 }
 
-- (NSString *)stringWithMonthAndYear {
-    NSDateFormatter *formatter = [NSDateFormatter formatterWithMonthAndYearDateFormat];
-    formatter.locale = [NSLocale autoupdatingCurrentLocale];
-    NSString *dateString = [formatter stringFromDate:self];
-    return [dateString stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[dateString substringToIndex:1] capitalizedString]];
-}
-
-- (NSString *)stringWithSmallDateAndTime {
-    NSDateFormatter *formatter = [NSDateFormatter formatterWithBrazilianExtention];
-    return [formatter stringFromDate:self];
-}
-
-- (NSString *)stringWithBrazilianDateFormat {
-    NSDateFormatter *formatter = [NSDateFormatter formatterWithBrazilianDateFormat];
-    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    return [formatter stringFromDate:self];
-}
-
-- (NSString *)stringWithBrazilianDateTimeFormat {
-    return [self stringWithBrazilianDateTimeFormatShowingSeconds:YES];
-}
-
-- (NSString *)stringWithBrazilianDateTimeFormatShowingSeconds:(BOOL)showingSeconds {
-    NSDateFormatter *formatter = [NSDateFormatter formatterWithBrazilianDateTimeFormatShowingSeconds:showingSeconds];
-    formatter.locale = [NSLocale autoupdatingCurrentLocale];
-    return [formatter stringFromDate:self];
-}
-
 - (NSString *)stringWithOnlyHours {
     return [[NSDateFormatter formatterWithOnlyHours] stringFromDate:self];
 }

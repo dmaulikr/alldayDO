@@ -14,12 +14,6 @@
 + (NSDateFormatter *)formatterWithFormat:(NSString *)dateFormat;
 + (NSDateFormatter *)formatterWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
 + (NSDateFormatter *)formatterWithInverseDateFormat;
-+ (NSDateFormatter *)formatterWithMonthAndYearDateFormat;
-
-+ (NSDateFormatter *)formatterWithBrazilianDateFormat;
-+ (NSDateFormatter *)formatterWithBrazilianDateTimeFormat;
-+ (NSDateFormatter *)formatterWithBrazilianDateTimeFormatShowingSeconds:(BOOL)showingSeconds;
-+ (NSDateFormatter *)formatterWithBrazilianExtention;
 + (NSDateFormatter *)formatterWithOnlyHours;
 
 @end

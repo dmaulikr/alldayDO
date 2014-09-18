@@ -51,12 +51,6 @@ typedef NSUInteger ADWeekday;
 - (NSDate *)lastDayInMonth;
 
 - (NSString *)stringWithInverseDateFormat;
-- (NSString *)stringWithMonthAndYear;
-- (NSString *)stringWithSmallDateAndTime;
-- (NSString *)stringWithBrazilianDateFormat;
-- (NSString *)stringWithBrazilianDateTimeFormat;
-- (NSString *)stringWithBrazilianDateTimeFormatShowingSeconds:(BOOL)showingSeconds;
-- (NSString *)stringWithOnlyHours;
 
 - (NSInteger)minute;
 - (NSInteger)hour;
