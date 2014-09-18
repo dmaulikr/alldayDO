@@ -10,7 +10,6 @@
 #import "ADModel.h"
 #import "ADLocalNotification.h"
 #import "ADStyleSheet.h"
-#import "GAI.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -64,20 +63,12 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"ClosedAppActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"ClosedAppActivity" withCategory:@"Action"];
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"OpenAppActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"OpenAppActivity" withCategory:@"Action"];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
 }
@@ -87,16 +78,11 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     if (application.applicationState == UIApplicationStateInactive ||
         application.applicationState == UIApplicationStateBackground ) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"OpenFromPushActivity"];
-        [tracker set:kGAIEventCategory value:@"Action"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
-            [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND object:notification];
+        [[GAI sharedInstance] sendAction:@"OpenFromPushActivity" withCategory:@"Action"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND object:notification];
     } else if (application.applicationState == UIApplicationStateActive ) {
             [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE object:notification];
     }
-    
 }
 
 @end

@@ -296,10 +296,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"EditReminderScreen"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendScreen:@"EditReminderScreen" withCategory:@"EditReminderScreen"];
     if (self.actionMode == ADEditMode) {
         [self _editReminderMode];
     }
@@ -313,10 +310,7 @@
 #pragma mark - Private Methods -
 
 - (void)_salvarTouched {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"saveActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"saveActivity" withCategory:@"Action"];
     if ([self _requiredValidation]) {
         self.viewModel.descricao = self.descriptionTextField.text;
         self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
@@ -389,10 +383,7 @@
 }
 
 - (void)_cancelarTouched {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"CancelActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"CancelActivity" withCategory:@"Action"];
     
     [[UIAlertView alertViewWithTitle:nil
                              message:NSLocalizedString(@"Você realmente deseja cancelar?", nil)
@@ -406,10 +397,7 @@
 }
 
 - (void)_nextFieldText {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"clickNextField"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"clickNextField" withCategory:@"Action"];
     if (self.descriptionTextField.isFirstResponder) {
         [self.periodoTextField becomeFirstResponder];
         
@@ -484,11 +472,7 @@
         sucess = NO;
         
     } else if (!iconImage) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"NolCon"];
-        [tracker set:kGAIEventCategory value:@"Action"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
+        [[GAI sharedInstance] sendAction:@"NolCon" withCategory:@"Action"];
         self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
         sucess = NO;
     }
@@ -508,33 +492,21 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.descriptionTextField) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"descricaoTextField"];
-        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        [[GAI sharedInstance] sendAction:@"descricaoTextField" withCategory:@"FocusOnTextField"];
     } else if (textField == self.periodoTextField) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"periodoTextField"];
-        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        [[GAI sharedInstance] sendAction:@"periodoTextField" withCategory:@"FocusOnTextField"];
         if (self.actionMode == ADAddMode) {
             self.periodoTextField.text = [self.viewModel textForCycleType:0];
             [self.periodoPickerView selectRow:0 inComponent:0 animated:YES];
         }
     } else if (textField == self.horaTextField) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"horaTextField"];
-        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        [[GAI sharedInstance] sendAction:@"horaTextField" withCategory:@"FocusOnTextField"];
         if (self.actionMode == ADAddMode) {
             [self _refreshTimeLabel:nil];
             self.horaPicker.date = [NSDate date];
         }
     } else if (textField == self.dataTextField) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"dataTextField"];
-        [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        [[GAI sharedInstance] sendAction:@"dataTextField" withCategory:@"FocusOnTextField"];
         if (self.actionMode == ADAddMode) {
             [self _refreshDataInicialLabel:nil];
             self.dataPicker.date = [NSDate date];

@@ -14,6 +14,7 @@
 #import "NSDateFormatter+ADToolkitAdditions.h"
 #import "NSDateComponents+ADToolkitAdditions.h"
 #import "NSString+ADToolkitAdditions.h"
+#import "GAI+ADToolkitAdditions.h"
 
 
 

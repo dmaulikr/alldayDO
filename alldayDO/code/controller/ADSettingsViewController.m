@@ -29,10 +29,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"DetailReminderScreen"];
-    [tracker set:kGAIEventCategory value:@"Screen"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendScreen:@"DetailReminderScreen" withCategory:@"Screen"];
 }
 
 #pragma mark - Private Methods -
@@ -76,42 +73,26 @@
 }
 
 - (IBAction)rateTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"rateAppActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"rateAppActivity" withCategory:@"Action"];
     NSString *appID = @"916494166";
     NSString *urlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", appID];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
 - (IBAction)websiteTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"websiteActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"websiteActivity" withCategory:@"Action"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.alldayDO.com"]];
 }
 
 - (IBAction)facebookTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"FacebookActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"FacebookActivity" withCategory:@"Action"];
     SLComposeViewController *facebookComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [facebookComposeViewController setInitialText:NSLocalizedString(@"facebookMessageDefault", nil)];
     [self presentViewController:facebookComposeViewController animated:YES completion:nil];
 }
 
 - (IBAction)twitterTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"TwitterActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"TwitterActivity" withCategory:@"Action"];
     SLComposeViewController *twitterComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [twitterComposeViewController setInitialText:NSLocalizedString(@"twitterMessageDefault", nil)];
     [self presentViewController:twitterComposeViewController animated:YES completion:nil];
@@ -122,10 +103,7 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"EmailSentActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"EmailSentActivity" withCategory:@"Action"];
     switch (result) {
         case MFMailComposeResultFailed:
             [[[UIAlertView alloc] initWithTitle:@"Email não enviado"

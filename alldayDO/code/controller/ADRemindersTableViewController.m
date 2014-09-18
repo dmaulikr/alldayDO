@@ -128,11 +128,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"RemindersScreen"];
-    [tracker set:kGAIEventCategory value:@"Screen"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendScreen:@"RemindersScreen" withCategory:@"Screen"];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self _reloadData];
 }
@@ -260,10 +256,7 @@
 }
 
 - (void)_showBlurViewWithAnimation {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"addActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"addActivity" withCategory:@"Action"];
     
     self.blurView.alpha = 0.0f;
     [UIView animateWithDuration:0.3f animations:^{
@@ -333,10 +326,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"DeleteInHomeActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"DeleteInHomeActivity" withCategory:@"Action"];
     
     [self.tableView beginUpdates];
     [self.viewModel deleteRow:indexPath];
@@ -352,31 +342,22 @@
 }
 
 - (IBAction)hexaconAllTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"CheckAllActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"CheckAllActivity" withCategory:@"Action"];
     
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForAll];
 }
 
 - (IBAction)hexaconDoneTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"CheckCompleteActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [[GAI sharedInstance] sendAction:@"CheckCompleteActivity" withCategory:@"Action"];
     
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForDoneReminders];
 }
 
 - (IBAction)hexaconUndoneTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"CheckNoCompleteActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"CheckNoCompleteActivity" withCategory:@"Action"];
+
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForUndoneReminders];
 }
@@ -422,10 +403,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:DETAIL_REMINDER_NAME_SEGUE]) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"DetailActivity"];
-        [tracker set:kGAIEventCategory value:@"Screen"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        [[GAI sharedInstance] sendAction:@"DetailActivity" withCategory:@"Screen"];
         
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     

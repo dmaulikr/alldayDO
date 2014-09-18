@@ -54,12 +54,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"DetailReminderScreen"];
-    [tracker set:kGAIEventCategory value:@"Screen"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendScreen:@"DetailReminderScreen" withCategory:@"Screen"];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -200,28 +195,16 @@
 #pragma mark - IBAction Methods -
 
 - (IBAction)editButtonTouched:(id)sender {
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:@"EditActivity"];
-    [tracker set:kGAIEventCategory value:@"Action"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    [[GAI sharedInstance] sendAction:@"EditActivity" withCategory:@"Action"];
     [self _presentNewReminderViewController];
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
     if (self.doneButton.selected) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"RememberQuestionActivity"];
-        [tracker set:kGAIEventCategory value:@"Action"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
+        [[GAI sharedInstance] sendAction:@"RememberQuestionActivity" withCategory:@"Action"];
         [self.viewModel removeLembreteConfirmado];
     } else {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker set:kGAIEventAction value:@"RememberOkActivity"];
-        [tracker set:kGAIEventCategory value:@"Action"];
-        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
+        [[GAI sharedInstance] sendAction:@"RememberOkActivity" withCategory:@"Action"];
         [self.viewModel addLembreteConfirmado];
     }
     
@@ -271,7 +254,6 @@
 }
 
 - (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex {
-    
 }
 
 - (void)userClickedOnBarCharIndex:(NSInteger)barIndex {

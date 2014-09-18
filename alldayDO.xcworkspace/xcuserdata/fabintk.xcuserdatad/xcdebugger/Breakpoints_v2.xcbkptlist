@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "alldayDO/code/controller/ADEditReminderViewController.m"
-            timestampString = "432015405.504362"
+            timestampString = "432773224.635534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
-            landmarkName = "-_refreshDataInicialLabel:"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "-_requiredValidation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

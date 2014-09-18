@@ -22,6 +22,7 @@
 		7130CD6D1943724E009AF8D8 /* ADStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD6C1943724E009AF8D8 /* ADStyleSheet.m */; };
 		7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130CD751944BEE0009AF8D8 /* ADIconCell.m */; };
 		714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */; };
+		716A347019CB90660069189E /* GAI+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A346F19CB90660069189E /* GAI+ADToolkitAdditions.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
 		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
 		71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71990A9E19A8153D0056C17C /* ADLocalNotification.m */; };
@@ -94,6 +95,8 @@
 		714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADLembrete+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ADLembrete+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		71507BD41947F50300884B46 /* ADEditReminderViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewControllerDelegate.h; sourceTree = "<group>"; };
+		716A346E19CB90660069189E /* GAI+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GAI+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		716A346F19CB90660069189E /* GAI+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GAI+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		7174F868193A779600DEB9D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
 		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */,
 				711F9844198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.h */,
 				711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */,
+				716A346E19CB90660069189E /* GAI+ADToolkitAdditions.h */,
+				716A346F19CB90660069189E /* GAI+ADToolkitAdditions.m */,
 			);
 			name = Category;
 			path = category;
@@ -566,6 +571,7 @@
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
 				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
+				716A347019CB90660069189E /* GAI+ADToolkitAdditions.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
 				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,
 				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
