@@ -65,7 +65,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
     if (!self.initialized) {
         self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
         [self.barChart setX:9.f andY:3.f];

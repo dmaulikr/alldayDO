@@ -300,7 +300,6 @@
     [tracker set:kGAIScreenName value:@"EditReminderScreen"];
     [tracker set:kGAIEventCategory value:@"Action"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
     if (self.actionMode == ADEditMode) {
         [self _editReminderMode];
     }
@@ -318,7 +317,6 @@
     [tracker set:kGAIEventAction value:@"saveActivity"];
     [tracker set:kGAIEventCategory value:@"Action"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
     if ([self _requiredValidation]) {
         self.viewModel.descricao = self.descriptionTextField.text;
         self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
@@ -372,13 +370,13 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:@"HH"];
-    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
+    NSString *horaFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"mm"];
-    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
+    NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:self.viewModel.dataEdit]];
+    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
     
@@ -412,7 +410,6 @@
     [tracker set:kGAIEventAction value:@"clickNextField"];
     [tracker set:kGAIEventCategory value:@"Action"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
     if (self.descriptionTextField.isFirstResponder) {
         [self.periodoTextField becomeFirstResponder];
         
@@ -427,13 +424,11 @@
     }
 }
 
-- (void)_refreshTimeLabel:(UIDatePicker*)datePicker {
+- (void)_refreshTimeLabel:(UIDatePicker *)datePicker {
     NSDate *date = [NSDate date];
-    
     if (self.actionMode == ADEditMode) {
         date = self.viewModel.dataEdit;
     }
-    
     if (datePicker) {
         date = datePicker.date;
     }
@@ -441,24 +436,22 @@
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     
     [outputFormatter setDateFormat:@"HH"];
-    NSString *horaFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:date]];
+    NSString *horaFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
     
     [outputFormatter setDateFormat:@"mm"];
-    NSString *minutosFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:date]];
+    NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
 
     [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@",[outputFormatter stringFromDate:date]];
+    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
 }
 
-- (void)_refreshDataInicialLabel:(UIDatePicker*)datePicker {
+- (void)_refreshDataInicialLabel:(UIDatePicker *)datePicker {
     NSDate *date = [NSDate date];
-    
     if (self.actionMode == ADEditMode) {
         date = self.viewModel.dataInicialEdit;
     }
-    
     if (datePicker) {
         date = datePicker.date;
     }
@@ -474,7 +467,6 @@
     UIColor *requiredColor = [UIColor sam_colorWithHex:ERROR_COLOR_HEX];
     
     UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
-    
     if ([self.descriptionTextField.text isEqualToString:@""]) {
         [self.descriptionTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
         sucess = NO;
@@ -500,7 +492,6 @@
         self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
         sucess = NO;
     }
-    
     return sucess;
 }
 
@@ -526,7 +517,6 @@
         [tracker set:kGAIEventAction value:@"periodoTextField"];
         [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
         [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
         if (self.actionMode == ADAddMode) {
             self.periodoTextField.text = [self.viewModel textForCycleType:0];
             [self.periodoPickerView selectRow:0 inComponent:0 animated:YES];
@@ -536,7 +526,6 @@
         [tracker set:kGAIEventAction value:@"horaTextField"];
         [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
         [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
         if (self.actionMode == ADAddMode) {
             [self _refreshTimeLabel:nil];
             self.horaPicker.date = [NSDate date];
@@ -546,7 +535,6 @@
         [tracker set:kGAIEventAction value:@"dataTextField"];
         [tracker set:kGAIEventCategory value:@"FocusOnTextField"];
         [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-        
         if (self.actionMode == ADAddMode) {
             [self _refreshDataInicialLabel:nil];
             self.dataPicker.date = [NSDate date];
@@ -556,7 +544,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     BOOL edited = NO;
-    
     if (textField == self.descriptionTextField) {
         edited = YES;
     }
@@ -571,7 +558,6 @@
 }
 
 #pragma mark - UIPickerViewDataSource Methods -
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
@@ -590,7 +576,6 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.periodoTextField.text = [self.viewModel textForCycleType:row];
 }
-
 
 #pragma mark - UICollectionViewDataSource Methods -
 
@@ -613,7 +598,6 @@
 }
 
 #pragma mark - UICollectionViewDelegate Methods -
-
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [UIView animateWithDuration:0.4f animations:^{

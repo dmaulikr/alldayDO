@@ -26,7 +26,6 @@
             repeatInterval = 0;
             break;
     }
-    
     return repeatInterval;
 }
 
@@ -38,7 +37,6 @@
         if ([[notification.userInfo objectForKey:LOCAL_NOTIFICATION_DOMAIN] isEqualToString:self.descricao]) {
             
             NSDate *dateInicial = [NSDate date];
-            
             if ([self.dataInicial compare:dateInicial] == NSOrderedDescending) {
                 dateInicial = self.dataInicial;
             }

@@ -82,7 +82,6 @@
         _blurView = [UIView viewWithFrame:self.view.frame];
         _blurView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.300];
     }
-    
     return _blurView;
 }
 
@@ -185,7 +184,6 @@
     self.hexaconAllButton.selected = selected;
     self.hexaconDoneButton.selected = selected;
     self.hexaconUndoneButton.selected = selected;
-    
     if (sender == self.hexaconAllButton) {
         self.hexaconAllButton.selected = !selected;;
     } else if (sender == self.hexaconDoneButton) {
@@ -295,7 +293,6 @@
     self.totalRemindersLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.allReminders.count];
     self.doneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.doneReminders.count];
     self.undoneReminders.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.viewModel.undoneReminders.count];
-    
     if (numberOfReminders > 0) {
         self.emptyMessage.hidden = YES;
     } else {
@@ -310,7 +307,6 @@
     [cell.badgeImageView centerYWith:cell.timelineContentView];
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;
     cell.timelineContentView.layer.cornerRadius = 5.f;
-    
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineBottomView.hidden = YES;
         
@@ -319,9 +315,8 @@
     }
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
-    
     if (self.viewModel.hasNoReminderAlert) {
-        cell.nextReminderLabel.text = NSLocalizedString(@"noReminderAlert",nil);
+        cell.nextReminderLabel.text = NSLocalizedString(@"noReminderAlert", nil);
     } else {
         cell.nextReminderLabel.text = [NSString stringWithFormat:@"%@", [self.viewModel nextReminderFormated]];
     }

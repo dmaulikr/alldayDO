@@ -27,14 +27,12 @@
     CGRect bounds = CGRectMake(0.f, 0.f, self.size.width, self.size.height);
     UIRectFill(bounds);
     [self drawInRect:bounds blendMode:blendMode alpha:1.f];
-    
     if (blendMode != kCGBlendModeDestinationIn) {
         [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.f];
     }
     
     UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return tintedImage;
 }
 

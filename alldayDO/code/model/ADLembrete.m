@@ -9,7 +9,6 @@
 #import "ADLembrete.h"
 #import "ADLembreteConfirmado.h"
 
-
 @implementation ADLembrete
 
 @dynamic data;

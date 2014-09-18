@@ -126,7 +126,6 @@
     [tracker set:kGAIEventAction value:@"EmailSentActivity"];
     [tracker set:kGAIEventCategory value:@"Action"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
     switch (result) {
         case MFMailComposeResultFailed:
             [[[UIAlertView alloc] initWithTitle:@"Email não enviado"

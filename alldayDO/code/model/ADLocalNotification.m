@@ -24,14 +24,13 @@
 #pragma mark - Initialize Methods -
 
 + (instancetype)sharedInstance {
-    static ADLocalNotification *__sharedInstance;
+    static ADLocalNotification * __sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __sharedInstance = [[ADLocalNotification alloc] init];
     });
     return __sharedInstance;
 }
-
 
 #pragma mark - Getter Methods - 
 
@@ -51,7 +50,6 @@
 
     int index = arc4random() % messages.count;
     alert_body = [messages objectAtIndex:index];
-    
     return alert_body;
 }
 

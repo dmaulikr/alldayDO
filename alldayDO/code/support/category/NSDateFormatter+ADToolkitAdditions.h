@@ -11,7 +11,7 @@
 @interface NSDateFormatter (ADToolkitAdditions)
 
 + (NSDateFormatter *)formatter;
-+ (NSDateFormatter *)formatterWithFormat:(NSString*)dateFormat;
++ (NSDateFormatter *)formatterWithFormat:(NSString *)dateFormat;
 + (NSDateFormatter *)formatterWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
 + (NSDateFormatter *)formatterWithInverseDateFormat;
 + (NSDateFormatter *)formatterWithMonthAndYearDateFormat;

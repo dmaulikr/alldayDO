@@ -13,11 +13,9 @@
 
 - (NSString *)dateAsString {
     NSString *date = @"";
-    
     if (self.year && self.year != INT_MAX) {
         date = [NSString stringWithFormat:@"%d %@", self.year, NSLocalizedString(@"a", nil)];
     }
-    
     if (self.month && self.month != INT_MAX) {
         if (date.isPresent) {
             date = [date stringByAppendingString:@", "];
@@ -26,7 +24,6 @@
         NSString *noMeses = [NSString stringWithFormat:@"%d m", self.month];
         date = [date stringByAppendingString:noMeses];
     }
-    
     if (self.day && self.day != INT_MAX) {
         if (date.isPresent) {
             date = [date stringByAppendingString:@", "];
@@ -35,7 +32,6 @@
         NSString *noDias = [NSString stringWithFormat:@"%d d", self.day];
         date = [date stringByAppendingString:noDias];
     }
-
     if (!date.isPresent) {
         if (self.hour && self.hour != INT_MAX) {
             if (date.isPresent) {
@@ -45,7 +41,6 @@
             NSString *noDias = [NSString stringWithFormat:@"%d h", self.hour];
             date = [date stringByAppendingString:noDias];
         }
-        
         if (self.minute && self.minute != INT_MAX) {
             if (date.isPresent) {
                 date = [date stringByAppendingString:@", "];
@@ -55,20 +50,17 @@
             date = [date stringByAppendingString:noDias];
         }
     }
-    
     if (!date.isPresent) {
         if (self.second && self.second != INT_MAX) {
             NSString *noDias = [NSString stringWithFormat:@"%d s", self.second];
             date = [date stringByAppendingString:noDias];
         }
     }
-    
     return date;
 }
 
 - (NSString *)dateAsStringExtended {
     NSString *date = @"";
-    
     if (self.year && self.year != INT_MAX) {
         
         NSString *yearLabel = nil;
@@ -79,7 +71,6 @@
         }
         date = [NSString stringWithFormat:@"%d %@", self.year, yearLabel];
     }
-    
     if (self.month && self.month != INT_MAX) {
         if (date.isPresent) {
             date = [date stringByAppendingString:@", "];
@@ -94,7 +85,6 @@
         NSString *noMeses = [NSString stringWithFormat:@"%d %@", self.month, monthLabel];
         date = [date stringByAppendingString:noMeses];
     }
-    
     if (self.day && self.day != INT_MAX) {
         if (date.isPresent) {
             date = [date stringByAppendingString:@", "];
@@ -109,7 +99,6 @@
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.day, daylabel];
         date = [date stringByAppendingString:noDias];
     }
-    
     if (!date.isPresent) {
         if (self.hour && self.hour != INT_MAX) {
             if (date.isPresent) {
@@ -125,7 +114,6 @@
             NSString *noDias = [NSString stringWithFormat:@"%d %@", self.hour, daylabel];
             date = [date stringByAppendingString:noDias];
         }
-        
         if (self.minute && self.minute != INT_MAX) {
             if (date.isPresent) {
                 date = [date stringByAppendingString:NSLocalizedString(@" e ", nil)];
@@ -141,7 +129,6 @@
             date = [date stringByAppendingString:noDias];
         }
     }
-    
     if (!date.isPresent) {
         NSString *daylabel = nil;
         if (self.second == 1) {
@@ -152,7 +139,6 @@
         NSString *noDias = [NSString stringWithFormat:@"%d %@", self.second, daylabel];
         date = [date stringByAppendingString:noDias];
     }
-    
     return date;
 }
 

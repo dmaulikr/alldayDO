@@ -49,7 +49,7 @@ typedef enum {
 }
 
 - (NSArray *)cycleType {
-    if(!_cycleType){
+    if (!_cycleType) {
         _cycleType = @[
             NSLocalizedString(@"Diariamente", nil),
             NSLocalizedString(@"Semanalmente", nil),
@@ -64,9 +64,7 @@ typedef enum {
 
 - (void)saveChanges {
     ADLembrete *lembrete = nil;
-    
     if (self.lembreteEdit) {
-        
         lembrete = self.lembreteEdit;
     } else {
         lembrete = [NSEntityDescription insertNewObjectForEntityADLembrete];

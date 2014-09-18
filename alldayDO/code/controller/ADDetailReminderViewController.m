@@ -31,7 +31,6 @@
 - (NSString *)_doneButtonTitles;
 
 //- (void)willRotateToInterfaceOrientation:(NSNotification *)notification;
-
 @end
 
 @implementation ADDetailReminderViewController
@@ -81,7 +80,6 @@
         _blurView = [UIView viewWithFrame:self.view.frame];
         _blurView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.300];
     }
-    
     return _blurView;
 }
 
@@ -145,7 +143,6 @@
         if ([lembretesConfirmados containsObject:data]) {
             valorY = 1;
         }
-        
         return [PNLineChartDataItem dataItemWithY:valorY];
     };
         
@@ -257,7 +254,6 @@
 }
 
 #pragma mark - UIInterfaceOrientation Methods
-
 //- (void)willRotateToInterfaceOrientation:(NSNotification *)notification {
 //    UIDevice *device = notification.object;
 //    
@@ -268,8 +264,6 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
 //}
-
-
 #pragma mark - PNChartDelegate Methods -
 
 - (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {

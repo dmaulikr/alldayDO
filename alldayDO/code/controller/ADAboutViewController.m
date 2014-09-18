@@ -40,6 +40,7 @@
     [tracker set:kGAIEventCategory value:@"Action"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/arthurklose"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/arthurklose"]];    
 }
+
 @end

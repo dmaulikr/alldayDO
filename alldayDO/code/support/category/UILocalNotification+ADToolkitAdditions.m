@@ -16,13 +16,15 @@
 - (NSDate *)myNextFireDateAfterDate:(NSDate *)afterDate {
     
     // Check if fire date is in the future:
-    if ([self.fireDate compare:afterDate] == NSOrderedDescending)
+    if ([self.fireDate compare:afterDate] == NSOrderedDescending) {
         return self.fireDate;
+    }
     
     // The notification can have its own calendar, but the default is the current calendar:
     NSCalendar *cal = self.repeatCalendar;
-    if (cal == nil)
-        cal = [NSCalendar currentCalendar];
+    if (cal == nil) {
+        cal = [NSCalendar currentCalendar];   
+    }
     
     // Number of repeat intervals between fire date and the reference date:
     NSDateComponents *difference = [cal components:self.repeatInterval

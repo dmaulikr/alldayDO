@@ -60,7 +60,6 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:@"reminders_cache"];
     }
-    
     return _fetchedResultsController;
 }
 
@@ -101,17 +100,13 @@
 - (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados {
     for (ADLembrete *lembrete in self.lembretes) {
         BOOL DoneReminder = NO;
-        
         for (ADLembreteConfirmado *lembreteConfirmado in lembrete.lembretesConfirmados) {
-            
             if ([lembreteConfirmado.data isToday]) {
                 [self.lembretesCompletados addObject:lembrete];
                 DoneReminder = YES;
             }
         }
-        
         if (!DoneReminder) {
-            
             [self.lembretesNaoCompletados addObject:lembrete];
         }
     }
@@ -183,9 +178,7 @@
 
 - (ADLembrete *)lembreteWithDescricao:(NSString *)descricao {
     ADLembrete *lembreteWithDescricao = nil;
-    
     for (ADLembrete *lembrete in self.lembretes) {
-        
         if ([lembrete.descricao isEqualToString:descricao]) {
             lembreteWithDescricao = lembrete;
             break;
@@ -196,9 +189,7 @@
 
 - (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao {
     NSIndexPath *indexPath = nil;
-    
     for (ADLembrete *lembrete in self.lembretes) {
-        
         if ([lembrete.descricao isEqualToString:descricao]) {
             indexPath = [NSIndexPath indexPathForRow:[self.lembretes indexOfObject:lembrete] inSection:0];
             break;

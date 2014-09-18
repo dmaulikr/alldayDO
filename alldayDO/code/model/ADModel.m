@@ -23,7 +23,7 @@
 #pragma mark - Getter Methods
 
 + (instancetype)sharedInstance {
-    static ADModel *__sharedInstance;
+    static ADModel * __sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __sharedInstance = [[ADModel alloc] init];
@@ -41,7 +41,6 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:REMINDER_NOTIFICATION_CACHE_NAME];
     }
-    
     return _fetchedResultsController;
 }
 
@@ -82,7 +81,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return _persistentStoreCoordinator;
 }
 
@@ -98,9 +96,8 @@
     NSError *error = nil;
     if ([self.managedObjectContext hasChanges]) {
         if (![self.managedObjectContext save:&error]) {
-            NSLog(@"Save failed: %@",[error localizedDescription]);
-        }
-        else {
+            NSLog(@"Save failed: %@", [error localizedDescription]);
+        } else {
             NSLog(@"Save succeeded");
         }
     }

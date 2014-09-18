@@ -37,7 +37,6 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:@"reminders_cache"];
     }
-    
     return _fetchedResultsController;
 }
 
@@ -86,7 +85,6 @@
 #pragma mark - UIApplication Methods - Local Notification - 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-
     if (application.applicationState == UIApplicationStateInactive ||
         application.applicationState == UIApplicationStateBackground ) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];

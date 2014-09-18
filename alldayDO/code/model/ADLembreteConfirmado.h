@@ -13,7 +13,7 @@
 
 @interface ADLembreteConfirmado : NSManagedObject
 
-@property (nonatomic, retain) NSDate * data;
+@property (nonatomic, retain) NSDate *data;
 @property (nonatomic, retain) ADLembrete *lembrete;
 
 @end

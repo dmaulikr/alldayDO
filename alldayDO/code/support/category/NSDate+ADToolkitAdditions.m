@@ -22,7 +22,6 @@
     } else {
         currentCalendar.firstWeekday = ADWeekdayMonday;
     }
-    
     return currentCalendar;
 }
 
@@ -37,7 +36,6 @@
     dateComponents.day = day;
     dateComponents.month = month;
     dateComponents.year = year;
-    
     return [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
 }
 
@@ -47,28 +45,27 @@
 
 - (NSDate *)dateByAddingComponents:(NSDateComponents *)dateComponents timeZone:(NSTimeZone *)timeZone {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    if (timeZone) calendar.timeZone = timeZone;
+    if (timeZone) {
+        calendar.timeZone = timeZone;
+    }
     return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
 }
 
 - (NSDate *)dateByAddingDays:(NSInteger)numberOfDays {
     NSDateComponents *daysComponent = [[NSDateComponents alloc] init];
     daysComponent.day = numberOfDays;
-    
     return [self dateByAddingComponents:daysComponent];
 }
 
 - (NSDate *)dateByAddingMonths:(NSInteger)numberOfMonths {
     NSDateComponents *monthComponent = [[NSDateComponents alloc] init];
     monthComponent.month = numberOfMonths;
-    
     return [self dateByAddingComponents:monthComponent];
 }
 
 - (NSDate *)dateByAddingYears:(NSInteger)numberOfYears {
     NSDateComponents *yearComponent = [[NSDateComponents alloc] init];
     yearComponent.year = numberOfYears;
-    
     return [self dateByAddingComponents:yearComponent];
 }
 
@@ -80,7 +77,6 @@
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.hour = hours;
     components.minute = minutes;
-    
     return [[self beginningOfDay] dateByAddingComponents:components];
 }
 
@@ -97,7 +93,6 @@
 - (NSDate *)endOfDay {
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.second = -1;
-    
     return [[[self beginningOfDay] dateByAddingDays:1] dateByAddingComponents:components];
 }
 
@@ -137,15 +132,23 @@
 
 - (NSDate *)lastWeekday:(ADWeekday)weekday {
     NSInteger daysToRemove = weekday - [self weekday];
-    if (daysToRemove > 0) { daysToRemove = -(NUMBER_WEEDAYS - daysToRemove); }
-    if (daysToRemove == 0) { daysToRemove = -7; }
+    if (daysToRemove > 0) {
+        daysToRemove = -(NUMBER_WEEDAYS - daysToRemove);
+    }
+    if (daysToRemove == 0) {
+        daysToRemove = -7;
+    }
     return [self dateByAddingDays:daysToRemove];
 }
 
 - (NSDate *)nextWeekday:(ADWeekday)weekday {
     NSInteger daysToAdd = weekday - [self weekday];
-    if (daysToAdd < 0) { daysToAdd = NUMBER_WEEDAYS + daysToAdd; }
-    if (daysToAdd == 0) { daysToAdd = 7; }
+    if (daysToAdd < 0) {
+        daysToAdd = NUMBER_WEEDAYS + daysToAdd;
+    }
+    if (daysToAdd == 0) {
+        daysToAdd = 7;
+    }
     return [self dateByAddingDays:daysToAdd];
 }
 
@@ -299,13 +302,11 @@
                                                                      toDate:date
                                                                     options:0];
     NSString *dataAsString = nil;
-    
     if (extended) {
         dataAsString = [components dateAsStringExtended];
     } else {
         dataAsString = [components dateAsString];
     }
-    
     return dataAsString;
 }
 

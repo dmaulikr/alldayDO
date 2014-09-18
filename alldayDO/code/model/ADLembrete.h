@@ -13,13 +13,14 @@
 
 @interface ADLembrete : NSManagedObject
 
-@property (nonatomic, retain) NSDate * data;
-@property (nonatomic, retain) NSDate * dataInicial;
-@property (nonatomic, retain) NSString * descricao;
-@property (nonatomic, retain) NSData * imagem;
-@property (nonatomic, retain) NSNumber * periodo;
-@property (nonatomic, retain) NSNumber * seguidos;
+@property (nonatomic, retain) NSDate *data;
+@property (nonatomic, retain) NSDate *dataInicial;
+@property (nonatomic, retain) NSString *descricao;
+@property (nonatomic, retain) NSData *imagem;
+@property (nonatomic, retain) NSNumber *periodo;
+@property (nonatomic, retain) NSNumber *seguidos;
 @property (nonatomic, retain) NSSet *lembretesConfirmados;
+
 @end
 
 @interface ADLembrete (CoreDataGeneratedAccessors)

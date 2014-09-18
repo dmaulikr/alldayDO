@@ -16,9 +16,9 @@
 @property (nonatomic, strong) NSNumber *periodo;
 @property (nonatomic, strong) NSData *imagem;
 
-@property (nonatomic, readonly) NSString * descricaoEdit;
-@property (nonatomic, readonly) NSDate * dataEdit;
-@property (nonatomic, readonly) NSDate * dataInicialEdit;
+@property (nonatomic, readonly) NSString *descricaoEdit;
+@property (nonatomic, readonly) NSDate *dataEdit;
+@property (nonatomic, readonly) NSDate *dataInicialEdit;
 @property (nonatomic, readonly) NSNumber *periodoEdit;
 @property (nonatomic, readonly) NSData *imagemEdit;
 

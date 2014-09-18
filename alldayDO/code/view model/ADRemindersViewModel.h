@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSString *periodo;
 @property (nonatomic, readonly) UIImage *imagem;
 @property (nonatomic, readonly) NSNumber *seguidos;
-@property (nonatomic, readonly) BOOL *hasNoReminderAlert;
+@property (nonatomic, readonly) BOOL hasNoReminderAlert;
 
 @property (nonatomic, readonly) NSMutableArray *allReminders;
 @property (nonatomic, readonly) NSMutableArray *doneReminders;

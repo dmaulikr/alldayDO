@@ -21,7 +21,6 @@ enum {
 };
 typedef NSUInteger ADWeekday;
 
-
 @interface NSDate (ADToolkitAdditions)
 
 - (NSCalendar *)currentCalendarStartingOnSunday:(BOOL)sunday;

@@ -42,14 +42,12 @@
             [calendario addObject:date];
         }
     }
-    
     return calendario;
 }
 
-
 - (NSArray *)dataLembretesConfirmados {
-    NSSortDescriptor *sortDescriptor =[[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObject: sortDescriptor];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
 
     NSMutableArray *lembretesConfirmados = [NSMutableArray array];
     for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados.allObjects) {
@@ -57,7 +55,6 @@
             [lembretesConfirmados addObject:lembreteConfirmado.data];
         }
     }
-
     return [lembretesConfirmados sortedArrayUsingDescriptors:descriptors];
 }
 
@@ -81,7 +78,6 @@
 - (void)addLembreteConfirmado {
     [self _setTodayDate];
     [self.lembrete addLembretesConfirmadosObject:self.lembreteConfirmado];
-    
     for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
         if ([lembreteConfirmado.data isEqualToDate:self.lembreteConfirmado.data.yesterday]) {
             self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue + 1];
@@ -95,7 +91,6 @@
 
 - (void)removeLembreteConfirmado {
     ADLembreteConfirmado *lembreteConfirmadoToRemove = nil;
-    
     for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
         if (lembreteConfirmado.data.isToday) {
             lembreteConfirmadoToRemove = lembreteConfirmado;
@@ -140,7 +135,6 @@
 
 - (NSInteger)quantidadeConfirmacaoSeguidos {
     NSInteger seguidos = 00;
-
     if (self.lembrete.seguidos != nil &&
         self.lembrete.seguidos.intValue > 0) {
         seguidos = self.lembrete.seguidos.intValue;
@@ -150,13 +144,11 @@
 
 - (BOOL)isLembreteConfirmated {
     BOOL isToday = NO;
-    
     for (ADLembreteConfirmado *lembreteConfirmado in self.lembrete.lembretesConfirmados) {
         if (lembreteConfirmado.data.isToday) {
             isToday = YES;
         }
     }
-    
     return isToday;
 }
 
@@ -171,7 +163,6 @@
             [datasCalendarioLabels addObject:[NSString stringWithFormat:@"%ld", (long)dataConfirmada.day]];
         }
     }
-    
     return datasCalendarioLabels;
 }
 
