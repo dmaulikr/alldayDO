@@ -12,16 +12,17 @@
 
 - (void)sendAction:(NSString *)action withCategory:(NSString *)category {
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIEventAction value:action];
-    [tracker set:kGAIEventCategory value:category];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
+                                                         action:action
+                                                          label:nil
+                                                          value:nil] build]];
 }
 
 - (void)sendScreen:(NSString *)screen withCategory:(NSString *)category {
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:screen];
     [tracker set:kGAIEventCategory value:category];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 @end
