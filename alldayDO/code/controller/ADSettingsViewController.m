@@ -7,11 +7,12 @@
 //
 
 #import "ADSettingsViewController.h"
+#import "ADWalkthrough.h"
 
 #import <MessageUI/MessageUI.h>
 #import <Social/Social.h>
 
-@interface ADSettingsViewController () <MFMailComposeViewControllerDelegate>
+@interface ADSettingsViewController () <MFMailComposeViewControllerDelegate, EAIntroDelegate>
 
 - (void)_IBOutletTitle;
 
@@ -41,7 +42,7 @@
     [self.seedFeedbackButton setTitle:NSLocalizedString(@"feedback", nil) forState:UIControlStateNormal];
     [self.rateButton setTitle:NSLocalizedString(@"rate", nil) forState:UIControlStateNormal];
     [self.websiteButton setTitle:NSLocalizedString(@"website", nil) forState:UIControlStateNormal];
-    
+    [self.walkthroughButton setTitle:NSLocalizedString(@"walkthrough", nil) forState:UIControlStateNormal];
     self.shareLabel.text = NSLocalizedString(@"shared", nil);
 }
 
@@ -91,6 +92,14 @@
     [self presentViewController:facebookComposeViewController animated:YES completion:nil];
 }
 
+- (IBAction)walkthroughTouched:(id)sender {
+        [[GAI sharedInstance] sendAction:@"WalktroughActivity" withCategory:@"Action"];
+    ADWalkthrough *walkthroughView = [[ADWalkthrough alloc] initWithFrame:self.navigationController.view.frame];
+    walkthroughView.delegate = self;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+    [walkthroughView showInView:self.navigationController.view animateDuration:0.4f];
+}
+
 - (IBAction)twitterTouched:(id)sender {
     [[GAI sharedInstance] sendAction:@"TwitterActivity" withCategory:@"Action"];
     SLComposeViewController *twitterComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -118,6 +127,12 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - EAIntroDelegate Methods
+
+- (void)introDidFinish:(EAIntroView *)introView {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
 }
 
 @end

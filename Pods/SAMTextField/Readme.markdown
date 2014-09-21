@@ -1,8 +1,8 @@
 # SAMTextField
 
-Handy UITextField additions like insetting text and changing the placeholder color.
+Handy UITextField additions like insetting text and other elements.
 
-SAMTextField is tested on iOS 6 and requires ARC. Released under the [MIT license](LICENSE).
+SAMTextField is tested on iOS 6-8 and requires ARC. Released under the [MIT license](LICENSE).
 
 ## Usage
 
@@ -12,9 +12,6 @@ SAMTextField *textField = [[SAMTextField alloc] initWithFrame:CGRectMake(20.0f, 
 
 // Inset some text
 textField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-
-// Change the placeholder color
-textField.placeholderTextColor = [UIColor lightGrayColor];
 ```
 
 See the [header](SAMTextField/SAMTextField.h) for full documentation.

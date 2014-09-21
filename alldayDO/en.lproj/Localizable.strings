@@ -67,6 +67,8 @@
 "feedback" = "Seed Feedback";
 "rate" = "Rate this App";
 "website" = "Informatic Website";
+"walkthrough" = "Walkthrough";
+"skip" = "Skip";
 "shared" = "Share with friends";
 
 "mailSubject" = "Feedback alldayDO";

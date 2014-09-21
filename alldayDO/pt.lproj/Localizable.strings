@@ -67,6 +67,8 @@
 "feedback" = "Envie um Feedback";
 "rate" = "Avalie nosso aplicativo";
 "website" = "Site informativo";
+"walkthrough" = "Passo a passo";
+"skip" = "Pular";
 "shared" = "Compartilhe com seus amigos";
 
 "mailSubject" = "Feedback alldayDO";

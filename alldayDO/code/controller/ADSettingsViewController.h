@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *seedFeedbackButton;
 @property (weak, nonatomic) IBOutlet UIButton *rateButton;
 @property (weak, nonatomic) IBOutlet UIButton *websiteButton;
+@property (weak, nonatomic) IBOutlet UIButton *walkthroughButton;
 @property (weak, nonatomic) IBOutlet UILabel *shareLabel;
 
 - (IBAction)feedbackTouched:(id)sender;
@@ -21,5 +22,6 @@
 - (IBAction)websiteTouched:(id)sender;
 - (IBAction)twitterTouched:(id)sender;
 - (IBAction)facebookTouched:(id)sender;
+- (IBAction)walkthroughTouched:(id)sender;
 
 @end

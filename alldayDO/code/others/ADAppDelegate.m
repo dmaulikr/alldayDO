@@ -10,13 +10,15 @@
 #import "ADModel.h"
 #import "ADLocalNotification.h"
 #import "ADStyleSheet.h"
+#import "ADWalkthrough.h"
 
 #import <Crashlytics/Crashlytics.h>
 
-@interface ADAppDelegate ()
+@interface ADAppDelegate () <EAIntroDelegate>
 
 - (void)_setupAnalytics;
 - (void)_setupCrashlytics;
+- (void)_walkthrough;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
@@ -52,6 +54,22 @@
     [Crashlytics startWithAPIKey:@"ba0eee4e53729a8c93fd47ad94835d6be7ec81c8"];
 }
 
+- (void)_walkthrough {
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+//        // app already launched
+//    }
+//    else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        ADWalkthrough *walkthroughView = [[ADWalkthrough alloc] initWithFrame:self.window.frame];
+        walkthroughView.delegate = self;
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+    
+        [walkthroughView showInView:self.window.rootViewController.view animateDuration:0.4f];
+//    }
+}
+
 #pragma mark - UIApplication Methods -
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -59,6 +77,8 @@
     [self _setupCrashlytics];
     
     [ADStyleSheet initStyles];
+
+    [self _walkthrough];
     return YES;
 }
 
@@ -83,6 +103,12 @@
     } else if (application.applicationState == UIApplicationStateActive ) {
             [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE object:notification];
     }
+}
+
+#pragma mark - EAIntroDelegate Methods
+
+- (void)introDidFinish:(EAIntroView *)introView {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
 }
 
 @end

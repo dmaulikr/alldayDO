@@ -3,7 +3,7 @@
 //  SAMTextField
 //
 //  Created by Sam Soffes on 3/11/10.
-//  Copyright 2010-2013 Sam Soffes. All rights reserved.
+//  Copyright 2010-2014 Sam Soffes. All rights reserved.
 //
 
 #import "SAMTextField.h"
@@ -40,18 +40,32 @@
 }
 
 
+- (CGRect)placeholderRectForBounds:(CGRect)bounds {
+  return [self textRectForBounds:bounds];
+}
+
+
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds {
-    return UIEdgeInsetsInsetRect([super clearButtonRectForBounds:bounds], self.clearButtonEdgeInsets);
+	CGRect rect = [super clearButtonRectForBounds:bounds];
+	rect.origin.x += self.clearButtonEdgeInsets.right;
+	rect.origin.y += self.clearButtonEdgeInsets.top;
+	return rect;
 }
 
 
 - (CGRect)rightViewRectForBounds:(CGRect)bounds {
-    return UIEdgeInsetsInsetRect([super rightViewRectForBounds:bounds], self.rightViewInsets);
+	CGRect rect = [super rightViewRectForBounds:bounds];
+	rect.origin.x += self.rightViewInsets.right;
+	rect.origin.y += self.rightViewInsets.top;
+	return rect;
 }
 
 
 - (CGRect)leftViewRectForBounds:(CGRect)bounds {
-    return UIEdgeInsetsInsetRect([super leftViewRectForBounds:bounds], self.leftViewInsets);
+    CGRect rect = [super leftViewRectForBounds:bounds];
+	rect.origin.x += self.leftViewInsets.left;
+	rect.origin.y += self.leftViewInsets.top;
+	return rect;
 }
 
 

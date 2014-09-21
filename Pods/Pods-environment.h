@@ -6,6 +6,12 @@
 // project.
 
 
+// EAIntroView
+#define COCOAPODS_POD_AVAILABLE_EAIntroView
+#define COCOAPODS_VERSION_MAJOR_EAIntroView 2
+#define COCOAPODS_VERSION_MINOR_EAIntroView 6
+#define COCOAPODS_VERSION_PATCH_EAIntroView 3
+
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
@@ -88,7 +94,7 @@
 #define COCOAPODS_POD_AVAILABLE_SAMTextField
 #define COCOAPODS_VERSION_MAJOR_SAMTextField 0
 #define COCOAPODS_VERSION_MINOR_SAMTextField 1
-#define COCOAPODS_VERSION_PATCH_SAMTextField 1
+#define COCOAPODS_VERSION_PATCH_SAMTextField 2
 
 // SAMTextView
 #define COCOAPODS_POD_AVAILABLE_SAMTextView
