@@ -160,6 +160,7 @@
     if (!_horaPicker) {
         _horaPicker = [[UIDatePicker alloc] init];
         _horaPicker.datePickerMode = UIDatePickerModeTime;
+        _horaPicker.locale = [NSLocale autoupdatingCurrentLocale];
         _horaPicker.backgroundColor = [UIColor whiteColor];
         [_horaPicker addTarget:self
                        action:@selector(_refreshTimeLabel:)
@@ -363,7 +364,7 @@
     
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setDateFormat:@"HH"];
+    [outputFormatter setDateFormat:@"hh"];
     NSString *horaFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     [outputFormatter setDateFormat:@"mm"];
@@ -423,7 +424,7 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     
-    [outputFormatter setDateFormat:@"HH"];
+    [outputFormatter setDateFormat:@"hh"];
     NSString *horaFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
     
     [outputFormatter setDateFormat:@"mm"];
