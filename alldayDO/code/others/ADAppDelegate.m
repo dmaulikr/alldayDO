@@ -55,19 +55,16 @@
 }
 
 - (void)_walkthrough {
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
-//        // app already launched
-//    }
-//    else {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         ADWalkthrough *walkthroughView = [[ADWalkthrough alloc] initWithFrame:self.window.frame];
         walkthroughView.delegate = self;
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
-    
+        
         [walkthroughView showInView:self.window.rootViewController.view animateDuration:0.4f];
-//    }
+    }
 }
 
 #pragma mark - UIApplication Methods -
