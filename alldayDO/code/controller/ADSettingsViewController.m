@@ -64,7 +64,7 @@
                              [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
                          }];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:NSLocalizedString(@"errorConfigEmail", nil)
                                                        delegate:self
                                               cancelButtonTitle:@"Ok"

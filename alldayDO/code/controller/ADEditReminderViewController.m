@@ -386,7 +386,7 @@
 - (void)_cancelarTouched {
     [[GAI sharedInstance] sendAction:@"CancelActivity" withCategory:@"Action"];
     
-    [[UIAlertView alertViewWithTitle:nil
+    [[UIAlertView alertViewWithTitle:@""
                              message:NSLocalizedString(@"Você realmente deseja cancelar?", nil)
                             delegate:self
                    cancelButtonTitle:NSLocalizedString(@"Não", nil)

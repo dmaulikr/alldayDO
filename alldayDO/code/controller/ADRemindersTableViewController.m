@@ -68,7 +68,7 @@
 
 - (UIAlertView *)alertView {
     if (!_alertView) {
-        _alertView = [UIAlertView alertViewWithTitle:nil
+        _alertView = [UIAlertView alertViewWithTitle:@""
                                              message:nil
                                             delegate:self
                                    cancelButtonTitle:NSLocalizedString(@"Não", nil)
