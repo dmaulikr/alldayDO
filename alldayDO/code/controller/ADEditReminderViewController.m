@@ -320,8 +320,10 @@
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
 
-        [self.delegate newReminderViewController:self
-                                 didSaveReminder:(ADLembrete *)self.viewModel];
+        if ([self.delegate respondsToSelector:@selector(newReminderViewController:didSaveReminder:)]) {
+            [self.delegate newReminderViewController:self
+                                     didSaveReminder:(ADLembrete *)self.viewModel];
+        }
     }
 }
 
@@ -589,7 +591,9 @@
     switch (buttonIndex) {
         case 1:
             [self dismissViewControllerAnimated:YES completion:nil];
-            [self.delegate newReminderViewControllerDidCancelReminder:self];
+            if ([self.delegate respondsToSelector:@selector(newReminderViewControllerDidCancelReminder:)]) {
+                [self.delegate newReminderViewControllerDidCancelReminder:self];
+            }
             break;
         default:
         break;
