@@ -11,6 +11,7 @@
 
 @interface ADDetailReminderViewModel ()
 
+@property (nonatomic, strong) ADLembrete *lembrete;
 @property (nonatomic, strong) ADLembreteConfirmado *lembreteConfirmado;
 
 - (void)_setTodayDate;
@@ -105,7 +106,7 @@
     self.lembreteConfirmado = nil;
 }
 
-- (void)lembreteDetail:(ADLembrete *)lembrete {
+- (void)setLembreteDetail:(ADLembrete *)lembrete {
     self.lembrete = lembrete;
 }
 
@@ -164,6 +165,10 @@
         }
     }
     return datasCalendarioLabels;
+}
+
+- (ADLembrete *)model {
+    return self.lembrete;
 }
 
 @end

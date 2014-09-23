@@ -171,7 +171,7 @@
     return [NSString stringWithFormat:@"%@ %@", message, dateAsString];
 }
 
-- (ADLembrete *)lembreteAtIndexPath:(NSIndexPath *)indexPath {
+- (ADLembrete *)modelAtIndexPath:(NSIndexPath *)indexPath {
     [self fetchObjectAtIndexPath:indexPath];
     return self.lembrete;
 }

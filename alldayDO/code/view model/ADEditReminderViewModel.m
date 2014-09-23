@@ -49,15 +49,12 @@ typedef enum {
 }
 
 - (NSArray *)cycleType {
-    if (!_cycleType) {
-        _cycleType = @[
-            NSLocalizedString(@"Diariamente", nil),
-            NSLocalizedString(@"Semanalmente", nil),
-            NSLocalizedString(@"Mensalmente", nil),
-            NSLocalizedString(@"Nunca", nil)
-        ];
-    }
-    return _cycleType;
+    return @[
+        NSLocalizedString(@"Diariamente", nil),
+        NSLocalizedString(@"Semanalmente", nil),
+        NSLocalizedString(@"Mensalmente", nil),
+        NSLocalizedString(@"Nunca", nil)
+    ];
 }
 
 #pragma mark - Public Methods -
@@ -84,7 +81,7 @@ typedef enum {
     return [self.cycleType objectAtIndex:cycleType];
 }
 
-- (void)lembreteEdit:(ADLembrete *)lembrete {
+- (void)setLembreteEdit:(ADLembrete *)lembrete {
     self.lembreteEdit = lembrete;
 }
 

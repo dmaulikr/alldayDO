@@ -14,8 +14,6 @@
 
 @interface ADDetailReminderViewModel : NSObject
 
-@property (nonatomic, strong) ADLembrete *lembrete;
-
 @property (nonatomic, readonly) NSArray *calendario;
 @property (nonatomic, readonly) NSArray *dataLembretesConfirmados;
 @property (nonatomic, readonly) NSString *title;
@@ -23,7 +21,7 @@
 - (void)addLembreteConfirmado;
 - (void)removeLembreteConfirmado;
 
-- (void)lembreteDetail:(ADLembrete *)lembrete;
+- (void)setLembreteDetail:(ADLembrete *)lembrete;
 
 - (NSInteger)quantidadeConfirmacaoPorMes;
 - (NSInteger)quantidadeConfirmacaoPorSemama;
@@ -33,5 +31,7 @@
 
 - (NSUInteger)chartDataItemCount;
 - (NSArray *)chartDataXLabels;
+
+- (ADLembrete *)model;
 
 @end

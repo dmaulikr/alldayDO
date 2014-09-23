@@ -22,12 +22,12 @@
 @property (nonatomic, readonly) NSNumber *periodoEdit;
 @property (nonatomic, readonly) NSData *imagemEdit;
 
-@property (nonatomic, strong) NSArray *cycleType;
+@property (nonatomic, readonly) NSArray *cycleType;
 
 - (void)saveChanges;
 
 - (NSString *)textForCycleType:(NSInteger)cycleType;
 
-- (void)lembreteEdit:(ADLembrete *)lembrete;
+- (void)setLembreteEdit:(ADLembrete *)lembrete;
 
 @end

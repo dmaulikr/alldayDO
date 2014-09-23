@@ -59,10 +59,9 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
         ADWalkthrough *walkthroughView = [[ADWalkthrough alloc] initWithFrame:self.window.frame];
         walkthroughView.delegate = self;
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
-        
         [walkthroughView showInView:self.window.rootViewController.view animateDuration:0.4f];
     }
 }
@@ -70,11 +69,9 @@
 #pragma mark - UIApplication Methods -
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ADStyleSheet initStyles];
     [self _setupAnalytics];
     [self _setupCrashlytics];
-    
-    [ADStyleSheet initStyles];
-
     [self _walkthrough];
     return YES;
 }

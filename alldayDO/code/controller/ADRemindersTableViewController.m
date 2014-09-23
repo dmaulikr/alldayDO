@@ -408,7 +408,7 @@
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
         ADDetailReminderViewController *detailViewController = (ADDetailReminderViewController *)[segue destinationViewController];
-        [detailViewController.viewModel lembreteDetail:[self.viewModel lembreteAtIndexPath:indexPath]];
+        [detailViewController.viewModel setLembreteDetail:[self.viewModel modelAtIndexPath:indexPath]];
     }
 }
 

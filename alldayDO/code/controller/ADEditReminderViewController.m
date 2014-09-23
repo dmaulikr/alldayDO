@@ -319,7 +319,6 @@
         self.viewModel.dataInicial = self.dataPicker.date;
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
-
         if ([self.delegate respondsToSelector:@selector(newReminderViewController:didSaveReminder:)]) {
             [self.delegate newReminderViewController:self
                                      didSaveReminder:(ADLembrete *)self.viewModel];

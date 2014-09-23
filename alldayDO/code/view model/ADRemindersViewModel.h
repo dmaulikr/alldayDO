@@ -35,7 +35,7 @@
 
 - (NSString *)nextReminderFormated;
 
-- (ADLembrete *)lembreteAtIndexPath:(NSIndexPath *)indexPath;
+- (ADLembrete *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao;
 
 @end
