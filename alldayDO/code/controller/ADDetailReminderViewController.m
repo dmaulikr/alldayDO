@@ -153,7 +153,7 @@
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
     newReminderViewController.actionMode = ADEditMode;
     
-    [newReminderViewController.viewModel setLembreteEdit:[self.viewModel model]];
+    [newReminderViewController.viewModel LembreteEdit:[self.viewModel model]];
     
     [self presentViewController:newReminderViewController animated:YES completion:^{
         [self _showBlurViewWithAnimation];
