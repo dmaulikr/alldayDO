@@ -412,4 +412,17 @@
     }
 }
 
+#pragma mark - UIResponder Methods
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (UIEventSubtypeMotionShake) {
+        [[GAI sharedInstance] sendAction:@"ShakeActivity" withCategory:@"Action"];
+        [self _presentNewReminderViewController];
+    }
+}
+
 @end
