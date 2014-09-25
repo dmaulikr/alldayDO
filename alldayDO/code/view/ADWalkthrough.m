@@ -35,7 +35,7 @@
     page1.title = @"Hello world";
     page1.desc = @"texto";
     page1.bgImage = backgroundImage;
-    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"alldayDO-icon"]];
+    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title1"]];
     
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"This is page 2";
@@ -44,10 +44,11 @@
     page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title2"]];
     
     EAIntroPage *page3 = [EAIntroPage page];
-    page3.title = @"This is page 3";
-    page3.desc = @"texto";
+    page3.title = @"NÃO PERCA NENHUMA INFORMAÇÃO";
+    page3.desc = @"Confira todas suas atividades, as que você não fez e as já completadas";
     page3.bgImage = backgroundImage;
-    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title3"]];
+    page3.titleIconPositionY = 0.f;
+    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"walkthrough"]];
     
     EAIntroPage *page4 = [EAIntroPage page];
     page4.title = @"This is page 4";
