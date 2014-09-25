@@ -81,7 +81,7 @@ typedef enum {
     return [self.cycleType objectAtIndex:cycleType];
 }
 
-- (void)setLembreteEdit:(ADLembrete *)lembrete {
+- (void)LembreteEdit:(ADLembrete *)lembrete {
     self.lembreteEdit = lembrete;
 }
 

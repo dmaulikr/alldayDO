@@ -28,6 +28,6 @@
 
 - (NSString *)textForCycleType:(NSInteger)cycleType;
 
-- (void)setLembreteEdit:(ADLembrete *)lembrete;
+- (void)LembreteEdit:(ADLembrete *)lembrete;
 
 @end
