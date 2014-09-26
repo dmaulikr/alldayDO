@@ -107,3 +107,26 @@
 "segundos" = "seconds";
 "a" = "y";
 " e " = " and ";
+
+// ADWalkthrough
+
+"shakeImage" = "shake-en";
+"detailImage" = "detail-en";
+"badgesImage" = "badges-en";
+"notificationImage" = "notification-en";
+"mainImage" = "main-en";
+
+"page1Title" = "Quick and convenient";
+"page1Desc" = "Few clicks and your activities saved. \n AH! And you can also prepare a new activity giving a little Shake!";
+
+"page2Title" = "Follow your productivity";
+"page2Desc" = "Our charts help you to track your performance";
+
+"page3Title" = "Don't miss any information";
+"page3Desc" = "Check all your activities, What has done, and what still forgeting";
+
+"page4Title" = "And of course, funny";
+"page4Desc" = "Simple notification? NO! We want you to remember in a funny way";
+
+"page5Title" = "Now, it's your time";
+"page5Desc" = "Add an activity and see the magic happen";
