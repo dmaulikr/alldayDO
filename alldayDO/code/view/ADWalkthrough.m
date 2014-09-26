@@ -20,6 +20,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self _initialize];
+        
+        [[GAI sharedInstance] sendScreen:@"WalkthroughScreen"
+                            withCategory:@"Screen"];
     }
     return self;
 }
