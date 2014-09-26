@@ -83,7 +83,7 @@
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
         _lineChart.delegate = self;
         
-        // POG
+        #warning TODO POG
         if (IS_IPHONE5) {
             [_lineChart setH:_lineChart.height * 1.855];
         }

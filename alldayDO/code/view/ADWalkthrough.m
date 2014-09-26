@@ -70,26 +70,27 @@
     page5.descFont = descFont;
     page5.bgImage = bgImage;
     page5.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedString(@"mainImage", nil)]];
-    
-//    CGFloat titleIconPositionY = 10.f;
-//    CGFloat titleIconViewHeight = 20.f;
-//    page1.titleIconPositionY = titleIconPositionY;
-//    page2.titleIconPositionY = titleIconPositionY;
-//    page3.titleIconPositionY = titleIconPositionY;
-//    page4.titleIconPositionY = titleIconPositionY;
-//    page5.titleIconPositionY = titleIconPositionY;
-//    
-//    [page1.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
-//                         andH:(page1.titleIconView.height - titleIconViewHeight)];
-//    [page2.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
-//                         andH:(page1.titleIconView.height - titleIconViewHeight)];
-//    [page3.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
-//                         andH:(page1.titleIconView.height - titleIconViewHeight)];
-//    [page4.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
-//                         andH:(page1.titleIconView.height - titleIconViewHeight)];
-//    [page5.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
-//                         andH:(page1.titleIconView.height - titleIconViewHeight)];
+    #warning TODO POG
+    if ([[UIDevice currentDevice].model containsString:@"4"]) {
+        CGFloat titleIconPositionY = 10.f;
+        CGFloat titleIconViewHeight = 20.f;
+        page1.titleIconPositionY = titleIconPositionY;
+        page2.titleIconPositionY = titleIconPositionY;
+        page3.titleIconPositionY = titleIconPositionY;
+        page4.titleIconPositionY = titleIconPositionY;
+        page5.titleIconPositionY = titleIconPositionY;
 
+        [page1.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
+                             andH:(page1.titleIconView.height - titleIconViewHeight)];
+        [page2.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
+                             andH:(page1.titleIconView.height - titleIconViewHeight)];
+        [page3.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
+                             andH:(page1.titleIconView.height - titleIconViewHeight)];
+        [page4.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
+                             andH:(page1.titleIconView.height - titleIconViewHeight)];
+        [page5.titleIconView setW:(page1.titleIconView.width - titleIconViewHeight)
+                             andH:(page1.titleIconView.height - titleIconViewHeight)];
+    }
     self.pages = @[page1, page2, page3, page4, page5];
 }
 

@@ -83,7 +83,7 @@
         if ([lembreteConfirmado.data isEqualToDate:self.lembreteConfirmado.data.yesterday]) {
             self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue + 1];
         } else if (self.lembrete.seguidos.intValue < 1) {
-            self.lembrete.seguidos = @1;
+            self.lembrete.seguidos = [NSNumber numberWithInt:1];
         }
     }
     
