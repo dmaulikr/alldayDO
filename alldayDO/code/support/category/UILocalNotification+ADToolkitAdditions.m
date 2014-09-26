@@ -44,7 +44,7 @@
                 difference.month++;
                 break;
             case NSWeekCalendarUnit:
-                difference.week++;
+                difference.weekOfMonth++;
                 break;
             case NSDayCalendarUnit:
                 difference.day++;
