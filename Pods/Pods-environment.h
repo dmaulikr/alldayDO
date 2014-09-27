@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_MALazykit 1
 #define COCOAPODS_VERSION_PATCH_MALazykit 10
 
+// NGAParallaxMotion
+#define COCOAPODS_POD_AVAILABLE_NGAParallaxMotion
+#define COCOAPODS_VERSION_MAJOR_NGAParallaxMotion 1
+#define COCOAPODS_VERSION_MINOR_NGAParallaxMotion 0
+#define COCOAPODS_VERSION_PATCH_NGAParallaxMotion 2
+
 // PNChart
 #define COCOAPODS_POD_AVAILABLE_PNChart
 #define COCOAPODS_VERSION_MAJOR_PNChart 0
@@ -130,7 +136,7 @@
 #define COCOAPODS_POD_AVAILABLE_pop
 #define COCOAPODS_VERSION_MAJOR_pop 1
 #define COCOAPODS_VERSION_MINOR_pop 0
-#define COCOAPODS_VERSION_PATCH_pop 6
+#define COCOAPODS_VERSION_PATCH_pop 7
 
 // uiview-frame-helpers
 #define COCOAPODS_POD_AVAILABLE_uiview_frame_helpers

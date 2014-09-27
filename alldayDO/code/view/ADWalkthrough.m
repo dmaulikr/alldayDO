@@ -7,7 +7,6 @@
 //
 
 #import "ADWalkthrough.h"
-
 #define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height - 480) ? NO : YES)
 
 @interface ADWalkthrough ()
@@ -22,7 +21,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self _initialize];
-        
         [[GAI sharedInstance] sendScreen:@"WalkthroughScreen"
                             withCategory:@"Screen"];
     }

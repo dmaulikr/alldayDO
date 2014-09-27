@@ -8,6 +8,7 @@
 
 #import "ADReminderCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import <NGAParallaxMotion.h>
 
 @interface ADReminderCell ()
 
@@ -61,6 +62,7 @@
     [self addSubview:self.badgeImageView];
     [self.badgeImageView.badgeIconImageView setW:22.f andH:22.f];
     [self.badgeImageView.badgeIconImageView centerWith:self.badgeImageView];
+    self.badgeImageView.parallaxIntensity = 4.f;
 }
 
 - (void)layoutSubviews {

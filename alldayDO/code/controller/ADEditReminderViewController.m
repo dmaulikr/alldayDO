@@ -10,6 +10,7 @@
 
 #import <JVFloatLabeledTextField.h>
 #import <JCRBlurView.h>
+#import <NGAParallaxMotion.h>
 
 #import "ADLembrete.h"
 #import "ADModel.h"
@@ -83,6 +84,7 @@
         [self _addGesturesRecognizer];
         [self _addInputViewForTextField];
         [self _addSubViews];
+        self.badgeView.parallaxIntensity = 7.f;
     }
     return self;
 }

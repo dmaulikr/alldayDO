@@ -4,9 +4,10 @@ PODS:
   - iOS-blur (0.0.5)
   - JVFloatLabeledTextField (0.0.9)
   - MALazykit (HEAD based on 0.1.10)
+  - NGAParallaxMotion (1.0.2)
   - PNChart (0.5):
     - UICountingLabel (~> 1.0.0)
-  - pop (1.0.6)
+  - pop (1.0.7)
   - SAMAddressBar (0.1.0)
   - SAMBadgeView (0.1.0)
   - SAMCategories (0.5.2)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - iOS-blur
   - JVFloatLabeledTextField
   - MALazykit (HEAD)
+  - NGAParallaxMotion
   - PNChart
   - pop
   - SSToolkit
@@ -52,8 +54,9 @@ SPEC CHECKSUMS:
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
   JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
+  NGAParallaxMotion: f25d6b7e4eefe1c94211dbf402cd3563e56d46f3
   PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
-  pop: e518794da38942c05255eb64b36d894e70cb4f00
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
   SAMBadgeView: 6f29c18e5dc4ddf6d843c3c5e9c9207028c2e8a8
   SAMCategories: dc26f9dc67d371d22f391ee2173bc607a887912e

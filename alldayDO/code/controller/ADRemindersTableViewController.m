@@ -22,6 +22,8 @@
 
 #import "PNChart.h"
 
+#import <NGAParallaxMotion.h>
+
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
 @interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate>
@@ -116,11 +118,22 @@
 
 #pragma mark - UIView Lifecycle Methods -
 
+- (void)_addParallaxEffect {
+    CGFloat parallaxIntensity = 4.f;
+    self.hexaconAllButton.parallaxIntensity = parallaxIntensity;
+    self.totalRemindersLabel.parallaxIntensity = parallaxIntensity;
+    self.hexaconDoneButton.parallaxIntensity = parallaxIntensity;
+    self.doneReminders.parallaxIntensity = parallaxIntensity;
+    self.hexaconUndoneButton.parallaxIntensity = parallaxIntensity;
+    self.undoneReminders.parallaxIntensity = parallaxIntensity;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _initStyle];
     [self _addSubView];
     [self _addNotificationCenter];
+    [self _addParallaxEffect];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
