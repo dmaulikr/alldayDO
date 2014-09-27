@@ -52,7 +52,7 @@
     if ([MFMailComposeViewController canSendMail]) {        
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         [mailViewController setSubject:@"Feedback alldayDO"];
-        [mailViewController setToRecipients:@[@"fna.contact@gmail.com"]];
+        [mailViewController setToRecipients:@[@"alldaydo.info@gmail.com"]];
         [mailViewController setMessageBody:nil
                                     isHTML:NO];
         mailViewController.mailComposeDelegate = self;
