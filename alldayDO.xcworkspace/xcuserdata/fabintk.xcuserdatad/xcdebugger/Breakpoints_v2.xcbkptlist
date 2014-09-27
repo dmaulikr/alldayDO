@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "alldayDO/code/view model/ADDetailReminderViewModel.m"
-            timestampString = "433481724.687063"
+            timestampString = "433482870.693186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-removeLembreteConfirmado"
             landmarkType = "5">
          </BreakpointContent>

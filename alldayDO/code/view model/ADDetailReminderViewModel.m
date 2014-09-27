@@ -97,7 +97,6 @@
             lembreteConfirmadoToRemove = lembreteConfirmado;
         }
     }
-    
     if (lembreteConfirmadoToRemove.data.yesterday) {
         self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue - 1];
     } else {
