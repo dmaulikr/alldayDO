@@ -73,8 +73,7 @@
         
         [self.badgeImageView setX:(self.borderTimelineContentView.x - self.badgeImageView.width) / 2.f];
         [self.badgeImageView centerYWith:self];
-        [self.lineTopView centerXWith:self.badgeImageView];
-        [self.lineBottomView centerXWith:self.badgeImageView];
+        [self.lineView centerXWith:self.badgeImageView];
         
         self.initialized = YES;
     }
