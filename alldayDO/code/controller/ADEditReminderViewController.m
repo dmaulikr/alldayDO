@@ -411,7 +411,11 @@
         [self.dataTextField becomeFirstResponder];
         
     } else if (self.dataTextField.isFirstResponder) {
-        [self _displayBadgeIconView];
+        if (self.actionMode == ADAddMode) {
+            [self _displayBadgeIconView];
+        } else {
+            [self _dismissKeyboard];
+        }
     }
 }
 
