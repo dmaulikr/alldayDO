@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jAA-iV-Qtm">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -45,8 +46,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
-                                                    <rect key="frame" x="44" y="0.0" width="1" height="40"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineView">
+                                                    <rect key="frame" x="44" y="0.0" width="1" height="80"/>
                                                     <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -95,15 +96,6 @@
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Fd-xEK" userLabel="lineBottomView">
-                                                    <rect key="frame" x="44" y="40" width="1" height="40"/>
-                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
-                                                            <integer key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -117,8 +109,8 @@
                                         <connections>
                                             <outlet property="barChartContentView" destination="5xt-SA-SWu" id="IV5-dU-T2j"/>
                                             <outlet property="borderTimelineContentView" destination="NOh-2g-0hC" id="Y0H-yd-cDA"/>
-                                            <outlet property="lineBottomView" destination="xKA-Fd-xEK" id="i0g-rz-R70"/>
                                             <outlet property="lineTopView" destination="eW6-et-pnZ" id="Igi-e3-JoJ"/>
+                                            <outlet property="lineView" destination="eW6-et-pnZ" id="72q-Lq-ndr"/>
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
                                             <outlet property="timelineContentView" destination="nym-vk-oar" id="nmX-7b-s51"/>

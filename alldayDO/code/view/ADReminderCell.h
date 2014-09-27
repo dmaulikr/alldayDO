@@ -18,9 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *timelineContentView;
 
-@property (strong, nonatomic) IBOutlet UIView *lineTopView;
-
-@property (weak, nonatomic) IBOutlet UIView *lineBottomView;
+@property (strong, nonatomic) IBOutlet UIView *lineView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nomeLabel;
 
