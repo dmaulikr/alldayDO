@@ -75,8 +75,8 @@
 
 "errorConfigEmail" = "Please configure your email account in the system settings";
 
-"twitterMessageDefault" = "Forget something? No more! @alldayDO don't let you forget anything. Download it too and bring productive to your life!";
-"facebookMessageDefault" = "Remember your activities has never been so fast, practical and productive. Download @alldayDO you too!";
+"twitterMessageDefault" = "Remember your activities has never been so fast, practical and productive. Download @alldayDO you too!";
+"facebookMessageDefault" = "Forget something? No more! @alldayDO don't let you forget anything. Download it too and bring productive to your life!";
 
 // ADLocalNotification
 

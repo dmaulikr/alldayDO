@@ -75,8 +75,8 @@
 
 "errorConfigEmail" = "Por favor configure sua conta de email nos ajustes do sistema";
 
-"twitterMessageDefault" = "Esquecer? Jamais! O @alldayDO não te deixa esquecer nada. Baixe você também e deixe seu dia mais produtivo!";
-"facebookMessageDefault" = "Lembrar suas atividades nunca foi tão rápido, prático e produtivo. Baixe o @alldayDO você também!";
+"twitterMessageDefault" = "Lembrar suas atividades nunca foi tão rápido, prático e produtivo. Baixe o @alldayDO você também!";
+"facebookMessageDefault" = "Esquecer? Jamais! O @alldayDO não te deixa esquecer nada. Baixe você também e deixe seu dia mais produtivo!";
 
 // ADLocalNotification
 
