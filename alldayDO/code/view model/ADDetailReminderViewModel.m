@@ -98,7 +98,12 @@
         }
     }
     
-    self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue - 1];
+    if (lembreteConfirmadoToRemove.data.yesterday) {
+        self.lembrete.seguidos = [NSNumber numberWithInt:self.lembrete.seguidos.intValue - 1];
+    } else {
+        self.lembrete.seguidos = 0;
+    }
+    
     [self.lembrete removeLembretesConfirmadosObject:lembreteConfirmadoToRemove];
     [[ADModel sharedInstance] deleteObject:lembreteConfirmadoToRemove];
     [[ADModel sharedInstance] saveChanges];
@@ -135,7 +140,7 @@
 }
 
 - (NSInteger)quantidadeConfirmacaoSeguidos {
-    NSInteger seguidos = 00;
+    NSInteger seguidos = 0;
     if (self.lembrete.seguidos != nil &&
         self.lembrete.seguidos.intValue > 0) {
         seguidos = self.lembrete.seguidos.intValue;

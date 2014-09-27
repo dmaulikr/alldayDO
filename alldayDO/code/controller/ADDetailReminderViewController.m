@@ -247,17 +247,5 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
 //}
-#pragma mark - PNChartDelegate Methods -
-
-- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {
-    
-}
-
-- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex {
-}
-
-- (void)userClickedOnBarCharIndex:(NSInteger)barIndex {
-    
-}
 
 @end
