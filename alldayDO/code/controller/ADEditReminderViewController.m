@@ -79,12 +79,11 @@
     self = [super init];
     if (self) {
         self.view.frame = CGRectMake(0, 0, 300, 400);
-        
+        self.badgeView.parallaxIntensity = 7.f;
         [self _addBlurView];
         [self _addGesturesRecognizer];
         [self _addInputViewForTextField];
         [self _addSubViews];
-        self.badgeView.parallaxIntensity = 7.f;
     }
     return self;
 }
@@ -412,7 +411,7 @@
         [self.dataTextField becomeFirstResponder];
         
     } else if (self.dataTextField.isFirstResponder) {
-        [self _dismissKeyboard];
+        [self _displayBadgeIconView];
     }
 }
 
