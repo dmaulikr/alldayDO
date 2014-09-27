@@ -13,7 +13,7 @@
 #import "PresentingAnimator.h"
 #import "DismissingAnimator.h"
 
-#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height - 568) ? NO : YES)
 
 @interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, PNChartDelegate>
 

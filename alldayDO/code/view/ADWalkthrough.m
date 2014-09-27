@@ -8,6 +8,8 @@
 
 #import "ADWalkthrough.h"
 
+#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height - 480) ? NO : YES)
+
 @interface ADWalkthrough ()
 
 - (void)_initialize;
@@ -70,8 +72,9 @@
     page5.descFont = descFont;
     page5.bgImage = bgImage;
     page5.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedString(@"mainImage", nil)]];
+  
     #warning TODO POG
-    if ([[UIDevice currentDevice].model containsString:@"4"]) {
+    if (IS_IPHONE4) {
         CGFloat titleIconPositionY = 10.f;
         CGFloat titleIconViewHeight = 20.f;
         page1.titleIconPositionY = titleIconPositionY;
