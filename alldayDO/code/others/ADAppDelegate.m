@@ -9,8 +9,9 @@
 #import "ADAppDelegate.h"
 #import "ADModel.h"
 #import "ADLocalNotification.h"
-#import "ADStyleSheet.h"
 #import "ADWalkthrough.h"
+
+#import "alldayDO-Swift.h"
 
 #import <Crashlytics/Crashlytics.h>
 

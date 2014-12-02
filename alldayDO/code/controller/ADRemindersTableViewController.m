@@ -314,10 +314,10 @@
     cell.borderTimelineContentView.layer.cornerRadius = 5.f;
     cell.timelineContentView.layer.cornerRadius = 5.f;
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
-        cell.lineBottomView.hidden = YES;
+//        cell.lineBottomView.hidden = YES;
         
     } else {
-        cell.lineBottomView.hidden = NO;
+//        cell.lineBottomView.hidden = NO;
     }
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
