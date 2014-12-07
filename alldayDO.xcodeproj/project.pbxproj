@@ -26,11 +26,11 @@
 		716A347019CB90660069189E /* GAI+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A346F19CB90660069189E /* GAI+ADToolkitAdditions.m */; };
 		7174F86C193A779600DEB9D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F869193A779600DEB9D0 /* DismissingAnimator.m */; };
 		7174F86D193A779600DEB9D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174F86B193A779600DEB9D0 /* PresentingAnimator.m */; };
+		718FB1BE1A349D320059F1B2 /* ADBadgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718FB1BD1A349D320059F1B2 /* ADBadgeImageView.swift */; };
 		71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 71990A9E19A8153D0056C17C /* ADLocalNotification.m */; };
 		71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		71B96AF0194CBDEB0042023E /* ADRemindersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */; };
 		71B96AF3194D299C0042023E /* ADEditReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF2194D299C0042023E /* ADEditReminderViewModel.m */; };
-		71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */; };
 		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71BBA20819A02C8C00EB6EEE /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20719A02C8C00EB6EEE /* ADLembreteConfirmado.m */; };
 		71BBA20B19A02C8C00EB6EEE /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20A19A02C8C00EB6EEE /* ADLembrete.m */; };
@@ -104,6 +104,7 @@
 		7174F869193A779600DEB9D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		7174F86A193A779600DEB9D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
 		7174F86B193A779600DEB9D0 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
+		718FB1BD1A349D320059F1B2 /* ADBadgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADBadgeImageView.swift; sourceTree = "<group>"; };
 		71990A9D19A8153D0056C17C /* ADLocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLocalNotification.h; sourceTree = "<group>"; };
 		71990A9E19A8153D0056C17C /* ADLocalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADLocalNotification.m; sourceTree = "<group>"; };
 		71ABE85E19BA7C5000161DE3 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -112,8 +113,6 @@
 		71B96AEF194CBDEB0042023E /* ADRemindersViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersViewModel.m; sourceTree = "<group>"; };
 		71B96AF1194D299C0042023E /* ADEditReminderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewModel.h; sourceTree = "<group>"; };
 		71B96AF2194D299C0042023E /* ADEditReminderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADEditReminderViewModel.m; sourceTree = "<group>"; };
-		71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBadgeImageView.h; sourceTree = "<group>"; };
-		71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBadgeImageView.m; sourceTree = "<group>"; };
 		71B96AFE194D4DC90042023E /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
 		71B96AFF194D4DC90042023E /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
 		71BBA20619A02C8C00EB6EEE /* ADLembreteConfirmado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLembreteConfirmado.h; sourceTree = "<group>"; };
@@ -385,8 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */,
-				71B96AF7194D3F1C0042023E /* ADBadgeImageView.h */,
-				71B96AF8194D3F1C0042023E /* ADBadgeImageView.m */,
+				718FB1BD1A349D320059F1B2 /* ADBadgeImageView.swift */,
 				7130CD741944BEE0009AF8D8 /* ADIconCell.h */,
 				7130CD751944BEE0009AF8D8 /* ADIconCell.m */,
 				7130CD6E1943B0AF009AF8D8 /* ADReminderCell.h */,
@@ -572,10 +570,10 @@
 				711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */,
 				70DFE494199E5DE90008EDEF /* ADDetailReminderViewModel.m in Sources */,
 				7130CD631942D69D009AF8D8 /* UIImage+ADToolkitAdditions.m in Sources */,
+				718FB1BE1A349D320059F1B2 /* ADBadgeImageView.swift in Sources */,
 				71990A9F19A8153D0056C17C /* ADLocalNotification.m in Sources */,
 				714A50F9193D75820041905C /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA9192966E800660C17 /* ADModel.m in Sources */,
-				71B96AF9194D3F1C0042023E /* ADBadgeImageView.m in Sources */,
 				716A347019CB90660069189E /* GAI+ADToolkitAdditions.m in Sources */,
 				7130CD761944BEE0009AF8D8 /* ADIconCell.m in Sources */,
 				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,

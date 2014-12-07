@@ -16,7 +16,8 @@
 #import "ADModel.h"
 #import "ADLocalNotification.h"
 #import "ADIconCell.h"
-#import "ADBadgeImageView.h"
+
+#import "alldayDO-Swift.h"
 
 #define PADDING 10.f
 #define ACTIVE_COLOR_HEX @"#3B89C6"
