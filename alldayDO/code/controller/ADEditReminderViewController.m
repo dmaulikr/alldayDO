@@ -15,7 +15,6 @@
 #import "ADLembrete.h"
 #import "ADModel.h"
 #import "ADLocalNotification.h"
-#import "ADIconCell.h"
 
 #import "alldayDO-Swift.h"
 
