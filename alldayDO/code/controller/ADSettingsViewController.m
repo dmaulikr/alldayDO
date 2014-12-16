@@ -15,6 +15,7 @@
 @interface ADSettingsViewController () <MFMailComposeViewControllerDelegate, EAIntroDelegate>
 
 - (void)_IBOutletTitle;
+- (void)_rounded_cornerRadiusButtonsButtons;
 
 @end
 
@@ -26,6 +27,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_second_color_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
     [self _IBOutletTitle];
+    [self _cornerRadiusButtons];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,6 +46,15 @@
     [self.websiteButton setTitle:NSLocalizedString(@"website", nil) forState:UIControlStateNormal];
     [self.walkthroughButton setTitle:NSLocalizedString(@"walkthrough", nil) forState:UIControlStateNormal];
     self.shareLabel.text = NSLocalizedString(@"shared", nil);
+}
+- (void)_cornerRadiusButtons {
+    CGFloat radius = 10;
+    self.aboutButton.layer.cornerRadius = radius;
+    self.seedFeedbackButton.layer.cornerRadius = radius;
+    self.rateButton.layer.cornerRadius = radius;
+    self.websiteButton.layer.cornerRadius = radius;
+    self.walkthroughButton.layer.cornerRadius = radius;
+    self.shareLabel.layer.cornerRadius = radius;
 }
 
 #pragma mark - IBOutlet Methods -
