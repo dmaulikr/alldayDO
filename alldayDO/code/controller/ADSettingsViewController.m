@@ -15,7 +15,7 @@
 @interface ADSettingsViewController () <MFMailComposeViewControllerDelegate, EAIntroDelegate>
 
 - (void)_IBOutletTitle;
-- (void)_rounded_cornerRadiusButtonsButtons;
+- (void)_cornerRadiusButtons;
 
 @end
 
