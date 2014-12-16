@@ -12,12 +12,15 @@ import UIKit
 class ADBadgeImageView: UIImageView {
 
     var badgeIconImageView : UIImageView?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame);
         self.image = UIImage(named: "Hexacon")
         self.initBadgeIconImageView()
-        self.addSubview(self.badgeIconImageView!)
+        
+        if let badgeIconImageView = self.badgeIconImageView {
+            self.addSubview(badgeIconImageView)
+        }
     }
     
     required init(coder aDecoder: NSCoder) {

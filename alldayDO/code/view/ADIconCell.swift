@@ -24,7 +24,9 @@ class ADIconCell: UICollectionViewCell {
     }
     
     func initialize() {
-        self.addSubview(self.iconImageView!)
+        if let iconImageView = self.iconImageView {
+            self.addSubview(iconImageView)
+        }
     }
 
 }
