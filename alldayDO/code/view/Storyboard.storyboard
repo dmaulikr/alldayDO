@@ -409,7 +409,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="KdN-kf-rrc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Você lembrou?" backgroundImage="navigation_second_color_bg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
