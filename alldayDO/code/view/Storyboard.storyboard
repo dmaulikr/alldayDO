@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,85 +35,94 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="66" sectionHeaderHeight="1" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
                                 <rect key="frame" x="0.0" y="132" width="320" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="80" id="6hs-ir-LQe" customClass="ADReminderCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="68" id="6hs-ir-LQe" customClass="ADReminderCell">
                                         <rect key="frame" x="0.0" y="1" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hs-ir-LQe" id="4eW-PI-vCW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineView">
-                                                    <rect key="frame" x="44" y="0.0" width="1" height="80"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-et-pnZ" userLabel="lineTopView">
+                                                    <rect key="frame" x="38" y="0.0" width="1" height="30"/>
                                                     <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="4Xr-k3-j5w"/>
+                                                        <constraint firstAttribute="height" constant="30" id="8ii-NE-adh"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
                                                             <integer key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-2g-0hC" userLabel="borderTimelineContentView">
-                                                    <rect key="frame" x="89" y="5" width="222" height="74"/>
-                                                    <color key="backgroundColor" red="0.63921568627450975" green="0.70196078431372544" blue="0.72549019607843135" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fb1-Tu-zfC" userLabel="lineBottomView">
+                                                    <rect key="frame" x="38" y="39" width="1" height="27"/>
+                                                    <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="74" id="PG7-N1-x76"/>
-                                                        <constraint firstAttribute="width" constant="222" id="zHJ-Dt-IAh"/>
+                                                        <constraint firstAttribute="width" constant="1" id="ntt-Hy-LRs"/>
+                                                        <constraint firstAttribute="height" constant="27" id="oOY-yP-YRW"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nym-vk-oar" userLabel="timelineContentView">
-                                                    <rect key="frame" x="90" y="6" width="220" height="72"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-mi-Zoo">
-                                                            <rect key="frame" x="10" y="2" width="200" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="pti-XF-M3L"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" red="0.086274509799999996" green="0.1137254902" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-SA-SWu">
-                                                            <rect key="frame" x="0.0" y="45" width="220" height="12"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-mi-Zoo">
+                                                    <rect key="frame" x="80" y="5" width="220" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="90f-Zm-RNh"/>
-                                                        <constraint firstItem="eWL-mi-Zoo" firstAttribute="top" secondItem="nym-vk-oar" secondAttribute="top" constant="2" id="KZn-QY-0mq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eWL-mi-Zoo" secondAttribute="trailing" constant="10" id="R4I-y3-0wV"/>
-                                                        <constraint firstAttribute="width" constant="220" id="ZRY-YI-Afw"/>
-                                                        <constraint firstItem="eWL-mi-Zoo" firstAttribute="leading" secondItem="nym-vk-oar" secondAttribute="leading" constant="10" id="cGr-dc-4np"/>
+                                                        <constraint firstAttribute="width" constant="220" id="G7Y-CR-uV3"/>
+                                                        <constraint firstAttribute="height" constant="20" id="xe3-5y-xnC"/>
                                                     </constraints>
-                                                </view>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Próximo lembrete em 7 horas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-Cs-4fK">
-                                                    <rect key="frame" x="100" y="25" width="200" height="22"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.086274509799999996" green="0.1137254902" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Próximo lembrete em 7 horas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-Cs-4fK">
+                                                    <rect key="frame" x="80" y="24" width="220" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="831-eN-PsE"/>
+                                                        <constraint firstAttribute="height" constant="22" id="aqK-EW-YPq"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.47450980390000003" green="0.52549019610000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-SA-SWu">
+                                                    <rect key="frame" x="70" y="46" width="250" height="12"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="ArQ-3Y-LoI"/>
+                                                        <constraint firstAttribute="width" constant="250" id="faG-HU-3rG"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="NOh-2g-0hC" firstAttribute="centerX" secondItem="nym-vk-oar" secondAttribute="centerX" id="ihM-SY-ufT"/>
-                                                <constraint firstItem="nym-vk-oar" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="top" constant="6" id="mU9-Sa-CJA"/>
-                                                <constraint firstItem="nym-vk-oar" firstAttribute="leading" secondItem="4eW-PI-vCW" secondAttribute="leading" constant="90" id="rjl-5R-1ab"/>
-                                                <constraint firstItem="NOh-2g-0hC" firstAttribute="centerY" secondItem="nym-vk-oar" secondAttribute="centerY" id="sCx-xF-gqn"/>
+                                                <constraint firstItem="5xt-SA-SWu" firstAttribute="top" secondItem="eWL-mi-Zoo" secondAttribute="bottom" constant="21" id="41f-Oi-RWd"/>
+                                                <constraint firstItem="eWL-mi-Zoo" firstAttribute="top" secondItem="4eW-PI-vCW" secondAttribute="topMargin" constant="-3" id="5n5-wW-JeR"/>
+                                                <constraint firstItem="fb1-Tu-zfC" firstAttribute="centerY" secondItem="5xt-SA-SWu" secondAttribute="centerY" constant="0.5" id="CCI-6u-za9"/>
+                                                <constraint firstItem="fb1-Tu-zfC" firstAttribute="leading" secondItem="eW6-et-pnZ" secondAttribute="leading" id="In6-t6-pyd"/>
+                                                <constraint firstItem="eWL-mi-Zoo" firstAttribute="leading" secondItem="bO8-Cs-4fK" secondAttribute="leading" id="L04-vR-DuO"/>
+                                                <constraint firstItem="5xt-SA-SWu" firstAttribute="top" secondItem="bO8-Cs-4fK" secondAttribute="bottom" id="Y9i-5g-tVK"/>
+                                                <constraint firstItem="5xt-SA-SWu" firstAttribute="leading" secondItem="fb1-Tu-zfC" secondAttribute="trailing" constant="31" id="o2y-Ei-GSo"/>
+                                                <constraint firstItem="eWL-mi-Zoo" firstAttribute="centerY" secondItem="eW6-et-pnZ" secondAttribute="centerY" id="sNY-Nl-yJ9"/>
+                                                <constraint firstItem="eWL-mi-Zoo" firstAttribute="leading" secondItem="eW6-et-pnZ" secondAttribute="trailing" constant="41" id="twm-DE-DEp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eWL-mi-Zoo" secondAttribute="trailing" constant="12" id="weV-fM-eqA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="barChartContentView" destination="5xt-SA-SWu" id="IV5-dU-T2j"/>
-                                            <outlet property="borderTimelineContentView" destination="NOh-2g-0hC" id="Y0H-yd-cDA"/>
                                             <outlet property="lineView" destination="eW6-et-pnZ" id="72q-Lq-ndr"/>
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
-                                            <outlet property="timelineContentView" destination="nym-vk-oar" id="nmX-7b-s51"/>
                                             <segue destination="aGT-1s-pi3" kind="push" identifier="detailReminderSegue" id="MCV-9j-JxL"/>
                                         </connections>
                                     </tableViewCell>
@@ -726,7 +736,7 @@
         <image name="Hexacon_done_selected" width="90" height="90"/>
         <image name="Hexacon_undone" width="90" height="90"/>
         <image name="Hexacon_undone_selected" width="90" height="90"/>
-        <image name="alldayDO-icon" width="100" height="100"/>
+        <image name="alldayDO-icon" width="120" height="120"/>
         <image name="background_selected_button" width="1" height="1"/>
         <image name="config" width="27" height="29"/>
         <image name="navigation_second_color_bg" width="1" height="1"/>

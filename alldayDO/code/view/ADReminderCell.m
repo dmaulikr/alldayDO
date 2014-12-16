@@ -24,7 +24,7 @@
 
 - (ADBadgeImageView *)badgeImageView {
     if (!_badgeImageView) {
-        _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 50.f, 50.f)];
+        _badgeImageView = [[ADBadgeImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 44.f)];
         _badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:@"#3B89C6"]];
     }
     return _badgeImageView;
@@ -71,7 +71,7 @@
         self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
         [self.barChart setX:9.f andY:3.f];
         
-        [self.badgeImageView setX:(self.borderTimelineContentView.x - self.badgeImageView.width) / 2.f];
+        [self.badgeImageView centerXWith:self.lineView];
         [self.badgeImageView centerYWith:self];
         [self.lineView centerXWith:self.badgeImageView];
         
