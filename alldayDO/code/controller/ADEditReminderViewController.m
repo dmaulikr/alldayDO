@@ -18,7 +18,8 @@
 
 #import "alldayDO-Swift.h"
 
-#define PADDING 34.f
+#define MARGIN_TOP 70.f
+#define MARGIN_LEFT 20.f
 #define ACTIVE_COLOR_HEX @"#3B89C6"
 #define DEFAULT_COLOR_HEX @"#487BAF"
 #define ERROR_COLOR_HEX @"bb3c45"
@@ -26,6 +27,9 @@
 #define NUMBER_OF_ICONS 51
 
 @interface ADEditReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
+
+@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) UILabel *labelHeader;
 
 @property (nonatomic, strong) JVFloatLabeledTextField *descriptionTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
@@ -89,6 +93,22 @@
 
 #pragma mark - Getter Methods -
 
+- (UIView *)headerView {
+    if (!_headerView) {
+        _headerView = [UIView viewWithFrame:self.view.bounds];
+        [_headerView setH:60.f];
+        _headerView.backgroundColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        
+        self.labelHeader = [UILabel label];
+        [self.labelHeader setW:_headerView.width andH:40.f];
+        [self.labelHeader setY:(_headerView.maxY - self.labelHeader.height)];
+        self.labelHeader.textColor = [UIColor whiteColor];
+        self.labelHeader.textAlignment = NSTextAlignmentCenter;
+        [_headerView addSubview:self.labelHeader];
+    }
+    return _headerView;
+}
+
 - (JVFloatLabeledTextField *)descriptionTextField {
     if (!_descriptionTextField) {
         _descriptionTextField = [[JVFloatLabeledTextField alloc] init];
@@ -96,7 +116,7 @@
         _descriptionTextField.returnKeyType = UIReturnKeyNext;
         _descriptionTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _descriptionTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
-        _descriptionTextField.frame = CGRectMake(PADDING, PADDING, self.view.width - PADDING, 44.f);
+        _descriptionTextField.frame = CGRectMake(MARGIN_LEFT, MARGIN_TOP, self.view.width - MARGIN_LEFT, 44.f);
         [_descriptionTextField setPlaceholder:NSLocalizedString(@"O que precisamos te lembrar?", nil)
                             floatingTitle:NSLocalizedString(@"Você não pode esquecer de", nil)];
         _descriptionTextField.inputAccessoryView = self.toolbar;
@@ -108,7 +128,7 @@
     if (!_periodoTextField) {
         _periodoTextField = [[JVFloatLabeledTextField alloc] init];
         _periodoTextField.delegate = self;
-        _periodoTextField.frame = CGRectMake(PADDING, self.descriptionTextField.maxY, self.view.width, 44.f);
+        _periodoTextField.frame = CGRectMake(MARGIN_LEFT, self.descriptionTextField.maxY, self.view.width, 44.f);
         _periodoTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _periodoTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_periodoTextField setPlaceholder:NSLocalizedString(@"Quando?", nil)
@@ -122,7 +142,7 @@
     if (!_horaTextField) {
         _horaTextField = [[JVFloatLabeledTextField alloc] init];
         _horaTextField.delegate = self;
-        _horaTextField.frame = CGRectMake(PADDING, self.periodoTextField.maxY, self.view.width, 44.f);
+        _horaTextField.frame = CGRectMake(MARGIN_LEFT, self.periodoTextField.maxY, self.view.width, 44.f);
         _horaTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _horaTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_horaTextField setPlaceholder:NSLocalizedString(@"Que horas?", nil)
@@ -136,7 +156,7 @@
     if (!_dataTextField) {
         _dataTextField = [[JVFloatLabeledTextField alloc] init];
         _dataTextField.delegate = self;
-        _dataTextField.frame = CGRectMake(PADDING, self.horaTextField.maxY, self.view.width, 44.f);
+        _dataTextField.frame = CGRectMake(MARGIN_LEFT, self.horaTextField.maxY, self.view.width, 44.f);
         _dataTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
         _dataTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
         [_dataTextField setPlaceholder:NSLocalizedString(@"Começando no dia?", nil)
@@ -295,10 +315,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[GAI sharedInstance] sendScreen:@"EditReminderScreen" withCategory:@"EditReminderScreen"];
+    [[GAI sharedInstance] sendScreen:@"EditReminderScreen"
+                        withCategory:@"EditReminderScreen"];
+    
+    NSString *labelHeaderText = NSLocalizedString(@"new_reminder", nil);
     if (self.actionMode == ADEditMode) {
+        labelHeaderText = NSLocalizedString(@"edit_reminder", nil);
         [self _editReminderMode];
     }
+    self.labelHeader.text = labelHeaderText;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -327,6 +352,7 @@
 - (void)_addBlurView {
     JCRBlurView *blurView = [JCRBlurView new];
     blurView.frame = self.view.frame;
+    [blurView addSubview:self.headerView];
     [self.view addSubview:blurView];
 }
 
@@ -359,7 +385,6 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterFullStyle];
     self.dataTextField.text = [formatter stringFromDate:self.viewModel.dataInicialEdit];
-    
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:@"hh"];

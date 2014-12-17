@@ -9,6 +9,8 @@
 
 // ADEditReminderViewController
 
+"new_reminder" = "New Reminder";
+"edit_reminder" = "Edit Reminder";
 "O que precisamos te lembrar?" = "What do we need to remind you?";
 "Você não pode esquecer de" = "You can't forget to";
 "Quando?" = "When?";

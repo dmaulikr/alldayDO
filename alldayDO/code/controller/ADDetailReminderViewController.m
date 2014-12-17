@@ -14,8 +14,6 @@
 
 @interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, PNChartDelegate>
 
-@property (nonatomic, strong) UIView *blurView;
-
 @property (nonatomic, strong) PNLineChart *lineChart;
 
 - (void)_animationToPortraitRotationChartView;
@@ -23,7 +21,6 @@
 - (void)_updateInterface;
 - (void)_updateChart;
 - (void)_presentNewReminderViewController;
-- (void)_showBlurViewWithAnimation;
 - (void)_IBOutletTitle;
 - (NSString *)_doneButtonTitles;
 
@@ -37,8 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.chartContentView addSubview:self.lineChart];
-    [self.view addSubview:self.blurView];
-    [self.view sendSubviewToBack:self.blurView];
     [self _IBOutletTitle];
     self.doneButton.layer.masksToBounds = YES;
     self.doneButton.layer.cornerRadius = 10.f;
@@ -65,14 +60,6 @@
         _viewModel = [[ADDetailReminderViewModel alloc] init];
     }
     return _viewModel;
-}
-
-- (UIView *)blurView {
-    if (!_blurView) {
-        _blurView = [UIView viewWithFrame:self.view.frame];
-        _blurView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.300];
-    }
-    return _blurView;
 }
 
 - (PNLineChart *)lineChart {
@@ -152,18 +139,7 @@
     
     [newReminderViewController.viewModel LembreteEdit:[self.viewModel model]];
     
-    [self presentViewController:newReminderViewController animated:YES completion:^{
-        [self _showBlurViewWithAnimation];
-    }];
-}
-
-- (void)_showBlurViewWithAnimation {
-    [self.view bringSubviewToFront:self.blurView];
-    
-    self.blurView.alpha = 0.0f;
-    [UIView animateWithDuration:0.3f animations:^{
-        self.blurView.alpha = 1.0f;
-    }];
+    [self presentViewController:newReminderViewController animated:YES completion:nil];
 }
 
 - (void)_IBOutletTitle {
