@@ -120,7 +120,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="barChartContentView" destination="5xt-SA-SWu" id="IV5-dU-T2j"/>
-                                            <outlet property="lineView" destination="eW6-et-pnZ" id="72q-Lq-ndr"/>
+                                            <outlet property="lineBottomView" destination="fb1-Tu-zfC" id="Qax-jO-m7T"/>
+                                            <outlet property="lineTopView" destination="eW6-et-pnZ" id="PRs-wh-GGG"/>
                                             <outlet property="nextReminderLabel" destination="bO8-Cs-4fK" id="q2i-ha-um8"/>
                                             <outlet property="nomeLabel" destination="eWL-mi-Zoo" id="g26-32-wSp"/>
                                             <segue destination="aGT-1s-pi3" kind="push" identifier="detailReminderSegue" id="MCV-9j-JxL"/>

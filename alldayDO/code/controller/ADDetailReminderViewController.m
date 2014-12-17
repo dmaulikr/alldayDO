@@ -10,9 +10,6 @@
 #import "ADEditReminderViewController.h"
 #import "PNChart.h"
 
-#import "PresentingAnimator.h"
-#import "DismissingAnimator.h"
-
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height - 568) ? NO : YES)
 
 @interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, PNChartDelegate>
@@ -209,19 +206,6 @@
     }
     
     [self _updateInterface];
-}
-
-#pragma mark - UIViewControllerTransitioningDelegate Methods -
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source {
-    return [PresentingAnimator new];
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    [self.view sendSubviewToBack:self.blurView];
-    return [DismissingAnimator new];
 }
 
 #pragma mark - ADEditReminderViewControllerDelegate Methods -

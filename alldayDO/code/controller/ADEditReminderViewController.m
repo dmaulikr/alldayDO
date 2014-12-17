@@ -18,7 +18,7 @@
 
 #import "alldayDO-Swift.h"
 
-#define PADDING 10.f
+#define PADDING 34.f
 #define ACTIVE_COLOR_HEX @"#3B89C6"
 #define DEFAULT_COLOR_HEX @"#487BAF"
 #define ERROR_COLOR_HEX @"bb3c45"
@@ -78,7 +78,6 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.view.frame = CGRectMake(0, 0, 300, 400);
         self.badgeView.parallaxIntensity = 7.f;
         [self _addBlurView];
         [self _addGesturesRecognizer];
@@ -206,8 +205,8 @@
                                                                     self.view.width / 2,
                                                                     50.f)];
         [_cancelarButton setTitle:NSLocalizedString(@"Cancelar", nil) forState:UIControlStateNormal];
-        [_cancelarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_cancelarButton addTarget:self action:@selector(_cancelarTouched) forControlEvents:UIControlEventTouchUpInside];
+        _cancelarButton.backgroundColor = [UIColor sam_colorWithHex:ERROR_COLOR_HEX];
     }
     return _cancelarButton;
 }
@@ -219,8 +218,8 @@
                                                                   self.view.width / 2,
                                                                   50.f)];
         [_salvarButton setTitle:NSLocalizedString(@"Salvar", nil) forState:UIControlStateNormal];
-        [_salvarButton setTitleColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX] forState:UIControlStateNormal];
         [_salvarButton addTarget:self action:@selector(_salvarTouched) forControlEvents:UIControlEventTouchUpInside];
+        _salvarButton.backgroundColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
     }
     return _salvarButton;
 }
@@ -228,7 +227,6 @@
 - (UIView *)badgeIconView {
     if (!_badgeIconView) {
         _badgeIconView = [UIView viewWithFrame:self.view.bounds];
-        _badgeIconView.layer.cornerRadius = 6.f;
         _badgeIconView.alpha = 0.f;
     }
     return _badgeIconView;
@@ -244,7 +242,6 @@
                                                       collectionViewLayout:collectionViewLayout];
         _badgeIconCollectionView.dataSource = self;
         _badgeIconCollectionView.delegate = self;
-        _badgeIconCollectionView.layer.cornerRadius = 6.f;
         _badgeIconCollectionView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.800];
     }
     return _badgeIconCollectionView;
@@ -330,7 +327,6 @@
 - (void)_addBlurView {
     JCRBlurView *blurView = [JCRBlurView new];
     blurView.frame = self.view.frame;
-    blurView.layer.cornerRadius = 6.f;
     [self.view addSubview:blurView];
 }
 

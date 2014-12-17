@@ -17,9 +17,6 @@
 
 #import "ADDetailReminderViewController.h"
 
-#import "PresentingAnimator.h"
-#import "DismissingAnimator.h"
-
 #import "PNChart.h"
 
 #import <NGAParallaxMotion.h>
@@ -309,15 +306,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
- 
-    [cell.badgeImageView centerYWith:cell.timelineContentView];
-    cell.borderTimelineContentView.layer.cornerRadius = 5.f;
-    cell.timelineContentView.layer.cornerRadius = 5.f;
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
-//        cell.lineBottomView.hidden = YES;
+        cell.lineBottomView.hidden = YES;
         
     } else {
-//        cell.lineBottomView.hidden = NO;
+        cell.lineBottomView.hidden = NO;
     }
     
     [self.viewModel fetchObjectAtIndexPath:indexPath];
@@ -373,18 +366,6 @@
 
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForUndoneReminders];
-}
-
-#pragma mark - UIViewControllerTransitioningDelegate Methods -
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [PresentingAnimator new];
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    [self.view sendSubviewToBack:self.blurView];
-    return [DismissingAnimator new];
 }
 
 #pragma mark - ADEditReminderViewControllerDelegate Methods -

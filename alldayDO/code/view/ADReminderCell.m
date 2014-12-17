@@ -71,10 +71,10 @@
         self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
         [self.barChart setX:9.f andY:3.f];
         
-        [self.badgeImageView centerXWith:self.lineView];
+        [self.badgeImageView centerXWith:self.lineTopView];
         [self.badgeImageView centerYWith:self];
-        [self.lineView centerXWith:self.badgeImageView];
-        
+        [self.lineTopView centerXWith:self.badgeImageView];
+
         self.initialized = YES;
     }
 }
