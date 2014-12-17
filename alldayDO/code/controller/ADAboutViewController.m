@@ -19,6 +19,10 @@
     [[GAI sharedInstance] sendScreen:@"aboutScreen" withCategory:@"Screen"];
     self.title = NSLocalizedString(@"about", nil);
     self.descriptionLabel.text = NSLocalizedString(@"aboutDescription", nil);
+    
+    CGFloat radius = 10.f;
+    self.fabioButton.layer.cornerRadius = radius;
+    self.arthurButton.layer.cornerRadius = radius;
 }
 
 - (IBAction)fabioTwitterTouched:(id)sender {

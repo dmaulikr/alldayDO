@@ -337,7 +337,8 @@
     [[GAI sharedInstance] sendAction:@"saveActivity" withCategory:@"Action"];
     if ([self _requiredValidation]) {
         self.viewModel.descricao = self.descriptionTextField.text;
-        self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView selectedRowInComponent:0]];
+        self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView
+                                                              selectedRowInComponent:0]];
         self.viewModel.data = self.horaPicker.date;
         self.viewModel.dataInicial = self.dataPicker.date;
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
@@ -442,13 +443,9 @@
 
 - (void)_refreshTimeLabel:(UIDatePicker *)datePicker {
     NSDate *date = [NSDate date];
-    if (self.actionMode == ADEditMode) {
-        date = self.viewModel.dataEdit;
-    }
     if (datePicker) {
         date = datePicker.date;
     }
-    
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     
     [outputFormatter setDateFormat:@"hh"];
@@ -465,9 +462,6 @@
 
 - (void)_refreshDataInicialLabel:(UIDatePicker *)datePicker {
     NSDate *date = [NSDate date];
-    if (self.actionMode == ADEditMode) {
-        date = self.viewModel.dataInicialEdit;
-    }
     if (datePicker) {
         date = datePicker.date;
     }

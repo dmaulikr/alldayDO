@@ -10,6 +10,9 @@
 
 @interface ADAboutViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *fabioButton;
+@property (weak, nonatomic) IBOutlet UIButton *arthurButton;
+
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 - (IBAction)fabioTwitterTouched:(id)sender;

@@ -669,8 +669,14 @@
                                     <constraint firstAttribute="height" constant="160" id="irD-AD-nfg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feito por quem quer uma vida com menos esquecimentos e mais produtividade! ;)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-Oa-dxS">
+                                <rect key="frame" x="0.0" y="188" width="320" height="116"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-Yb-nPe">
-                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <rect key="frame" x="10" y="364" width="300" height="44"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Pur-Ke-1uF"/>
@@ -683,7 +689,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-Hd-lDC">
-                                <rect key="frame" x="0.0" y="318" width="320" height="44"/>
+                                <rect key="frame" x="10" y="310" width="300" height="44"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="p7j-z7-zt2"/>
@@ -695,12 +701,6 @@
                                     <action selector="fabioTwitterTouched:" destination="ooC-Zf-Ou6" eventType="touchUpInside" id="cCC-3V-PUg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feito por quem quer uma vida com menos esquecimentos e mais produtividade! ;)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-Oa-dxS">
-                                <rect key="frame" x="0.0" y="188" width="320" height="116"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -708,21 +708,23 @@
                             <constraint firstItem="NYh-Oa-dxS" firstAttribute="width" secondItem="Z2r-7v-445" secondAttribute="width" id="3mj-A0-oHN"/>
                             <constraint firstItem="Is1-J9-xnu" firstAttribute="top" secondItem="zM1-iU-q6V" secondAttribute="bottom" constant="20" id="4fm-16-nM0"/>
                             <constraint firstItem="NYh-Oa-dxS" firstAttribute="centerX" secondItem="QYs-Hd-lDC" secondAttribute="centerX" id="FgG-Le-Xvq"/>
-                            <constraint firstItem="QYs-Hd-lDC" firstAttribute="top" secondItem="NYh-Oa-dxS" secondAttribute="bottom" constant="14" id="HXe-ge-tnO"/>
+                            <constraint firstItem="QYs-Hd-lDC" firstAttribute="top" secondItem="NYh-Oa-dxS" secondAttribute="bottom" constant="6" id="HXe-ge-tnO"/>
                             <constraint firstItem="Fyo-Yb-nPe" firstAttribute="top" secondItem="QYs-Hd-lDC" secondAttribute="bottom" constant="10" id="Iq8-NS-MpG"/>
                             <constraint firstAttribute="centerX" secondItem="Fyo-Yb-nPe" secondAttribute="centerX" id="OMR-zI-7ez"/>
                             <constraint firstItem="NYh-Oa-dxS" firstAttribute="top" secondItem="Is1-J9-xnu" secondAttribute="bottom" constant="8" id="RHM-74-71K"/>
-                            <constraint firstAttribute="width" secondItem="Fyo-Yb-nPe" secondAttribute="width" id="iYO-DA-1Lg"/>
-                            <constraint firstAttribute="width" secondItem="QYs-Hd-lDC" secondAttribute="width" id="lzd-N1-3A4"/>
+                            <constraint firstAttribute="width" secondItem="Fyo-Yb-nPe" secondAttribute="width" constant="20" id="iYO-DA-1Lg"/>
+                            <constraint firstAttribute="width" secondItem="QYs-Hd-lDC" secondAttribute="width" constant="20" id="lzd-N1-3A4"/>
                             <constraint firstAttribute="trailing" secondItem="Is1-J9-xnu" secondAttribute="trailing" constant="80" id="ssI-R0-rjU"/>
-                            <constraint firstItem="lvM-C3-Lhv" firstAttribute="top" secondItem="Fyo-Yb-nPe" secondAttribute="bottom" id="wTh-bc-U5B"/>
+                            <constraint firstItem="lvM-C3-Lhv" firstAttribute="top" secondItem="Fyo-Yb-nPe" secondAttribute="bottom" constant="8" id="wTh-bc-U5B"/>
                             <constraint firstItem="Is1-J9-xnu" firstAttribute="leading" secondItem="Z2r-7v-445" secondAttribute="leading" constant="80" id="zlP-wU-QFC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dUD-0t-rOh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="arthurButton" destination="Fyo-Yb-nPe" id="4bd-qi-kxZ"/>
                         <outlet property="descriptionLabel" destination="NYh-Oa-dxS" id="86K-HL-uN2"/>
+                        <outlet property="fabioButton" destination="QYs-Hd-lDC" id="uyr-Qf-vdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSb-WF-L2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
