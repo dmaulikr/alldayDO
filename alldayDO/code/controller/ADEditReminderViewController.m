@@ -40,6 +40,7 @@
 @property (nonatomic, strong) UIDatePicker *horaPicker;
 @property (nonatomic, strong) UIDatePicker *dataPicker;
 
+@property (nonatomic, strong) UILabel *badgeLabel;
 @property (nonatomic, strong) UIButton *cancelarButton;
 @property (nonatomic, strong) UIButton *salvarButton;
 
@@ -203,7 +204,7 @@
 
 - (UIView *)badgeView {
     if (!_badgeView) {
-        _badgeView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 90.f, 90.f)];
+        _badgeView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 80.f, 90.f)];
         _badgeView.center = self.view.center;
         
         CGFloat yBetweenDataTextAndSalvarButton = self.dataTextField.maxY + (((self.salvarButton.y - self.dataTextField.maxY) / 2) - _badgeView.height / 2);
@@ -216,6 +217,19 @@
         [_badgeView addSubview:self.badgeImageView];
     }
     return _badgeView;
+}
+
+- (UILabel *)badgeLabel {
+    if (!_badgeLabel) {
+        _badgeLabel = [UILabel label];
+        [_badgeLabel setW:self.view.width andH:44.f];
+        [_badgeLabel setY:(self.badgeView.y - _badgeLabel.height)];
+        _badgeLabel.textAlignment = NSTextAlignmentCenter;
+        _badgeLabel.textColor = [UIColor sam_colorWithHex:@"#B6BEC9"];
+        _badgeLabel.font = [UIFont systemFontOfSize:16.f];
+        _badgeLabel.text = NSLocalizedString(@"selecione_miniatura", nil);
+    }
+    return _badgeLabel;
 }
 
 - (UIButton *)cancelarButton {
@@ -375,6 +389,7 @@
     [self.view addSubview:self.badgeView];
     [self.view addSubview:self.salvarButton];
     [self.view addSubview:self.cancelarButton];
+    [self.view addSubview:self.badgeLabel];
     [self.view addSubview:self.badgeIconView];
     [self.badgeIconView addSubview:self.badgeIconCollectionView];
 }
@@ -399,7 +414,7 @@
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
     
-    self.badgeImageView.image = [[UIImage imageNamed:@"Hexacon"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
+    self.badgeImageView.image = [[UIImage imageNamed:@"HexaconEdit"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
     self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagemEdit] tintedImageWithColor:[UIColor whiteColor]];
 }
 

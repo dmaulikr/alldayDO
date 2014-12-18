@@ -24,6 +24,7 @@
 "Você realmente deseja cancelar?" = "Você realmente deseja cancelar?";
 "Sim" = "Sim";
 "Não" = "Não";
+"selecione_miniatura" = "Selecione uma miniatura de identificação";
 
 // ADRemindersTableViewController
 

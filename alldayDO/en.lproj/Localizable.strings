@@ -24,6 +24,7 @@
 "Você realmente deseja cancelar?" = "Do you really want to cancel?";
 "Sim" = "Yes";
 "Não" = "No";
+"selecione_miniatura" = "Select your thumbnail identification";
 
 // ADRemindersTableViewController
 
