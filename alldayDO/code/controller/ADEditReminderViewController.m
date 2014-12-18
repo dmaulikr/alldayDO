@@ -336,9 +336,9 @@
 - (void)_salvarTouched {
     [[GAI sharedInstance] sendAction:@"saveActivity" withCategory:@"Action"];
     if ([self _requiredValidation]) {
+
+        self.viewModel.periodo = [NSNumber numberWithInteger:[self.viewModel typeForCycleString:self.periodoTextField.text]];
         self.viewModel.descricao = self.descriptionTextField.text;
-        self.viewModel.periodo = [NSNumber numberWithInteger:[self.periodoPickerView
-                                                              selectedRowInComponent:0]];
         self.viewModel.data = self.horaPicker.date;
         self.viewModel.dataInicial = self.dataPicker.date;
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);

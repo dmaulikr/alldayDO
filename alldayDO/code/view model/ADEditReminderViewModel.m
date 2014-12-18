@@ -11,13 +11,6 @@
 #import "ADModel.h"
 #import "ADLocalNotification.h"
 
-typedef enum {
-    ADCycleTypeDay,
-    ADCycleTypeWeek,
-    ADCycleTypeMonth,
-    ADCycleTypeNever
-} ADCycleType;
-
 @interface ADEditReminderViewModel ()
 
 @property (nonatomic, strong) ADLembrete *lembreteEdit;
@@ -53,6 +46,7 @@ typedef enum {
         NSLocalizedString(@"Diariamente", nil),
         NSLocalizedString(@"Semanalmente", nil),
         NSLocalizedString(@"Mensalmente", nil),
+        NSLocalizedString(@"Uma única vez", nil),
         NSLocalizedString(@"Nunca", nil)
     ];
 }
@@ -83,6 +77,22 @@ typedef enum {
 
 - (void)LembreteEdit:(ADLembrete *)lembrete {
     self.lembreteEdit = lembrete;
+}
+
+- (NSInteger)typeForCycleString:(NSString *)CycleType {
+    NSInteger type;
+    if ([CycleType isEqualToString:NSLocalizedString(@"Diariamente", nil)]) {
+        type = 0;
+    } else if ([CycleType isEqualToString:NSLocalizedString(@"Semanalmente", nil)]) {
+        type = 1;
+    } else if ([CycleType isEqualToString:NSLocalizedString(@"Mensalmente", nil)]) {
+        type = 2;
+    } else if ([CycleType isEqualToString:NSLocalizedString(@"Uma única vez", nil)]) {
+        type = 3;
+    } else if ([CycleType isEqualToString:NSLocalizedString(@"Nunca", nil)]) {
+        type = 4;
+    }
+    return type;
 }
 
 @end

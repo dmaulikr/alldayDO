@@ -70,7 +70,11 @@
 
 - (UILocalNotification *)_defaultLocalNotificationWith:(ADLembrete *)lembrete {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = lembrete.data;
+    if ([lembrete.periodo isEqual:[NSNumber numberWithInt:ADCycleTypeJustOneTime]]) {
+        localNotification.fireDate = [lembrete dateFormattedForJustOneTime];
+    } else {
+        localNotification.fireDate = lembrete.data;
+    }
     localNotification.repeatInterval = [lembrete repeatInterval];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.alertAction = NSLocalizedString(@"concluir a tarefa", nil);
@@ -92,7 +96,15 @@
     for (ADLembrete *lembrete in [self.fetchedResultsController fetchedObjects]) {
         UILocalNotification *localNotification = [self _defaultLocalNotificationWith:lembrete];
         localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
-        if (![lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:3]]) {
+        
+        BOOL justOneTimeValid = NO;
+        if ([lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeJustOneTime]]) {
+            if ([[lembrete dateFormattedForJustOneTime] compare:[NSDate date]] == NSOrderedDescending) {
+                justOneTimeValid = YES;
+            }
+        }
+        if (![lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]
+            && justOneTimeValid) {
              [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];   
         }
     }

@@ -46,4 +46,17 @@
     return nextFireDate;
 }
 
+- (NSDate *)dateFormattedForJustOneTime {
+    NSDateComponents *component = [[NSDateComponents alloc] init];
+    [component setDay:self.dataInicial.day];
+    [component setMonth:self.dataInicial.month];
+    [component setYear:self.dataInicial.year];
+    [component setHour:self.data.hour];
+    [component setMinute:self.data.minute];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    return [calendar dateFromComponents:component];
+}
+
 @end

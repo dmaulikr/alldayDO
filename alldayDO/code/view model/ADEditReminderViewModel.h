@@ -30,4 +30,6 @@
 
 - (void)LembreteEdit:(ADLembrete *)lembrete;
 
+- (NSInteger)typeForCycleString:(NSString *)CycleType;
+
 @end

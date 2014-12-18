@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    ADCycleTypeDay,
+    ADCycleTypeWeek,
+    ADCycleTypeMonth,
+    ADCycleTypeJustOneTime,
+    ADCycleTypeNever
+} ADCycleType;
+
 @interface ADLocalNotification : NSObject
 
 + (instancetype)sharedInstance;

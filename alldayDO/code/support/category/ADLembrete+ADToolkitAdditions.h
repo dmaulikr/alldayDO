@@ -14,5 +14,6 @@
 
 - (NSInteger)repeatInterval;
 - (NSDate *)nextFireDate;
+- (NSDate *)dateFormattedForJustOneTime;
 
 @end

@@ -77,7 +77,11 @@
 
 - (BOOL)hasNoReminderAlert {
     BOOL hasReminderAlert = NO;
-    if ([self.lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:3]]) {
+    if ([self.lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]) {
+        hasReminderAlert = YES;
+    }
+    if ([self.lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeJustOneTime]]
+        && [[self.lembrete dateFormattedForJustOneTime] compare:[NSDate date]] == NSOrderedAscending) {
         hasReminderAlert = YES;
     }
     return hasReminderAlert;
