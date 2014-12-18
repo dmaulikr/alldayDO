@@ -523,8 +523,12 @@
         messageError = NSLocalizedString(@"", nil);
         sucess = NO;
     }
+  
+    BOOL exceptionForValidation = [self.viewModel typeForCycleString:self.periodoTextField.text] == ADCycleTypeNever
+    || [self.viewModel typeForCycleString:self.periodoTextField.text] == ADCycleTypeNever;
     if ([[NSDate dateFormattedWithDate:self.dataPicker.date
-               andHourFromAnotherDate:self.horaPicker.date] compare:[NSDate date]] == NSOrderedAscending) {
+               andHourFromAnotherDate:self.horaPicker.date] compare:[NSDate date]] == NSOrderedAscending
+        && exceptionForValidation) {
         messageError = NSLocalizedString(@"", nil);
         sucess = NO;
     }
