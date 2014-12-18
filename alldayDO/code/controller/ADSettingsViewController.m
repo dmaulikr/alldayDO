@@ -47,6 +47,7 @@
     [self.walkthroughButton setTitle:NSLocalizedString(@"walkthrough", nil) forState:UIControlStateNormal];
     self.shareLabel.text = NSLocalizedString(@"shared", nil);
 }
+
 - (void)_cornerRadiusButtons {
     CGFloat radius = 10;
     self.aboutButton.layer.cornerRadius = radius;

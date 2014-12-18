@@ -39,6 +39,18 @@
     return [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
 }
 
++ (NSDate *)dateFormattedWithDate:(NSDate *)date andHourFromAnotherDate:(NSDate *)hour {
+    NSDateComponents *component = [[NSDateComponents alloc] init];
+    [component setDay:date.day];
+    [component setMonth:date.month];
+    [component setYear:date.year];
+    [component setHour:hour.hour];
+    [component setMinute:hour.minute];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    return [calendar dateFromComponents:component];
+}
+
 - (NSDate *)dateByAddingComponents:(NSDateComponents *)dateComponents {
     return [self dateByAddingComponents:dateComponents timeZone:nil];
 }

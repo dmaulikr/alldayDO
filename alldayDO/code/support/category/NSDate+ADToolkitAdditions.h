@@ -27,6 +27,7 @@ typedef NSUInteger ADWeekday;
 
 + (NSDate *)vbDate;
 + (NSDate *)dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year;
++ (NSDate *)dateFormattedWithDate:(NSDate *)date andHourFromAnotherDate:(NSDate *)hour;
 
 - (NSDate *)dateByAddingComponents:(NSDateComponents *)dateComponents;
 - (NSDate *)dateByAddingComponents:(NSDateComponents *)dateComponents timeZone:(NSTimeZone *)timeZone;

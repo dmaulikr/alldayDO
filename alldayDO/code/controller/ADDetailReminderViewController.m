@@ -207,7 +207,6 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
 //}
-
 #pragma mark - PNChartDelegate Methods 
 
 - (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {}

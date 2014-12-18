@@ -104,7 +104,7 @@
             }
         }
         if (![lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]
-            && justOneTimeValid) {
+            || justOneTimeValid) {
              [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];   
         }
     }

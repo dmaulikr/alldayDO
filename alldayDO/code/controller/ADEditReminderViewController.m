@@ -488,30 +488,48 @@
 
 - (BOOL)_requiredValidation {
     BOOL sucess = YES;
+    NSString *messageError;
     
     UIColor *requiredColor = [UIColor sam_colorWithHex:ERROR_COLOR_HEX];
     
     UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
     if ([self.descriptionTextField.text isEqualToString:@""]) {
-        [self.descriptionTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        [self.descriptionTextField setValue:requiredColor
+                                 forKeyPath:@"_placeholderLabel.textColor"];
+        messageError = NSLocalizedString(@"", nil);
         sucess = NO;
         
     } else if ([self.periodoTextField.text isEqualToString:@""]){
-        [self.periodoTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        [self.periodoTextField setValue:requiredColor
+                             forKeyPath:@"_placeholderLabel.textColor"];
+        messageError = NSLocalizedString(@"", nil);
         sucess = NO;
         
     } else if ([self.horaTextField.text isEqualToString:@""]) {
-        [self.horaTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        [self.horaTextField setValue:requiredColor
+                          forKeyPath:@"_placeholderLabel.textColor"];
+        messageError = NSLocalizedString(@"", nil);
         sucess = NO;
         
     } else if ([self.dataTextField.text isEqualToString:@""]) {
-        [self.dataTextField setValue:requiredColor forKeyPath:@"_placeholderLabel.textColor"];
+        [self.dataTextField setValue:requiredColor
+                          forKeyPath:@"_placeholderLabel.textColor"];
+        messageError = NSLocalizedString(@"", nil);
         sucess = NO;
         
     } else if (!iconImage) {
         [[GAI sharedInstance] sendAction:@"NolCon" withCategory:@"Action"];
         self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
+        messageError = NSLocalizedString(@"", nil);
         sucess = NO;
+    }
+    if ([[NSDate dateFormattedWithDate:self.dataPicker.date
+               andHourFromAnotherDate:self.horaPicker.date] compare:[NSDate date]] == NSOrderedAscending) {
+        messageError = NSLocalizedString(@"", nil);
+        sucess = NO;
+    }
+    if (messageError.isPresent) {
+        #warning apresentar mensagem de error por notification - cocoapod
     }
     return sucess;
 }
