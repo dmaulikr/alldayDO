@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>WidgetKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
+		<key>WidgetKitTests copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
+		<key>alldayDO Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
 		<key>alldayDO.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +27,36 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>718D9EBE1A436C8400E900D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71A2A7761A43B2A50026F01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71A2A7801A43B2A50026F01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71A2A7AD1A43B6310026F01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71A2A7B71A43B6310026F01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71A2A7CD1A43B6380026F01B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>71D28AFD19294F970047F291</key>
 		<dict>
 			<key>primary</key>
