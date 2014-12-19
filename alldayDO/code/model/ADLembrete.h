@@ -2,9 +2,9 @@
 //  ADLembrete.h
 //  alldayDO
 //
-//  Created by Fábio Nogueira  on 16/08/14.
+//  Created by Fábio Nogueira  on 16/08/14.1
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
-//
+///Users/fabintk/Desktop/alldayDO/alldayDO/code/model/ADLembrete.h
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>

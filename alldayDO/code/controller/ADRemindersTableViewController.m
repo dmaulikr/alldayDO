@@ -8,7 +8,6 @@
 
 #import "ADRemindersTableViewController.h"
 
-#import "ADLembrete.h"
 #import "ADModel.h"
 #import "ADReminderCell.h"
 

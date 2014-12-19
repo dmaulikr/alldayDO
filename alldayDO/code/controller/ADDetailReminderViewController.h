@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ADLembrete.h"
 #import "ADLembreteConfirmado.h"
 #import "ADDetailReminderViewModel.h"
 

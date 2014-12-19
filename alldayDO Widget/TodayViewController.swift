@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationCenter
+import WidgetKit
 
 class TodayViewController: UITableViewController, NCWidgetProviding {
     

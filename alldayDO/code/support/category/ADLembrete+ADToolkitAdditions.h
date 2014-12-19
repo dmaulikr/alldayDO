@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADLembrete.h"
+#import "WidgetKit.h"
 
 #define LOCAL_NOTIFICATION_DOMAIN @"mobi.fabionogueira.alldayDO"
 

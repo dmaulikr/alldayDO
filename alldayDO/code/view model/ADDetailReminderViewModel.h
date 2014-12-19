@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ADLembrete.h"
 #import "ADLembreteConfirmado.h"
 #import "PNLineChartDataItem.h"
 

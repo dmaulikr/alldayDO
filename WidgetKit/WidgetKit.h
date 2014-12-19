@@ -2,7 +2,7 @@
 //  WidgetKit.h
 //  WidgetKit
 //
-//  Created by Fábio Nogueira  on 18/12/14.
+//  Created by Fábio Nogueira  on 19/12/14.
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WidgetKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WidgetKit/PublicHeader.h>
 
-
+#import <WidgetKit/ADLembrete.h>
