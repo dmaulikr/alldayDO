@@ -40,16 +40,16 @@
     // If necessary, add one more:
     if ([nextFireDate compare:afterDate] == NSOrderedAscending) {
         switch (self.repeatInterval) {
-            case NSMonthCalendarUnit:
+            case NSCalendarUnitMonth:
                 difference.month++;
                 break;
-            case NSWeekCalendarUnit:
+            case kCFCalendarUnitWeek:
                 difference.week++;
                 break;
-            case NSDayCalendarUnit:
+            case NSCalendarUnitDay:
                 difference.day++;
                 break;
-            case NSHourCalendarUnit:
+            case NSCalendarUnitHour:
                 difference.hour++;
                 break;
                 // ... add cases for other repeat intervals ...

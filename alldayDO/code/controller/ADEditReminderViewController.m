@@ -317,7 +317,7 @@
                                                                                           target:self
                                                                                           action:NULL];
         UIBarButtonItem *nextButtonItem = [UIBarButtonItem barButtonItemWithTitle:NSLocalizedString(@"Próximo", nil)
-                                                                            style:UIBarButtonItemStyleBordered
+                                                                            style:UIBarButtonItemStylePlain
                                                                            target:self
                                                                            action:@selector(_nextFieldText)];
         _toolbar.items = @[spaceButtonItem, nextButtonItem];

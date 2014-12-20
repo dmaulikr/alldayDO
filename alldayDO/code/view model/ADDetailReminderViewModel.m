@@ -30,8 +30,8 @@
 }
 
 - (NSArray *)calendario {
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
                                                         fromDate:self.dataLembretesConfirmados.firstObject
                                                           toDate:[NSDate date].nextWeek
                                                          options:0];
@@ -67,7 +67,7 @@
 
 - (void)_setTodayDate {
     NSDateComponents *components = [[NSCalendar currentCalendar]
-                                    components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                    components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                                     fromDate:[NSDate date]];
     NSDate *today = [[NSCalendar currentCalendar]
                          dateFromComponents:components];

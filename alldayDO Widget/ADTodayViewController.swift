@@ -10,7 +10,7 @@ import UIKit
 import NotificationCenter
 import WidgetKit
 
-class TodayViewController: UITableViewController, NCWidgetProviding {
+class ADTodayViewController: UITableViewController, NCWidgetProviding {
     
     // MARK: Properties
     

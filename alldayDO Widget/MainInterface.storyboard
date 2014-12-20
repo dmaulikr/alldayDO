@@ -8,13 +8,13 @@
         <!--Today View Controller-->
         <scene sceneID="b2z-0f-4Gu">
             <objects>
-                <tableViewController id="MQt-UN-tGa" customClass="TodayViewController" customModule="alldayDO__" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="MQt-UN-tGa" customClass="ADTodayViewController" customModule="alldayDO_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="y0W-De-C4h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="todayCell" id="XOs-P1-pjg" customClass="ADTodayCell" customModule="alldayDO__" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="todayCell" id="XOs-P1-pjg" customClass="ADTodayCell" customModule="alldayDO_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XOs-P1-pjg" id="Kmf-UT-be5">

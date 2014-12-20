@@ -54,7 +54,7 @@
     [component setHour:self.data.hour];
     [component setMinute:self.data.minute];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [calendar dateFromComponents:component];
 }
 

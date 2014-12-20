@@ -47,7 +47,7 @@
     [component setHour:hour.hour];
     [component setMinute:hour.minute];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [calendar dateFromComponents:component];
 }
 
@@ -99,7 +99,7 @@
 }
 
 - (NSDate *)beginningOfDay {
-    return [self beginningOfUnit:NSDayCalendarUnit];
+    return [self beginningOfUnit:NSCalendarUnitDay];
 }
 
 - (NSDate *)endOfDay {
@@ -142,30 +142,8 @@
     return [self dateByAddingYears:-1];
 }
 
-- (NSDate *)lastWeekday:(ADWeekday)weekday {
-    NSInteger daysToRemove = weekday - [self weekday];
-    if (daysToRemove > 0) {
-        daysToRemove = -(NUMBER_WEEDAYS - daysToRemove);
-    }
-    if (daysToRemove == 0) {
-        daysToRemove = -7;
-    }
-    return [self dateByAddingDays:daysToRemove];
-}
-
-- (NSDate *)nextWeekday:(ADWeekday)weekday {
-    NSInteger daysToAdd = weekday - [self weekday];
-    if (daysToAdd < 0) {
-        daysToAdd = NUMBER_WEEDAYS + daysToAdd;
-    }
-    if (daysToAdd == 0) {
-        daysToAdd = 7;
-    }
-    return [self dateByAddingDays:daysToAdd];
-}
-
 - (NSDate *)firstDayInMonth {
-    return [self beginningOfUnit:NSMonthCalendarUnit];
+    return [self beginningOfUnit:NSCalendarUnitMonth];
 }
 
 - (NSDate *)lastDayInMonth {
@@ -185,43 +163,28 @@
 #pragma mark - Date Components
 
 - (NSInteger)minute {
-    return [[[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:self] minute];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMinute fromDate:self] minute];
 }
 
 - (NSInteger)hour {
-    return [[[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:self] hour];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:self] hour];
 }
 
 - (NSInteger)day {
-    return [[[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:self] day];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:self] day];
 }
 
 - (NSInteger)month {
-    return [[[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:self] month];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self] month];
 }
 
 - (NSInteger)year {
-    return [[[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:self] year];
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] year];
 }
 
-- (NSInteger)weekday {
-    return [self weekdayWithWeekStartingOnSunday:YES];
-}
-
-- (NSInteger)weekdayWithWeekStartingOnSunday:(BOOL)sunday {
-    return [[[self currentCalendarStartingOnSunday:sunday] components:NSWeekdayCalendarUnit fromDate:self] weekday];
-}
 
 - (NSInteger)daysInMonth {
-    return [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:self].length;
-}
-
-- (NSInteger)weeksInMonth {
-    return [self weeksInMonthStartingOnSunday:YES];
-}
-
-- (NSInteger)weeksInMonthStartingOnSunday:(BOOL)sunday {
-    return [[self currentCalendarStartingOnSunday:sunday] rangeOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:self].length;
+    return [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self].length;
 }
 
 - (BOOL)compareComponents:(NSUInteger)unitFlags withDate:(NSDate *)date {
@@ -243,21 +206,21 @@
 }
 
 - (BOOL)isCurrentYear {
-    return [self compareComponents:NSYearCalendarUnit withDate:[NSDate date]];
+    return [self compareComponents:NSCalendarUnitYear withDate:[NSDate date]];
 }
 
 - (BOOL)isSameDay:(NSDate *)date {
-    NSInteger dayMonthYear = NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit;
+    NSInteger dayMonthYear = NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear;
     return [self compareComponents:dayMonthYear withDate:date];
 }
 
 - (BOOL)isSameWeek:(NSDate *)date {
-    NSInteger weekMonthYear = NSWeekOfMonthCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit;
+    NSInteger weekMonthYear = NSCalendarUnitWeekOfMonth|NSCalendarUnitMonth|NSCalendarUnitYear;
     return [self compareComponents:weekMonthYear withDate:date];
 }
 
 - (BOOL)isSameMonth:(NSDate *)date {
-    NSInteger monthYear = NSMonthCalendarUnit|NSYearCalendarUnit;
+    NSInteger monthYear = NSCalendarUnitMonth|NSCalendarUnitYear;
     return [self compareComponents:monthYear withDate:date];
 }
 
@@ -278,8 +241,8 @@
 }
 
 - (NSString *)dateAsStringFromDate:(NSDate *)date extended:(BOOL)extended {
-    NSUInteger componentsFlag = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSUInteger componentsFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay |
+    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:componentsFlag
                                                                    fromDate:self

@@ -42,12 +42,8 @@ typedef NSUInteger ADWeekday;
 - (NSDate *)tomorrow;
 - (NSDate *)yesterday;
 - (NSDate *)nextWeek;
-- (NSDate *)nextMonth;
-- (NSDate *)lastMonth;
 - (NSDate *)nextYear;
 - (NSDate *)lastYear;
-- (NSDate *)lastWeekday:(ADWeekday)weekday;
-- (NSDate *)nextWeekday:(ADWeekday)weekday;
 - (NSDate *)firstDayInMonth;
 - (NSDate *)lastDayInMonth;
 
@@ -58,11 +54,7 @@ typedef NSUInteger ADWeekday;
 - (NSInteger)day;
 - (NSInteger)month;
 - (NSInteger)year;
-- (NSInteger)weekday;
-- (NSInteger)weekdayWithWeekStartingOnSunday:(BOOL)sunday;
 - (NSInteger)daysInMonth;
-- (NSInteger)weeksInMonth;
-- (NSInteger)weeksInMonthStartingOnSunday:(BOOL)sunday;
 
 - (BOOL)compareComponents:(NSUInteger)unitFlags withDate:(NSDate *)date;
 - (BOOL)isToday;
