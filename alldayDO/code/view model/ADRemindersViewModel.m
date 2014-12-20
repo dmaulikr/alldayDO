@@ -17,10 +17,11 @@
 @property (nonatomic, strong) NSMutableArray *lembretesTodos;
 @property (nonatomic, strong) NSMutableArray *lembretesCompletados;
 @property (nonatomic, strong) NSMutableArray *lembretesNaoCompletados;
+@property (nonatomic, strong) NSMutableArray *lembretesParaHoje;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-- (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados;
+- (void)_fetchResultsForLembretesInDiferentsCategories;
 - (NSArray *)_sortReminders:(NSArray *)reminders;
 
 @end
@@ -48,6 +49,13 @@
         _lembretesNaoCompletados = [NSMutableArray array];
     }
     return _lembretesNaoCompletados;
+}
+
+- (NSMutableArray *)lembretesParaHoje {
+    if (!_lembretesParaHoje) {
+        _lembretesParaHoje = [NSMutableArray array];
+    }
+    return _lembretesParaHoje;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -99,9 +107,13 @@
     return self.lembretesNaoCompletados;
 }
 
+- (NSArray *)todayReminders {
+    return self.lembretesParaHoje;
+}
+
 #pragma mark - Private Methods -
 
-- (void)_fetchResultsForLembretesConfirmadosAndNaoConfirmados {
+- (void)_fetchResultsForLembretesInDiferentsCategories {
     for (ADLembrete *lembrete in self.lembretes) {
         BOOL DoneReminder = NO;
         for (ADLembreteConfirmado *lembreteConfirmado in lembrete.lembretesConfirmados) {
@@ -112,6 +124,9 @@
         }
         if (!DoneReminder) {
             [self.lembretesNaoCompletados addObject:lembrete];
+        }
+        if ([lembrete.nextFireDate isToday]) {
+            [self.lembretesParaHoje addObject:lembrete];
         }
     }
 }
@@ -131,6 +146,7 @@
     [self.lembretesTodos removeObject:lembrete];
     [self.lembretesCompletados removeObject:lembrete];
     [self.lembretesNaoCompletados removeObject:lembrete];
+    [self.lembretesParaHoje removeObject:lembrete];
     
     [[ADModel sharedInstance] deleteObject:lembrete];
     [[ADLocalNotification sharedInstance] scheduleAllLocalNotification];
@@ -153,12 +169,13 @@
     self.lembretesTodos = nil;
     self.lembretesCompletados = nil;
     self.lembretesNaoCompletados = nil;
+    self.lembretesParaHoje = nil;
     
     [self.fetchedResultsController performFetch:nil];
     [self.lembretesTodos addObjectsFromArray:[self _sortReminders:[self.fetchedResultsController fetchedObjects]]];
      self.lembretes = self.lembretesTodos;
     
-    [self _fetchResultsForLembretesConfirmadosAndNaoConfirmados];
+    [self _fetchResultsForLembretesInDiferentsCategories];
 }
 
 - (void)executeFetchRequestForDoneReminders {

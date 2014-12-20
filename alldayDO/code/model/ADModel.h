@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WidgetKit.h"
 
 @interface ADModel : NSObject
 

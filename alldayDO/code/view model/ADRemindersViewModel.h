@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ADLembreteConfirmado.h"
 
+#import "WidgetKit.h"
+
 @interface ADRemindersViewModel : NSObject
 
 @property (nonatomic, readonly) NSString *descricao;
@@ -20,6 +22,7 @@
 @property (nonatomic, readonly) NSMutableArray *allReminders;
 @property (nonatomic, readonly) NSMutableArray *doneReminders;
 @property (nonatomic, readonly) NSMutableArray *undoneReminders;
+@property (nonatomic, readonly) NSMutableArray *todayReminders;
 
 
 - (void)deleteRow:(NSIndexPath *)indexPath;

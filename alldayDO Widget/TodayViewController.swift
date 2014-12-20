@@ -12,34 +12,67 @@ import WidgetKit
 
 class TodayViewController: UITableViewController, NCWidgetProviding {
     
-    // MARK: - UIControllerView Methods
+    // MARK: Properties
+    
+    var viewModel : ADRemindersViewModel
+    
+    // MARK: Init Methods
+    
+    required init(coder aDecoder: NSCoder) {
+        viewModel = ADRemindersViewModel()
+        super.init(coder: aDecoder)
+    }
+    
+    override init() {
+        viewModel = ADRemindersViewModel()
+        super.init()
+    }
+    
+    // MARK: Init Methods
     
     override func viewDidLoad() {
-    super.viewDidLoad()
-    self.preferredContentSize = self.tableView.contentSize;
+        super.viewDidLoad()
+        self.preferredContentSize = self.tableView.contentSize;
+//        reloadData()
+    }
+    
+    // MARK: Private Methods
+    
+    func reloadData() {
+        self.viewModel.executeFetchRequestForAll()
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+//        return self.viewModel.todayReminders.count
+        return 3;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
+        
+//        self.viewModel.fetchObjectAtIndexPath(indexPath)
+        
+//        cell.descricaolabel.text = self.viewModel.descricao
+//        cell.nextReminderLabel.text = self.viewModel.nextReminderFormated()
+//        
+//        cell.badgeIconImageView.image = self.viewModel.imagem
     
-    cell.descricaolabel.text = "Fazer funcionar o Widget"
-    cell.nextReminderLabel.text = "Próximo lembrete em 18 horas"
-    return cell
+        cell.badgeIconImageView.image = UIImage(named: "10")?.tintedImageWithColor(UIColor.whiteColor())
+
+        return cell
     }
     
     // MARK: - NCWidgetProviding
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+//        reloadData()
         self.preferredContentSize = self.tableView.contentSize;
         // Perform any setup necessary in order to update the view.
         

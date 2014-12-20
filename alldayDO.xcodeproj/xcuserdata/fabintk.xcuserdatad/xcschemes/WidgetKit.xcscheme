@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A2A7761A43B2A50026F01B"
-               BuildableName = "WidgetKit.framework"
-               BlueprintName = "WidgetKit"
+               BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
+               BuildableName = "alldayDOKit.framework"
+               BlueprintName = "alldayDOKit"
                ReferencedContainer = "container:alldayDO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "71A2A7761A43B2A50026F01B"
-            BuildableName = "WidgetKit.framework"
-            BlueprintName = "WidgetKit"
+            BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
+            BuildableName = "alldayDOKit.framework"
+            BlueprintName = "alldayDOKit"
             ReferencedContainer = "container:alldayDO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "71A2A7761A43B2A50026F01B"
-            BuildableName = "WidgetKit.framework"
-            BlueprintName = "WidgetKit"
+            BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
+            BuildableName = "alldayDOKit.framework"
+            BlueprintName = "alldayDOKit"
             ReferencedContainer = "container:alldayDO.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
