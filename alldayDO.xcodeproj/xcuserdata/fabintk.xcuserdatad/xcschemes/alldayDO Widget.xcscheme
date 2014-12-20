@@ -43,7 +43,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A2A7801A43B2A50026F01B"
+               BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
                ReferencedContainer = "container:alldayDO.xcodeproj">
@@ -57,9 +57,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A2A7B71A43B6310026F01B"
+               BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
+               ReferencedContainer = "container:alldayDO.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71D8E66E1A45057200A5B9BC"
+               BuildableName = "alldayDOKitTests.xctest"
+               BlueprintName = "alldayDOKitTests"
                ReferencedContainer = "container:alldayDO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -75,7 +89,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A2A7801A43B2A50026F01B"
+               BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
                ReferencedContainer = "container:alldayDO.xcodeproj">
@@ -85,9 +99,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "71A2A7B71A43B6310026F01B"
+               BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
+               ReferencedContainer = "container:alldayDO.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71D8E66E1A45057200A5B9BC"
+               BuildableName = "alldayDOKitTests.xctest"
+               BlueprintName = "alldayDOKitTests"
                ReferencedContainer = "container:alldayDO.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -112,10 +136,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <IDERemoteRunnable
-         RemotePath = "/Today-View"
-         BundleIdentifier = "/Today-View">
-      </IDERemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -127,6 +147,10 @@
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <IDERemoteRunnable
+         RemotePath = "/Today-View"
+         BundleIdentifier = "/Today-View">
+      </IDERemoteRunnable>
       <IDERemoteRunnable
          RemotePath = "/Today-View"
          BundleIdentifier = "/Today-View">

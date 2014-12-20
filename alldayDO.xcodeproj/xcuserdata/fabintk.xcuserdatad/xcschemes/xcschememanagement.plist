@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>alldayDOKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -73,6 +78,16 @@
 			<true/>
 		</dict>
 		<key>71D28B1D19294F970047F291</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71D8E6641A45057200A5B9BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71D8E66E1A45057200A5B9BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

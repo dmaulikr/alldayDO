@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WidgetKit.h"
+#import "alldayDOKit.h"
 
 #import "ADLembrete.h"
 

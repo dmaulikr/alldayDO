@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WidgetKit.h"
+#import "alldayDOKit.h"
 
 @interface ADModel : NSObject
 
