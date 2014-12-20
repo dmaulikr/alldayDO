@@ -64,7 +64,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
 //        
 //        cell.badgeIconImageView.image = self.viewModel.imagem
     
-        cell.badgeIconImageView.image = UIImage(named: "10")?.tintedImageWithColor(UIColor.whiteColor())
+        cell.badgeIconImageView.image = UIImage(named: "10")?.tintedImageWithColor(UIColor.darkGrayColor())
 
         return cell
     }
