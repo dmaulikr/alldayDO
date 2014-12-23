@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_widget" translatesAutoresizingMaskIntoConstraints="NO" id="4ph-Na-myh">
-                                            <rect key="frame" x="16" y="4" width="26" height="36"/>
+                                            <rect key="frame" x="16" y="4" width="26" height="38"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4F-2M-s02">
                                             <rect key="frame" x="64" y="2" width="240" height="19"/>
@@ -48,7 +48,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4ph-Na-myh" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="8" id="7fT-Zb-gbR"/>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="centerY" secondItem="4ph-Na-myh" secondAttribute="centerY" id="8hY-DG-goq"/>
+                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="centerY" secondItem="4ph-Na-myh" secondAttribute="centerY" constant="-1" id="8hY-DG-goq"/>
                                         <constraint firstItem="4ph-Na-myh" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="-4" id="Fin-zQ-tx1"/>
                                         <constraint firstItem="bz0-2M-k6C" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="13" id="Id5-2Z-H3I"/>
                                         <constraint firstItem="4ph-Na-myh" firstAttribute="top" secondItem="s4F-2M-s02" secondAttribute="top" constant="2" id="Lf9-Ii-gQ3"/>

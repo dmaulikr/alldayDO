@@ -36,6 +36,7 @@
 - (void)executeFetchRequestForUndoneReminders;
 
 - (NSString *)nextReminderFormated;
+- (NSString *)nextReminderFormatedWithDate:(NSDate *)date;
 
 - (ADLembrete *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForLembreteWithDescricao:(NSString *)descricao;

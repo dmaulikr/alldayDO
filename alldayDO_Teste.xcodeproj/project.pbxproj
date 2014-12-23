@@ -45,11 +45,6 @@
 		71D28B0819294F970047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
 		71D28B1019294F970047F291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B0F19294F970047F291 /* main.m */; };
 		71D28B1919294F970047F291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
-		71D28B2019294F970047F291 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B1F19294F970047F291 /* XCTest.framework */; };
-		71D28B2119294F980047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
-		71D28B2219294F980047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
-		71D28B2319294F980047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
-		71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B2C19294F980047F291 /* alldayDOTests.m */; };
 		71D8E6591A44EBE600A5B9BC /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		71D8E66A1A45057200A5B9BC /* alldayDOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D8E6691A45057200A5B9BC /* alldayDOKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71D8E6701A45057200A5B9BC /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
@@ -87,13 +82,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 718D9EBE1A436C8400E900D1;
 			remoteInfo = "alldayDO Widget";
-		};
-		71D28B2419294F980047F291 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71D28AF619294F970047F291 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71D28AFD19294F970047F291;
-			remoteInfo = alldayDO;
 		};
 		71D8E6711A45057200A5B9BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -214,7 +202,6 @@
 		71D28B1119294F970047F291 /* alldayDO_Teste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO_Teste-Prefix.pch"; sourceTree = "<group>"; };
 		71D28B1619294F970047F291 /* alldayDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alldayDO.xcdatamodel; sourceTree = "<group>"; };
 		71D28B1819294F970047F291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		71D28B1E19294F970047F291 /* alldayDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldayDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B1F19294F970047F291 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		71D28B2819294F980047F291 /* alldayDOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDOTests-Info.plist"; sourceTree = "<group>"; };
 		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
@@ -255,17 +242,6 @@
 				71D28B0219294F970047F291 /* Foundation.framework in Frameworks */,
 				71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */,
 				1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71D28B1B19294F970047F291 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71D28B2019294F970047F291 /* XCTest.framework in Frameworks */,
-				71D28B2319294F980047F291 /* CoreData.framework in Frameworks */,
-				71D28B2219294F980047F291 /* UIKit.framework in Frameworks */,
-				71D28B2119294F980047F291 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				71D28AFE19294F970047F291 /* alldayDO.app */,
-				71D28B1E19294F970047F291 /* alldayDOTests.xctest */,
 				718D9EBF1A436C8400E900D1 /* alldayDO .appex */,
 				71D8E6651A45057200A5B9BC /* alldayDOKit.framework */,
 				71D8E66F1A45057200A5B9BC /* alldayDOKitTests.xctest */,
@@ -640,24 +615,6 @@
 			productReference = 71D28AFE19294F970047F291 /* alldayDO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		71D28B1D19294F970047F291 /* alldayDOTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 71D28B3319294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDOTests" */;
-			buildPhases = (
-				71D28B1A19294F970047F291 /* Sources */,
-				71D28B1B19294F970047F291 /* Frameworks */,
-				71D28B1C19294F970047F291 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				71D28B2519294F980047F291 /* PBXTargetDependency */,
-			);
-			name = alldayDOTests;
-			productName = alldayDOTests;
-			productReference = 71D28B1E19294F970047F291 /* alldayDOTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		71D8E6641A45057200A5B9BC /* alldayDOKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71D8E67E1A45057200A5B9BC /* Build configuration list for PBXNativeTarget "alldayDOKit" */;
@@ -722,9 +679,6 @@
 							};
 						};
 					};
-					71D28B1D19294F970047F291 = {
-						TestTargetID = 71D28AFD19294F970047F291;
-					};
 					71D8E6641A45057200A5B9BC = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = C7Q44C43S9;
@@ -752,7 +706,6 @@
 			projectRoot = "";
 			targets = (
 				71D28AFD19294F970047F291 /* alldayDO */,
-				71D28B1D19294F970047F291 /* alldayDOTests */,
 				718D9EBE1A436C8400E900D1 /* alldayDO  */,
 				71D8E6641A45057200A5B9BC /* alldayDOKit */,
 				71D8E66E1A45057200A5B9BC /* alldayDOKitTests */,
@@ -778,13 +731,6 @@
 				71D28B1919294F970047F291 /* Images.xcassets in Resources */,
 				71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */,
 				71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71D28B1C19294F970047F291 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,14 +853,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71D28B1A19294F970047F291 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71D28B2D19294F980047F291 /* alldayDOTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71D8E6601A45057200A5B9BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -946,11 +884,6 @@
 			isa = PBXTargetDependency;
 			target = 718D9EBE1A436C8400E900D1 /* alldayDO  */;
 			targetProxy = 718D9EC91A436C8400E900D1 /* PBXContainerItemProxy */;
-		};
-		71D28B2519294F980047F291 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 71D28AFD19294F970047F291 /* alldayDO */;
-			targetProxy = 71D28B2419294F980047F291 /* PBXContainerItemProxy */;
 		};
 		71D8E6721A45057200A5B9BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1178,49 +1111,10 @@
 			};
 			name = Release;
 		};
-		71D28B3419294F980047F291 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "alldayDOTests/alldayDOTests-Info.plist";
-				PRODUCT_NAME = alldayDOTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		71D28B3519294F980047F291 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "alldayDO/alldayDO-Prefix.pch";
-				INFOPLIST_FILE = "alldayDOTests/alldayDOTests-Info.plist";
-				PRODUCT_NAME = alldayDOTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		71D8E67F1A45057200A5B9BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1240,6 +1134,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = alldayDOKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s x86-64 i368";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1250,6 +1145,7 @@
 		71D8E6801A45057200A5B9BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1337,15 +1233,6 @@
 			buildConfigurations = (
 				71D28B3119294F980047F291 /* Debug */,
 				71D28B3219294F980047F291 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		71D28B3319294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDOTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				71D28B3419294F980047F291 /* Debug */,
-				71D28B3519294F980047F291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
