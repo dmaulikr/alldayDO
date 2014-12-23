@@ -17,8 +17,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "718D9EBE1A436C8400E900D1"
                BuildableName = "alldayDO .appex"
-               BlueprintName = "alldayDO "
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               BlueprintName = "alldayDO_Teste "
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,8 +31,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71D28AFD19294F970047F291"
                BuildableName = "alldayDO.app"
-               BlueprintName = "alldayDO"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               BlueprintName = "alldayDO_Teste"
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -60,7 +60,7 @@
                BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -72,9 +72,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71D8E66E1A45057200A5B9BC"
-               BuildableName = "alldayDOKitTests.xctest"
-               BlueprintName = "alldayDOKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               BuildableName = "alldayDO_TesteKitTests.xctest"
+               BlueprintName = "alldayDO_TesteKitTests"
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -92,7 +92,7 @@
                BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -102,7 +102,7 @@
                BlueprintIdentifier = "71A2A8701A43C97D0026F01B"
                BuildableName = "WidgetKitTests.xctest"
                BlueprintName = "WidgetKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -110,9 +110,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71D8E66E1A45057200A5B9BC"
-               BuildableName = "alldayDOKitTests.xctest"
-               BlueprintName = "alldayDOKitTests"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               BuildableName = "alldayDO_TesteKitTests.xctest"
+               BlueprintName = "alldayDO_TesteKitTests"
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -121,8 +121,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71D28AFD19294F970047F291"
             BuildableName = "alldayDO.app"
-            BlueprintName = "alldayDO"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            BlueprintName = "alldayDO_Teste"
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -141,8 +141,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71D28AFD19294F970047F291"
             BuildableName = "alldayDO.app"
-            BlueprintName = "alldayDO"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            BlueprintName = "alldayDO_Teste"
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -168,8 +168,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71D28AFD19294F970047F291"
             BuildableName = "alldayDO.app"
-            BlueprintName = "alldayDO"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            BlueprintName = "alldayDO_Teste"
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

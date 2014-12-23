@@ -17,7 +17,7 @@
                BlueprintIdentifier = "71A2A7CD1A43B6380026F01B"
                BuildableName = "WidgetKitTests copy.xctest"
                BlueprintName = "WidgetKitTests copy"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "71A2A7CD1A43B6380026F01B"
                BuildableName = "WidgetKitTests copy.xctest"
                BlueprintName = "WidgetKitTests copy"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "71A2A7CD1A43B6380026F01B"
             BuildableName = "WidgetKitTests copy.xctest"
             BlueprintName = "WidgetKitTests copy"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "71A2A7CD1A43B6380026F01B"
             BuildableName = "WidgetKitTests copy.xctest"
             BlueprintName = "WidgetKitTests copy"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "71A2A7CD1A43B6380026F01B"
             BuildableName = "WidgetKitTests copy.xctest"
             BlueprintName = "WidgetKitTests copy"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

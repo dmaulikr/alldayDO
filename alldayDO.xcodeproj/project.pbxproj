@@ -207,7 +207,7 @@
 		71D28B0719294F970047F291 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		71D28B0B19294F970047F291 /* alldayDO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDO-Info.plist"; sourceTree = "<group>"; };
 		71D28B0F19294F970047F291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		71D28B1119294F970047F291 /* alldayDO-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO-Prefix.pch"; sourceTree = "<group>"; };
+		71D28B1119294F970047F291 /* alldayDO_Teste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO_Teste-Prefix.pch"; sourceTree = "<group>"; };
 		71D28B1619294F970047F291 /* alldayDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alldayDO.xcdatamodel; sourceTree = "<group>"; };
 		71D28B1819294F970047F291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71D28B1E19294F970047F291 /* alldayDOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldayDOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,7 +337,7 @@
 			path = delegate;
 			sourceTree = "<group>";
 		};
-		718D9EC21A436C8400E900D1 /* alldayDO Today */ = {
+		718D9EC21A436C8400E900D1 /* alldayDO Widget */ = {
 			isa = PBXGroup;
 			children = (
 				718D9EC51A436C8400E900D1 /* ADTodayViewController.swift */,
@@ -345,7 +345,6 @@
 				718D9EC71A436C8400E900D1 /* MainInterface.storyboard */,
 				718D9EC31A436C8400E900D1 /* Supporting Files */,
 			);
-			name = "alldayDO Today";
 			path = "alldayDO Widget";
 			sourceTree = "<group>";
 		};
@@ -374,7 +373,7 @@
 			children = (
 				71D28B0919294F970047F291 /* alldayDO */,
 				71D28B2619294F980047F291 /* alldayDOTests */,
-				718D9EC21A436C8400E900D1 /* alldayDO Today */,
+				718D9EC21A436C8400E900D1 /* alldayDO Widget */,
 				71D8E6661A45057200A5B9BC /* alldayDOKit */,
 				71D8E6751A45057200A5B9BC /* alldayDOKitTests */,
 				71D28B0019294F970047F291 /* Frameworks */,
@@ -425,7 +424,7 @@
 			children = (
 				71D28B0B19294F970047F291 /* alldayDO-Info.plist */,
 				71D28B0F19294F970047F291 /* main.m */,
-				71D28B1119294F970047F291 /* alldayDO-Prefix.pch */,
+				71D28B1119294F970047F291 /* alldayDO_Teste-Prefix.pch */,
 				71ABE85D19BA7C4800161DE3 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -1209,7 +1208,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = alldayDOKit;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s x86-64 i368";
@@ -1234,7 +1233,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = alldayDOKit;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s x86-64 i368";
@@ -1260,7 +1259,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = alldayDOKitTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
 			};
 			name = Debug;
@@ -1277,7 +1276,7 @@
 				INFOPLIST_FILE = alldayDOKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = alldayDOKitTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
 			};
 			name = Release;

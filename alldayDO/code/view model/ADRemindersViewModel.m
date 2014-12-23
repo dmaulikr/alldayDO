@@ -23,6 +23,7 @@
 
 - (void)_fetchResultsForLembretesInDiferentsCategories;
 - (NSArray *)_sortReminders:(NSArray *)reminders;
+- (BOOL)_isJustOneTimeOrNeverTypeForLembrete:(ADLembrete *)lembrete;
 
 @end
 
@@ -132,11 +133,33 @@
 }
 
 - (NSArray *)_sortReminders:(NSArray *)reminders {
-    return [reminders sortedArrayUsingComparator: ^(id obj1, id obj2) {
-                ADLembrete *lembrete1 = (ADLembrete *)obj1;
-                ADLembrete *lembrete2 = (ADLembrete *)obj2;
-                return [lembrete1.nextFireDate compare:lembrete2.nextFireDate];
-            }];
+    NSArray *sortedReminders = [reminders sortedArrayUsingComparator: ^(id obj1, id obj2) {
+            ADLembrete *lembrete1 = (ADLembrete *)obj1;
+            ADLembrete *lembrete2 = (ADLembrete *)obj2;
+        return [lembrete1.nextFireDate compare:lembrete2.nextFireDate];
+    }];
+    NSArray *sortedWithTypes = [sortedReminders sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        ADLembrete *lembrete1 = (ADLembrete *)obj1;
+        ADLembrete *lembrete2 = (ADLembrete *)obj2;
+        if ([self _isJustOneTimeOrNeverTypeForLembrete:lembrete1] ||
+            [self _isJustOneTimeOrNeverTypeForLembrete:lembrete2]) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedAscending;
+        }
+    }];
+    return sortedWithTypes;
+}
+
+- (BOOL)_isJustOneTimeOrNeverTypeForLembrete:(ADLembrete *)lembrete {
+    BOOL isType = NO;
+    if ([lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeJustOneTime]] &&
+        [[lembrete dateFormattedForJustOneTime] compare:[NSDate date]] == NSOrderedAscending) {
+        isType = YES;
+    } else if ([lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]) {
+        isType = YES;
+    }
+    return isType;
 }
 
 #pragma mark - Public Methods -

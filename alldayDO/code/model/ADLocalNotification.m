@@ -97,15 +97,16 @@
         UILocalNotification *localNotification = [self _defaultLocalNotificationWith:lembrete];
         localNotification.alertBody = [NSString stringWithFormat:self.alert_body, lembrete.descricao];
         
-        BOOL justOneTimeValid = NO;
+        BOOL canScheduleNotification = YES;
         if ([lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeJustOneTime]]) {
-            if ([[lembrete dateFormattedForJustOneTime] compare:[NSDate date]] == NSOrderedDescending) {
-                justOneTimeValid = YES;
+            if ([[lembrete dateFormattedForJustOneTime] compare:[NSDate date]] == NSOrderedAscending) {
+                canScheduleNotification = NO;
             }
+        } else if ([lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]) {
+            canScheduleNotification = NO;
         }
-        if (![lembrete.periodo isEqualToNumber:[NSNumber numberWithInt:ADCycleTypeNever]]
-            || justOneTimeValid) {
-             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];   
+        if (canScheduleNotification) {
+             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         }
     }
 }

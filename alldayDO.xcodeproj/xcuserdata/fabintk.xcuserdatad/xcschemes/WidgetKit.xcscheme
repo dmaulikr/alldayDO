@@ -17,7 +17,7 @@
                BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
                BuildableName = "WidgetKit.framework"
                BlueprintName = "WidgetKit"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
             BuildableName = "WidgetKit.framework"
             BlueprintName = "WidgetKit"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "71A2A8661A43C97D0026F01B"
             BuildableName = "WidgetKit.framework"
             BlueprintName = "WidgetKit"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

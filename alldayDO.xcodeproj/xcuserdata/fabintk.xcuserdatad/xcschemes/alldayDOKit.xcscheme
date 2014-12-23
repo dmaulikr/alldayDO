@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71D8E6641A45057200A5B9BC"
-               BuildableName = "alldayDOKit.framework"
-               BlueprintName = "alldayDOKit"
-               ReferencedContainer = "container:alldayDO.xcodeproj">
+               BuildableName = "alldayDO_TesteKit.framework"
+               BlueprintName = "alldayDO_TesteKit"
+               ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71D8E6641A45057200A5B9BC"
-            BuildableName = "alldayDOKit.framework"
-            BlueprintName = "alldayDOKit"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            BuildableName = "alldayDO_TesteKit.framework"
+            BlueprintName = "alldayDO_TesteKit"
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71D8E6641A45057200A5B9BC"
-            BuildableName = "alldayDOKit.framework"
-            BlueprintName = "alldayDOKit"
-            ReferencedContainer = "container:alldayDO.xcodeproj">
+            BuildableName = "alldayDO_TesteKit.framework"
+            BlueprintName = "alldayDO_TesteKit"
+            ReferencedContainer = "container:alldayDO_Teste.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

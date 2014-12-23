@@ -20,7 +20,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XOs-P1-pjg" id="Kmf-UT-be5">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon" translatesAutoresizingMaskIntoConstraints="NO" id="4ph-Na-myh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_widget" translatesAutoresizingMaskIntoConstraints="NO" id="4ph-Na-myh">
                                             <rect key="frame" x="16" y="4" width="26" height="36"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4F-2M-s02">
@@ -92,7 +92,7 @@
     </scenes>
     <resources>
         <image name="10" width="64" height="64"/>
-        <image name="Hexacon" width="41" height="46"/>
+        <image name="Hexacon_widget" width="41" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

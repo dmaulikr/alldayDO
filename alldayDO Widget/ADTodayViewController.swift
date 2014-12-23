@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationCenter
-import WidgetKit
+import alldayDOKit
 
 class ADTodayViewController: UITableViewController, NCWidgetProviding {
     
