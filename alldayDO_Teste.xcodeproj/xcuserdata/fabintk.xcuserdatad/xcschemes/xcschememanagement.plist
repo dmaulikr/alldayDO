@@ -11,10 +11,12 @@
 		</dict>
 		<key>WidgetKitTests copy.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
-		<key>alldayDO Widget.xcscheme</key>
+		<key>alldayDO Widget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>25</integer>

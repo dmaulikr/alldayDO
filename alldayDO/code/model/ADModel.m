@@ -65,10 +65,6 @@
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"alldayDO" withExtension:@"momd"];
     
-#warning colocando url do app group
-    
-//    NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"url do group"];
-    
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -78,7 +74,9 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"alldayDO.sqlite"];
+    NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.alldaydo"];
+    
+    NSURL *storeURL = [groupURL URLByAppendingPathComponent:@"alldayDO.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

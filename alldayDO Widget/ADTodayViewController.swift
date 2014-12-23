@@ -33,7 +33,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = self.tableView.contentSize;
-//        reloadData()
+        reloadData()
     }
     
     // MARK: Private Methods
@@ -50,22 +50,17 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.viewModel.todayReminders.count
-        return 3;
+        return self.viewModel.todayReminders.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-//        self.viewModel.fetchObjectAtIndexPath(indexPath)
-        
-//        cell.descricaolabel.text = self.viewModel.descricao
-//        cell.nextReminderLabel.text = self.viewModel.nextReminderFormated()
-//        
-//        cell.badgeIconImageView.image = self.viewModel.imagem
-    
-        cell.badgeIconImageView.image = UIImage(named: "10")?.tintedImageWithColor(UIColor.darkGrayColor())
+        self.viewModel.fetchObjectAtIndexPath(indexPath)
 
+        cell.descricaolabel.text = self.viewModel.descricao
+        cell.nextReminderLabel.text = self.viewModel.nextReminderFormated()
+        cell.badgeIconImageView.image = self.viewModel.imagem.tintedImageWithColor(UIColor.blackColor())
         return cell
     }
     

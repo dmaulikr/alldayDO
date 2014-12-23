@@ -34,6 +34,8 @@
 		71A2A7A61A43B5F20026F01B /* ADDetailReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A2A7A11A43B5F20026F01B /* ADDetailReminderViewModel.m */; };
 		71A2A7A71A43B5F20026F01B /* ADEditReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A2A7A31A43B5F20026F01B /* ADEditReminderViewModel.m */; };
 		71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
+		71B65C9B1A48F9C000C36884 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
+		71B65C9C1A48FA6600C36884 /* alldayDO.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */; };
 		71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */; };
@@ -191,6 +193,8 @@
 		71A2A7A51A43B5F20026F01B /* ADRemindersViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADRemindersViewModel.m; path = "../alldayDO/code/view model/ADRemindersViewModel.m"; sourceTree = "<group>"; };
 		71ABE85E19BA7C5000161DE3 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71ABE85F19BA7C5700161DE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		71B65C9A1A48F74000C36884 /* alldayDO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = alldayDO.entitlements; sourceTree = "<group>"; };
+		71B65C9D1A48FD6000C36884 /* alldayDO .entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "alldayDO .entitlements"; path = "../alldayDO .entitlements"; sourceTree = "<group>"; };
 		71B96AFE194D4DC90042023E /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
 		71B96AFF194D4DC90042023E /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
 		71BBA20619A02C8C00EB6EEE /* ADLembreteConfirmado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADLembreteConfirmado.h; path = ../alldayDO/code/model/ADLembreteConfirmado.h; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 		718D9EC21A436C8400E900D1 /* alldayDO Widget */ = {
 			isa = PBXGroup;
 			children = (
+				71B65C9D1A48FD6000C36884 /* alldayDO .entitlements */,
 				718D9EC51A436C8400E900D1 /* ADTodayViewController.swift */,
 				718D9ED11A43717A00E900D1 /* ADTodayCell.swift */,
 				718D9EC71A436C8400E900D1 /* MainInterface.storyboard */,
@@ -412,6 +417,7 @@
 		71D28B0919294F970047F291 /* alldayDO */ = {
 			isa = PBXGroup;
 			children = (
+				71B65C9A1A48F74000C36884 /* alldayDO.entitlements */,
 				71D28B36192950480047F291 /* Code */,
 				71D28B1819294F970047F291 /* Images.xcassets */,
 				71D28B0A19294F970047F291 /* Supporting Files */,
@@ -702,9 +708,19 @@
 					718D9EBE1A436C8400E900D1 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = C7Q44C43S9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					71D28AFD19294F970047F291 = {
 						DevelopmentTeam = C7Q44C43S9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					71D28B1D19294F970047F291 = {
 						TestTargetID = 71D28AFD19294F970047F291;
@@ -719,7 +735,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */;
+			buildConfigurationList = 71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO_Teste" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -749,6 +765,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B65C9C1A48FA6600C36884 /* alldayDO.xcdatamodeld in Resources */,
 				718D9EC81A436C8400E900D1 /* MainInterface.storyboard in Resources */,
 				718D9ED01A436E7200E900D1 /* Images.xcassets in Resources */,
 			);
@@ -852,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B65C9B1A48F9C000C36884 /* alldayDO.xcdatamodeld in Sources */,
 				718D9ED21A43717A00E900D1 /* ADTodayCell.swift in Sources */,
 				718D9EC61A436C8400E900D1 /* ADTodayViewController.swift in Sources */,
 			);
@@ -971,7 +989,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "alldayDO .entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -982,6 +1002,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "alldayDO ";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -996,13 +1017,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "alldayDO .entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "alldayDO Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "alldayDO ";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s x86-64 i368";
@@ -1103,7 +1127,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = alldayDO/alldayDO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1115,6 +1141,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = alldayDO;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "alldayDO/code/others/alldayDO-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "arm64 armv7 armv7s i368 x86_64";
@@ -1130,7 +1157,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = alldayDO/alldayDO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1142,6 +1171,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = alldayDO;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "alldayDO/code/others/alldayDO-Bridging-Header.h";
 				VALID_ARCHS = "arm64 armv7 armv7s i368 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -1293,7 +1323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */ = {
+		71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO_Teste" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71D28B2E19294F980047F291 /* Debug */,

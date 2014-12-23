@@ -182,7 +182,6 @@
     return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] year];
 }
 
-
 - (NSInteger)daysInMonth {
     return [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self].length;
 }
