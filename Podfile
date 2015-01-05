@@ -10,3 +10,4 @@ pod 'SSToolkit'
 pod 'PNChart'
 pod 'EAIntroView'
 pod 'NGAParallaxMotion'
+pod "TSMessages"

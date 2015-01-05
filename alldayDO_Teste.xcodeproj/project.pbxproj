@@ -16,7 +16,6 @@
 		711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */; };
 		711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */; };
 		711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */; };
-		7133A1CB1A43DE2B0010BA36 /* ADRemindersViewModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 71A2A7A41A43B5F20026F01B /* ADRemindersViewModel.h */; };
 		7133A1CD1A43DE2B0010BA36 /* ADLocalNotification.h in Sources */ = {isa = PBXBuildFile; fileRef = 71990A9D19A8153D0056C17C /* ADLocalNotification.h */; };
 		7133A1CF1A43DE2B0010BA36 /* ADLembrete.h in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20919A02C8C00EB6EEE /* ADLembrete.h */; };
 		7133A1D11A43DE2B0010BA36 /* ADLembrete+ADToolkitAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */; };
@@ -202,7 +201,6 @@
 		71D28B1119294F970047F291 /* alldayDO_Teste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alldayDO_Teste-Prefix.pch"; sourceTree = "<group>"; };
 		71D28B1619294F970047F291 /* alldayDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alldayDO.xcdatamodel; sourceTree = "<group>"; };
 		71D28B1819294F970047F291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		71D28B1F19294F970047F291 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		71D28B2819294F980047F291 /* alldayDOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "alldayDOTests-Info.plist"; sourceTree = "<group>"; };
 		71D28B2C19294F980047F291 /* alldayDOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOTests.m; sourceTree = "<group>"; };
 		71D8E6651A45057200A5B9BC /* alldayDOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = alldayDOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -382,7 +380,6 @@
 				71D28B0319294F970047F291 /* CoreGraphics.framework */,
 				71D28B0519294F970047F291 /* UIKit.framework */,
 				71D28B0719294F970047F291 /* CoreData.framework */,
-				71D28B1F19294F970047F291 /* XCTest.framework */,
 				C342DAE7F9404DE4B305DC50 /* libPods.a */,
 				718D9EC01A436C8400E900D1 /* NotificationCenter.framework */,
 			);
@@ -826,7 +823,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7133A1D31A43DE4F0010BA36 /* ADModel.h in Sources */,
-				7133A1CB1A43DE2B0010BA36 /* ADRemindersViewModel.h in Sources */,
 				7133A1CD1A43DE2B0010BA36 /* ADLocalNotification.h in Sources */,
 				7133A1CF1A43DE2B0010BA36 /* ADLembrete.h in Sources */,
 				7133A1D11A43DE2B0010BA36 /* ADLembrete+ADToolkitAdditions.h in Sources */,

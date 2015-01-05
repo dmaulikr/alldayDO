@@ -43,6 +43,97 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
         self.tableView.reloadData()
     }
     
+    func nextReminderFormatedForLembrete(lembrete: ADLembrete) -> String {
+        let dateAsString = dateAsStringFromDate(lembrete.nextFireDate())
+        
+        let message = "Lembrete em \(dateAsString)"
+        
+        return message
+    }
+    
+    func dateAsStringFromDate(date: NSDate) -> String {
+        var componentsFlag = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond
+        
+        var currentCalendar : NSCalendar =  NSCalendar.currentCalendar()
+        
+        var components = NSCalendar.currentCalendar() .components(componentsFlag, fromDate: NSDate(), toDate: date, options: NSCalendarOptions.allZeros)
+        
+        return dateAsStringFromComponents(components)
+
+    }
+    
+    func dateAsStringFromComponents(comp : NSDateComponents) -> String {
+        var date = ""
+        
+        var yearLabel = ""
+        if comp.year != 0 {
+            if comp.year == 1 {
+                yearLabel = "ano"
+            } else {
+                yearLabel = "anos"
+            }
+            date = "\(comp.year) \(yearLabel)"
+        }
+        
+        if comp.month != 0 {
+            if !date.isEmpty {
+                date = date.stringByAppendingString(", ")
+            }
+            
+            var monthLabel = ""
+            if comp.month == 1 {
+                monthLabel = "mês"
+            } else {
+                monthLabel = "meses"
+            }
+            date = date.stringByAppendingString("\(comp.month) \(monthLabel)")
+        }
+        
+        if comp.day != 0 {
+            if !date.isEmpty {
+                date = date.stringByAppendingString(", ")
+            }
+            
+            var dayLabel = ""
+            if comp.day == 1 {
+                dayLabel = "dia"
+            } else {
+                dayLabel = "dias"
+            }
+            date = date.stringByAppendingString("\(comp.day) \(dayLabel)")
+        }
+        
+        if comp.hour != 0 {
+            if !date.isEmpty {
+                date = date.stringByAppendingString(", ")
+            }
+            
+            var hourLabel = ""
+            if comp.hour == 1 {
+                hourLabel = "hora"
+            } else {
+                hourLabel = "horas"
+            }
+            date = date.stringByAppendingString("\(comp.hour) \(hourLabel)")
+        }
+        
+        if comp.minute != 0 {
+            if !date.isEmpty {
+                date = date.stringByAppendingString(", ")
+            }
+            
+            var minuteLabel = ""
+            if comp.minute == 1 {
+                minuteLabel = "minuto"
+            } else {
+                minuteLabel = "minutos"
+            }
+            date = date.stringByAppendingString("\(comp.minute) \(minuteLabel)")
+        }
+        
+        return date
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -56,11 +147,12 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-        self.viewModel.fetchObjectAtIndexPath(indexPath)
+        let lembrete = self.viewModel.todayReminders.objectAtIndex(indexPath.row) as ADLembrete
 
-        cell.descricaolabel.text = self.viewModel.descricao
-        cell.nextReminderLabel.text = self.viewModel.nextReminderFormated()
-        cell.badgeIconImageView.image = self.viewModel.imagem.tintedImageWithColor(UIColor.blackColor())
+        cell.descricaolabel.text = lembrete.descricao
+        cell.nextReminderLabel.text = nextReminderFormatedForLembrete(lembrete)
+        cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())
+        
         return cell
     }
     
