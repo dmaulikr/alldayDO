@@ -211,7 +211,9 @@
 
 - (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {}
 
-- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex {}
+- (void)userClickedOnLineKeyPoint:(CGPoint)point
+                        lineIndex:(NSInteger)lineIndex
+                       pointIndex:(NSInteger)pointIndex {}
 
-- (void)userClickedOnBarCharIndex:(NSInteger)barIndex {}
+- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {}
 @end

@@ -151,7 +151,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
 
         cell.descricaolabel.text = lembrete.descricao
         cell.nextReminderLabel.text = nextReminderFormatedForLembrete(lembrete)
-        cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())
+        cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.whiteColor())
         
         return cell
     }

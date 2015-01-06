@@ -27,7 +27,8 @@
 "selecione_miniatura" = "Selecione uma miniatura de identificação";
 
 "validation_message_date" = "A data do lembrete não pode ser anterior a data atual";
-"required_icon" = "Miniatura de identificação é obrigatório";
+"required_description"= "Do que você não pode esquecer?";
+"required_icon" = "Selecione o seu icone. Ele será muito importante no futuro :)";
 "required_periodo" = "Ops, Você esqueceu de informar quando iremos te lembrar";
 "required_hora" = "Que horas iremos lembrar você?";
 "required_date" = "Iremos começar a lembrar você a partir de quando?";

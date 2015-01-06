@@ -1,11 +1,14 @@
 PODS:
-  - EAIntroView (2.6.3)
-  - GoogleAnalytics-iOS-SDK (3.0.9)
+  - EAIntroView (2.6.4)
+  - GoogleAnalytics-iOS-SDK (3.10):
+    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
+  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - HexColors (2.2.1)
   - iOS-blur (0.0.5)
-  - JVFloatLabeledTextField (0.0.9)
+  - JVFloatLabeledTextField (1.0.0)
   - MALazykit (HEAD based on 0.1.10)
-  - NGAParallaxMotion (1.0.2)
-  - PNChart (0.5):
+  - NGAParallaxMotion (1.1.0)
+  - PNChart (0.7.1):
     - UICountingLabel (~> 1.0.0)
   - pop (1.0.7)
   - SAMAddressBar (0.1.0)
@@ -33,6 +36,8 @@ PODS:
     - SAMTextField
     - SAMTextView
     - SAMWebView
+  - TSMessages (0.9.11):
+    - HexColors
   - UICountingLabel (1.0.0)
   - uiview-frame-helpers (0.1.1)
 
@@ -46,16 +51,18 @@ DEPENDENCIES:
   - PNChart
   - pop
   - SSToolkit
+  - TSMessages
   - uiview-frame-helpers
 
 SPEC CHECKSUMS:
-  EAIntroView: 45924b81c153d1206ee24f4fa654e9d9dae79e93
-  GoogleAnalytics-iOS-SDK: d9e198b1f955259a72886769be7377cdfcdb2250
+  EAIntroView: 8f66dc6b79f2d52db26af8fc5476a05ffc549d4c
+  GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
-  JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
+  JVFloatLabeledTextField: c2b8124e439cf2b05fe5bb38f44358743588c1bd
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
-  NGAParallaxMotion: f25d6b7e4eefe1c94211dbf402cd3563e56d46f3
-  PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
+  NGAParallaxMotion: 62644b783178f75a234f458270f416afee89877c
+  PNChart: f69e20597c6099ff44a5814bdd2004b9b46dc6eb
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
   SAMBadgeView: 6f29c18e5dc4ddf6d843c3c5e9c9207028c2e8a8
@@ -70,7 +77,8 @@ SPEC CHECKSUMS:
   SAMTextView: 1062a784ba7b2080b0c17748001c416b53010b4b
   SAMWebView: e615d50d3683b9b4fd3e10da9d079ed03230ee24
   SSToolkit: 64d8bb043b4f36da68936ddbb4ec4e8cb3c5a8df
+  TSMessages: e21ef5b1c7518cc590a4826c8b05b16b79b10c2c
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
   uiview-frame-helpers: 68ff15193c81e40695cb50f7eedee88e57077efc
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.35.0

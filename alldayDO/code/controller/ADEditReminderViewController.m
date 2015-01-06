@@ -498,7 +498,7 @@
     if ([self.descriptionTextField.text isEqualToString:@""]) {
         [self.descriptionTextField setValue:requiredColor
                                  forKeyPath:@"_placeholderLabel.textColor"];
-        messageError = NSLocalizedString(@"O que precisamos te lembrar?", nil);
+        messageError = NSLocalizedString(@"required_description", nil);
         sucess = NO;
         
     } else if ([self.periodoTextField.text isEqualToString:@""]){

@@ -1,5 +1,0 @@
-#include "Pods-SAMTextField.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/SAMTextField" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/EAIntroView" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/JVFloatLabeledTextField" "${PODS_ROOT}/Headers/MALazykit" "${PODS_ROOT}/Headers/NGAParallaxMotion" "${PODS_ROOT}/Headers/PNChart" "${PODS_ROOT}/Headers/SAMAddressBar" "${PODS_ROOT}/Headers/SAMBadgeView" "${PODS_ROOT}/Headers/SAMCategories" "${PODS_ROOT}/Headers/SAMCircleProgressView" "${PODS_ROOT}/Headers/SAMGradientView" "${PODS_ROOT}/Headers/SAMHUDView" "${PODS_ROOT}/Headers/SAMLabel" "${PODS_ROOT}/Headers/SAMLoadingView" "${PODS_ROOT}/Headers/SAMRateLimit" "${PODS_ROOT}/Headers/SAMTextField" "${PODS_ROOT}/Headers/SAMTextView" "${PODS_ROOT}/Headers/SAMWebView" "${PODS_ROOT}/Headers/SSToolkit" "${PODS_ROOT}/Headers/UICountingLabel" "${PODS_ROOT}/Headers/iOS-blur" "${PODS_ROOT}/Headers/pop" "${PODS_ROOT}/Headers/uiview-frame-helpers"
-OTHER_LDFLAGS = -ObjC ${PODS_SAMTEXTFIELD_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}

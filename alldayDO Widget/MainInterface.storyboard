@@ -34,29 +34,29 @@
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="bz0-2M-k6C">
-                                            <rect key="frame" x="16" y="2" width="40" height="40"/>
+                                            <rect key="frame" x="26" y="9" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="FMh-qC-fIa"/>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="Vcv-y8-LQ7"/>
-                                                <constraint firstAttribute="width" constant="40" id="haZ-VR-n6U"/>
-                                                <constraint firstAttribute="height" constant="40" id="z8Q-pj-E44"/>
+                                                <constraint firstAttribute="width" constant="26" id="haZ-VR-n6U"/>
+                                                <constraint firstAttribute="height" constant="26" id="z8Q-pj-E44"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="8" id="Id5-2Z-H3I"/>
+                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="18" id="Id5-2Z-H3I"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="s4F-2M-s02" secondAttribute="bottom" constant="14" id="M6R-U3-Z2h"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" constant="-7" id="Nqm-gd-N2R"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" id="Nqm-gd-N2R"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="s4F-2M-s02" secondAttribute="trailing" constant="8" id="Tzh-hN-nYw"/>
                                         <constraint firstItem="s4F-2M-s02" firstAttribute="trailing" secondItem="4R1-1T-SNI" secondAttribute="trailing" id="XTS-qi-LRU"/>
                                         <constraint firstItem="4R1-1T-SNI" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="11" id="ZAP-LA-e9M"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="8" id="Zho-za-fur"/>
+                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="12" id="Zho-za-fur"/>
                                         <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="s4F-2M-s02" secondAttribute="leading" id="awu-8F-VHR"/>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="-6" id="bIT-ZQ-dyG"/>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="-6" id="bLr-vW-iJf"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" constant="-7" id="ciz-FN-sOi"/>
+                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="1" id="bIT-ZQ-dyG"/>
+                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="1" id="bLr-vW-iJf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" id="ciz-FN-sOi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="4R1-1T-SNI" secondAttribute="bottom" constant="-5" id="wkp-zz-oDD"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="8" id="znh-eF-AlU"/>
+                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="12" id="znh-eF-AlU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

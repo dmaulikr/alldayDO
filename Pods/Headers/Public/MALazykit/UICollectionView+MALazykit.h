@@ -1,0 +1,1 @@
+../../../MALazykit/MALazykit/categories/ui/UICollectionView+MALazykit.h

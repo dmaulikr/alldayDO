@@ -7,7 +7,6 @@
 //
 
 #import "PNChartLabel.h"
-#import "PNColor.h"
 
 @implementation PNChartLabel
 
@@ -16,12 +15,12 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        // Initialization code
-
-        [self setFont:[UIFont boldSystemFontOfSize:11.0f]];
-        self.backgroundColor = [UIColor clearColor];
-        [self setTextAlignment:NSTextAlignmentCenter];
-        self.userInteractionEnabled = YES;
+        self.font                      = [UIFont boldSystemFontOfSize:11.0f];
+        self.backgroundColor           = [UIColor clearColor];
+        self.textAlignment             = NSTextAlignmentCenter;
+        self.userInteractionEnabled    = YES;
+        self.minimumScaleFactor        = 0.8;
+        self.adjustsFontSizeToFitWidth = YES;
     }
 
     return self;
