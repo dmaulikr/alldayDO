@@ -498,31 +498,31 @@
     if ([self.descriptionTextField.text isEqualToString:@""]) {
         [self.descriptionTextField setValue:requiredColor
                                  forKeyPath:@"_placeholderLabel.textColor"];
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"O que precisamos te lembrar?", nil);
         sucess = NO;
         
     } else if ([self.periodoTextField.text isEqualToString:@""]){
         [self.periodoTextField setValue:requiredColor
                              forKeyPath:@"_placeholderLabel.textColor"];
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"required_periodo", nil);
         sucess = NO;
         
     } else if ([self.horaTextField.text isEqualToString:@""]) {
         [self.horaTextField setValue:requiredColor
                           forKeyPath:@"_placeholderLabel.textColor"];
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"required_hora", nil);
         sucess = NO;
         
     } else if ([self.dataTextField.text isEqualToString:@""]) {
         [self.dataTextField setValue:requiredColor
                           forKeyPath:@"_placeholderLabel.textColor"];
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"required_date", nil);
         sucess = NO;
         
     } else if (!iconImage) {
         [[GAI sharedInstance] sendAction:@"NolCon" withCategory:@"Action"];
         self.badgeImageView.image = [self.badgeImageView.image tintedImageWithColor:requiredColor];
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"required_icon", nil);
         sucess = NO;
     }
   
@@ -535,9 +535,8 @@
         sucess = NO;
     }
     if (messageError.isPresent) {
-        [TSMessage showNotificationWithTitle:@""
-                                    subtitle:messageError
-                                        type:TSMessageNotificationTypeWarning];
+        [TSMessage showNotificationInViewController:self
+                                              title:@"" subtitle:messageError type:TSMessageNotificationTypeWarning];
     }
     return sucess;
 }
