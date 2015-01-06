@@ -25,6 +25,7 @@
 "Sim" = "Sim";
 "Não" = "Não";
 "selecione_miniatura" = "Selecione uma miniatura de identificação";
+"validation_message_date" = "A data do lembrete não pode ser anterior a data de começo";
 
 // ADRemindersTableViewController
 

@@ -25,6 +25,7 @@
 "Sim" = "Yes";
 "Não" = "No";
 "selecione_miniatura" = "Select your thumbnail identification";
+"validation_message_date" = "The reminder date cannot be earlier than the start date";
 
 // ADRemindersTableViewController
 

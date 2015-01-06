@@ -67,7 +67,7 @@
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
         _lineChart.delegate = self;
         
-        #warning TODO POG
+        // TODO POG - GAMBIARRA
         if (IS_IPHONE5) {
             [_lineChart setH:_lineChart.height * 1.855];
         }

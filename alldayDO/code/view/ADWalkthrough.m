@@ -71,7 +71,7 @@
     page5.bgImage = bgImage;
     page5.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedString(@"mainImage", nil)]];
   
-    #warning TODO POG
+    // TODO POG - GAMBIARRA
     if (IS_IPHONE4) {
         CGFloat titleIconPositionY = 10.f;
         CGFloat titleIconViewHeight = 20.f;

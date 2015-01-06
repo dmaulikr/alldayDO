@@ -16,6 +16,8 @@
 #import "ADModel.h"
 #import "ADLocalNotification.h"
 
+#import <TSMessages/TSMessage.h>
+
 #import "alldayDO-Swift.h"
 
 #define MARGIN_TOP 70.f
@@ -529,11 +531,13 @@
     if ([[NSDate dateFormattedWithDate:self.dataPicker.date
                andHourFromAnotherDate:self.horaPicker.date] compare:[NSDate date]] == NSOrderedAscending
         && exceptionForValidation) {
-        messageError = NSLocalizedString(@"", nil);
+        messageError = NSLocalizedString(@"validation_message_date", nil);
         sucess = NO;
     }
     if (messageError.isPresent) {
-        #warning apresentar mensagem de error por notification - cocoapod
+        [TSMessage showNotificationWithTitle:@""
+                                    subtitle:messageError
+                                        type:TSMessageNotificationTypeWarning];
     }
     return sucess;
 }
