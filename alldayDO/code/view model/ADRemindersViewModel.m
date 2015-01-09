@@ -201,6 +201,10 @@
     [self _fetchResultsForLembretesInDiferentsCategories];
 }
 
+- (void)executeFetchRequestForToday {
+    
+}
+
 - (void)executeFetchRequestForDoneReminders {
     self.lembretes = self.lembretesCompletados;
 }

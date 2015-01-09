@@ -14,6 +14,4 @@ class ADTodayCell: UITableViewCell {
     
     @IBOutlet weak var descricaolabel: UILabel!
     
-    @IBOutlet weak var nextReminderLabel: UILabel!
-
 }

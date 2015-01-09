@@ -9,8 +9,8 @@
         <scene sceneID="b2z-0f-4Gu">
             <objects>
                 <tableViewController id="MQt-UN-tGa" customClass="ADTodayViewController" customModule="alldayDO_" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="y0W-De-C4h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="y0W-De-C4h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -20,50 +20,45 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XOs-P1-pjg" id="Kmf-UT-be5">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_widget" translatesAutoresizingMaskIntoConstraints="NO" id="zyQ-Mb-Dee">
+                                            <rect key="frame" x="12" y="9" width="36" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="Dch-mc-Ia6"/>
+                                                <constraint firstAttribute="height" constant="41" id="zT1-TP-Qdm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="bz0-2M-k6C">
+                                            <rect key="frame" x="19" y="18" width="23" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="KoT-bI-pdr"/>
+                                                <constraint firstAttribute="width" constant="23" id="LNN-oK-XH0"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4F-2M-s02">
-                                            <rect key="frame" x="64" y="4" width="240" height="17"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <rect key="frame" x="56" y="21" width="240" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="C15-Ut-N8h"/>
+                                                <constraint firstAttribute="height" constant="17" id="pBS-E6-nFD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Próximo lembrete em 7 horas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-1T-SNI">
-                                            <rect key="frame" x="64" y="19" width="240" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="bz0-2M-k6C">
-                                            <rect key="frame" x="26" y="9" width="26" height="26"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="FMh-qC-fIa"/>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="Vcv-y8-LQ7"/>
-                                                <constraint firstAttribute="width" constant="26" id="haZ-VR-n6U"/>
-                                                <constraint firstAttribute="height" constant="26" id="z8Q-pj-E44"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="18" id="Id5-2Z-H3I"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="s4F-2M-s02" secondAttribute="bottom" constant="14" id="M6R-U3-Z2h"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" id="Nqm-gd-N2R"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="s4F-2M-s02" secondAttribute="trailing" constant="8" id="Tzh-hN-nYw"/>
-                                        <constraint firstItem="s4F-2M-s02" firstAttribute="trailing" secondItem="4R1-1T-SNI" secondAttribute="trailing" id="XTS-qi-LRU"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="11" id="ZAP-LA-e9M"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="12" id="Zho-za-fur"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="s4F-2M-s02" secondAttribute="leading" id="awu-8F-VHR"/>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="1" id="bIT-ZQ-dyG"/>
-                                        <constraint firstItem="bz0-2M-k6C" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="1" id="bLr-vW-iJf"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bz0-2M-k6C" secondAttribute="bottom" id="ciz-FN-sOi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="4R1-1T-SNI" secondAttribute="bottom" constant="-5" id="wkp-zz-oDD"/>
-                                        <constraint firstItem="4R1-1T-SNI" firstAttribute="leading" secondItem="bz0-2M-k6C" secondAttribute="trailing" constant="12" id="znh-eF-AlU"/>
+                                        <constraint firstItem="s4F-2M-s02" firstAttribute="centerY" secondItem="Kmf-UT-be5" secondAttribute="centerY" id="EYq-9r-f51"/>
+                                        <constraint firstItem="zyQ-Mb-Dee" firstAttribute="centerY" secondItem="bz0-2M-k6C" secondAttribute="centerY" id="QBT-99-Fv8"/>
+                                        <constraint firstItem="s4F-2M-s02" firstAttribute="leading" secondItem="zyQ-Mb-Dee" secondAttribute="trailing" constant="8" id="QtN-GA-C6K"/>
+                                        <constraint firstItem="zyQ-Mb-Dee" firstAttribute="centerX" secondItem="bz0-2M-k6C" secondAttribute="centerX" id="Xh6-V3-W1U"/>
+                                        <constraint firstItem="s4F-2M-s02" firstAttribute="trailing" secondItem="Kmf-UT-be5" secondAttribute="trailingMargin" constant="-16" id="oMY-1H-zms"/>
+                                        <constraint firstItem="zyQ-Mb-Dee" firstAttribute="top" secondItem="Kmf-UT-be5" secondAttribute="topMargin" constant="1" id="tEX-WA-7iO"/>
+                                        <constraint firstItem="zyQ-Mb-Dee" firstAttribute="leading" secondItem="Kmf-UT-be5" secondAttribute="leadingMargin" constant="4" id="xht-eW-1Ok"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundView" destination="Kmf-UT-be5" id="5pt-dL-9U3"/>
                                     <outlet property="badgeIconImageView" destination="bz0-2M-k6C" id="fzr-he-HQJ"/>
                                     <outlet property="descricaolabel" destination="s4F-2M-s02" id="gSd-1M-bcR"/>
-                                    <outlet property="nextReminderLabel" destination="4R1-1T-SNI" id="6OP-cx-8Yw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,7 +69,7 @@
                     </tableView>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="70"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="70"/>
+                    <size key="freeformSize" width="320" height="80"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bz-5O-RA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,6 +78,7 @@
     </scenes>
     <resources>
         <image name="10" width="64" height="64"/>
+        <image name="Hexacon_widget" width="41" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

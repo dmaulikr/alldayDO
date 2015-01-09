@@ -141,19 +141,25 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.todayReminders.count
+        return self.viewModel.undoneReminders.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-        let lembrete = self.viewModel.todayReminders.objectAtIndex(indexPath.row) as ADLembrete
+        let lembrete = self.viewModel.undoneReminders.objectAtIndex(indexPath.row) as ADLembrete
 
         cell.descricaolabel.text = lembrete.descricao
-        cell.nextReminderLabel.text = nextReminderFormatedForLembrete(lembrete)
-        cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.whiteColor())
-        
+        cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var label = UILabel()
+        label.textColor = UIColor.lightGrayColor()
+        label.text = "Atividades restantes"
+        return label
     }
     
     // MARK: - NCWidgetProviding

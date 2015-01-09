@@ -32,6 +32,7 @@
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath;
 - (void)executeFetchRequestForAll;
+- (void)executeFetchRequestForToday;
 - (void)executeFetchRequestForDoneReminders;
 - (void)executeFetchRequestForUndoneReminders;
 

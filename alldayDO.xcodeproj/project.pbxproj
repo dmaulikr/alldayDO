@@ -31,18 +31,20 @@
 		71A2A7A71A43B5F20026F01B /* ADEditReminderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A2A7A31A43B5F20026F01B /* ADEditReminderViewModel.m */; };
 		71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		71B65C9B1A48F9C000C36884 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
-		71B65C9C1A48FA6600C36884 /* alldayDO.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */; };
 		71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */; };
 		71CC1D981A5B6AB100FC3E5B /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20A19A02C8C00EB6EEE /* ADLembrete.m */; };
+		71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 71B65C9A1A48F74000C36884 /* alldayDO.entitlements */; };
+		71CC1D9A1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 71B65C9A1A48F74000C36884 /* alldayDO.entitlements */; };
+		71CC1D9B1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 71B65C9A1A48F74000C36884 /* alldayDO.entitlements */; };
+		71CC1D9D1A5C9E6600FC3E5B /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBA20719A02C8C00EB6EEE /* ADLembreteConfirmado.m */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
 		71D28B0419294F970047F291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0319294F970047F291 /* CoreGraphics.framework */; };
 		71D28B0619294F970047F291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0519294F970047F291 /* UIKit.framework */; };
 		71D28B0819294F970047F291 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0719294F970047F291 /* CoreData.framework */; };
 		71D28B1019294F970047F291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B0F19294F970047F291 /* main.m */; };
 		71D28B1919294F970047F291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
-		71D8E6591A44EBE600A5B9BC /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		71D8E66A1A45057200A5B9BC /* alldayDOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D8E6691A45057200A5B9BC /* alldayDOKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71D8E6701A45057200A5B9BC /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
 		71D8E6791A45057200A5B9BC /* alldayDOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D8E6781A45057200A5B9BC /* alldayDOKitTests.m */; };
@@ -67,6 +69,7 @@
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
 		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
 		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
+		71F96E6F1A5F54260059C81D /* ADRemindersViewModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 71A2A7A41A43B5F20026F01B /* ADRemindersViewModel.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -718,7 +721,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B65C9C1A48FA6600C36884 /* alldayDO.xcdatamodeld in Resources */,
+				71CC1D9A1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */,
 				718D9EC81A436C8400E900D1 /* MainInterface.storyboard in Resources */,
 				718D9ED01A436E7200E900D1 /* Images.xcassets in Resources */,
 			);
@@ -729,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D28B1919294F970047F291 /* Images.xcassets in Resources */,
+				71CC1D9B1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */,
 				71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */,
 				71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */,
 			);
@@ -738,6 +742,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,9 +840,9 @@
 				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,
 				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
+				71CC1D9D1A5C9E6600FC3E5B /* ADLembreteConfirmado.m in Sources */,
 				70E6FBF619BF30E000AF3CF8 /* ADAboutViewController.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
-				71D8E6591A44EBE600A5B9BC /* alldayDO.xcdatamodeld in Sources */,
 				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
 				71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */,
@@ -853,6 +858,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F96E6F1A5F54260059C81D /* ADRemindersViewModel.h in Sources */,
 				71CC1D981A5B6AB100FC3E5B /* ADLembrete.m in Sources */,
 				71D8E6931A45061C00A5B9BC /* UILocalNotification+ADToolkitAdditions.m in Sources */,
 				71D8E6851A4505FF00A5B9BC /* ADRemindersViewModel.m in Sources */,

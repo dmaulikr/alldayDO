@@ -84,11 +84,11 @@
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-SA-SWu">
-                                                    <rect key="frame" x="70" y="46" width="250" height="12"/>
+                                                    <rect key="frame" x="70" y="46" width="240" height="12"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ArQ-3Y-LoI"/>
-                                                        <constraint firstAttribute="width" constant="250" id="faG-HU-3rG"/>
+                                                        <constraint firstAttribute="width" constant="240" id="faG-HU-3rG"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
