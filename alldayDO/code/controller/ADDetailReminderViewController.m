@@ -65,12 +65,15 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
+        [_lineChart setW:_lineChart.width + 20.f];
         _lineChart.delegate = self;
         
         // TODO POG - GAMBIARRA
         if (IS_IPHONE5) {
             [_lineChart setH:_lineChart.height * 1.855];
         }
+        
+        _lineChart.chartCavanWidth = self.chartContentView.width;
         
         _lineChart.showLabel = NO;
     }
@@ -209,11 +212,17 @@
 //}
 #pragma mark - PNChartDelegate Methods 
 
-- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {}
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {
+
+}
 
 - (void)userClickedOnLineKeyPoint:(CGPoint)point
                         lineIndex:(NSInteger)lineIndex
-                       pointIndex:(NSInteger)pointIndex {}
+                       pointIndex:(NSInteger)pointIndex {
 
-- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {}
+}
+
+- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {
+
+}
 @end

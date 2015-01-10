@@ -27,7 +27,7 @@
 "selecione_miniatura" = "Select your thumbnail identification";
 
 "validation_message_date" = "The reminder date cannot be earlier than the current date";
-"required_description"= "What you can't forget?";
+"required_description"= "What do you can't forget?";
 "required_icon" = "Select your emoji. It will be very important in the future :)";
 "required_periodo" = "Ops, you forgot to us tell when we will remember you";
 "required_hora" = "What time we will remember you?";
