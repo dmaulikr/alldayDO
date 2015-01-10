@@ -67,7 +67,7 @@
     [super layoutSubviews];
     if (!self.initialized) {
         self.barChart.transform = CGAffineTransformMakeRotation(-M_PI_2);
-        [self.barChart setX:9.f andY:3.f];
+        [self.barChart setX:0.f andY:0.f];
         
         [self.badgeImageView centerXWith:self.lineTopView];
         [self.badgeImageView centerYWith:self];
@@ -96,7 +96,7 @@
     
     self.barChart.showLabel = NO;
     self.barChart.showChartBorder = NO;
-    self.barChart.backgroundColor = [UIColor clearColor];
+    self.barChart.backgroundColor = [UIColor lightGrayColor];
     
     [self.barChartContentView addSubview:self.barChart];
 }

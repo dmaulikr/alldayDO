@@ -65,7 +65,7 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
-        [_lineChart setW:_lineChart.width + 20.f];
+        [_lineChart setW:_lineChart.width + 40.f];
         _lineChart.delegate = self;
         
         // TODO POG - GAMBIARRA
@@ -73,7 +73,8 @@
             [_lineChart setH:_lineChart.height * 1.855];
         }
         
-        _lineChart.chartCavanWidth = self.chartContentView.width;
+        self.lineChart.yFixedValueMax = 1;
+        self.lineChart.yFixedValueMin = 0;
         
         _lineChart.showLabel = NO;
     }
@@ -114,6 +115,8 @@
     PNLineChartData *lineChartData = [PNLineChartData new];
     lineChartData.color = PNFreshGreen;
     lineChartData.itemCount = [self.viewModel chartDataItemCount];
+//    lineChartData.inflexionPointStyle = PNLineChartPointStyleCircle;
+
     
     NSArray *calendario = self.viewModel.calendario;
     NSArray *lembretesConfirmados = self.viewModel.dataLembretesConfirmados;
@@ -212,17 +215,11 @@
 //}
 #pragma mark - PNChartDelegate Methods 
 
-- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {
-
-}
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {}
 
 - (void)userClickedOnLineKeyPoint:(CGPoint)point
                         lineIndex:(NSInteger)lineIndex
-                       pointIndex:(NSInteger)pointIndex {
+                       pointIndex:(NSInteger)pointIndex {}
 
-}
-
-- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {
-
-}
+- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {}
 @end
