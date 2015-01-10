@@ -12,10 +12,12 @@
 		708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */; };
 		70E6FBF619BF30E000AF3CF8 /* ADAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6FBF519BF30E000AF3CF8 /* ADAboutViewController.m */; };
 		71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADEditReminderViewController.m */; };
-		71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		710D9C841A60AC0900433069 /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
 		710D9C851A60B6CF00433069 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		710D9C861A60B6D100433069 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
+		710D9C871A6156C600433069 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
+		710D9C881A6159B200433069 /* NSEntityDescription+ADToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		710D9C891A6159BA00433069 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */; };
 		711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */; };
 		711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9845198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m */; };
 		711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F9848198DAB700097AA22 /* NSString+ADToolkitAdditions.m */; };
@@ -142,8 +144,8 @@
 		71018AA2192960C000660C17 /* ADEditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADEditReminderViewController.m; sourceTree = "<group>"; };
 		71018AA7192966E800660C17 /* ADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADModel.h; path = ../alldayDO/code/model/ADModel.h; sourceTree = "<group>"; };
 		71018AA8192966E800660C17 /* ADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADModel.m; path = ../alldayDO/code/model/ADModel.m; sourceTree = "<group>"; };
-		71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ADToolkitAdditions.h"; sourceTree = "<group>"; };
-		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
+		71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+ADToolkitAdditions.h"; path = "../alldayDO/code/support/category/NSEntityDescription+ADToolkitAdditions.h"; sourceTree = "<group>"; };
+		71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+ADToolkitAdditions.m"; path = "../alldayDO/code/support/category/NSEntityDescription+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711F983B198DA8B40097AA22 /* NSDate+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ADToolkitAdditions.h"; path = "../alldayDO/code/support/category/NSDate+ADToolkitAdditions.h"; sourceTree = "<group>"; };
 		711F983C198DA8B40097AA22 /* NSDate+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ADToolkitAdditions.m"; path = "../alldayDO/code/support/category/NSDate+ADToolkitAdditions.m"; sourceTree = "<group>"; };
 		711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -276,8 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				7130CD67194369C6009AF8D8 /* PDToolkitAdditions.h */,
-				71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */,
-				71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */,
 				711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */,
 				711F983F198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m */,
 				711F9847198DAB700097AA22 /* NSString+ADToolkitAdditions.h */,
@@ -294,6 +294,8 @@
 		7133A1C51A43D84C0010BA36 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				71018AAC1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.h */,
+				71018AAD1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m */,
 				714A50F7193D75820041905C /* ADLembrete+ADToolkitAdditions.h */,
 				714A50F8193D75820041905C /* ADLembrete+ADToolkitAdditions.m */,
 				7130CD611942D69D009AF8D8 /* UIImage+ADToolkitAdditions.h */,
@@ -566,6 +568,7 @@
 			files = (
 				71D8E6901A45061C00A5B9BC /* UIImage+ADToolkitAdditions.h in Headers */,
 				71D8E6941A45061C00A5B9BC /* NSDate+ADToolkitAdditions.h in Headers */,
+				710D9C881A6159B200433069 /* NSEntityDescription+ADToolkitAdditions.h in Headers */,
 				71D8E68E1A45061C00A5B9BC /* ADLembrete+ADToolkitAdditions.h in Headers */,
 				71D8E6841A4505FF00A5B9BC /* ADRemindersViewModel.h in Headers */,
 				71D8E6921A45061C00A5B9BC /* UILocalNotification+ADToolkitAdditions.h in Headers */,
@@ -845,11 +848,11 @@
 				716A347019CB90660069189E /* GAI+ADToolkitAdditions.m in Sources */,
 				708481EA199BC90B008BF6A5 /* ADDetailReminderViewController.m in Sources */,
 				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
+				710D9C871A6156C600433069 /* alldayDO.xcdatamodeld in Sources */,
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
 				71CC1D9D1A5C9E6600FC3E5B /* ADLembreteConfirmado.m in Sources */,
 				70E6FBF619BF30E000AF3CF8 /* ADAboutViewController.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
-				71018AAE1929683500660C17 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
 				71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */,
 				718FB1C21A35344B0059F1B2 /* ADIconCell.swift in Sources */,
@@ -864,6 +867,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710D9C891A6159BA00433069 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				71F96E6F1A5F54260059C81D /* ADRemindersViewModel.h in Sources */,
 				71CC1D981A5B6AB100FC3E5B /* ADLembrete.m in Sources */,
 				71D8E6931A45061C00A5B9BC /* UILocalNotification+ADToolkitAdditions.m in Sources */,

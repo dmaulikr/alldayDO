@@ -104,7 +104,6 @@
     }
     
     [self.lembrete removeLembretesConfirmadosObject:lembreteConfirmadoToRemove];
-    [[ADModel sharedInstance] deleteObject:lembreteConfirmadoToRemove];
     [[ADModel sharedInstance] saveChanges];
     
     self.lembreteConfirmado = nil;

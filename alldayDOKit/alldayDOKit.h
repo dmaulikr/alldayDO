@@ -25,3 +25,4 @@ FOUNDATION_EXPORT const unsigned char alldayDOKitVersionString[];
 #import <alldayDOKit/UILocalNotification+ADToolkitAdditions.h>
 #import <alldayDOKit/NSDate+ADToolkitAdditions.h>
 #import <alldayDOKit/UIImage+ADToolkitAdditions.h>
+#import <alldayDOKit/NSEntityDescription+ADToolkitAdditions.h>
