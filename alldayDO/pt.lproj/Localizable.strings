@@ -141,3 +141,8 @@
 
 "page5Title" = "Agora é com você!";
 "page5Desc" = "Adicione uma atividade e veja a mágica acontecer!";
+
+// Today Extension
+
+"atividades_restantes" = "Você está esquecendo de fazer algumas atividades";
+"undone_reminder_widget" = "Você não tem nenhum lembrete agendado";

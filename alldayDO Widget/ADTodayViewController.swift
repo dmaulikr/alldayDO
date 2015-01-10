@@ -154,11 +154,20 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
         return cell
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var label = UILabel()
         label.textColor = UIColor.lightGrayColor()
-        label.text = "Atividades restantes"
+        
+        if self.viewModel.undoneReminders.count == 0 {
+            label.text = NSLocalizedString("undone_reminder_widget", value: "undone_reminder_widget", comment: "")
+        } else {
+            label.text = NSLocalizedString("atividades_restantes", value: "atividades_restantes", comment: "")
+        }
+        
         return label
     }
     
