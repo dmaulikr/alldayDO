@@ -84,7 +84,7 @@
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-SA-SWu">
-                                                    <rect key="frame" x="70" y="46" width="240" height="12"/>
+                                                    <rect key="frame" x="80" y="46" width="240" height="12"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ArQ-3Y-LoI"/>
@@ -100,7 +100,7 @@
                                                 <constraint firstItem="fb1-Tu-zfC" firstAttribute="leading" secondItem="eW6-et-pnZ" secondAttribute="leading" id="In6-t6-pyd"/>
                                                 <constraint firstItem="eWL-mi-Zoo" firstAttribute="leading" secondItem="bO8-Cs-4fK" secondAttribute="leading" id="L04-vR-DuO"/>
                                                 <constraint firstItem="5xt-SA-SWu" firstAttribute="top" secondItem="bO8-Cs-4fK" secondAttribute="bottom" id="Y9i-5g-tVK"/>
-                                                <constraint firstItem="5xt-SA-SWu" firstAttribute="leading" secondItem="fb1-Tu-zfC" secondAttribute="trailing" constant="31" id="o2y-Ei-GSo"/>
+                                                <constraint firstItem="5xt-SA-SWu" firstAttribute="leading" secondItem="fb1-Tu-zfC" secondAttribute="trailing" constant="41" id="o2y-Ei-GSo"/>
                                                 <constraint firstItem="eWL-mi-Zoo" firstAttribute="centerY" secondItem="eW6-et-pnZ" secondAttribute="centerY" id="sNY-Nl-yJ9"/>
                                                 <constraint firstItem="eWL-mi-Zoo" firstAttribute="leading" secondItem="eW6-et-pnZ" secondAttribute="trailing" constant="41" id="twm-DE-DEp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="eWL-mi-Zoo" secondAttribute="trailing" constant="12" id="weV-fM-eqA"/>

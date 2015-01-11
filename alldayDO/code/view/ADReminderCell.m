@@ -89,16 +89,17 @@
     self.barChart.chartMargin = 0.f;
     self.barChart.labelMarginTop = 0.f;
     
-    self.barChart.yMaxValue = 7;
+    self.barChart.yMaxValue = 0;
     self.barChart.yChartLabelWidth = 0.f;
     
     self.barChart.barRadius = 3.f;
     
     self.barChart.showLabel = NO;
     self.barChart.showChartBorder = NO;
-    self.barChart.backgroundColor = [UIColor lightGrayColor];
+    self.barChart.backgroundColor = [UIColor clearColor];
     
     [self.barChartContentView addSubview:self.barChart];
+    [self.barChart centerWith:self.barChartContentView];
 }
 
 @end

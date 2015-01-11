@@ -65,7 +65,7 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
-        [_lineChart setW:_lineChart.width + 40.f];
+        [_lineChart setW:_lineChart.width + 30.f];
         _lineChart.delegate = self;
         
         // TODO POG - GAMBIARRA
