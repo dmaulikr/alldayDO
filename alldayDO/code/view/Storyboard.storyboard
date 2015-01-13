@@ -416,6 +416,9 @@
                                             <action selector="doneButtonTouched:" destination="aGT-1s-pi3" eventType="touchUpInside" id="lYG-Vn-nO2"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_graphic" translatesAutoresizingMaskIntoConstraints="NO" id="c9H-kk-bLt">
+                                        <rect key="frame" x="0.0" y="191" width="27" height="26"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.94509803921568625" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -472,6 +475,7 @@
                         <outlet property="chartBorderContentView" destination="8VZ-io-jtq" id="Nn4-9g-Jli"/>
                         <outlet property="chartContentView" destination="bWz-lw-N9p" id="Bq0-zu-CPn"/>
                         <outlet property="doneButton" destination="cYc-jf-303" id="a5Z-vM-MWa"/>
+                        <outlet property="graphicIcon" destination="c9H-kk-bLt" id="mWZ-ki-BFK"/>
                         <outlet property="inLineBorderContentView" destination="f7s-Dz-0nx" id="fm3-Eo-r9S"/>
                         <outlet property="inLineContentView" destination="9MT-Uw-dxE" id="uDm-eQ-lk9"/>
                         <outlet property="inLineLabel" destination="apK-VK-AYe" id="ZdI-la-DuT"/>
@@ -731,6 +735,7 @@
         <image name="alldayDO-icon" width="120" height="120"/>
         <image name="background_selected_button" width="1" height="1"/>
         <image name="config" width="27" height="29"/>
+        <image name="icon_graphic" width="27" height="27"/>
         <image name="navigation_second_color_bg" width="1" height="1"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

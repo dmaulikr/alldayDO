@@ -12,7 +12,7 @@
 
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height - 568) ? NO : YES)
 
-@interface ADDetailReminderViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, PNChartDelegate>
+@interface ADDetailReminderViewController () <ADEditReminderViewControllerDelegate>
 
 @property (nonatomic, strong) PNLineChart *lineChart;
 
@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.chartContentView addSubview:self.lineChart];
+    [self.graphicIcon bringSubviewToFront:self.lineChart];
     [self _IBOutletTitle];
     self.doneButton.layer.masksToBounds = YES;
     self.doneButton.layer.cornerRadius = 10.f;
@@ -65,15 +66,15 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
-        [_lineChart setW:_lineChart.width + 30.f];
-        _lineChart.delegate = self;
+        [_lineChart setW:_lineChart.width + 40.f];
+        [_lineChart setX:-10.f];
         
         // TODO POG - GAMBIARRA
         if (IS_IPHONE5) {
             [_lineChart setH:_lineChart.height * 1.855];
         }
         
-        self.lineChart.yFixedValueMax = 1;
+        self.lineChart.yFixedValueMax = 1.5;
         self.lineChart.yFixedValueMin = 0;
         
         _lineChart.showLabel = NO;
@@ -117,7 +118,6 @@
     lineChartData.itemCount = [self.viewModel chartDataItemCount];
 //    lineChartData.inflexionPointStyle = PNLineChartPointStyleCircle;
 
-    
     NSArray *calendario = self.viewModel.calendario;
     NSArray *lembretesConfirmados = self.viewModel.dataLembretesConfirmados;
     
@@ -139,7 +139,6 @@
 - (void)_presentNewReminderViewController {
     ADEditReminderViewController *newReminderViewController = [ADEditReminderViewController viewController];
     newReminderViewController.delegate = self;
-    newReminderViewController.transitioningDelegate = self;
     newReminderViewController.modalPresentationStyle = UIModalPresentationCustom;
     newReminderViewController.actionMode = ADEditMode;
     
@@ -213,13 +212,5 @@
 //        [self performSelector:@selector(_animationToLandscapeRotationChartView) withObject:self];
 //    }
 //}
-#pragma mark - PNChartDelegate Methods 
 
-- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex {}
-
-- (void)userClickedOnLineKeyPoint:(CGPoint)point
-                        lineIndex:(NSInteger)lineIndex
-                       pointIndex:(NSInteger)pointIndex {}
-
-- (void)userClickedOnBarAtIndex:(NSInteger)barIndex {}
 @end
