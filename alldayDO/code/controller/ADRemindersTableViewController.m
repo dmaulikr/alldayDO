@@ -114,6 +114,7 @@
 
 #pragma mark - UIView Lifecycle Methods -
 
+#warning RETIRAR E COLOCAR NA MARK
 - (void)_addParallaxEffect {
     CGFloat parallaxIntensity = 4.f;
     self.hexaconAllButton.parallaxIntensity = parallaxIntensity;

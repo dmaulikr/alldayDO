@@ -33,6 +33,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *weekLabel;
 @property (strong, nonatomic) IBOutlet UILabel *inLineLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *graphicIcon;
+
 @property (nonatomic, strong) ADDetailReminderViewModel *viewModel;
 
 - (IBAction)editButtonTouched:(id)sender;
