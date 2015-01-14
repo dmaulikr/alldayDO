@@ -34,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.chartContentView addSubview:self.lineChart];
-    [self.graphicIcon bringSubviewToFront:self.lineChart];
     [self _IBOutletTitle];
     self.doneButton.layer.masksToBounds = YES;
     self.doneButton.layer.cornerRadius = 10.f;
@@ -66,8 +65,8 @@
 - (PNLineChart *)lineChart {
     if (!_lineChart) {
         _lineChart = [[PNLineChart alloc] initWithFrame:self.chartContentView.bounds];
-        [_lineChart setW:_lineChart.width + 40.f];
-        [_lineChart setX:-10.f];
+        [_lineChart setW:_lineChart.width + 60.f];
+        [_lineChart setX:-15.f];
         
         // TODO POG - GAMBIARRA
         if (IS_IPHONE5) {
