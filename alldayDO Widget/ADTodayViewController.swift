@@ -36,6 +36,12 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
         reloadData()
     }
     
+    // MARK: UIViewController Methods
+    
+    override func viewWillAppear(animated: Bool) {
+        reloadData()
+    }
+    
     // MARK: Private Methods
     
     func reloadData() {
@@ -147,7 +153,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-        let lembrete = self.viewModel.undoneReminders.objectAtIndex(indexPath.row) as ADLembrete
+        var lembrete = self.viewModel.undoneReminders.objectAtIndex(indexPath.row)
 
         cell.descricaolabel.text = lembrete.descricao
         cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())
@@ -174,7 +180,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     // MARK: - NCWidgetProviding
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-//        reloadData()
+        reloadData()
         self.preferredContentSize = self.tableView.contentSize;
         // Perform any setup necessary in order to update the view.
         

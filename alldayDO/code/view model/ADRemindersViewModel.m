@@ -201,18 +201,6 @@
     [self _fetchResultsForLembretesInDiferentsCategories];
 }
 
-- (void)executeFetchRequestForToday {
-    
-}
-
-- (void)executeFetchRequestForDoneReminders {
-    self.lembretes = self.lembretesCompletados;
-}
-
-- (void)executeFetchRequestForUndoneReminders {
-    self.lembretes = self.lembretesNaoCompletados;
-}
-
 - (NSString *)nextReminderFormated {
     return [self nextReminderFormatedWithDate:nil];
 }
