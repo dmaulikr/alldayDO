@@ -36,6 +36,7 @@
 
 - (void)_addSubView;
 - (void)_addNotificationCenter;
+- (void)_addParallaxEffect;
 
 - (void)_adjustHexaconSelect:(id)sender;
 
@@ -114,17 +115,6 @@
 
 #pragma mark - UIView Lifecycle Methods -
 
-#warning RETIRAR E COLOCAR NA MARK
-- (void)_addParallaxEffect {
-    CGFloat parallaxIntensity = 4.f;
-    self.hexaconAllButton.parallaxIntensity = parallaxIntensity;
-    self.totalRemindersLabel.parallaxIntensity = parallaxIntensity;
-    self.hexaconDoneButton.parallaxIntensity = parallaxIntensity;
-    self.doneReminders.parallaxIntensity = parallaxIntensity;
-    self.hexaconUndoneButton.parallaxIntensity = parallaxIntensity;
-    self.undoneReminders.parallaxIntensity = parallaxIntensity;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self _initStyle];
@@ -183,6 +173,16 @@
                                              selector:@selector(_applicationDidReceiveLocalNotificationOnBackground:)
                                                  name:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_BACKGROUND
                                                object:NULL];
+}
+
+- (void)_addParallaxEffect {
+    CGFloat parallaxIntensity = 4.f;
+    self.hexaconAllButton.parallaxIntensity = parallaxIntensity;
+    self.totalRemindersLabel.parallaxIntensity = parallaxIntensity;
+    self.hexaconDoneButton.parallaxIntensity = parallaxIntensity;
+    self.doneReminders.parallaxIntensity = parallaxIntensity;
+    self.hexaconUndoneButton.parallaxIntensity = parallaxIntensity;
+    self.undoneReminders.parallaxIntensity = parallaxIntensity;
 }
 
 - (void)_adjustHexaconSelect:(id)sender {
@@ -280,12 +280,12 @@
 }
 
 - (void)_fetchRequestForDoneReminders {
-    [self.viewModel executeFetchRequestForDoneReminders];
+    [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)_fetchRequestForUndoneReminders {
-    [self.viewModel executeFetchRequestForUndoneReminders];
+    [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
 }
 

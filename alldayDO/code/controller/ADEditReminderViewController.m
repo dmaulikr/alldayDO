@@ -495,7 +495,20 @@
     UIColor *requiredColor = [UIColor sam_colorWithHex:ERROR_COLOR_HEX];
     
     UIImage *iconImage = self.badgeImageView.badgeIconImageView.image;
-    if ([self.descriptionTextField.text isEqualToString:@""]) {
+    
+    BOOL name_invalid = NO;
+    for (ADLembrete *lembrete in self.viewModel.lembretes) {
+        if ([lembrete.descricao isEqualToString:self.descriptionTextField.text] ||
+            [lembrete.descricao isEqualToString:self.viewModel.descricaoEdit]) {
+            name_invalid = YES;
+        }
+    }
+    if (name_invalid) {
+        [self.descriptionTextField setValue:requiredColor
+                                 forKeyPath:@"_placeholderLabel.textColor"];
+        messageError = NSLocalizedString(@"descricao_invalid", nil);
+        sucess = NO;
+    } else if ([self.descriptionTextField.text isEqualToString:@""]) {
         [self.descriptionTextField setValue:requiredColor
                                  forKeyPath:@"_placeholderLabel.textColor"];
         messageError = NSLocalizedString(@"required_description", nil);

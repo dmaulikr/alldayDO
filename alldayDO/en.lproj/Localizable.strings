@@ -33,6 +33,8 @@
 "required_hora" = "What time we will remember you?";
 "required_date" = "We will start to remember you from when?";
 
+"descricao_invalid" = "You are already being reminded of that activity";
+
 // ADRemindersTableViewController
 
 "Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar" = "Your activities stays here \nYour reminders shows here and they easly changeable";

@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) ADLembrete *lembreteEdit;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
 @end
 
 @implementation ADEditReminderViewModel
@@ -49,6 +51,23 @@
         NSLocalizedString(@"Uma única vez", nil),
         NSLocalizedString(@"Nunca", nil)
     ];
+}
+
+- (NSArray *)lembretes {
+    [self.fetchedResultsController performFetch:nil];
+    return [self.fetchedResultsController fetchedObjects];
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (!_fetchedResultsController) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADLembrete"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:[ADModel sharedInstance].managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:@"editReminders_cache"];
+    }
+    return _fetchedResultsController;
 }
 
 #pragma mark - Public Methods -

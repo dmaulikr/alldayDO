@@ -22,6 +22,8 @@
 @property (nonatomic, readonly) NSNumber *periodoEdit;
 @property (nonatomic, readonly) NSData *imagemEdit;
 
+@property (nonatomic, readonly) NSArray *lembretes;
+
 @property (nonatomic, readonly) NSArray *cycleType;
 
 - (void)saveChanges;
