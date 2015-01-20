@@ -498,8 +498,8 @@
     
     BOOL name_invalid = NO;
     for (ADLembrete *lembrete in self.viewModel.lembretes) {
-        if ([lembrete.descricao isEqualToString:self.descriptionTextField.text] ||
-            [lembrete.descricao isEqualToString:self.viewModel.descricaoEdit]) {
+        if ([lembrete.descricao isEqualToString:self.descriptionTextField.text] &&
+            ![lembrete.descricao isEqualToString:self.viewModel.descricaoEdit]) {
             name_invalid = YES;
         }
     }
