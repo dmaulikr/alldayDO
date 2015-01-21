@@ -280,12 +280,12 @@
 }
 
 - (void)_fetchRequestForDoneReminders {
-    [self.viewModel executeFetchRequestForAll];
+    [self.viewModel executeFetchRequestForDoneReminders];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)_fetchRequestForUndoneReminders {
-    [self.viewModel executeFetchRequestForAll];
+    [self.viewModel executeFetchRequestForUndoneReminders];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
 }
 
