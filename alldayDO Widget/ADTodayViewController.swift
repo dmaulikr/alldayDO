@@ -153,7 +153,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-        var lembrete = self.viewModel.undoneReminders.objectAtIndex(indexPath.row)
+        var lembrete: AnyObject = self.viewModel.undoneReminders.objectAtIndex(indexPath.row)
 
         cell.descricaolabel.text = lembrete.descricao
         cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())

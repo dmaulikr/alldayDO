@@ -72,8 +72,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "718D9EBE1A436C8400E900D1"
-               BuildableName = "alldayDO .appex"
-               BlueprintName = "alldayDO "
+               BuildableName = "alldayDOToday.appex"
+               BlueprintName = "alldayDOToday"
                ReferencedContainer = "container:alldayDO.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -178,10 +178,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <IDERemoteRunnable
-         RemotePath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/Maps.app"
-         BundleIdentifier = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/Maps.app">
-      </IDERemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -199,6 +195,10 @@
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <IDERemoteRunnable
+         RemotePath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/Maps.app"
+         BundleIdentifier = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/Maps.app">
+      </IDERemoteRunnable>
       <IDERemoteRunnable
          RemotePath = "/Today-View"
          BundleIdentifier = "/Today-View">
