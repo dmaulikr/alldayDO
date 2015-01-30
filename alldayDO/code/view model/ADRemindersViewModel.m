@@ -204,6 +204,7 @@
 - (void)executeFetchRequestForDoneReminders {
     self.lembretes = self.lembretesCompletados;
 }
+
 - (void)executeFetchRequestForUndoneReminders {
     self.lembretes = self.lembretesNaoCompletados;
 }

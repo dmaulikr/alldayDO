@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "alldayDOKit.h"
 
 @interface ADEditReminderViewModel : NSObject
 

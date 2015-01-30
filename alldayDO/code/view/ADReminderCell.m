@@ -8,6 +8,7 @@
 
 #import "ADReminderCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "alldayDOKit.h"
 
 @interface ADReminderCell ()
 

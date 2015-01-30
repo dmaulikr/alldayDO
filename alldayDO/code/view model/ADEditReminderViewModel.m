@@ -9,7 +9,6 @@
 #import "ADEditReminderViewModel.h"
 
 #import "ADModel.h"
-#import "ADLocalNotification.h"
 
 @interface ADEditReminderViewModel ()
 
