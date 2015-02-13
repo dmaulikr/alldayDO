@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2013 Jared Verdi
+//  Copyright (c) 2013-2015 Jared Verdi
 //  Original Concept by Matt D. Smith
 //  http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 //
@@ -62,11 +62,12 @@
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
-    _floatingLabelActiveTextColor = self.tintColor;
-    _animateEvenIfNotFirstResponder = NO;
+    _animateEvenIfNotFirstResponder = 0;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
+    
+    _adjustsClearButtonRect = 1;
 }
 
 #pragma mark -
@@ -87,6 +88,7 @@
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
     [self setFloatingLabelText:self.placeholder];
+    [self invalidateIntrinsicContentSize];
 }
 
 - (void)showFloatingLabel:(BOOL)animated
@@ -99,7 +101,7 @@
                                           _floatingLabel.frame.size.height);
     };
     
-    if (animated || _animateEvenIfNotFirstResponder) {
+    if (animated || 0 != _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:_floatingLabelShowAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut
@@ -122,7 +124,7 @@
 
     };
     
-    if (animated || _animateEvenIfNotFirstResponder) {
+    if (animated || 0 != _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:_floatingLabelHideAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseIn
@@ -164,6 +166,13 @@
 }
 
 #pragma mark - UITextField
+
+- (CGSize)intrinsicContentSize
+{
+    CGSize textFieldIntrinsicContentSize = [super intrinsicContentSize];
+    return CGSizeMake(textFieldIntrinsicContentSize.width,
+                      textFieldIntrinsicContentSize.height + _floatingLabelYPadding + _floatingLabel.font.lineHeight);
+}
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
@@ -208,10 +217,12 @@
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    if ([self.text length]) {
-        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-        topInset = MIN(topInset, [self maxTopInset]);
-        rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+    if (0 != self.adjustsClearButtonRect) {
+        if ([self.text length]) {
+            CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+            topInset = MIN(topInset, [self maxTopInset]);
+            rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+        }
     }
     return CGRectIntegral(rect);
 }

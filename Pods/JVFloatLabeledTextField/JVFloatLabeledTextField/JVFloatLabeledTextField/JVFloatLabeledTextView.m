@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2013 Jared Verdi
+//  Copyright (c) 2013-2015 Jared Verdi
 //  Original Concept by Matt D. Smith
 //  http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 //
@@ -88,8 +88,7 @@
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
-    _floatingLabelActiveTextColor = self.tintColor;
-    _animateEvenIfNotFirstResponder = NO;
+    _animateEvenIfNotFirstResponder = 0;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
 
@@ -128,7 +127,7 @@
     _placeholderLabel.text = placeholder;
     _floatingLabel.text = placeholder;
     
-    if (self.floatingLabelShouldLockToTop) {
+    if (0 != self.floatingLabelShouldLockToTop) {
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                           _floatingLabel.frame.origin.y,
                                           self.frame.size.width,
@@ -154,6 +153,11 @@
     
     [_placeholderLabel sizeToFit];
     [_floatingLabel sizeToFit];
+    
+    _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+                                      _floatingLabel.frame.origin.y,
+                                      self.frame.size.width,
+                                      _floatingLabel.bounds.size.height);
     
     CGRect textRect = [self textRect];
     
@@ -194,7 +198,7 @@
     void (^showBlock)() = ^{
         _floatingLabel.alpha = 1.0f;
         CGFloat top = _floatingLabelYPadding;
-        if (self.floatingLabelShouldLockToTop) {
+        if (0 != self.floatingLabelShouldLockToTop) {
             top += self.contentOffset.y;
         }
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -203,8 +207,8 @@
                                           _floatingLabel.frame.size.height);
     };
     
-    if ((animated || _animateEvenIfNotFirstResponder)
-        && (!self.floatingLabelShouldLockToTop || _floatingLabel.alpha != 1.0f)) {
+    if ((animated || 0 != _animateEvenIfNotFirstResponder)
+        && (0 == self.floatingLabelShouldLockToTop || _floatingLabel.alpha != 1.0f)) {
         [UIView animateWithDuration:_floatingLabelShowAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut
@@ -227,7 +231,7 @@
         
     };
     
-    if (animated || _animateEvenIfNotFirstResponder) {
+    if (animated || 0 != _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:_floatingLabelHideAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseIn
@@ -335,7 +339,7 @@
 {
     [super setBackgroundColor:backgroundColor];
     
-    if (self.floatingLabelShouldLockToTop) {
+    if (0 != self.floatingLabelShouldLockToTop) {
         _floatingLabel.backgroundColor = self.backgroundColor;
     }
 }

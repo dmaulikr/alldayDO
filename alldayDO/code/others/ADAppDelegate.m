@@ -14,11 +14,13 @@
 #import "alldayDO-Swift.h"
 
 #import <Crashlytics/Crashlytics.h>
+#import <iRate.h>
 
 @interface ADAppDelegate () <EAIntroDelegate>
 
 - (void)_setupAnalytics;
 - (void)_setupCrashlytics;
+- (void)_setupRate;
 - (void)_walkthrough;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -55,6 +57,22 @@
     [Crashlytics startWithAPIKey:@"ba0eee4e53729a8c93fd47ad94835d6be7ec81c8"];
 }
 
+- (void)_setupRate {
+    [iRate sharedInstance].daysUntilPrompt = 3.f;
+    [iRate sharedInstance].remindPeriod = 8.f;
+
+    [iRate sharedInstance].messageTitle = @"Gostou do alldayDO?";
+
+    [iRate sharedInstance].message = @"O alldayDO lhe ajuda no\ndia-a-dia? Poderia avaliá-lo?\n\nNão vai demorar mais de um minuto.\nObrigado pelo apoio.";
+
+    [iRate sharedInstance].cancelButtonLabel = @"Não, Obrigado";
+    [iRate sharedInstance].rateButtonLabel = @"Avaliar agora";
+    [iRate sharedInstance].remindButtonLabel = @"Avaliar mais tarde";
+
+    [iRate sharedInstance].promptForNewVersionIfUserRated = NO;
+    [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+}
+
 - (void)_walkthrough {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
@@ -73,7 +91,9 @@
     [ADStyleSheet initStyles];
     [self _setupAnalytics];
     [self _setupCrashlytics];
+    [self _setupRate];
     [self _walkthrough];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];

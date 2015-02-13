@@ -25,14 +25,25 @@ Additional References
 [Float Label Pattern](http://bradfrostweb.com/blog/post/float-label-pattern/) - Brad Frost  
 [Material Design - Floating Labels](http://www.google.com/design/spec/components/text-fields.html#text-fields-floating-labels) - Google  
 
-Ports
-=======================
-[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
+Ports and Alternate Implementations
+=====================================
+[Android](https://github.com/wrapp/floatlabelededittext) - Henrik Sandström  
+[Android](https://github.com/weddingparty/AndroidFloatLabel) - Kaushik Gopal  
+[Android](https://github.com/KevinJ90825/FloatLabelPattern) - Kevin Johnson  
 [Xamarin.iOS](https://github.com/gshackles/JVFloatSharp) - Greg Shackles  
+[Xamarin.Android](https://github.com/Johan-dutoit/JVFloatSharp) - Johan du Toit  
+[CSS](http://snook.ca/archives/html_and_css/floated-label-pattern-css) Jonathan Snook  
+[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
+[JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
+[AngularJS](https://github.com/dmackerman/angular-better-placeholders) - Dave Ackerman  
 [Bootstrap plugin](https://github.com/fauxparse/bootstrap-floating-labels) - Matt Powell  
 [JavaFX](https://github.com/andytill/floaty-field) - Andy Till  
-[JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
-[Android](https://github.com/wrapp/floatlabelededittext) - Henrik Sandström  
-
-
+[Swift](https://github.com/dirkfabisch/B68FloatingLabelTextField) - Dirk Fabisch  
+[Swift](https://github.com/FahimF/FloatLabelFields) - Fahim Farook  
+[Swift](https://github.com/kNeerajPro/CGFLoatingUIKit) - Neeraj Kumar  
+[Swift](https://github.com/varshylmobile/VMFloatLabel) - Jimmy Jose  
+[ObjC](https://github.com/ArtSabintsev/UIFloatLabelTextField) - Arthur Ariel Sabintsev  
+[ObjC](https://github.com/iwasrobbed/RPFloatingPlaceholders) - Rob Phillips  
+  
+  
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)

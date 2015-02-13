@@ -5,14 +5,15 @@ PODS:
   - GoogleAnalytics-iOS-SDK/Core (3.10)
   - HexColors (2.2.1)
   - iOS-blur (0.0.5)
-  - JVFloatLabeledTextField (1.0.0)
+  - iRate (1.11.3)
+  - JVFloatLabeledTextField (1.0.2)
   - MALazykit (HEAD based on 0.1.10)
   - NGAParallaxMotion (1.1.0)
-  - PNChart (0.7.1):
+  - PNChart (0.7.5):
     - UICountingLabel (~> 1.0.0)
   - pop (1.0.7)
   - SAMAddressBar (0.1.0)
-  - SAMBadgeView (0.1.0)
+  - SAMBadgeView (0.1.1)
   - SAMCategories (0.5.2)
   - SAMCircleProgressView (0.1.1)
   - SAMGradientView (0.2.1)
@@ -36,7 +37,7 @@ PODS:
     - SAMTextField
     - SAMTextView
     - SAMWebView
-  - TSMessages (0.9.11):
+  - TSMessages (0.9.12):
     - HexColors
   - UICountingLabel (1.0.0)
   - uiview-frame-helpers (0.1.1)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - EAIntroView
   - GoogleAnalytics-iOS-SDK
   - iOS-blur
+  - iRate
   - JVFloatLabeledTextField
   - MALazykit (HEAD)
   - NGAParallaxMotion
@@ -59,13 +61,14 @@ SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
-  JVFloatLabeledTextField: c2b8124e439cf2b05fe5bb38f44358743588c1bd
+  iRate: 5e1978bac8b3f3f0296dbeccc0dd7b50e6e50657
+  JVFloatLabeledTextField: c1ad6b4b5bd77115cfe6c71ba4c023866df5c4cf
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
   NGAParallaxMotion: 62644b783178f75a234f458270f416afee89877c
-  PNChart: f69e20597c6099ff44a5814bdd2004b9b46dc6eb
+  PNChart: 18d4c57f43df3357ab14b3847a930f36d1fbce48
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
-  SAMBadgeView: 6f29c18e5dc4ddf6d843c3c5e9c9207028c2e8a8
+  SAMBadgeView: 56c54bb74bb0af743de1cc788aaacd38b31030af
   SAMCategories: dc26f9dc67d371d22f391ee2173bc607a887912e
   SAMCircleProgressView: 8ec885aeaf60bd1ab717d82da166d3a807c63931
   SAMGradientView: 37ef027b0da8b5fd85bfdfef49801b5262160998
@@ -77,7 +80,7 @@ SPEC CHECKSUMS:
   SAMTextView: 1062a784ba7b2080b0c17748001c416b53010b4b
   SAMWebView: e615d50d3683b9b4fd3e10da9d079ed03230ee24
   SSToolkit: 64d8bb043b4f36da68936ddbb4ec4e8cb3c5a8df
-  TSMessages: e21ef5b1c7518cc590a4826c8b05b16b79b10c2c
+  TSMessages: b2b5dc71f65146387e51f2600bb0eb8f3a6c4ab8
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
   uiview-frame-helpers: 68ff15193c81e40695cb50f7eedee88e57077efc
 
