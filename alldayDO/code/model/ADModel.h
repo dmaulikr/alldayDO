@@ -15,12 +15,11 @@
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property ( strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (void)saveChanges;
 - (void)cancelChanges;
-- (void)reloadChangesiCloud;
 
 - (void)deleteObject:(id)object;
 

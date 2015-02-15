@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/controller/ADEditReminderViewController.m"
-            timestampString = "445661530.901348"
+            filePath = "alldayDO/code/controller/ADDetailReminderViewController.m"
+            timestampString = "445665732.947569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
-            landmarkName = "-_refreshTimeLabel:"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-_presentNewReminderViewController"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/controller/ADEditReminderViewController.m"
-            timestampString = "445661027.151877"
+            filePath = "alldayDO/code/controller/ADDetailReminderViewController.m"
+            timestampString = "445665732.947569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "-_salvarTouched"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-newReminderViewController:didSaveReminder:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "alldayDO/code/controller/ADDetailReminderViewController.m"
+            timestampString = "445665732.947569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-_updateInterface"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +57,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "alldayDO/code/controller/ADEditReminderViewController.m"
-            timestampString = "445661511.765425"
+            filePath = "alldayDO/code/view model/ADDetailReminderViewModel.m"
+            timestampString = "445665732.947569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
-            landmarkName = "-_salvarTouched"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-removeLembreteConfirmado"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "alldayDO/code/view model/ADDetailReminderViewModel.m"
+            timestampString = "445700657.908608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-removeLembreteConfirmado"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
