@@ -358,8 +358,16 @@
 
         self.viewModel.periodo = [NSNumber numberWithInteger:[self.viewModel typeForCycleString:self.periodoTextField.text]];
         self.viewModel.descricao = self.descriptionTextField.text;
-        self.viewModel.data = self.horaPicker.date;
-        self.viewModel.dataInicial = self.dataPicker.date;
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"HH:mm a"];
+        NSDate *hour = [df dateFromString: self.horaTextField.text];
+        self.viewModel.data = hour;
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterFullStyle];
+        self.viewModel.dataInicial = [formatter dateFromString:self.dataTextField.text];
+    
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
         if ([self.delegate respondsToSelector:@selector(newReminderViewController:didSaveReminder:)]) {
