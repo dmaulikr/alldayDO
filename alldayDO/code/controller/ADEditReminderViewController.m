@@ -338,6 +338,9 @@
     if (self.actionMode == ADEditMode) {
         labelHeaderText = NSLocalizedString(@"edit_reminder", nil);
         [self _editReminderMode];
+        self.badgeLabel.hidden = YES;
+    } else {
+        self.badgeLabel.hidden = NO;
     }
     self.labelHeader.text = labelHeaderText;
 }
@@ -559,6 +562,7 @@
     [UIView animateWithDuration:0.4f animations:^{
         self.badgeIconView.alpha = 1.f;
         [self.badgeIconCollectionView reloadData];
+        self.badgeLabel.hidden = YES;
     }];
     [self _removeGestureRecognizer];
 }
