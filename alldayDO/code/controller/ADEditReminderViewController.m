@@ -361,7 +361,7 @@
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"HH:mm a"];
-        NSDate *hour = [df dateFromString: self.horaTextField.text];
+        NSDate *hour = [df dateFromString:self.horaTextField.text];
         self.viewModel.data = hour;
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
