@@ -576,10 +576,6 @@
         }
     } else if (textField == self.horaTextField) {
         [[GAI sharedInstance] sendAction:@"horaTextField" withCategory:@"FocusOnTextField"];
-        if (self.actionMode == ADAddMode) {
-            [self _refreshTimeLabel:nil];
-            self.horaPicker.date = [NSDate date];
-        }
     } else if (textField == self.dataTextField) {
         [[GAI sharedInstance] sendAction:@"dataTextField" withCategory:@"FocusOnTextField"];
         if (self.actionMode == ADAddMode) {
