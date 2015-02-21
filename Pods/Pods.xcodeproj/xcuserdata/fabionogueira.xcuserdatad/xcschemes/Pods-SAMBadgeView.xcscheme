@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D92D0A139EEC1AF9B2BCE73"
+               BlueprintIdentifier = "EC685023592DBDADACBEAD5B"
                BuildableName = "libPods-SAMBadgeView.a"
                BlueprintName = "Pods-SAMBadgeView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -146,5 +146,5 @@
 
 // Today Extension
 
-"atividades_restantes" = "Remember!";
-"undone_reminder_widget" = "No scheduled reminder";
+"atividades_restantes" = "Hey, you're forgetting something!";
+"undone_reminder_widget" = "No scheduled reminder. Enjoy your day :)";
