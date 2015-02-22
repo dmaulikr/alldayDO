@@ -26,7 +26,7 @@
 #define DEFAULT_COLOR_HEX @"#487BAF"
 #define ERROR_COLOR_HEX @"bb3c45"
 
-#define NUMBER_OF_ICONS 62
+#define NUMBER_OF_ICONS 56
 
 @interface ADEditReminderViewController () <UIGestureRecognizerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate>
 
