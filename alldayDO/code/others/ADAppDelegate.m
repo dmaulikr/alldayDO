@@ -15,6 +15,7 @@
 
 #import <Crashlytics/Crashlytics.h>
 #import <iRate.h>
+#import <Parse/Parse.h>
 
 @interface ADAppDelegate () <EAIntroDelegate>
 
@@ -73,6 +74,11 @@
     [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
 }
 
+- (void)_setupPushNotification {
+    [Parse setApplicationId:@"9pfskNLkTOcoeq0mFRFrIhbXP608aDl84rdkPAvh"
+                  clientKey:@"GIgl8dUghpL9IzWZTV0BlyXSdJEtxOxBZXJz3Mal"];
+}
+
 - (void)_walkthrough {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
@@ -92,11 +98,21 @@
     [self _setupAnalytics];
     [self _setupCrashlytics];
     [self _setupRate];
+    [self _setupPushNotification];
+    
     [self _walkthrough];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
+    if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
+        [application registerForRemoteNotifications];
     }
     return YES;
 }
@@ -122,6 +138,19 @@
     } else if (application.applicationState == UIApplicationStateActive ) {
             [[NSNotificationCenter defaultCenter] postNotificationName:APPLICATION_DID_RECEIVE_LOCAL_NOTIFICATION_ACTIVE object:notification];
     }
+}
+
+#pragma mark - UIApplication Methods - Remote Notification -
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 #pragma mark - EAIntroDelegate Methods
