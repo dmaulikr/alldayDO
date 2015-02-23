@@ -20,6 +20,8 @@
 @property (nonatomic) NSMutableArray *chartPath;       // Array of line path, one for each line.
 @property (nonatomic) NSMutableArray *pointPath;       // Array of point path, one for each line
 
+- (void)setDefaultValues;
+
 @end
 
 @implementation PNLineChart
@@ -31,7 +33,7 @@
     self = [super initWithCoder:coder];
 
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
 
     return self;
@@ -42,7 +44,7 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
 
     return self;
@@ -184,64 +186,64 @@
 
 - (void)touchPoint:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Get the point user touched
-    UITouch *touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
-
-    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
-        NSArray *linePointsArray = _pathPoints[p];
-
-        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
-            CGPoint p1 = [linePointsArray[i] CGPointValue];
-            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
-
-            // Closest distance from point to line
-            float distance = fabsf(((p2.x - p1.x) * (touchPoint.y - p1.y)) - ((p1.x - touchPoint.x) * (p1.y - p2.y)));
-            distance /= hypot(p2.x - p1.x, p1.y - p2.y);
-
-            if (distance <= 5.0) {
-                // Conform to delegate parameters, figure out what bezier path this CGPoint belongs to.
-                for (UIBezierPath *path in _chartPath) {
-                    BOOL pointContainsPath = CGPathContainsPoint(path.CGPath, NULL, p1, NO);
-
-                    if (pointContainsPath) {
-                        [_delegate userClickedOnLinePoint:touchPoint lineIndex:[_chartPath indexOfObject:path]];
-
-                        return;
-                    }
-                }
-            }
-        }
-    }
+//    // Get the point user touched
+//    UITouch *touch = [touches anyObject];
+//    CGPoint touchPoint = [touch locationInView:self];
+//
+//    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
+//        NSArray *linePointsArray = _pathPoints[p];
+//
+//        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
+//            CGPoint p1 = [linePointsArray[i] CGPointValue];
+//            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
+//
+//            // Closest distance from point to line
+//            float distance = fabsf(((p2.x - p1.x) * (touchPoint.y - p1.y)) - ((p1.x - touchPoint.x) * (p1.y - p2.y)));
+//            distance /= hypot(p2.x - p1.x, p1.y - p2.y);
+//
+//            if (distance <= 5.0) {
+//                // Conform to delegate parameters, figure out what bezier path this CGPoint belongs to.
+//                for (UIBezierPath *path in _chartPath) {
+//                    BOOL pointContainsPath = CGPathContainsPoint(path.CGPath, NULL, p1, NO);
+//
+//                    if (pointContainsPath) {
+//                        [_delegate userClickedOnLinePoint:touchPoint lineIndex:[_chartPath indexOfObject:path]];
+//
+//                        return;
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 - (void)touchKeyPoint:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Get the point user touched
-    UITouch *touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
-
-    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
-        NSArray *linePointsArray = _pathPoints[p];
-
-        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
-            CGPoint p1 = [linePointsArray[i] CGPointValue];
-            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
-
-            float distanceToP1 = fabsf(hypot(touchPoint.x - p1.x, touchPoint.y - p1.y));
-            float distanceToP2 = hypot(touchPoint.x - p2.x, touchPoint.y - p2.y);
-
-            float distance = MIN(distanceToP1, distanceToP2);
-
-            if (distance <= 10.0) {
-                [_delegate userClickedOnLineKeyPoint:touchPoint
-                                           lineIndex:p
-                                          pointIndex:(distance == distanceToP2 ? i + 1 : i)];
-
-                return;
-            }
-        }
-    }
+//    // Get the point user touched
+//    UITouch *touch = [touches anyObject];
+//    CGPoint touchPoint = [touch locationInView:self];
+//
+//    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
+//        NSArray *linePointsArray = _pathPoints[p];
+//
+//        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
+//            CGPoint p1 = [linePointsArray[i] CGPointValue];
+//            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
+//
+//            float distanceToP1 = fabsf(hypot(touchPoint.x - p1.x, touchPoint.y - p1.y));
+//            float distanceToP2 = hypot(touchPoint.x - p2.x, touchPoint.y - p2.y);
+//
+//            float distance = MIN(distanceToP1, distanceToP2);
+//
+//            if (distance <= 10.0) {
+//                [_delegate userClickedOnLineKeyPoint:touchPoint
+//                                           lineIndex:p
+//                                          pointIndex:(distance == distanceToP2 ? i + 1 : i)];
+//
+//                return;
+//            }
+//        }
+//    }
 }
 
 #pragma mark - Draw Chart
@@ -644,7 +646,7 @@
 
 #pragma mark private methods
 
-- (void)setupDefaultValues
+- (void)setDefaultValues
 {
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];

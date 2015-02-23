@@ -46,6 +46,8 @@
 
 @property (nonatomic) BOOL isForUpdate;
 
+- (void)setDefaultValues;
+
 @end
 
 
@@ -58,7 +60,7 @@
     self = [super initWithCoder:coder];
     
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
     return self;
 }
@@ -68,7 +70,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
     return self;
 }
@@ -79,7 +81,7 @@
     [self vectorYSetup];
 }
 
-- (void)setupDefaultValues
+- (void)setDefaultValues
 {
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];

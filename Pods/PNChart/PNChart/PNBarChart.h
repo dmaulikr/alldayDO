@@ -8,91 +8,111 @@
 
 #import <UIKit/UIKit.h>
 #import "PNChartDelegate.h"
-#import "PNBar.h"
 
 #define xLabelMargin 15
 #define yLabelMargin 15
 #define yLabelHeight 11
 #define xLabelHeight 20
 
-typedef NSString *(^PNYLabelFormatter)(CGFloat yLabelValue);
+typedef NSString *(^PNyLabelFromatter)(CGFloat yLabelValue);
 
 @interface PNBarChart : UIView
 
 /**
- * Draws the chart in an animated fashion.
+ * This method will call and stroke the line in animation
  */
+
 - (void)strokeChart;
 
 @property (nonatomic) NSArray *xLabels;
 @property (nonatomic) NSArray *yLabels;
 @property (nonatomic) NSArray *yValues;
-
-@property (nonatomic) NSMutableArray * bars;
-
 @property (nonatomic) CGFloat xLabelWidth;
 @property (nonatomic) int yValueMax;
 @property (nonatomic) UIColor *strokeColor;
 @property (nonatomic) NSArray *strokeColors;
 
 
-/** Update Values. */
-- (void)updateChartData:(NSArray *)data;
-
-/** Changes chart margin. */
+/*
+ chartMargin changes chart margin
+ */
 @property (nonatomic) CGFloat yChartLabelWidth;
 
-/** Formats the ylabel text. */
-@property (copy) PNYLabelFormatter yLabelFormatter;
+/*
+ yLabelFormatter will format the ylabel text
+ */
 
+@property (copy) PNyLabelFromatter yLabelFormatter;
+
+/*
+ chartMargin changes chart margin
+ */
 @property (nonatomic) CGFloat chartMargin;
 
-/** Controls whether labels should be displayed. */
+/*
+ showLabelDefines if the Labels should be deplay
+ */
 @property (nonatomic) BOOL showLabel;
 
-/** Controls whether the chart border line should be displayed. */
+/*
+ showChartBorder if the chart border Line should be deplay
+ */
 @property (nonatomic) BOOL showChartBorder;
 
-/** Chart bottom border, co-linear with the x-axis. */
+/*
+ chartBottomLine the Line at the chart bottom
+ */
 @property (nonatomic) CAShapeLayer * chartBottomLine;
 
-/** Chart left border, co-linear with the y-axis. */
+/*
+ chartLeftLine the Line at the chart left
+ */
 @property (nonatomic) CAShapeLayer * chartLeftLine;
 
-/** Corner radius for all bars in the chart. */
+/*
+ barRadius changes the bar corner radius
+ */
 @property (nonatomic) CGFloat barRadius;
 
-/** Width of all bars in the chart. */
+/*
+ barWidth changes the width of the bar
+ */
 @property (nonatomic) CGFloat barWidth;
 
+/*
+ labelMarginTop changes the width of the bar
+ */
 @property (nonatomic) CGFloat labelMarginTop;
 
-/** Background color of all bars in the chart. */
+/*
+ barBackgroundColor changes the bar background color
+ */
 @property (nonatomic) UIColor * barBackgroundColor;
 
-/** Text color for all bars in the chart. */
+/*
+ labelTextColor changes the bar label text color
+ */
 @property (nonatomic) UIColor * labelTextColor;
 
-/** Font for all bars in the chart. */
+/*
+ labelFont changes the bar label font
+ */
 @property (nonatomic) UIFont * labelFont;
 
-/** How many labels on the x-axis to skip in between displaying labels. */
+/*
+ xLabelSkip define the label skip number
+ */
 @property (nonatomic) NSInteger xLabelSkip;
 
-/** How many labels on the y-axis to skip in between displaying labels. */
+/*
+ yLabelSum define the label skip number
+ */
 @property (nonatomic) NSInteger yLabelSum;
 
-/** The maximum for the range of values to display on the y-axis. */
+/*
+ yMaxValue define the max value of the chart
+ */
 @property (nonatomic) CGFloat yMaxValue;
-
-/** The minimum for the range of values to display on the y-axis. */
-@property (nonatomic) CGFloat yMinValue;
-
-/** Controls whether each bar should have a gradient fill. */
-@property (nonatomic) UIColor *barColorGradientStart;
-
-/** Controls whether text for x-axis be straight or rotate 45 degree. */
-@property (nonatomic) BOOL rotateForXAxisText;
 
 @property (nonatomic, retain) id<PNChartDelegate> delegate;
 
