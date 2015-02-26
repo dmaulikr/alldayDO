@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "alldayDOKit.h"
+
+#import <alldayDOKit/alldayDOKit.h>
 
 #define LOCAL_NOTIFICATION_DOMAIN @"mobi.fabionogueira.alldayDO"
 

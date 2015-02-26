@@ -7,6 +7,7 @@
 //
 
 #import <CoreData/CoreData.h>
+#import <alldayDOKit/alldayDOKit.h>
 
 @interface NSEntityDescription (ADToolkitAdditions)
 

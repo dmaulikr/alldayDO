@@ -4,19 +4,24 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>alldayDO Widget.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>alldayDO.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+		<key>alldayDOToday.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>70F105FB1A9E9EB00042EBD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>718D9EBE1A436C8400E900D1</key>
 		<dict>
 			<key>primary</key>

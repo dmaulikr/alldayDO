@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ADLembreteConfirmado.h"
-
-#import "alldayDOKit.h"
 
 @interface ADRemindersViewModel : NSObject
 

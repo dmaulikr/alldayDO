@@ -17,8 +17,9 @@
     #import <MALazykit/MALazykit.h>
     #import <uiview-frame-helpers/UIView+CBFrameHelpers.h>
     #import <SSToolkit/SSToolkit.h>
-    #import "PDToolkitAdditions.h"
+    #import "ADToolkitAdditions.h"
     #import "GAI.h"
     #import "GAIFields.h"
     #import "GAIDictionaryBuilder.h"
+    #import <alldayDOKit/alldayDOKit.h>
 #endif

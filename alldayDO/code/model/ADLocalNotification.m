@@ -7,7 +7,6 @@
 //
 
 #import "ADLocalNotification.h"
-#import "ADModel.h"
 
 @interface ADLocalNotification ()
 

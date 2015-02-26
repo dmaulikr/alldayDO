@@ -14,17 +14,17 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     
     // MARK: Properties
     
-    var viewModel : ADRemindersViewModel
+    var viewModel : ADToday
     
     // MARK: Init Methods
     
     required init(coder aDecoder: NSCoder) {
-        viewModel = ADRemindersViewModel()
+        viewModel = ADToday()
         super.init(coder: aDecoder)
     }
     
     override init() {
-        viewModel = ADRemindersViewModel()
+        viewModel = ADToday()
         super.init()
     }
     
@@ -45,7 +45,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     // MARK: Private Methods
     
     func reloadData() {
-        self.viewModel.executeFetchRequestForAll()
+        self.viewModel.executeFetchRequestForToday()
         self.tableView.reloadData()
     }
     
@@ -56,14 +56,14 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.undoneReminders.count
+        return self.viewModel.todayReminders.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as ADTodayCell
         
-        var lembrete: AnyObject = self.viewModel.undoneReminders.objectAtIndex(indexPath.row)
-
+        var lembrete: AnyObject = self.viewModel.todayReminders.objectAtIndex(indexPath.row)
+        
         cell.descricaolabel.text = lembrete.descricao
         cell.badgeIconImageView.image = UIImage(data: lembrete.imagem)?.tintedImageWithColor(UIColor.blackColor())
         return cell
@@ -77,7 +77,7 @@ class ADTodayViewController: UITableViewController, NCWidgetProviding {
         var label = UILabel()
         label.textColor = UIColor.lightGrayColor()
         
-        if self.viewModel.undoneReminders.count == 0 {
+        if self.viewModel.todayReminders.count == 0 {
             label.text = NSLocalizedString("undone_reminder_widget", value: "undone_reminder_widget", comment: "")
         } else {
             label.text = NSLocalizedString("atividades_restantes", value: "atividades_restantes", comment: "")

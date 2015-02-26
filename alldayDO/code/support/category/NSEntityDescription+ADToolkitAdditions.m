@@ -7,7 +7,6 @@
 //
 
 #import "NSEntityDescription+ADToolkitAdditions.h"
-#import "ADModel.h"
 
 @implementation NSEntityDescription (ADToolkitAdditions)
 

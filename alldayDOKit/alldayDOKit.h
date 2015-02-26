@@ -17,12 +17,9 @@ FOUNDATION_EXPORT const unsigned char alldayDOKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <alldayDOKit/PublicHeader.h>
 
+#import <alldayDOKit/ADToday.h>
 #import <alldayDOKit/ADModel.h>
 #import <alldayDOKit/ADLembrete.h>
-#import <alldayDOKit/ADRemindersViewModel.h>
-#import <alldayDOKit/NSDate+ADToolkitAdditions.h>
+#import <alldayDOKit/ADLembreteConfirmado.h>
 #import <alldayDOKit/UIImage+ADToolkitAdditions.h>
-#import <alldayDOKit/NSEntityDescription+ADToolkitAdditions.h>
-#import <alldayDOKit/ADLocalNotification.h>
-#import <alldayDOKit/UILocalNotification+ADToolkitAdditions.h>
-#import <alldayDOKit/ADLembrete+ADToolkitAdditions.h>
+#import <alldayDOKit/NSDate+ADToolkitAdditions.h>

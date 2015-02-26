@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="E5K-y8-Lkj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="YGd-cr-nWP">
+            <objects>
+                <tableViewController id="E5K-y8-Lkj" customClass="ADTodayViewController" customModule="alldayDOToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="SZO-9z-od9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="todayCell" id="3rs-oH-CAk" customClass="ADTodayCell" customModule="alldayDOToday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3rs-oH-CAk" id="4vh-3h-aK3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hexacon_widget" translatesAutoresizingMaskIntoConstraints="NO" id="Xq5-5S-Sal">
+                                            <rect key="frame" x="12" y="9" width="36" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="41" id="ZDR-Ve-y2h"/>
+                                                <constraint firstAttribute="width" constant="36" id="jRh-oq-gju"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-oT-v36">
+                                            <rect key="frame" x="19" y="18" width="23" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="Hv2-pY-yJv"/>
+                                                <constraint firstAttribute="width" constant="23" id="aqN-kZ-Eqn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0E-jL-ZW7">
+                                            <rect key="frame" x="56" y="21" width="240" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="TXF-pz-V7f"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="qhD-fe-pYE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="N0E-jL-ZW7" firstAttribute="trailing" secondItem="4vh-3h-aK3" secondAttribute="trailingMargin" constant="-16" id="EOv-su-Zss"/>
+                                        <constraint firstItem="N0E-jL-ZW7" firstAttribute="centerY" secondItem="4vh-3h-aK3" secondAttribute="centerY" id="K5p-Nc-s3w"/>
+                                        <constraint firstItem="Xq5-5S-Sal" firstAttribute="centerX" secondItem="Azg-oT-v36" secondAttribute="centerX" id="S1z-LY-XAU"/>
+                                        <constraint firstItem="Xq5-5S-Sal" firstAttribute="leading" secondItem="4vh-3h-aK3" secondAttribute="leadingMargin" constant="4" id="bzc-Ca-MTp"/>
+                                        <constraint firstItem="N0E-jL-ZW7" firstAttribute="leading" secondItem="Xq5-5S-Sal" secondAttribute="trailing" constant="8" id="l2j-JR-UUt"/>
+                                        <constraint firstItem="Xq5-5S-Sal" firstAttribute="top" secondItem="4vh-3h-aK3" secondAttribute="topMargin" constant="1" id="uzF-iB-aUk"/>
+                                        <constraint firstItem="Xq5-5S-Sal" firstAttribute="centerY" secondItem="Azg-oT-v36" secondAttribute="centerY" id="wn1-ss-fxn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundView" destination="4vh-3h-aK3" id="bGs-py-wRy"/>
+                                    <outlet property="badgeIconImageView" destination="Azg-oT-v36" id="FSi-Bs-TaN"/>
+                                    <outlet property="descricaolabel" destination="N0E-jL-ZW7" id="x3u-zS-HST"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E5K-y8-Lkj" id="w93-1W-tU4"/>
+                            <outlet property="delegate" destination="E5K-y8-Lkj" id="e1M-Gq-Wt2"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="70"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="80"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sof-Om-i5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="237"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="10" width="64" height="64"/>
+        <image name="Hexacon_widget" width="41" height="46"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
