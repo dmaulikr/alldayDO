@@ -1,10 +1,13 @@
 //
 //  EAIntroView.h
 //
-//  Copyright (c) 2013-2014 Evgeny Aleksandrov. License: MIT.
+//  Copyright (c) 2013-2015 Evgeny Aleksandrov. License: MIT.
 
 #import <UIKit/UIKit.h>
+#import <EARestrictedScrollView/EARestrictedScrollView.h>
 #import "EAIntroPage.h"
+
+#define EA_EMPTY_PROPERTY 9999.f
 
 enum EAIntroViewTags {
     kTitleLabelTag = 1,
@@ -12,48 +15,67 @@ enum EAIntroViewTags {
     kTitleImageViewTag
 };
 
+typedef NS_ENUM(NSUInteger, EAViewAlignment) {
+    EAViewAlignmentLeft,
+    EAViewAlignmentCenter,
+    EAViewAlignmentRight,
+};
+
 @class EAIntroView;
 
-@protocol EAIntroDelegate
+@protocol EAIntroDelegate<NSObject>
 @optional
 - (void)introDidFinish:(EAIntroView *)introView;
-- (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex;
-- (void)intro:(EAIntroView *)introView pageStartScrolling:(EAIntroPage *)page withIndex:(NSInteger)pageIndex;
-- (void)intro:(EAIntroView *)introView pageEndScrolling:(EAIntroPage *)page withIndex:(NSInteger)pageIndex;
+- (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSUInteger)pageIndex;
+- (void)intro:(EAIntroView *)introView pageStartScrolling:(EAIntroPage *)page withIndex:(NSUInteger)pageIndex;
+- (void)intro:(EAIntroView *)introView pageEndScrolling:(EAIntroPage *)page withIndex:(NSUInteger)pageIndex;
 @end
 
 @interface EAIntroView : UIView <UIScrollViewDelegate>
 
 @property (nonatomic, weak) id<EAIntroDelegate> delegate;
 
-// titleView Y position - from top of the screen
-// pageControl Y position - from bottom of the screen
-@property (nonatomic, assign) bool swipeToExit;
-@property (nonatomic, assign) bool tapToNext;
-@property (nonatomic, assign) bool hideOffscreenPages;
-@property (nonatomic, assign) bool easeOutCrossDisolves;
-@property (nonatomic, assign) bool showSkipButtonOnlyOnLastPage;
-@property (nonatomic, assign) bool useMotionEffects;
+@property (nonatomic, assign) BOOL swipeToExit;
+@property (nonatomic, assign) BOOL tapToNext;
+@property (nonatomic, assign) BOOL hideOffscreenPages;
+@property (nonatomic, assign) BOOL easeOutCrossDisolves;
+@property (nonatomic, assign) BOOL useMotionEffects;
 @property (nonatomic, assign) CGFloat motionEffectsRelativeValue;
-@property (nonatomic, strong) UIImage *bgImage;
-@property (nonatomic, assign) UIViewContentMode bgViewContentMode;
+
+// Title View (Y position - from top of the screen)
 @property (nonatomic, strong) UIView *titleView;
 @property (nonatomic, assign) CGFloat titleViewY;
+
+// Background image
+@property (nonatomic, strong) UIImage *bgImage;
+@property (nonatomic, assign) UIViewContentMode bgViewContentMode;
+
+// Page Control (Y position - from bottom of the screen)
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, assign) CGFloat pageControlY;
-@property (nonatomic, strong) UIButton *skipButton;
+@property (nonatomic, assign) NSUInteger currentPageIndex;
+@property (nonatomic, assign, readonly) NSUInteger visiblePageIndex;
 
-@property (nonatomic, assign) NSInteger currentPageIndex;
-@property (nonatomic, assign) NSInteger visiblePageIndex;
-@property (nonatomic, strong) UIScrollView *scrollView;
+// Skip button (Y position - from bottom of the screen)
+@property (nonatomic, strong) UIButton *skipButton;
+@property (nonatomic, assign) CGFloat skipButtonY;
+@property (nonatomic, assign) CGFloat skipButtonSideMargin;
+@property (nonatomic, assign) EAViewAlignment skipButtonAlignment;
+@property (nonatomic, assign) BOOL showSkipButtonOnlyOnLastPage;
+
+@property (nonatomic, strong) EARestrictedScrollView *scrollView;
+@property (nonatomic, assign) BOOL scrollingEnabled;
 @property (nonatomic, strong) NSArray *pages;
 
 - (id)initWithFrame:(CGRect)frame andPages:(NSArray *)pagesArray;
 
 - (void)showInView:(UIView *)view animateDuration:(CGFloat)duration;
+- (void)showInView:(UIView *)view animateDuration:(CGFloat)duration withInitialPageIndex:(NSUInteger)initialPageIndex;
 - (void)hideWithFadeOutDuration:(CGFloat)duration;
 
-- (void)setCurrentPageIndex:(NSInteger)currentPageIndex;
-- (void)setCurrentPageIndex:(NSInteger)currentPageIndex animated:(BOOL)animated;
+- (void)setCurrentPageIndex:(NSUInteger)currentPageIndex;
+- (void)setCurrentPageIndex:(NSUInteger)currentPageIndex animated:(BOOL)animated;
+
+- (void)limitScrollingToPage:(NSUInteger)lastPageIndex;
 
 @end

@@ -9,8 +9,14 @@
 // EAIntroView
 #define COCOAPODS_POD_AVAILABLE_EAIntroView
 #define COCOAPODS_VERSION_MAJOR_EAIntroView 2
-#define COCOAPODS_VERSION_MINOR_EAIntroView 6
-#define COCOAPODS_VERSION_PATCH_EAIntroView 4
+#define COCOAPODS_VERSION_MINOR_EAIntroView 7
+#define COCOAPODS_VERSION_PATCH_EAIntroView 0
+
+// EARestrictedScrollView
+#define COCOAPODS_POD_AVAILABLE_EARestrictedScrollView
+#define COCOAPODS_VERSION_MAJOR_EARestrictedScrollView 0
+#define COCOAPODS_VERSION_MINOR_EARestrictedScrollView 1
+#define COCOAPODS_VERSION_PATCH_EARestrictedScrollView 0
 
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
@@ -29,6 +35,12 @@
 #define COCOAPODS_VERSION_MAJOR_HexColors 2
 #define COCOAPODS_VERSION_MINOR_HexColors 2
 #define COCOAPODS_VERSION_PATCH_HexColors 1
+
+// INSPullToRefresh
+#define COCOAPODS_POD_AVAILABLE_INSPullToRefresh
+#define COCOAPODS_VERSION_MAJOR_INSPullToRefresh 1
+#define COCOAPODS_VERSION_MINOR_INSPullToRefresh 0
+#define COCOAPODS_VERSION_PATCH_INSPullToRefresh 2
 
 // JVFloatLabeledTextField
 #define COCOAPODS_POD_AVAILABLE_JVFloatLabeledTextField
@@ -118,7 +130,7 @@
 #define COCOAPODS_POD_AVAILABLE_SAMTextView
 #define COCOAPODS_VERSION_MAJOR_SAMTextView 0
 #define COCOAPODS_VERSION_MINOR_SAMTextView 2
-#define COCOAPODS_VERSION_PATCH_SAMTextView 1
+#define COCOAPODS_VERSION_PATCH_SAMTextView 2
 
 // SAMWebView
 #define COCOAPODS_POD_AVAILABLE_SAMWebView

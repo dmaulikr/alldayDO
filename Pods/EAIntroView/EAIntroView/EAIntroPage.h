@@ -1,18 +1,21 @@
 //
 //  EAIntroPage.h
 //
-//  Copyright (c) 2013-2014 Evgeny Aleksandrov. License: MIT.
+//  Copyright (c) 2013-2015 Evgeny Aleksandrov. License: MIT.
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void (^VoidBlock)();
 
 @interface EAIntroPage : NSObject
 
-// background used for cross-dissolve
+// background image or color used for cross-dissolve
 @property (nonatomic, strong) UIImage *bgImage;
+@property (nonatomic, strong) UIColor *bgColor;
+
 // show or hide EAIntroView titleView on this page (default YES)
-@property (nonatomic, assign) bool showTitleView;
+@property (nonatomic, assign) BOOL showTitleView;
 
 
 // properties for default EAIntroPage layout
@@ -41,6 +44,8 @@ typedef void (^VoidBlock)();
 @property (nonatomic, assign) CGFloat descPositionY;
 
 @property (nonatomic, strong) NSArray *subviews;
+
+@property (nonatomic, assign) CGFloat alpha;
 
 @property (nonatomic,copy) VoidBlock onPageDidLoad;
 @property (nonatomic,copy) VoidBlock onPageDidAppear;

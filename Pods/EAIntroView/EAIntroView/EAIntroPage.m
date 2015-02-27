@@ -1,13 +1,14 @@
 //
 //  EAIntroPage.m
 //
-//  Copyright (c) 2013-2014 Evgeny Aleksandrov. License: MIT.
+//  Copyright (c) 2013-2015 Evgeny Aleksandrov. License: MIT.
 
 #import "EAIntroPage.h"
 
 #define DEFAULT_DESCRIPTION_LABEL_SIDE_PADDING 25
 #define DEFAULT_TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0]
 #define DEFAULT_LABEL_COLOR [UIColor whiteColor]
+#define DEFAULT_BG_COLOR [UIColor clearColor]
 #define DEFAULT_DESCRIPTION_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:13.0]
 #define DEFAULT_TITLE_IMAGE_Y_POSITION 50.0f
 #define DEFAULT_TITLE_LABEL_Y_POSITION 160.0f
@@ -32,7 +33,9 @@
         _desc = @"";
         _descFont = DEFAULT_DESCRIPTION_FONT;
         _descColor = DEFAULT_LABEL_COLOR;
+        _bgColor = DEFAULT_BG_COLOR;
         _showTitleView = YES;
+        _alpha = 1.f;
     }
     return self;
 }

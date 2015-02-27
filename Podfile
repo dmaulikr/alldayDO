@@ -13,5 +13,6 @@ pod 'SSToolkit'
 pod 'PNChart'
 pod 'EAIntroView'
 pod 'NGAParallaxMotion'
-pod "TSMessages"
+pod 'TSMessages'
 pod 'iRate'
+pod 'INSPullToRefresh'

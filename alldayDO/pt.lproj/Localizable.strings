@@ -39,6 +39,9 @@
 
 "Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar" = "Suas atividades ficam aqui \nSeus lembretes aparecem aqui e são fáceis de editar";
 "noReminderAlert"= "Nenhum alerta agendado";
+"pullToRefresh" = "Puxe para atualizar";
+"releaseToRefresh" = "Solte para atualizar";
+"loading" = "Carregando...";
 
 // ADDetailReminderViewController
 

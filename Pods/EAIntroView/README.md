@@ -1,7 +1,7 @@
 #EAIntroView - simple iOS Introductions
 
-![BackgroundImage](https://raw.github.com/ealeksandrov/EAIntroView/master/1.png)
-![BackgroundImage](https://raw.github.com/ealeksandrov/EAIntroView/master/2.png)
+![BackgroundImage](https://raw.githubusercontent.com/ealeksandrov/EAIntroView/master/Screenshot01.png)
+![BackgroundImage](https://raw.githubusercontent.com/ealeksandrov/EAIntroView/master/Screenshot02.png)
 
 This is highly customizable drop-in solution for introduction views.
 Some features (remember, most features are optional and can be turned off):
@@ -39,13 +39,11 @@ Some features (remember, most features are optional and can be turned off):
 	* setCurrentPageIndex:animated:
 * storyboard/IB support
 
-License: MIT.
-
 ##CocoaPods
 
 [CocoaPods](http://cocoapods.org/) is the recommended way to use EAIntroView in your project.
 
-* Simply add this line to your `Podfile`: `pod 'EAIntroView', '~> 2.6.0'`
+* Simply add this line to your `Podfile`: `pod 'EAIntroView', '~> 2.7.0'`
 * Run `pod install`.
 * Include with `#import "EAIntroView.h"` to use it wherever you need.
 * Subscribe to the `EAIntroDelegate` to enable delegate/callback interaction.
@@ -53,6 +51,7 @@ License: MIT.
 ##Manual installation
 
 * Add `EAIntroPage` and `EAIntroView` headers and implementations to your project (4 files total).
+* Add [EARestrictedScrollView](https://github.com/ealeksandrov/EARestrictedScrollView) header and implementation to your project (2 files total).
 * Include with `#import "EAIntroView.h"` to use it wherever you need.
 * Subscribe to the `EAIntroDelegate` to enable delegate/callback interaction.
 
@@ -83,10 +82,8 @@ EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:@"IntroPage"];
 page3.bgImage = [UIImage imageNamed:@"bg2"];
 ```
 
-
 ###Step 2 - Create Introduction View
 Once all pages have been created,  you are ready to create the introduction view. Just pass them in right order in the introduction view. You can also pass array of pages after IntroView's initialization, it will rebuild its contents.
-
 
 ```objc
 EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
@@ -105,11 +102,19 @@ Don't forget to set the delegate if you want to use any callbacks.
 ```
 
 ###Storyboard/IB
-Since 1.3.0 EAIntroView supports init from IB. Since 2.0.0 EAIntroPage supports it too.
+Since 1.3.0 `EAIntroView` supports init from IB. Since 2.0.0 `EAIntroPage` supports it too.
 
-1. Drop UIView to your IB document.
+1. Drop `UIView` to your IB document.
 2. Set its class to `EAIntroView`.
 3. Create `IBOutlet` property in your view controller: `@property(nonatomic,weak) IBOutlet EAIntroView *introView;`.
 4. Connect `IBOutlet` with `EAIntroView` in IB.
 5. Build array of pages (you can use `pageWithCustomViewFromNibNamed:` here with separate nibs for each page).
 6. Pass pages array to `EAIntroView` property in `setPages:`.
+
+##Author
+
+Created and maintained by Evgeny Aleksandrov ([@EAleksandrov](https://twitter.com/EAleksandrov)).
+
+## License
+
+`EAIntroView` is available under the MIT license. See the LICENSE file for more info.

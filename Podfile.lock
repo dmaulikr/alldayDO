@@ -1,9 +1,12 @@
 PODS:
-  - EAIntroView (2.6.4)
+  - EAIntroView (2.7.0):
+    - EARestrictedScrollView (~> 0.1.0)
+  - EARestrictedScrollView (0.1.0)
   - GoogleAnalytics-iOS-SDK (3.10):
     - GoogleAnalytics-iOS-SDK/Core (= 3.10)
   - GoogleAnalytics-iOS-SDK/Core (3.10)
   - HexColors (2.2.1)
+  - INSPullToRefresh (1.0.2)
   - iOS-blur (0.0.5)
   - iRate (1.11.3)
   - JVFloatLabeledTextField (1.0.2)
@@ -22,7 +25,7 @@ PODS:
   - SAMLoadingView (0.1.0)
   - SAMRateLimit (0.2.0)
   - SAMTextField (0.1.2)
-  - SAMTextView (0.2.1)
+  - SAMTextView (0.2.2)
   - SAMWebView (0.2.1)
   - SSToolkit (2.0.0):
     - SAMAddressBar
@@ -45,6 +48,7 @@ PODS:
 DEPENDENCIES:
   - EAIntroView
   - GoogleAnalytics-iOS-SDK
+  - INSPullToRefresh
   - iOS-blur
   - iRate
   - JVFloatLabeledTextField
@@ -57,9 +61,11 @@ DEPENDENCIES:
   - uiview-frame-helpers
 
 SPEC CHECKSUMS:
-  EAIntroView: 8f66dc6b79f2d52db26af8fc5476a05ffc549d4c
+  EAIntroView: 2284bb6d9105035cb09f8952933e83591f0a81ca
+  EARestrictedScrollView: 6023847998f13e2d80dff2d575181c2598349507
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  INSPullToRefresh: e34bc80efc480f748ea8b0647974cb8fe7ffe4a0
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
   iRate: 5e1978bac8b3f3f0296dbeccc0dd7b50e6e50657
   JVFloatLabeledTextField: c1ad6b4b5bd77115cfe6c71ba4c023866df5c4cf
@@ -77,7 +83,7 @@ SPEC CHECKSUMS:
   SAMLoadingView: 11b746311268140f6a2380723215fe96a6d15dee
   SAMRateLimit: f47a9961333e2d44fe189ef2233cee48012905ee
   SAMTextField: 10e2252e15f2e43f67f71a4399928ed10d884076
-  SAMTextView: 1062a784ba7b2080b0c17748001c416b53010b4b
+  SAMTextView: c37f114b5bbf3260d804453aa9614b721714646e
   SAMWebView: e615d50d3683b9b4fd3e10da9d079ed03230ee24
   SSToolkit: 64d8bb043b4f36da68936ddbb4ec4e8cb3c5a8df
   TSMessages: b2b5dc71f65146387e51f2600bb0eb8f3a6c4ab8

@@ -52,6 +52,7 @@
 		70F106071A9E9EB00042EBD5 /* alldayDOToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		70F1060B1A9E9F830042EBD5 /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
 		70F1060C1A9EA02E0042EBD5 /* ADTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D9ED11A43717A00E900D1 /* ADTodayCell.swift */; };
+		70F88D7B1AA006A100BAEF33 /* INSLabelPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F88D7A1AA006A000BAEF33 /* INSLabelPullToRefresh.m */; };
 		71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADEditReminderViewController.m */; };
 		710D9C861A60B6D100433069 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		710D9C871A6156C600433069 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
@@ -186,6 +187,8 @@
 		70F106001A9E9EB00042EBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F106011A9E9EB00042EBD5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		70F106031A9E9EB00042EBD5 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		70F88D791AA006A000BAEF33 /* INSLabelPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSLabelPullToRefresh.h; sourceTree = "<group>"; };
+		70F88D7A1AA006A000BAEF33 /* INSLabelPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSLabelPullToRefresh.m; sourceTree = "<group>"; };
 		71018AA1192960C000660C17 /* ADEditReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADEditReminderViewController.h; sourceTree = "<group>"; };
 		71018AA2192960C000660C17 /* ADEditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADEditReminderViewController.m; sourceTree = "<group>"; };
 		711F983E198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ADToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -331,6 +334,15 @@
 				70F106001A9E9EB00042EBD5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70F88D781AA0066B00BAEF33 /* INSLabelPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				70F88D791AA006A000BAEF33 /* INSLabelPullToRefresh.h */,
+				70F88D7A1AA006A000BAEF33 /* INSLabelPullToRefresh.m */,
+			);
+			path = INSLabelPullToRefresh;
 			sourceTree = "<group>";
 		};
 		71018AAA192967D500660C17 /* Support */ = {
@@ -528,6 +540,7 @@
 		71D28B3B1929510A0047F291 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				70F88D781AA0066B00BAEF33 /* INSLabelPullToRefresh */,
 				71B96AFE194D4DC90042023E /* ADAppDelegate.h */,
 				71B96AFF194D4DC90042023E /* ADAppDelegate.m */,
 				7077B8791A2E29A800841BE5 /* ADStyleSheet.swift */,
@@ -922,6 +935,7 @@
 				70BDEDC01A9EAF35006CAAA2 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
 				70BDEDB91A9EA942006CAAA2 /* ADLocalNotification.m in Sources */,
 				7077B87A1A2E29A900841BE5 /* ADStyleSheet.swift in Sources */,
+				70F88D7B1AA006A100BAEF33 /* INSLabelPullToRefresh.m in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
 				71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */,
 				713B9BA519CF79E300F253C8 /* ADWalkthrough.m in Sources */,

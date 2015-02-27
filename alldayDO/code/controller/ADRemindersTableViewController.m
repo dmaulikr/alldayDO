@@ -19,17 +19,20 @@
 #import "PNChart.h"
 
 #import <NGAParallaxMotion.h>
+#import <INSPullToRefresh/INSPullToRefreshBackgroundView.h>
+#import <INSPullToRefresh/INSDefaultPullToRefresh.h>
+
+#import "INSLabelPullToRefresh.h"
 
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
-@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate>
+@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
 @property (nonatomic, strong) UIAlertView *alertView;
 @property (nonatomic, strong) UIView *blurView;
 @property (nonatomic, strong) UITextView *emptyMessage;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (void)_applicationDidReceiveLocalNotificationOnActive:(NSNotification *)notification;
 - (void)_applicationDidReceiveLocalNotificationOnBackground:(NSNotification *)notification;
@@ -37,13 +40,13 @@
 - (void)_addSubView;
 - (void)_addNotificationCenter;
 - (void)_addParallaxEffect;
+- (void)_addRefreshControl;
 
 - (void)_adjustHexaconSelect:(id)sender;
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
-- (void)_refreshTableView;
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_showBlurViewWithAnimation;
@@ -105,14 +108,6 @@
     return _emptyMessage;
 }
 
-- (UIRefreshControl *)refreshControl {
-    if (!_refreshControl) {
-        _refreshControl = [[UIRefreshControl alloc] init];
-        [_refreshControl addTarget:self action:@selector(_refreshTableView) forControlEvents:UIControlEventValueChanged];
-    }
-    return _refreshControl;
-}
-
 #pragma mark - UIView Lifecycle Methods -
 
 - (void)viewDidLoad {
@@ -121,6 +116,7 @@
     [self _addSubView];
     [self _addNotificationCenter];
     [self _addParallaxEffect];
+    [self _addRefreshControl];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -160,7 +156,6 @@
 - (void)_addSubView {
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
-    [self.tableView addSubview:self.refreshControl];
 }
 
 - (void)_addNotificationCenter {
@@ -183,6 +178,27 @@
     self.doneReminders.parallaxIntensity = parallaxIntensity;
     self.hexaconUndoneButton.parallaxIntensity = parallaxIntensity;
     self.undoneReminders.parallaxIntensity = parallaxIntensity;
+}
+
+- (void)_addRefreshControl {
+    [self.tableView ins_addPullToRefreshWithHeight:60.0 handler:^(UIScrollView *scrollView) {
+        int64_t delayInSeconds = 1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self _reloadData];
+            [scrollView ins_endPullToRefresh];
+            
+        });
+    }];
+    
+    CGRect defaultFrame = CGRectMake(0, 0, self.tableView.width, 60.0);
+    UIView <INSPullToRefreshBackgroundViewDelegate> *pullToRefresh = [[INSLabelPullToRefresh alloc] initWithFrame:defaultFrame
+                                                                                                    noneStateText:NSLocalizedString(@"pullToRefresh", nil)
+                                                                                               triggeredStateText:NSLocalizedString(@"releaseToRefresh", nil)
+                                                                                                 loadingStateText:NSLocalizedString(@"loading", nil)];
+    self.tableView.ins_pullToRefreshBackgroundView.dragToTriggerOffset = 60.0;
+    self.tableView.ins_pullToRefreshBackgroundView.delegate = pullToRefresh;
+    [self.tableView.ins_pullToRefreshBackgroundView addSubview:pullToRefresh];
 }
 
 - (void)_adjustHexaconSelect:(id)sender {
@@ -244,12 +260,6 @@
     [self presentViewController:newReminderViewController animated:YES completion:^{
         [self _showBlurViewWithAnimation];
     }];
-}
-
-- (void)_refreshTableView {
-    [self.refreshControl beginRefreshing];
-    [self _reloadData];
-    [self.refreshControl endRefreshing];
 }
 
 - (void)_reloadData {

@@ -6,11 +6,9 @@
 //  Copyright (c) 2015 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADToday.h"
-
 #import <CoreData/CoreData.h>
 
-
+#import "ADToday.h"
 #import "ADModel.h"
 
 @interface ADToday ()
