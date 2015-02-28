@@ -454,7 +454,6 @@
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
 }
 
-
 #pragma mark - UIStoryboard Methods -
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -162,6 +162,7 @@
         NSLocalizedString(@"title2", nil),
         NSLocalizedString(@"title3", nil),
         NSLocalizedString(@"title4", nil),
+        NSLocalizedString(@"title5", nil)
     ];
     
     int index = arc4random() % titles.count;

@@ -62,6 +62,12 @@
 "Nunca" = "Never";
 "Uma única vez"= "Just one time";
 
+"title1" = "WOW! I did it!";
+"title2" = "Productivity says thanks!";
+"title3" = "One more done activity!";
+"title4" = "alldayDO reminded me";
+"title5" = "ARRIBA! Task completed!";
+
 // ADAboutViewController
 
 "about" = "About";
@@ -80,10 +86,6 @@
 
 "Próximo" = "Next";
 
-"title1" = "WOW! I did it!";
-"title2" = "Productivity says thanks!";
-"title3" = "One more done activity!";
-"title4" = "alldayDO reminded me";
 
 // ADFeedbackViewController
 
@@ -105,7 +107,7 @@
 
 // ADLocalNotification
 
-"Você lembrou de %@?" = "Did you remember to %@ ?";
+"Você lembrou de %@?" = "Did you remember to %@?";
 "Hey, não esqueceu de %@ né?" = "Hey, Didn't you forget to %@, did you?";
 "Tá na hora de %@!" = "It's time to %@!";
 "Passando pra lembrar que chegou a hora de %@!" = "Just checking to remember that's %@ time!";
@@ -113,6 +115,9 @@
 "Chegou a hora de %@!" =  "It's time to %@!";
 "Agora é hora de %@!" = "Now it's time to %@!";
 "Parem as máquinas! É hora de %@." = "Stop all the machines! It's time to %@.";
+"PRE PA RA! Que é hora de fazer %@" = "Wait! It's time to %@";
+"Alô? Aqui é o alldayDO lembrando que você pediu pra lembrar de %@" = "Hello! Here is the alldayDO reminding you to %@";
+
 
 "concluir a tarefa" = "complete the task";
 

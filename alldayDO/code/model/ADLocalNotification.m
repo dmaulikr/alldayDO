@@ -44,7 +44,9 @@
         NSLocalizedString(@"Não se esqueça de %@ heim?", nil),
         NSLocalizedString(@"Chegou a hora de %@!", nil),
         NSLocalizedString(@"Agora é hora de %@!", nil),
-        NSLocalizedString(@"Parem as máquinas! É hora de %@.", nil)
+        NSLocalizedString(@"Parem as máquinas! É hora de %@.", nil),
+        NSLocalizedString(@"PRE PA RA! Que é hora de fazer %@", nil),
+        NSLocalizedString(@"Alô? Aqui é o alldayDO lembrando que você pediu pra lembrar de %@", nil)
     ];
 
     int index = arc4random() % messages.count;

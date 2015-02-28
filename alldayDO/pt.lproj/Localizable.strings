@@ -62,6 +62,12 @@
 "Nunca" = "Nunca";
 "Uma única vez"= "Uma única vez";
 
+"title1" = "WOW! Eu fiz!";
+"title2" = "A produtividade agradece!";
+"title3" = "Mais uma atividade completa!";
+"title4" = "alldayDO me lembrou!";
+"title5" = "ARRIBA! Tarefa completa!";
+
 // ADAboutViewController
 
 "about" = "Sobre";
@@ -79,11 +85,6 @@
 "Anualmente" = "Anualmente";
 
 "Próximo" = "Próximo";
-
-"title1" = "WOW! Eu fiz!";
-"title2" = "A produtividade agradece!";
-"title3" = "Mais uma atividade completa!";
-"title4" = "alldayDO me lembrou!";
 
 // ADFeedbackViewController
 
@@ -113,6 +114,8 @@
 "Chegou a hora de %@!" =  "Chegou a hora de %@!";
 "Agora é hora de %@!" = "Agora é hora de %@!";
 "Parem as máquinas! É hora de %@." = "Parem as máquinas! É hora de %@.";
+"PRE PA RA! Que é hora de fazer %@" = "PRE PA RA! Que é hora de fazer %@";
+"Alô? Aqui é o alldayDO lembrando que você pediu pra lembrar de %@" = "Alô? Aqui é o alldayDO lembrando que você pediu pra lembrar de %@";
 
 "concluir a tarefa" = "concluir a tarefa";
 
