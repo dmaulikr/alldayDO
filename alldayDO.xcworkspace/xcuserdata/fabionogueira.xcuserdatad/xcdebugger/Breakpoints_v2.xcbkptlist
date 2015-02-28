@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "alldayDO/code/controller/ADDetailReminderViewController.m"
-            timestampString = "445665732.947569"
+            timestampString = "446842209.674904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-newReminderViewController:didSaveReminder:"
             landmarkType = "5">
          </BreakpointContent>

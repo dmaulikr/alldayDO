@@ -38,7 +38,7 @@
 #pragma mark - Private Methods -
 
 - (void)_IBOutletTitle {
-    self.title = NSLocalizedString(@"settings", nil);
+    self.title = NSLocalizedString(@"about", nil);
 
     [self.aboutButton setTitle:NSLocalizedString(@"about", nil) forState:UIControlStateNormal];
     [self.seedFeedbackButton setTitle:NSLocalizedString(@"feedback", nil) forState:UIControlStateNormal];
