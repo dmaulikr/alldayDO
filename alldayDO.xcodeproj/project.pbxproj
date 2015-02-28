@@ -45,7 +45,7 @@
 		70BDEDBE1A9EA989006CAAA2 /* ADToday.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BDEDBC1A9EA989006CAAA2 /* ADToday.m */; };
 		70BDEDBF1A9EADFF006CAAA2 /* UILocalNotification+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616FC1A644AAC006C936E /* UILocalNotification+ADToolkitAdditions.m */; };
 		70BDEDC01A9EAF35006CAAA2 /* NSEntityDescription+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616FF1A644AAC006C936E /* NSEntityDescription+ADToolkitAdditions.m */; };
-		70E6FBF619BF30E000AF3CF8 /* ADAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6FBF519BF30E000AF3CF8 /* ADAboutViewController.m */; };
+		70E6FBF619BF30E000AF3CF8 /* ADAuthorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6FBF519BF30E000AF3CF8 /* ADAuthorsViewController.m */; };
 		70F105FD1A9E9EB00042EBD5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718D9EC01A436C8400E900D1 /* NotificationCenter.framework */; };
 		70F106021A9E9EB00042EBD5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F106011A9E9EB00042EBD5 /* TodayViewController.swift */; };
 		70F106041A9E9EB00042EBD5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F106031A9E9EB00042EBD5 /* MainInterface.storyboard */; };
@@ -68,7 +68,7 @@
 		71ABE85B19BA7C4800161DE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B96AFF194D4DC90042023E /* ADAppDelegate.m */; };
 		71BBFF5A19BA842200BFF5FA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */; };
-		71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */; };
+		71BBFF5D19BAB8FF00BFF5FA /* ADAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBFF5C19BAB8FF00BFF5FA /* ADAboutViewController.m */; };
 		71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 71B65C9A1A48F74000C36884 /* alldayDO.entitlements */; };
 		71CC1D9B1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 71B65C9A1A48F74000C36884 /* alldayDO.entitlements */; };
 		71D28B0219294F970047F291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D28B0119294F970047F291 /* Foundation.framework */; };
@@ -83,7 +83,7 @@
 		71D8E67D1A45057200A5B9BC /* alldayDOKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
 		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
-		71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersTableViewController.m */; };
+		71E9325519401803007C96D4 /* ADRemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E9325419401803007C96D4 /* ADRemindersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,8 +181,8 @@
 		70BDEDB71A9EA903006CAAA2 /* alldayDO-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "alldayDO-Prefix.pch"; sourceTree = "<group>"; };
 		70BDEDBB1A9EA989006CAAA2 /* ADToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADToday.h; sourceTree = "<group>"; };
 		70BDEDBC1A9EA989006CAAA2 /* ADToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADToday.m; sourceTree = "<group>"; };
-		70E6FBF419BF30E000AF3CF8 /* ADAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAboutViewController.h; sourceTree = "<group>"; };
-		70E6FBF519BF30E000AF3CF8 /* ADAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAboutViewController.m; sourceTree = "<group>"; };
+		70E6FBF419BF30E000AF3CF8 /* ADAuthorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthorsViewController.h; sourceTree = "<group>"; };
+		70E6FBF519BF30E000AF3CF8 /* ADAuthorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAuthorsViewController.m; sourceTree = "<group>"; };
 		70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = alldayDOToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F106001A9E9EB00042EBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F106011A9E9EB00042EBD5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -222,8 +222,8 @@
 		71B96AFE194D4DC90042023E /* ADAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAppDelegate.h; sourceTree = "<group>"; };
 		71B96AFF194D4DC90042023E /* ADAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAppDelegate.m; sourceTree = "<group>"; };
 		71BBFF5919BA842200BFF5FA /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		71BBFF5B19BAB8FF00BFF5FA /* ADSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSettingsViewController.h; sourceTree = "<group>"; };
-		71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSettingsViewController.m; sourceTree = "<group>"; };
+		71BBFF5B19BAB8FF00BFF5FA /* ADAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAboutViewController.h; sourceTree = "<group>"; };
+		71BBFF5C19BAB8FF00BFF5FA /* ADAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAboutViewController.m; sourceTree = "<group>"; };
 		71D28AFE19294F970047F291 /* alldayDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alldayDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D28B0119294F970047F291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71D28B0319294F970047F291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,8 +243,8 @@
 		71D8E6781A45057200A5B9BC /* alldayDOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOKitTests.m; sourceTree = "<group>"; };
 		71DD14E8197DD46C003F9059 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
 		71E18B92198C59E2007C7467 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		71E9325319401803007C96D4 /* ADRemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersTableViewController.h; sourceTree = "<group>"; };
-		71E9325419401803007C96D4 /* ADRemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersTableViewController.m; sourceTree = "<group>"; };
+		71E9325319401803007C96D4 /* ADRemindersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRemindersViewController.h; sourceTree = "<group>"; };
+		71E9325419401803007C96D4 /* ADRemindersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADRemindersViewController.m; sourceTree = "<group>"; };
 		7A886D478D3C0BAC779D5179 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C342DAE7F9404DE4B305DC50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B6814DDCACB0F14E9DC045 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -524,14 +524,14 @@
 			children = (
 				71018AA1192960C000660C17 /* ADEditReminderViewController.h */,
 				71018AA2192960C000660C17 /* ADEditReminderViewController.m */,
-				71E9325319401803007C96D4 /* ADRemindersTableViewController.h */,
-				71E9325419401803007C96D4 /* ADRemindersTableViewController.m */,
+				71E9325319401803007C96D4 /* ADRemindersViewController.h */,
+				71E9325419401803007C96D4 /* ADRemindersViewController.m */,
 				708481E8199BC90B008BF6A5 /* ADDetailReminderViewController.h */,
 				708481E9199BC90B008BF6A5 /* ADDetailReminderViewController.m */,
-				71BBFF5B19BAB8FF00BFF5FA /* ADSettingsViewController.h */,
-				71BBFF5C19BAB8FF00BFF5FA /* ADSettingsViewController.m */,
-				70E6FBF419BF30E000AF3CF8 /* ADAboutViewController.h */,
-				70E6FBF519BF30E000AF3CF8 /* ADAboutViewController.m */,
+				71BBFF5B19BAB8FF00BFF5FA /* ADAboutViewController.h */,
+				71BBFF5C19BAB8FF00BFF5FA /* ADAboutViewController.m */,
+				70E6FBF419BF30E000AF3CF8 /* ADAuthorsViewController.h */,
+				70E6FBF519BF30E000AF3CF8 /* ADAuthorsViewController.m */,
 			);
 			name = Controller;
 			path = controller;
@@ -925,11 +925,11 @@
 				711F9849198DAB700097AA22 /* NSString+ADToolkitAdditions.m in Sources */,
 				710D9C871A6156C600433069 /* alldayDO.xcdatamodeld in Sources */,
 				71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */,
-				70E6FBF619BF30E000AF3CF8 /* ADAboutViewController.m in Sources */,
+				70E6FBF619BF30E000AF3CF8 /* ADAuthorsViewController.m in Sources */,
 				71B96B00194D4DC90042023E /* ADAppDelegate.m in Sources */,
 				70BDED811A9EA504006CAAA2 /* ADLembrete+ADToolkitAdditions.m in Sources */,
 				71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */,
-				71BBFF5D19BAB8FF00BFF5FA /* ADSettingsViewController.m in Sources */,
+				71BBFF5D19BAB8FF00BFF5FA /* ADAboutViewController.m in Sources */,
 				70BDEDBF1A9EADFF006CAAA2 /* UILocalNotification+ADToolkitAdditions.m in Sources */,
 				718FB1C21A35344B0059F1B2 /* ADIconCell.swift in Sources */,
 				70BDEDC01A9EAF35006CAAA2 /* NSEntityDescription+ADToolkitAdditions.m in Sources */,
@@ -937,7 +937,7 @@
 				7077B87A1A2E29A900841BE5 /* ADStyleSheet.swift in Sources */,
 				70F88D7B1AA006A100BAEF33 /* INSLabelPullToRefresh.m in Sources */,
 				71D28B1019294F970047F291 /* main.m in Sources */,
-				71E9325519401803007C96D4 /* ADRemindersTableViewController.m in Sources */,
+				71E9325519401803007C96D4 /* ADRemindersViewController.m in Sources */,
 				713B9BA519CF79E300F253C8 /* ADWalkthrough.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

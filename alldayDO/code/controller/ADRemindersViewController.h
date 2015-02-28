@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ADRemindersViewModel.h"
 
-@interface ADRemindersTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ADRemindersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -21,7 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *doneReminders;
 @property (weak, nonatomic) IBOutlet UILabel *undoneReminders;
 
-- (IBAction)newReminderTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UITabBarItem *addButton;
+@property (weak, nonatomic) IBOutlet UITabBarItem *settingsButton;
+@property (weak, nonatomic) IBOutlet UITabBarItem *aboutButton;
+
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 - (IBAction)hexaconAllTouched:(id)sender;
 - (IBAction)hexaconDoneTouched:(id)sender;

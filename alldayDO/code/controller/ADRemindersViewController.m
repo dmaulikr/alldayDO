@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
 //
 
-#import "ADRemindersTableViewController.h"
+#import "ADRemindersViewController.h"
 
 #import "ADModel.h"
 #import "ADReminderCell.h"
@@ -15,6 +15,8 @@
 #import "ADEditReminderViewControllerDelegate.h"
 
 #import "ADDetailReminderViewController.h"
+
+#import "ADAboutViewController.h"
 
 #import "PNChart.h"
 
@@ -26,7 +28,7 @@
 
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
-@interface ADRemindersTableViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate>
+@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -41,12 +43,14 @@
 - (void)_addNotificationCenter;
 - (void)_addParallaxEffect;
 - (void)_addRefreshControl;
+- (void)_addTitleButton;
 
 - (void)_adjustHexaconSelect:(id)sender;
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
 - (void)_presentNewReminderViewController;
+- (void)_presentAboutViewController;
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_showBlurViewWithAnimation;
@@ -57,7 +61,7 @@
 
 @end
 
-@implementation ADRemindersTableViewController
+@implementation ADRemindersViewController
 
 #pragma mark - Getter Methods -
 
@@ -117,7 +121,9 @@
     [self _addNotificationCenter];
     [self _addParallaxEffect];
     [self _addRefreshControl];
+    [self _addTitleButton];
     
+    self.tabBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -126,6 +132,7 @@
     [super viewWillAppear:animated];
     [[GAI sharedInstance] sendScreen:@"RemindersScreen" withCategory:@"Screen"];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.tabBar setSelectedItem:nil];
     [self _reloadData];
 }
 
@@ -201,6 +208,12 @@
     [self.tableView.ins_pullToRefreshBackgroundView addSubview:pullToRefresh];
 }
 
+- (void)_addTitleButton {
+    self.addButton.title = NSLocalizedString(@"addButton", nil);
+    self.settingsButton.title = NSLocalizedString(@"settingsButton", nil);
+    self.aboutButton.title = NSLocalizedString(@"aboutButton", nil);
+}
+
 - (void)_adjustHexaconSelect:(id)sender {
     BOOL selected = NO;
     self.hexaconAllButton.selected = selected;
@@ -260,6 +273,11 @@
     [self presentViewController:newReminderViewController animated:YES completion:^{
         [self _showBlurViewWithAnimation];
     }];
+}
+
+- (void)_presentAboutViewController {
+    ADAboutViewController *aboutViewController = (ADAboutViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"aboutViewController"];
+    [self.navigationController pushViewController:aboutViewController animated:YES];
 }
 
 - (void)_reloadData {
@@ -353,10 +371,6 @@
 
 #pragma mark - IBOutlet Methods -
 
-- (IBAction)newReminderTouched:(id)sender {
-    [self _presentNewReminderViewController];
-}
-
 - (IBAction)hexaconAllTouched:(id)sender {
     [[GAI sharedInstance] sendAction:@"CheckAllActivity" withCategory:@"Action"];
     
@@ -385,10 +399,12 @@
     [newReminderViewController dismissViewControllerAnimated:YES completion:^{
         [self.viewModel executeFetchRequestForAll];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+        [self.tabBar setSelectedItem:nil];
     }];
 }
 
 - (void)newReminderViewControllerDidCancelReminder:(ADEditReminderViewController *)newReminderViewController {
+    [self.tabBar setSelectedItem:nil];
 }
 
 #pragma mark - UIAlertViewDelegate Methods -
@@ -400,6 +416,16 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - UITabBarDelegate Methods -
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (item == self.addButton) {
+        [self _presentNewReminderViewController];
+    } else if (item == self.aboutButton) {
+        [self _presentAboutViewController];
     }
 }
 
@@ -416,7 +442,7 @@
     }
 }
 
-#pragma mark - UIResponder Methods
+#pragma mark - UIResponder Methods -
 
 - (BOOL)canBecomeFirstResponder {
     return YES;

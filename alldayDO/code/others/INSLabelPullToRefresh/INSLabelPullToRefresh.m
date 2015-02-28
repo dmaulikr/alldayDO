@@ -56,7 +56,7 @@
         self.contentView.backgroundColor = [UIColor colorWithRed:1 green:0.81 blue:0.19 alpha:1];
     } else {
         self.label.text = self.loadingState;
-        self.contentView.backgroundColor = [UIColor colorWithRed:0.75 green:0.2 blue:0.17 alpha:1];
+        self.contentView.backgroundColor = [UIColor sam_colorWithHex:@"56BD6D"];
     }
 }
 @end

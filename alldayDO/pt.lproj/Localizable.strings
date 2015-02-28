@@ -43,6 +43,10 @@
 "releaseToRefresh" = "Solte para atualizar";
 "loading" = "Carregando...";
 
+"addButton" = "Novo";
+"settingsButton" = "Ajustes";
+"aboutButton" = "Sobre";
+
 // ADDetailReminderViewController
 
 "Mês" = "Mês";
