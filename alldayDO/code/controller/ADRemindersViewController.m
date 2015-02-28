@@ -316,7 +316,7 @@
 }
 
 - (void)_hideSearchBar {
-    [self.tableView setContentOffset:CGPointMake(0, 44)];
+    [self.tableView setContentOffset:CGPointMake(0, 44) animated:YES];
 }
 
 - (void)_fetchRequestForAll {
