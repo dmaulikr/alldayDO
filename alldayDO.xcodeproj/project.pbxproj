@@ -11,12 +11,14 @@
 		701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
 		701F65731A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
 		701F65741A9EB4C0005E3EB6 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
-		706616EC1A644A57006C936E /* ADLembrete.h in Headers */ = {isa = PBXBuildFile; fileRef = 706616E61A644A57006C936E /* ADLembrete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		705006081AA2424C00386C4D /* ADLembrete.h in Headers */ = {isa = PBXBuildFile; fileRef = 705006041AA2424C00386C4D /* ADLembrete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		705006091AA2424C00386C4D /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 705006051AA2424C00386C4D /* ADLembrete.m */; };
+		7050060A1AA2424C00386C4D /* ADLembreteConfirmado.h in Headers */ = {isa = PBXBuildFile; fileRef = 705006061AA2424C00386C4D /* ADLembreteConfirmado.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7050060B1AA2424C00386C4D /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 705006071AA2424C00386C4D /* ADLembreteConfirmado.m */; };
+		7050060E1AA2428200386C4D /* ADCategoria.h in Headers */ = {isa = PBXBuildFile; fileRef = 7050060C1AA2428200386C4D /* ADCategoria.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7050060F1AA2428200386C4D /* ADCategoria.m in Sources */ = {isa = PBXBuildFile; fileRef = 7050060D1AA2428200386C4D /* ADCategoria.m */; };
 		706616ED1A644A57006C936E /* ADModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 706616E71A644A57006C936E /* ADModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		706616EE1A644A57006C936E /* ADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616E81A644A57006C936E /* ADModel.m */; };
-		706616EF1A644A57006C936E /* ADLembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616E91A644A57006C936E /* ADLembrete.m */; };
-		706616F01A644A57006C936E /* ADLembreteConfirmado.h in Headers */ = {isa = PBXBuildFile; fileRef = 706616EA1A644A57006C936E /* ADLembreteConfirmado.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		706616F11A644A57006C936E /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616EB1A644A57006C936E /* ADLembreteConfirmado.m */; };
 		706617041A644AAC006C936E /* NSDate+ADToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 706616FA1A644AAC006C936E /* NSDate+ADToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		706617051A644AAC006C936E /* NSDate+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616FB1A644AAC006C936E /* NSDate+ADToolkitAdditions.m */; };
 		706617081A644AAC006C936E /* UIImage+ADToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 706616FE1A644AAC006C936E /* UIImage+ADToolkitAdditions.m */; };
@@ -143,13 +145,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7004620F1AA23C41009EB035 /* alldayDO 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "alldayDO 2.xcdatamodel"; sourceTree = "<group>"; };
 		701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = alldayDOToday.entitlements; sourceTree = "<group>"; };
-		706616E61A644A57006C936E /* ADLembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADLembrete.h; path = alldayDO/code/model/ADLembrete.h; sourceTree = SOURCE_ROOT; };
+		705006041AA2424C00386C4D /* ADLembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADLembrete.h; path = alldayDO/code/model/ADLembrete.h; sourceTree = SOURCE_ROOT; };
+		705006051AA2424C00386C4D /* ADLembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADLembrete.m; path = alldayDO/code/model/ADLembrete.m; sourceTree = SOURCE_ROOT; };
+		705006061AA2424C00386C4D /* ADLembreteConfirmado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADLembreteConfirmado.h; path = alldayDO/code/model/ADLembreteConfirmado.h; sourceTree = SOURCE_ROOT; };
+		705006071AA2424C00386C4D /* ADLembreteConfirmado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADLembreteConfirmado.m; path = alldayDO/code/model/ADLembreteConfirmado.m; sourceTree = SOURCE_ROOT; };
+		7050060C1AA2428200386C4D /* ADCategoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCategoria.h; path = alldayDO/code/model/ADCategoria.h; sourceTree = SOURCE_ROOT; };
+		7050060D1AA2428200386C4D /* ADCategoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADCategoria.m; path = alldayDO/code/model/ADCategoria.m; sourceTree = SOURCE_ROOT; };
 		706616E71A644A57006C936E /* ADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADModel.h; path = alldayDO/code/model/ADModel.h; sourceTree = SOURCE_ROOT; };
 		706616E81A644A57006C936E /* ADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADModel.m; path = alldayDO/code/model/ADModel.m; sourceTree = SOURCE_ROOT; };
-		706616E91A644A57006C936E /* ADLembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADLembrete.m; path = alldayDO/code/model/ADLembrete.m; sourceTree = SOURCE_ROOT; };
-		706616EA1A644A57006C936E /* ADLembreteConfirmado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADLembreteConfirmado.h; path = alldayDO/code/model/ADLembreteConfirmado.h; sourceTree = SOURCE_ROOT; };
-		706616EB1A644A57006C936E /* ADLembreteConfirmado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADLembreteConfirmado.m; path = alldayDO/code/model/ADLembreteConfirmado.m; sourceTree = SOURCE_ROOT; };
 		706616F81A644AAC006C936E /* ADLembrete+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ADLembrete+ADToolkitAdditions.h"; path = "alldayDO/code/support/category/ADLembrete+ADToolkitAdditions.h"; sourceTree = SOURCE_ROOT; };
 		706616F91A644AAC006C936E /* ADLembrete+ADToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ADLembrete+ADToolkitAdditions.m"; path = "alldayDO/code/support/category/ADLembrete+ADToolkitAdditions.m"; sourceTree = SOURCE_ROOT; };
 		706616FA1A644AAC006C936E /* NSDate+ADToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ADToolkitAdditions.h"; path = "alldayDO/code/support/category/NSDate+ADToolkitAdditions.h"; sourceTree = SOURCE_ROOT; };
@@ -319,11 +324,11 @@
 		70F105FE1A9E9EB00042EBD5 /* alldayDOToday */ = {
 			isa = PBXGroup;
 			children = (
-				701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */,
 				718D9ED11A43717A00E900D1 /* ADTodayCell.swift */,
-				70F106011A9E9EB00042EBD5 /* TodayViewController.swift */,
+				701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */,
 				70F106031A9E9EB00042EBD5 /* MainInterface.storyboard */,
 				70F105FF1A9E9EB00042EBD5 /* Supporting Files */,
+				70F106011A9E9EB00042EBD5 /* TodayViewController.swift */,
 			);
 			path = alldayDOToday;
 			sourceTree = "<group>";
@@ -383,8 +388,8 @@
 			children = (
 				706616FA1A644AAC006C936E /* NSDate+ADToolkitAdditions.h */,
 				706616FB1A644AAC006C936E /* NSDate+ADToolkitAdditions.m */,
-				706616FE1A644AAC006C936E /* UIImage+ADToolkitAdditions.m */,
 				706617001A644AAC006C936E /* UIImage+ADToolkitAdditions.h */,
+				706616FE1A644AAC006C936E /* UIImage+ADToolkitAdditions.m */,
 			);
 			name = Category;
 			path = ../WidgetKit;
@@ -480,10 +485,10 @@
 		71D28B0A19294F970047F291 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				70BDEDB71A9EA903006CAAA2 /* alldayDO-Prefix.pch */,
 				71D28B0B19294F970047F291 /* alldayDO-Info.plist */,
-				71D28B0F19294F970047F291 /* main.m */,
+				70BDEDB71A9EA903006CAAA2 /* alldayDO-Prefix.pch */,
 				71ABE85D19BA7C4800161DE3 /* Localizable.strings */,
+				71D28B0F19294F970047F291 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -509,11 +514,11 @@
 			isa = PBXGroup;
 			children = (
 				71D28B37192950700047F291 /* Controller */,
-				71D28B3D192954950047F291 /* View */,
-				71A2A79F1A43B5DD0026F01B /* ViewModel */,
 				71D28B3C1929513F0047F291 /* Model */,
 				71D28B3B1929510A0047F291 /* Others */,
 				71018AAA192967D500660C17 /* Support */,
+				71D28B3D192954950047F291 /* View */,
+				71A2A79F1A43B5DD0026F01B /* ViewModel */,
 			);
 			name = Code;
 			path = code;
@@ -579,12 +584,14 @@
 		71D8E65F1A44FC4500A5B9BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7050060C1AA2428200386C4D /* ADCategoria.h */,
+				7050060D1AA2428200386C4D /* ADCategoria.m */,
+				705006041AA2424C00386C4D /* ADLembrete.h */,
+				705006051AA2424C00386C4D /* ADLembrete.m */,
+				705006061AA2424C00386C4D /* ADLembreteConfirmado.h */,
+				705006071AA2424C00386C4D /* ADLembreteConfirmado.m */,
 				706616E71A644A57006C936E /* ADModel.h */,
 				706616E81A644A57006C936E /* ADModel.m */,
-				706616E61A644A57006C936E /* ADLembrete.h */,
-				706616E91A644A57006C936E /* ADLembrete.m */,
-				706616EA1A644A57006C936E /* ADLembreteConfirmado.h */,
-				706616EB1A644A57006C936E /* ADLembreteConfirmado.m */,
 			);
 			name = Model;
 			path = ../WidgetKit;
@@ -643,13 +650,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				706616EC1A644A57006C936E /* ADLembrete.h in Headers */,
-				706616F01A644A57006C936E /* ADLembreteConfirmado.h in Headers */,
 				706617041A644AAC006C936E /* NSDate+ADToolkitAdditions.h in Headers */,
 				706616ED1A644A57006C936E /* ADModel.h in Headers */,
+				7050060A1AA2424C00386C4D /* ADLembreteConfirmado.h in Headers */,
 				71D8E66A1A45057200A5B9BC /* alldayDOKit.h in Headers */,
+				705006081AA2424C00386C4D /* ADLembrete.h in Headers */,
 				70BDEDBD1A9EA989006CAAA2 /* ADToday.h in Headers */,
 				7066170A1A644AAC006C936E /* UIImage+ADToolkitAdditions.h in Headers */,
+				7050060E1AA2428200386C4D /* ADCategoria.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,10 +955,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				70BDEDBE1A9EA989006CAAA2 /* ADToday.m in Sources */,
-				706616EF1A644A57006C936E /* ADLembrete.m in Sources */,
+				705006091AA2424C00386C4D /* ADLembrete.m in Sources */,
+				7050060F1AA2428200386C4D /* ADCategoria.m in Sources */,
 				706617081A644AAC006C936E /* UIImage+ADToolkitAdditions.m in Sources */,
 				706617051A644AAC006C936E /* NSDate+ADToolkitAdditions.m in Sources */,
-				706616F11A644A57006C936E /* ADLembreteConfirmado.m in Sources */,
+				7050060B1AA2424C00386C4D /* ADLembreteConfirmado.m in Sources */,
 				706616EE1A644A57006C936E /* ADModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,9 +1334,10 @@
 		71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7004620F1AA23C41009EB035 /* alldayDO 2.xcdatamodel */,
 				71D28B1619294F970047F291 /* alldayDO.xcdatamodel */,
 			);
-			currentVersion = 71D28B1619294F970047F291 /* alldayDO.xcdatamodel */;
+			currentVersion = 7004620F1AA23C41009EB035 /* alldayDO 2.xcdatamodel */;
 			name = alldayDO.xcdatamodeld;
 			path = ../../alldayDO.xcdatamodeld;
 			sourceTree = "<group>";

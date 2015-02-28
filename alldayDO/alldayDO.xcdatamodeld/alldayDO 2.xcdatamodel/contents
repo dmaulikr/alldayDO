@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ADCategoria" representedClassName="ADCategoria" syncable="YES">
+        <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lembrete" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ADLembrete" inverseName="categoria" inverseEntity="ADLembrete" syncable="YES"/>
+    </entity>
     <entity name="ADLembrete" representedClassName="ADLembrete" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dataInicial" optional="YES" attributeType="Date" syncable="YES"/>
@@ -7,6 +11,7 @@
         <attribute name="imagem" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="periodo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="seguidos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="categoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ADCategoria" inverseName="lembrete" inverseEntity="ADCategoria" syncable="YES"/>
         <relationship name="lembretesConfirmados" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ADLembreteConfirmado" inverseName="lembrete" inverseEntity="ADLembreteConfirmado" syncable="YES"/>
     </entity>
     <entity name="ADLembreteConfirmado" representedClassName="ADLembreteConfirmado" syncable="YES">
@@ -14,7 +19,8 @@
         <relationship name="lembrete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ADLembrete" inverseName="lembretesConfirmados" inverseEntity="ADLembrete" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ADLembrete" positionX="-63" positionY="-18" width="117" height="148"/>
-        <element name="ADLembreteConfirmado" positionX="162" positionY="62" width="128" height="73"/>
+        <element name="ADLembrete" positionX="-63" positionY="-18" width="117" height="163"/>
+        <element name="ADLembreteConfirmado" positionX="160" positionY="9" width="128" height="73"/>
+        <element name="ADCategoria" positionX="-297" positionY="54" width="128" height="73"/>
     </elements>
 </model>
