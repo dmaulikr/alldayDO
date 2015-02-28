@@ -28,7 +28,7 @@
 
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
-@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate>
+@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -126,6 +126,7 @@
     [self _addTitleButton];
     [self _addScopeTitlesToSearchBar];
     
+    self.searchBar.delegate = self;
     self.tabBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -444,6 +445,15 @@
         [self _presentAboutViewController];
     }
 }
+
+#pragma mark - UISearchBarDelegate Methods -
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+}
+
 
 #pragma mark - UIStoryboard Methods -
 
