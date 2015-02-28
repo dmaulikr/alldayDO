@@ -27,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 - (IBAction)hexaconAllTouched:(id)sender;
 - (IBAction)hexaconDoneTouched:(id)sender;
 - (IBAction)hexaconUndoneTouched:(id)sender;

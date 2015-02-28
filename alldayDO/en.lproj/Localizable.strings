@@ -47,6 +47,11 @@
 "settingsButton" = "Settings";
 "aboutButton" = "About";
 
+"all" = "All";
+"personal" = "Personal";
+"home" = "Home";
+"work" = "Work";
+
 // ADDetailReminderViewController
 
 "Mês" = "Month";

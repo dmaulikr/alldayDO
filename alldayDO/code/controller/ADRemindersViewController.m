@@ -44,6 +44,7 @@
 - (void)_addParallaxEffect;
 - (void)_addRefreshControl;
 - (void)_addTitleButton;
+- (void)_addScopeTitlesToSearchBar;
 
 - (void)_adjustHexaconSelect:(id)sender;
 
@@ -54,6 +55,7 @@
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_showBlurViewWithAnimation;
+- (void)_hideSearchBar;
 
 - (void)_fetchRequestForAll;
 - (void)_fetchRequestForDoneReminders;
@@ -122,6 +124,7 @@
     [self _addParallaxEffect];
     [self _addRefreshControl];
     [self _addTitleButton];
+    [self _addScopeTitlesToSearchBar];
     
     self.tabBar.delegate = self;
     self.tableView.delegate = self;
@@ -133,6 +136,8 @@
     [[GAI sharedInstance] sendScreen:@"RemindersScreen" withCategory:@"Screen"];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tabBar setSelectedItem:nil];
+
+    [self _hideSearchBar];
     [self _reloadData];
 }
 
@@ -212,6 +217,13 @@
     self.addButton.title = NSLocalizedString(@"addButton", nil);
     self.settingsButton.title = NSLocalizedString(@"settingsButton", nil);
     self.aboutButton.title = NSLocalizedString(@"aboutButton", nil);
+}
+
+- (void)_addScopeTitlesToSearchBar {
+    self.searchBar.scopeButtonTitles = @[NSLocalizedString(@"all", nil),
+                                         NSLocalizedString(@"personal", nil),
+                                         NSLocalizedString(@"home", nil),
+                                         NSLocalizedString(@"work", nil)];
 }
 
 - (void)_adjustHexaconSelect:(id)sender {
@@ -300,6 +312,10 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.blurView.alpha = 1.0f;
     }];
+}
+
+- (void)_hideSearchBar {
+    [self.tableView setContentOffset:CGPointMake(0, 44)];
 }
 
 - (void)_fetchRequestForAll {

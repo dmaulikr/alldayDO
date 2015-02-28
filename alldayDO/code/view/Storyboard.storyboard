@@ -151,9 +151,23 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="66" sectionHeaderHeight="1" sectionFooterHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-Gz-5Sz">
-                                <rect key="frame" x="0.0" y="132" width="320" height="372"/>
+                                <rect key="frame" x="0.0" y="132" width="320" height="323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsScopeBar="YES" id="MQ1-NF-ttd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" red="0.23137254900000001" green="0.53725490200000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>All</string>
+                                        <string>Categoria 1</string>
+                                        <string>Categoria 2</string>
+                                        <string>Categoria 3</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="66" id="6hs-ir-LQe" customClass="ADReminderCell">
                                         <rect key="frame" x="0.0" y="1" width="320" height="80"/>
@@ -234,14 +248,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTI-b9-aeT">
+                            <tabBar contentMode="scaleToFill" translucent="NO" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="QTI-b9-aeT">
                                 <rect key="frame" x="0.0" y="455" width="320" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Sobre" image="about_icon" id="xTq-vX-Uhx"/>
                                     <tabBarItem title="Ajustes" image="config" id="kIj-uM-DZg"/>
                                     <tabBarItem title="Novo" image="new" id="c9F-Rz-7bP"/>
                                 </items>
+                                <color key="tintColor" red="0.2784313725" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tabBar>
                         </subviews>
                         <color key="tintColor" red="0.36862745099999999" green="0.50980392159999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -251,14 +266,14 @@
                             <constraint firstAttribute="trailing" secondItem="FQn-EG-PKv" secondAttribute="trailing" id="HVz-sM-LxS"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="Hr0-SM-LBk"/>
                             <constraint firstItem="QTI-b9-aeT" firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="JFX-TA-eAg"/>
-                            <constraint firstItem="QTI-b9-aeT" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" constant="-49" id="Kfu-vc-6OK"/>
+                            <constraint firstItem="QTI-b9-aeT" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" id="Kfu-vc-6OK"/>
                             <constraint firstItem="ieF-Gz-5Sz" firstAttribute="top" secondItem="FQn-EG-PKv" secondAttribute="bottom" id="N5p-AF-TBR"/>
-                            <constraint firstItem="QTI-b9-aeT" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" constant="-49" id="TLY-Rz-WDE"/>
+                            <constraint firstItem="QTI-b9-aeT" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" id="TLY-Rz-WDE"/>
                             <constraint firstItem="QKd-UN-YEx" firstAttribute="top" secondItem="QTI-b9-aeT" secondAttribute="bottom" id="Tsx-p4-rAJ"/>
                             <constraint firstAttribute="trailing" secondItem="ieF-Gz-5Sz" secondAttribute="trailing" id="V3c-eO-oax"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="leading" secondItem="WLG-HH-LLG" secondAttribute="leading" id="WcW-EK-f25"/>
                             <constraint firstItem="FQn-EG-PKv" firstAttribute="top" secondItem="BxK-cQ-Umf" secondAttribute="bottom" id="X5f-J9-HaA"/>
-                            <constraint firstItem="QKd-UN-YEx" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" id="Ylp-Sg-XNt"/>
+                            <constraint firstItem="QKd-UN-YEx" firstAttribute="top" secondItem="ieF-Gz-5Sz" secondAttribute="bottom" constant="49" id="Ylp-Sg-XNt"/>
                             <constraint firstAttribute="trailing" secondItem="FQn-EG-PKv" secondAttribute="trailing" id="dnh-Ps-v4Q"/>
                             <constraint firstItem="QTI-b9-aeT" firstAttribute="leading" secondItem="ieF-Gz-5Sz" secondAttribute="leading" id="e6j-X0-pRL"/>
                             <constraint firstAttribute="trailing" secondItem="BxK-cQ-Umf" secondAttribute="trailing" id="f4e-fA-YPS"/>
@@ -281,6 +296,7 @@
                         <outlet property="hexaconAllButton" destination="clV-yg-dbR" id="m0y-PW-cU8"/>
                         <outlet property="hexaconDoneButton" destination="IfA-Fn-FtX" id="iAf-Oa-J8D"/>
                         <outlet property="hexaconUndoneButton" destination="evj-qa-8Nd" id="Z4f-25-9Sq"/>
+                        <outlet property="searchBar" destination="MQ1-NF-ttd" id="eQ5-Pe-Uhd"/>
                         <outlet property="settingsButton" destination="kIj-uM-DZg" id="Xmm-Yv-sIU"/>
                         <outlet property="tabBar" destination="QTI-b9-aeT" id="6Hc-8f-rIm"/>
                         <outlet property="tableView" destination="ieF-Gz-5Sz" id="ck1-mN-q6l"/>
