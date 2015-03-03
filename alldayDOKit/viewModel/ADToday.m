@@ -9,7 +9,8 @@
 #import <CoreData/CoreData.h>
 
 #import "ADToday.h"
-#import "alldayDOKit.h"
+#import <ADLembrete.h>
+#import <ADModel.h>
 
 @interface ADToday ()
 

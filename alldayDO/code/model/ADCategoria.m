@@ -7,11 +7,10 @@
 //
 
 #import "ADCategoria.h"
-#import "ADLembrete.h"
+
 
 @implementation ADCategoria
 
 @dynamic categoria;
-@dynamic lembrete;
 
 @end

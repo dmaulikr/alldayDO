@@ -9,20 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class ADLembrete;
 
 @interface ADCategoria : NSManagedObject
 
-@property (nonatomic, retain) NSString *categoria;
-@property (nonatomic, retain) NSSet *lembrete;
-
-@end
-
-@interface ADCategoria (CoreDataGeneratedAccessors)
-
-- (void)addLembreteObject:(ADLembrete *)value;
-- (void)removeLembreteObject:(ADLembrete *)value;
-- (void)addLembrete:(NSSet *)values;
-- (void)removeLembrete:(NSSet *)values;
+@property (nonatomic, retain) NSString * categoria;
 
 @end

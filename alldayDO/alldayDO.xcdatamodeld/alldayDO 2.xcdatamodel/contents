@@ -19,8 +19,8 @@
         <relationship name="lembrete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ADLembrete" inverseName="lembretesConfirmados" inverseEntity="ADLembrete" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ADLembrete" positionX="-63" positionY="-18" width="117" height="163"/>
-        <element name="ADLembreteConfirmado" positionX="160" positionY="9" width="128" height="73"/>
         <element name="ADCategoria" positionX="-297" positionY="54" width="128" height="73"/>
+        <element name="ADLembrete" positionX="-63" positionY="-10" width="117" height="163"/>
+        <element name="ADLembreteConfirmado" positionX="160" positionY="9" width="128" height="73"/>
     </elements>
 </model>

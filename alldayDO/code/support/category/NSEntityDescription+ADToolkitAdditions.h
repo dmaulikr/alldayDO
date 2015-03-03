@@ -13,5 +13,6 @@
 
 + (id)insertNewObjectForEntityADLembrete;
 + (id)insertNewObjectForEntityADLembreteConfirmado;
++ (id)insertNewObjectForEntityADCategoria;
 
 @end
