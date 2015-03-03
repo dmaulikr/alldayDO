@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ADCategoria" representedClassName="ADCategoria" syncable="YES">
-        <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lembrete" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ADLembrete" inverseName="categoria" inverseEntity="ADLembrete" syncable="YES"/>
     </entity>
     <entity name="ADLembrete" representedClassName="ADLembrete" syncable="YES">

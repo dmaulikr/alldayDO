@@ -491,7 +491,7 @@
     } else if (self.dataTextField.isFirstResponder) {
         [self.categoriaTextField becomeFirstResponder];
         
-    }  else if (self.categoriaTextField.isFirstResponder) {
+    } else if (self.categoriaTextField.isFirstResponder) {
         if (self.actionMode == ADAddMode) {
             [self _displayBadgeIconView];
         } else {
@@ -656,7 +656,7 @@
     if (pickerView == self.periodoPickerView) {
         numberOfRows = self.viewModel.cycleType.count;
     } else if (pickerView == self.categoriaPickerView) {
-        numberOfRows = 1;
+        numberOfRows = self.viewModel.categorias.count;
     }
     return numberOfRows;;
 }
@@ -668,7 +668,8 @@
     if (pickerView == self.periodoPickerView) {
         titleForRow = [self.viewModel textForCycleType:row];
     } else if (pickerView == self.categoriaPickerView) {
-        titleForRow = @"Teste title for row categoria";
+        ADCategoria *categoria = [self.viewModel.categorias objectAtIndex:row];
+        titleForRow = categoria.descricao;
     }
     return titleForRow;
 }
@@ -677,7 +678,8 @@
     if (pickerView == self.periodoPickerView) {
         self.periodoTextField.text = [self.viewModel textForCycleType:row];
     } else if (pickerView == self.categoriaPickerView) {
-        self.categoriaTextField.text = @"Teste did select row categoria";
+        ADCategoria *categoria = [self.viewModel.categorias objectAtIndex:row];
+        self.categoriaTextField.text = categoria.descricao;
     }
 }
 

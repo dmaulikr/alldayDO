@@ -2,7 +2,7 @@
 //  ADLembreteConfirmado.h
 //  alldayDO
 //
-//  Created by Fábio Nogueira de Almeida on 28/02/15.
+//  Created by Fábio Nogueira de Almeida on 02/03/15.
 //  Copyright (c) 2015 Fábio Nogueira . All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface ADLembreteConfirmado : NSManagedObject
 
-@property (nonatomic, retain) NSDate * data;
+@property (nonatomic, retain) NSDate *data;
 @property (nonatomic, retain) ADLembrete *lembrete;
 
 @end

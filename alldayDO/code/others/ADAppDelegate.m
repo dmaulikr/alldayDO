@@ -35,7 +35,7 @@
 - (NSFetchedResultsController *)fetchedResultsControllerForCategoria {
     if (!_fetchedResultsControllerForCategoria) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADCategoria"];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"categoria" ascending:YES]];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
         _fetchedResultsControllerForCategoria = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[ADModel sharedInstance].managedObjectContext
                                                                           sectionNameKeyPath:nil
@@ -97,14 +97,15 @@
     NSArray *categorias = [self.fetchedResultsControllerForCategoria fetchedObjects];
     if (categorias.count != 3) {
         ADCategoria *categoria1 = [NSEntityDescription insertNewObjectForEntityADCategoria];
-        categoria1.categoria = NSLocalizedString(@"personal", nil);
+        categoria1.descricao = NSLocalizedString(@"personal", nil);
+        [[ADModel sharedInstance] saveChanges];
         
         ADCategoria *categoria2 = [NSEntityDescription insertNewObjectForEntityADCategoria];
-        categoria2.categoria = NSLocalizedString(@"home", nil);
+        categoria2.descricao = NSLocalizedString(@"home", nil);
+        [[ADModel sharedInstance] saveChanges];
         
         ADCategoria *categoria3 = [NSEntityDescription insertNewObjectForEntityADCategoria];
-        categoria3.categoria = NSLocalizedString(@"work", nil);
-        
+        categoria3.descricao = NSLocalizedString(@"work", nil);
         [[ADModel sharedInstance] saveChanges];
     }
 }

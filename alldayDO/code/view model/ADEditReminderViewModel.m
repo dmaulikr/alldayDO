@@ -16,6 +16,7 @@
 @property (nonatomic, strong) ADLembrete *lembreteEdit;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerCategorias;
 
 @end
 
@@ -39,6 +40,10 @@
     return self.lembreteEdit.periodo;
 }
 
+- (NSString *)categoriaEdit {
+    return self.categoria.descricao;
+}
+
 - (NSData *)imagemEdit {
     return self.lembreteEdit.imagem;
 }
@@ -51,6 +56,13 @@
         NSLocalizedString(@"Uma única vez", nil),
         NSLocalizedString(@"Nunca", nil)
     ];
+}
+
+- (NSArray *)categorias {
+    if (!self.fetchedResultsControllerCategorias) {
+        [self.fetchedResultsControllerCategorias performFetch:nil];
+    }
+    return [self.fetchedResultsControllerCategorias fetchedObjects];
 }
 
 - (NSArray *)lembretes {
@@ -70,6 +82,18 @@
     return _fetchedResultsController;
 }
 
+- (NSFetchedResultsController *)fetchedResultsControllerCategorias {
+    if (!_fetchedResultsControllerCategorias) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADCategoria"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
+        _fetchedResultsControllerCategorias = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                  managedObjectContext:[ADModel sharedInstance].managedObjectContext
+                                                                                    sectionNameKeyPath:nil
+                                                                                             cacheName:@"categoria_cache"];
+    }
+    return _fetchedResultsControllerCategorias;
+}
+
 #pragma mark - Public Methods -
 
 - (void)saveChanges {
@@ -84,6 +108,7 @@
     lembrete.periodo = self.periodo;
     lembrete.data = self.data;
     lembrete.dataInicial = self.dataInicial;
+    lembrete.categoria = self.categoria;
     lembrete.imagem = self.imagem;
     
     [[ADModel sharedInstance] saveChanges];
