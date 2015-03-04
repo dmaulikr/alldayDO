@@ -393,7 +393,12 @@
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateStyle:NSDateFormatterFullStyle];
         self.viewModel.dataInicial = [formatter dateFromString:self.dataTextField.text];
-    
+        for (ADCategoria *categoria in self.viewModel.categorias) {
+            if ([categoria.descricao isEqualToString:self.categoriaTextField.text]) {
+                self.viewModel.categoria = categoria;
+            }
+        }
+        
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
         if ([self.delegate respondsToSelector:@selector(newReminderViewController:didSaveReminder:)]) {
@@ -454,6 +459,8 @@
     NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    
+    self.categoriaTextField.text = self.viewModel.categoriaEdit.descricao;
     
     self.badgeImageView.image = [[UIImage imageNamed:@"HexaconEdit"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
     self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagemEdit] tintedImageWithColor:[UIColor whiteColor]];

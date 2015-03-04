@@ -40,8 +40,8 @@
     return self.lembreteEdit.periodo;
 }
 
-- (NSString *)categoriaEdit {
-    return self.categoria.descricao;
+- (ADCategoria *)categoriaEdit {
+    return self.lembreteEdit.categoria;
 }
 
 - (NSData *)imagemEdit {
@@ -59,9 +59,7 @@
 }
 
 - (NSArray *)categorias {
-    if (!self.fetchedResultsControllerCategorias) {
-        [self.fetchedResultsControllerCategorias performFetch:nil];
-    }
+    [self.fetchedResultsControllerCategorias performFetch:nil];
     return [self.fetchedResultsControllerCategorias fetchedObjects];
 }
 
