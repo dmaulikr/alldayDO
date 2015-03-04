@@ -351,6 +351,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        cell.lineTopView.hidden = YES;
+        
+    } else {
+        cell.lineBottomView.hidden = NO;
+    }
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineBottomView.hidden = YES;
         
