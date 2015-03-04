@@ -16,6 +16,9 @@
 @property (nonatomic, readonly) NSNumber *seguidos;
 @property (nonatomic, readonly) BOOL hasNoReminderAlert;
 
+@property (nonatomic, readonly) NSArray *categorias;
+@property (nonatomic, readonly) NSArray *searchBarScopesTitles;
+
 @property (nonatomic, readonly) NSMutableArray *allReminders;
 @property (nonatomic, readonly) NSMutableArray *doneReminders;
 @property (nonatomic, readonly) NSMutableArray *undoneReminders;
@@ -28,7 +31,10 @@
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
 - (void)fetchObjectAtIndexPath:(NSIndexPath *)indexPath;
+
 - (void)executeFetchRequestForAll;
+- (void)executeFetchRequestForAllWithCategoria:(ADCategoria *)categoria;
+
 - (void)executeFetchRequestForDoneReminders;
 - (void)executeFetchRequestForUndoneReminders;
 

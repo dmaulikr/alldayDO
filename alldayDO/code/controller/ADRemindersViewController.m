@@ -124,7 +124,6 @@
     [self _addParallaxEffect];
     [self _addRefreshControl];
     [self _addTitleButton];
-    [self _addScopeTitlesToSearchBar];
     
     self.searchBar.delegate = self;
     self.tabBar.delegate = self;
@@ -138,6 +137,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tabBar setSelectedItem:nil];
 
+    [self _addScopeTitlesToSearchBar];
     [self _hideSearchBar];
     [self _reloadData];
 }
@@ -221,10 +221,7 @@
 }
 
 - (void)_addScopeTitlesToSearchBar {
-    self.searchBar.scopeButtonTitles = @[NSLocalizedString(@"all", nil),
-                                         NSLocalizedString(@"personal", nil),
-                                         NSLocalizedString(@"home", nil),
-                                         NSLocalizedString(@"work", nil)];
+    self.searchBar.scopeButtonTitles = self.viewModel.searchBarScopesTitles;
 }
 
 - (void)_adjustHexaconSelect:(id)sender {
@@ -295,6 +292,7 @@
 
 - (void)_reloadData {
     [self _adjustHexaconSelect:self.hexaconAllButton];
+    self.searchBar.selectedScopeButtonIndex = 0;
     [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadData];
 }
@@ -454,10 +452,23 @@
 
 #pragma mark - UISearchBarDelegate Methods -
 
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    if (selectedScope == 0) {
+        [self _reloadData];
+    } else {
+        if (selectedScope == 1) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:self.viewModel.categorias.firstObject];
+        } else if (selectedScope == 2) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:[self.viewModel.categorias objectAtIndex:1]];
+        } else if (selectedScope == 3) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:self.viewModel.categorias.lastObject];
+        }
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - UIStoryboard Methods -
