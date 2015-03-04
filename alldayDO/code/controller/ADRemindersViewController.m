@@ -54,6 +54,7 @@
 - (void)_presentAboutViewController;
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
+- (void)_searchBarLostFocus;
 - (void)_showBlurViewWithAnimation;
 - (void)_hideSearchBar;
 
@@ -236,6 +237,7 @@
     } else {
         self.hexaconUndoneButton.selected = !selected;
     }
+    [self _searchBarLostFocus];
 }
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos {
@@ -302,6 +304,11 @@
     [self.tableView selectRowAtIndexPath:indePath
                                 animated:NO
                           scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+- (void)_searchBarLostFocus {
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)_showBlurViewWithAnimation {
@@ -394,7 +401,8 @@
 
 - (IBAction)hexaconAllTouched:(id)sender {
     [[GAI sharedInstance] sendAction:@"CheckAllActivity" withCategory:@"Action"];
-    
+
+    self.searchBar.selectedScopeButtonIndex = 0;
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForAll];
 }
@@ -453,10 +461,13 @@
 #pragma mark - UISearchBarDelegate Methods -
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-
+    [self.viewModel searchBarWithText:searchText];
+    [self.tableView reloadData];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    [self _searchBarLostFocus];
+    
     if (selectedScope == 0) {
         [self _reloadData];
     } else {

@@ -38,6 +38,8 @@
 - (void)executeFetchRequestForDoneReminders;
 - (void)executeFetchRequestForUndoneReminders;
 
+- (void)searchBarWithText:(NSString *)searchText;
+
 - (NSString *)nextReminderFormated;
 - (NSString *)nextReminderFormatedWithDate:(NSDate *)date;
 

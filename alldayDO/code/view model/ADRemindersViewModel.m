@@ -263,6 +263,22 @@
     self.lembretes = self.lembretesNaoCompletados;
 }
 
+- (void)searchBarWithText:(NSString *)searchText {
+    if ([searchText isEqualToString:@""]) {
+        self.lembretes = self.lembretesTodos;
+    } else {
+        NSMutableArray *lembretes = [NSMutableArray array];
+        for (ADLembrete *lembrete in self.lembretesTodos) {
+            if ([lembrete.descricao hasPrefix:searchText]) {
+                [lembretes addObject:lembrete];
+            } else {
+                [lembretes removeObject:lembrete];
+            }
+        }
+         self.lembretes = lembretes;
+    }
+}
+
 - (NSString *)nextReminderFormated {
     return [self nextReminderFormatedWithDate:nil];
 }
