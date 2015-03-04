@@ -467,7 +467,6 @@
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     [self _searchBarLostFocus];
-    
     if (selectedScope == 0) {
         [self _reloadData];
     } else {
