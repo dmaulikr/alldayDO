@@ -28,7 +28,7 @@
 
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
-@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate, UISearchBarDelegate>
+@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -506,6 +506,12 @@
         [[GAI sharedInstance] sendAction:@"ShakeActivity" withCategory:@"Action"];
         [self _presentNewReminderViewController];
     }
+}
+
+#pragma mark - UIScrollViewDelegate Methods -
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
 }
 
 @end
