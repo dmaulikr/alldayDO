@@ -360,7 +360,7 @@
         cell.lineTopView.hidden = YES;
         
     } else {
-        cell.lineBottomView.hidden = NO;
+        cell.lineTopView.hidden = NO;
     }
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineBottomView.hidden = YES;
