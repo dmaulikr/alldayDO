@@ -17,6 +17,7 @@
 #import "ADDetailReminderViewController.h"
 
 #import "ADAboutViewController.h"
+#import "ADSettingsTableViewController.h"
 
 #import "PNChart.h"
 
@@ -50,8 +51,11 @@
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
+
 - (void)_presentNewReminderViewController;
 - (void)_presentAboutViewController;
+- (void)_presentSettingsViewController;
+
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
 - (void)_searchBarLostFocus;
@@ -292,6 +296,11 @@
     [self.navigationController pushViewController:aboutViewController animated:YES];
 }
 
+- (void)_presentSettingsViewController {
+    ADSettingsTableViewController *settingsViewController = (ADSettingsTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
+}
+
 - (void)_reloadData {
     [self _adjustHexaconSelect:self.hexaconAllButton];
     self.searchBar.selectedScopeButtonIndex = 0;
@@ -453,6 +462,8 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item == self.addButton) {
         [self _presentNewReminderViewController];
+    } else if (item == self.settingsButton) {
+        [self _presentSettingsViewController];
     } else if (item == self.aboutButton) {
         [self _presentAboutViewController];
     }
