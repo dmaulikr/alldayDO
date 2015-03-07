@@ -717,6 +717,7 @@
                     <navigationItem key="navigationItem" id="EAE-Uu-J0Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="CategoriasTableViewSection" destination="5qf-OH-YFy" id="dgd-dD-1vz"/>
                         <outlet property="categoriaOneText" destination="Dzf-4f-GmP" id="Zd8-mX-wCw"/>
                         <outlet property="categoriaThreeText" destination="hsG-lP-k9o" id="c1A-Ml-X2X"/>
                         <outlet property="categoriaTwoText" destination="tg6-zc-z49" id="Lk4-GR-1MX"/>

@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *categoriaOneText;
 @property (weak, nonatomic) IBOutlet UITextField *categoriaTwoText;
 @property (weak, nonatomic) IBOutlet UITextField *categoriaThreeText;
+@property (weak, nonatomic) IBOutlet UITableViewRowAction *CategoriasTableViewSection;
 
 @end

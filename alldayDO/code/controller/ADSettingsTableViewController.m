@@ -66,7 +66,6 @@
     [[ADModel sharedInstance] saveChanges];
 }
 
-
 #pragma mark - ViewController Methods
 
 - (void)viewDidLoad {
@@ -87,6 +86,18 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self _saveCategorias];
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *sectionTitle = nil;
+    if (section == 0) {
+        sectionTitle = NSLocalizedString(@"categoriasSectionTitle", nil);
+    } else if (section == 1) {
+        sectionTitle = nil;
+    }
+    return sectionTitle;
 }
 
 @end

@@ -9,6 +9,8 @@
 // SettingsViewController
 
 "settings" = "Settings";
+"categoriasSectionTitle" = "Categories";
+
 
 // ADEditReminderViewController
 
