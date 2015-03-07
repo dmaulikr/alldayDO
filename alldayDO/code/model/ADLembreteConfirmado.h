@@ -2,8 +2,8 @@
 //  ADLembreteConfirmado.h
 //  alldayDO
 //
-//  Created by Fábio Nogueira  on 16/08/14.
-//  Copyright (c) 2014 Fábio Nogueira . All rights reserved.
+//  Created by Fábio Nogueira de Almeida on 02/03/15.
+//  Copyright (c) 2015 Fábio Nogueira . All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

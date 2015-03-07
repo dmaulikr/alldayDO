@@ -6,6 +6,10 @@
   Copyright (c) 2014 F√°bio Nogueira . All rights reserved.
 */
 
+// SettingsViewController
+
+"settings" = "Ajustes";
+"categoriasSectionTitle" = "Categorias";
 
 // ADEditReminderViewController
 
@@ -19,6 +23,9 @@
 "às" = "às";
 "Começando no dia?" = "Começando no dia?";
 "a partir do dia" = "a partir do dia";
+"categoryPlaceHolder" = "Meta para?";
+"categoryFloatingTitle" = "marcado como";
+
 "Cancelar" = "Cancelar";
 "Salvar" = "Salvar";
 "Você realmente deseja cancelar?" = "Você realmente deseja cancelar?";

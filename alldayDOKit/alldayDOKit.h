@@ -19,7 +19,9 @@ FOUNDATION_EXPORT const unsigned char alldayDOKitVersionString[];
 
 #import <alldayDOKit/ADToday.h>
 #import <alldayDOKit/ADModel.h>
+#import <alldayDOKit/ADSettings.h>
 #import <alldayDOKit/ADLembrete.h>
 #import <alldayDOKit/ADLembreteConfirmado.h>
+#import <alldayDOKit/ADCategoria.h>
 #import <alldayDOKit/UIImage+ADToolkitAdditions.h>
 #import <alldayDOKit/NSDate+ADToolkitAdditions.h>

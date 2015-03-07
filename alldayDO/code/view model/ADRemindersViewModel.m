@@ -19,10 +19,12 @@
 @property (nonatomic, strong) NSMutableArray *lembretesParaHoje;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerCategoria;
 
 - (void)_fetchResultsForLembretesInDiferentsCategories;
 - (NSArray *)_sortReminders:(NSArray *)reminders;
 - (BOOL)_isJustOneTimeOrNeverTypeForLembrete:(ADLembrete *)lembrete;
+- (void)_nullableLembretes;
 
 @end
 
@@ -71,6 +73,19 @@
     return _fetchedResultsController;
 }
 
+- (NSFetchedResultsController *)fetchedResultsControllerCategoria {
+    if (!_fetchedResultsControllerCategoria) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADCategoria"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
+        
+        _fetchedResultsControllerCategoria = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:[ADModel sharedInstance].managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:@"descricao_reminders_cache"];
+    }
+    return _fetchedResultsControllerCategoria;
+}
+
 - (NSString *)descricao {
     return self.lembrete.descricao;
 }
@@ -93,6 +108,28 @@
         hasReminderAlert = YES;
     }
     return hasReminderAlert;
+}
+
+- (NSArray *)categorias {
+    [self.fetchedResultsControllerCategoria performFetch:nil];
+    return [self.fetchedResultsControllerCategoria fetchedObjects];
+}
+
+- (NSArray *)searchBarScopesTitles {
+    NSMutableArray *titles = [NSMutableArray array];
+    [titles addObject:NSLocalizedString(@"all", nil)];
+    for (ADCategoria *categoria in self.categorias) {
+        if ([categoria.descricao isEqualToString:@"Home"]) {
+            [titles addObject:NSLocalizedString(@"home", nil)];
+        } else if ([categoria.descricao isEqualToString:@"Personal"]) {
+            [titles addObject:NSLocalizedString(@"personal", nil)];
+        } else if ([categoria.descricao isEqualToString:@"Work"]) {
+            [titles addObject:NSLocalizedString(@"work", nil)];
+        } else {
+            [titles addObject:categoria.descricao];
+        }
+    }
+    return titles;
 }
 
 - (NSArray *)allReminders {
@@ -161,6 +198,14 @@
     return isType;
 }
 
+- (void)_nullableLembretes {
+    self.lembretes = nil;
+    self.lembretesTodos = nil;
+    self.lembretesCompletados = nil;
+    self.lembretesNaoCompletados = nil;
+    self.lembretesParaHoje = nil;
+}
+
 #pragma mark - Public Methods -
 
 - (void)deleteRow:(NSIndexPath *)indexPath {
@@ -187,15 +232,25 @@
 }
 
 - (void)executeFetchRequestForAll {
-    self.lembretes = nil;
-    self.lembretesTodos = nil;
-    self.lembretesCompletados = nil;
-    self.lembretesNaoCompletados = nil;
-    self.lembretesParaHoje = nil;
+    [self _nullableLembretes];
     
     [self.fetchedResultsController performFetch:nil];
     [self.lembretesTodos addObjectsFromArray:[self _sortReminders:[self.fetchedResultsController fetchedObjects]]];
      self.lembretes = self.lembretesTodos;
+    
+    [self _fetchResultsForLembretesInDiferentsCategories];
+}
+
+- (void)executeFetchRequestForAllWithCategoria:(ADCategoria *)categoria {
+    [self _nullableLembretes];
+    
+    [self.fetchedResultsController performFetch:nil];
+    for (ADLembrete *lembrete in [self _sortReminders:[self.fetchedResultsController fetchedObjects]]) {
+        if ([lembrete.categoria isEqual:categoria]) {
+            [self.lembretesTodos addObject:lembrete];
+        }
+    }
+    self.lembretes = self.lembretesTodos;
     
     [self _fetchResultsForLembretesInDiferentsCategories];
 }
@@ -206,6 +261,22 @@
 
 - (void)executeFetchRequestForUndoneReminders {
     self.lembretes = self.lembretesNaoCompletados;
+}
+
+- (void)searchBarWithText:(NSString *)searchText {
+    if ([searchText isEqualToString:@""]) {
+        self.lembretes = self.lembretesTodos;
+    } else {
+        NSMutableArray *lembretes = [NSMutableArray array];
+        for (ADLembrete *lembrete in self.lembretesTodos) {
+            if ([lembrete.descricao hasPrefix:searchText]) {
+                [lembretes addObject:lembrete];
+            } else {
+                [lembretes removeObject:lembrete];
+            }
+        }
+         self.lembretes = lembretes;
+    }
 }
 
 - (NSString *)nextReminderFormated {

@@ -24,7 +24,7 @@
 - (void)_setupRate;
 - (void)_walkthrough;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerForCategoria;
 
 @end
 
@@ -32,17 +32,16 @@
 
 #pragma mark - Getter Interface -
 
-- (NSFetchedResultsController *)fetchedResultsController {
-    if (!_fetchedResultsController) {
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADLembrete"];
+- (NSFetchedResultsController *)fetchedResultsControllerForCategoria {
+    if (!_fetchedResultsControllerForCategoria) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ADCategoria"];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"descricao" ascending:YES]];
-        
-        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+        _fetchedResultsControllerForCategoria = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[ADModel sharedInstance].managedObjectContext
                                                                           sectionNameKeyPath:nil
-                                                                                   cacheName:@"reminders_cache"];
+                                                                                   cacheName:@"categoria_cache"];
     }
-    return _fetchedResultsController;
+    return _fetchedResultsControllerForCategoria;
 }
 
 #pragma mark - Private Methods - 
@@ -93,6 +92,24 @@
 
 #pragma mark - UIApplication Methods -
 
+- (void)_updateDB {
+    [self.fetchedResultsControllerForCategoria performFetch:nil];
+    NSArray *categorias = [self.fetchedResultsControllerForCategoria fetchedObjects];
+    if (categorias.count != 3) {
+        ADCategoria *categoria1 = [NSEntityDescription insertNewObjectForEntityADCategoria];
+        categoria1.descricao = NSLocalizedString(@"personal", nil);
+        [[ADModel sharedInstance] saveChanges];
+        
+        ADCategoria *categoria2 = [NSEntityDescription insertNewObjectForEntityADCategoria];
+        categoria2.descricao = NSLocalizedString(@"home", nil);
+        [[ADModel sharedInstance] saveChanges];
+        
+        ADCategoria *categoria3 = [NSEntityDescription insertNewObjectForEntityADCategoria];
+        categoria3.descricao = NSLocalizedString(@"work", nil);
+        [[ADModel sharedInstance] saveChanges];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ADStyleSheet initStyles];
     [self _setupAnalytics];
@@ -101,6 +118,7 @@
     [self _setupPushNotification];
     
     [self _walkthrough];
+    [self _updateDB];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {

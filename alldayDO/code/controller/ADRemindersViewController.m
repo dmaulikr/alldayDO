@@ -17,6 +17,7 @@
 #import "ADDetailReminderViewController.h"
 
 #import "ADAboutViewController.h"
+#import "ADSettingsTableViewController.h"
 
 #import "PNChart.h"
 
@@ -28,7 +29,7 @@
 
 #define DETAIL_REMINDER_NAME_SEGUE @"detailReminderSegue"
 
-@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate, UISearchBarDelegate>
+@interface ADRemindersViewController () <UIViewControllerTransitioningDelegate, ADEditReminderViewControllerDelegate, UIAlertViewDelegate, INSPullToRefreshBackgroundViewDelegate, UITabBarDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) ADRemindersViewModel *viewModel;
 
@@ -50,10 +51,14 @@
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos;
 - (void)_initStyle;
+
 - (void)_presentNewReminderViewController;
 - (void)_presentAboutViewController;
+- (void)_presentSettingsViewController;
+
 - (void)_reloadData;
 - (void)_selectRowAtIndexPathForLembreteDescricao:(NSString *)descricao;
+- (void)_searchBarLostFocus;
 - (void)_showBlurViewWithAnimation;
 - (void)_hideSearchBar;
 
@@ -124,7 +129,6 @@
     [self _addParallaxEffect];
     [self _addRefreshControl];
     [self _addTitleButton];
-    [self _addScopeTitlesToSearchBar];
     
     self.searchBar.delegate = self;
     self.tabBar.delegate = self;
@@ -138,6 +142,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tabBar setSelectedItem:nil];
 
+    [self _addScopeTitlesToSearchBar];
     [self _hideSearchBar];
     [self _reloadData];
 }
@@ -221,10 +226,7 @@
 }
 
 - (void)_addScopeTitlesToSearchBar {
-    self.searchBar.scopeButtonTitles = @[NSLocalizedString(@"all", nil),
-                                         NSLocalizedString(@"personal", nil),
-                                         NSLocalizedString(@"home", nil),
-                                         NSLocalizedString(@"work", nil)];
+    self.searchBar.scopeButtonTitles = self.viewModel.searchBarScopesTitles;
 }
 
 - (void)_adjustHexaconSelect:(id)sender {
@@ -239,6 +241,7 @@
     } else {
         self.hexaconUndoneButton.selected = !selected;
     }
+    [self _searchBarLostFocus];
 }
 
 - (UIColor *)_colorForNumberOfSeguidos:(NSNumber *)seguidos {
@@ -293,8 +296,14 @@
     [self.navigationController pushViewController:aboutViewController animated:YES];
 }
 
+- (void)_presentSettingsViewController {
+    ADSettingsTableViewController *settingsViewController = (ADSettingsTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
+}
+
 - (void)_reloadData {
     [self _adjustHexaconSelect:self.hexaconAllButton];
+    self.searchBar.selectedScopeButtonIndex = 0;
     [self.viewModel executeFetchRequestForAll];
     [self.tableView reloadData];
 }
@@ -304,6 +313,11 @@
     [self.tableView selectRowAtIndexPath:indePath
                                 animated:NO
                           scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+- (void)_searchBarLostFocus {
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)_showBlurViewWithAnimation {
@@ -351,6 +365,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ADReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell" forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        cell.lineTopView.hidden = YES;
+        
+    } else {
+        cell.lineTopView.hidden = NO;
+    }
     if ([tableView numberOfRowsInSection:indexPath.section] - 1 == indexPath.row) {
         cell.lineBottomView.hidden = YES;
         
@@ -390,7 +410,8 @@
 
 - (IBAction)hexaconAllTouched:(id)sender {
     [[GAI sharedInstance] sendAction:@"CheckAllActivity" withCategory:@"Action"];
-    
+
+    self.searchBar.selectedScopeButtonIndex = 0;
     [self _adjustHexaconSelect:sender];
     [self _fetchRequestForAll];
 }
@@ -441,6 +462,8 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item == self.addButton) {
         [self _presentNewReminderViewController];
+    } else if (item == self.settingsButton) {
+        [self _presentSettingsViewController];
     } else if (item == self.aboutButton) {
         [self _presentAboutViewController];
     }
@@ -448,10 +471,25 @@
 
 #pragma mark - UISearchBarDelegate Methods -
 
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.viewModel searchBarWithText:searchText];
+    [self.tableView reloadData];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    [self _searchBarLostFocus];
+    if (selectedScope == 0) {
+        [self _reloadData];
+    } else {
+        if (selectedScope == 1) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:self.viewModel.categorias.firstObject];
+        } else if (selectedScope == 2) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:[self.viewModel.categorias objectAtIndex:1]];
+        } else if (selectedScope == 3) {
+            [self.viewModel executeFetchRequestForAllWithCategoria:self.viewModel.categorias.lastObject];
+        }
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - UIStoryboard Methods -
@@ -478,6 +516,12 @@
         [[GAI sharedInstance] sendAction:@"ShakeActivity" withCategory:@"Action"];
         [self _presentNewReminderViewController];
     }
+}
+
+#pragma mark - UIScrollViewDelegate Methods -
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
 }
 
 @end

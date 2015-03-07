@@ -37,10 +37,12 @@
 @property (nonatomic, strong) JVFloatLabeledTextField *periodoTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *horaTextField;
 @property (nonatomic, strong) JVFloatLabeledTextField *dataTextField;
+@property (nonatomic, strong) JVFloatLabeledTextField *categoriaTextField;
 
 @property (nonatomic, strong) UIPickerView *periodoPickerView;
 @property (nonatomic, strong) UIDatePicker *horaPicker;
 @property (nonatomic, strong) UIDatePicker *dataPicker;
+@property (nonatomic, strong) UIPickerView *categoriaPickerView;
 
 @property (nonatomic, strong) UILabel *badgeLabel;
 @property (nonatomic, strong) UIButton *cancelarButton;
@@ -169,6 +171,20 @@
     return _dataTextField;
 }
 
+- (JVFloatLabeledTextField *)categoriaTextField {
+    if (!_categoriaTextField) {
+        _categoriaTextField = [[JVFloatLabeledTextField alloc] init];
+        _categoriaTextField.delegate = self;
+        _categoriaTextField.frame = CGRectMake(MARGIN_LEFT, self.dataTextField.maxY, self.view.width, 44.f);
+        _categoriaTextField.floatingLabelActiveTextColor = [UIColor sam_colorWithHex:ACTIVE_COLOR_HEX];
+        _categoriaTextField.floatingLabelTextColor = [UIColor sam_colorWithHex:DEFAULT_COLOR_HEX];
+        [_categoriaTextField setPlaceholder:NSLocalizedString(@"categoryPlaceHolder", nil)
+                         floatingTitle:NSLocalizedString(@"categoryFloatingTitle", nil)];
+        _categoriaTextField.inputAccessoryView = self.toolbar;
+    }
+    return _categoriaTextField;
+}
+
 - (UIPickerView *)periodoPickerView {
     if (!_periodoPickerView) {
         _periodoPickerView = [[UIPickerView alloc] init];
@@ -204,12 +220,22 @@
     return _dataPicker;
 }
 
+- (UIPickerView *)categoriaPickerView {
+    if (!_categoriaPickerView) {
+        _categoriaPickerView = [[UIPickerView alloc] init];
+        _categoriaPickerView.dataSource = self;
+        _categoriaPickerView.delegate = self;
+        _categoriaPickerView.backgroundColor = [UIColor whiteColor];
+    }
+    return _categoriaPickerView;
+}
+
 - (UIView *)badgeView {
     if (!_badgeView) {
         _badgeView = [UIView viewWithFrame:CGRectMake(0.f, 0.f, 80.f, 90.f)];
         _badgeView.center = self.view.center;
         
-        CGFloat yBetweenDataTextAndSalvarButton = self.dataTextField.maxY + (((self.salvarButton.y - self.dataTextField.maxY) / 2) - _badgeView.height / 2);
+        CGFloat yBetweenDataTextAndSalvarButton = self.categoriaTextField.maxY + (((self.salvarButton.y - self.categoriaTextField.maxY) / 2) - _badgeView.height / 2);
         [_badgeView setY:yBetweenDataTextAndSalvarButton];
         UITapGestureRecognizer *iconGestureRecognizer = [UITapGestureRecognizer gestureRecognizerWithTarget:self
                                                                                                      action:@selector(_displayBadgeIconView)];
@@ -367,7 +393,12 @@
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateStyle:NSDateFormatterFullStyle];
         self.viewModel.dataInicial = [formatter dateFromString:self.dataTextField.text];
-    
+        for (ADCategoria *categoria in self.viewModel.categorias) {
+            if ([categoria.descricao isEqualToString:self.categoriaTextField.text]) {
+                self.viewModel.categoria = categoria;
+            }
+        }
+        
         self.viewModel.imagem = UIImagePNGRepresentation(self.badgeImageView.badgeIconImageView.image);
         [self.viewModel saveChanges];
         if ([self.delegate respondsToSelector:@selector(newReminderViewController:didSaveReminder:)]) {
@@ -392,6 +423,7 @@
     self.periodoTextField.inputView = self.periodoPickerView;
     self.horaTextField.inputView = self.horaPicker;
     self.dataTextField.inputView = self.dataPicker;
+    self.categoriaTextField.inputView = self.categoriaPickerView;
 }
 
 - (void)_addSubViews {
@@ -399,6 +431,7 @@
     [self.view addSubview:self.periodoTextField];
     [self.view addSubview:self.horaTextField];
     [self.view addSubview:self.dataTextField];
+    [self.view addSubview:self.categoriaTextField];
     [self.view addSubview:self.badgeView];
     [self.view addSubview:self.salvarButton];
     [self.view addSubview:self.cancelarButton];
@@ -426,6 +459,8 @@
     NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
     self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    
+    self.categoriaTextField.text = self.viewModel.categoriaEdit.descricao;
     
     self.badgeImageView.image = [[UIImage imageNamed:@"HexaconEdit"] tintedImageWithColor:[UIColor sam_colorWithHex:DEFAULT_COLOR_HEX]];
     self.badgeImageView.badgeIconImageView.image = [[UIImage imageWithData:self.viewModel.imagemEdit] tintedImageWithColor:[UIColor whiteColor]];
@@ -461,6 +496,9 @@
         [self.dataTextField becomeFirstResponder];
         
     } else if (self.dataTextField.isFirstResponder) {
+        [self.categoriaTextField becomeFirstResponder];
+        
+    } else if (self.categoriaTextField.isFirstResponder) {
         if (self.actionMode == ADAddMode) {
             [self _displayBadgeIconView];
         } else {
@@ -594,6 +632,8 @@
             [self _refreshDataInicialLabel:nil];
             self.dataPicker.date = [NSDate date];
         }
+    } else if (textField == self.categoriaTextField) {
+        [[GAI sharedInstance] sendAction:@"categoriaTextField" withCategory:@"FocusOnTextField"];
     }
 }
 
@@ -619,17 +659,35 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.viewModel.cycleType.count;
+    NSInteger numberOfRows = 0;
+    if (pickerView == self.periodoPickerView) {
+        numberOfRows = self.viewModel.cycleType.count;
+    } else if (pickerView == self.categoriaPickerView) {
+        numberOfRows = self.viewModel.categorias.count;
+    }
+    return numberOfRows;;
 }
 
 #pragma mark - UIPickerViewDelegate Methods -
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.viewModel textForCycleType:row];
+    NSString *titleForRow = @"Bug";
+    if (pickerView == self.periodoPickerView) {
+        titleForRow = [self.viewModel textForCycleType:row];
+    } else if (pickerView == self.categoriaPickerView) {
+        ADCategoria *categoria = [self.viewModel.categorias objectAtIndex:row];
+        titleForRow = categoria.descricao;
+    }
+    return titleForRow;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.periodoTextField.text = [self.viewModel textForCycleType:row];
+    if (pickerView == self.periodoPickerView) {
+        self.periodoTextField.text = [self.viewModel textForCycleType:row];
+    } else if (pickerView == self.categoriaPickerView) {
+        ADCategoria *categoria = [self.viewModel.categorias objectAtIndex:row];
+        self.categoriaTextField.text = categoria.descricao;
+    }
 }
 
 #pragma mark - UICollectionViewDataSource Methods -

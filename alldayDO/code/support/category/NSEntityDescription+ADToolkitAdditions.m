@@ -11,11 +11,18 @@
 @implementation NSEntityDescription (ADToolkitAdditions)
 
 + (id)insertNewObjectForEntityADLembrete {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembrete" inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
+    return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembrete"
+                                         inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
 }
 
 + (id)insertNewObjectForEntityADLembreteConfirmado {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembreteConfirmado" inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
+    return [NSEntityDescription insertNewObjectForEntityForName:@"ADLembreteConfirmado"
+                                         inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
+}
+
++ (id)insertNewObjectForEntityADCategoria {
+    return [NSEntityDescription insertNewObjectForEntityForName:@"ADCategoria"
+                                         inManagedObjectContext:[ADModel sharedInstance].managedObjectContext];
 }
 
 @end

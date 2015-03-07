@@ -651,7 +651,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4y-Gs-BUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="699"/>
+            <point key="canvasLocation" x="438" y="741"/>
+        </scene>
+        <!--settings-->
+        <scene sceneID="eTV-A4-FML">
+            <objects>
+                <tableViewController storyboardIdentifier="settingsViewController" title="settings" id="7XE-6h-0MH" customClass="ADSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JT9-zT-KXt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Categorias" id="5qf-OH-YFy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="gOB-f1-76y">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gOB-f1-76y" id="Odd-q1-ZiK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Você poderá mudar a categoria aqui" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dzf-4f-GmP">
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KM0-TL-y2N">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KM0-TL-y2N" id="Og8-eO-5eQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Você poderá mudar a categoria aqui" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg6-zc-z49">
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HdJ-xa-TY7">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdJ-xa-TY7" id="MuH-Bq-iUs">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="settingsViewController" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Você poderá mudar a categoria aqui" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsG-lP-k9o">
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="AlldayDO Widget" id="EVF-ct-Ksy">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7XE-6h-0MH" id="tQC-Jh-zRo"/>
+                            <outlet property="delegate" destination="7XE-6h-0MH" id="xWS-wg-IWp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EAE-Uu-J0Y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="CategoriasTableViewSection" destination="5qf-OH-YFy" id="dgd-dD-1vz"/>
+                        <outlet property="categoriaOneText" destination="Dzf-4f-GmP" id="Zd8-mX-wCw"/>
+                        <outlet property="categoriaThreeText" destination="hsG-lP-k9o" id="c1A-Ml-X2X"/>
+                        <outlet property="categoriaTwoText" destination="tg6-zc-z49" id="Lk4-GR-1MX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QfZ-0e-ll3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11" y="741"/>
         </scene>
         <!--Authors View Controller-->
         <scene sceneID="1Cc-z6-IJa">
@@ -732,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSb-WF-L2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="699"/>
+            <point key="canvasLocation" x="438" y="1350"/>
         </scene>
     </scenes>
     <resources>
