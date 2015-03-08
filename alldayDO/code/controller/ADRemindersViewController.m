@@ -524,4 +524,10 @@
     [self.searchBar resignFirstResponder];
 }
 
+#pragma mark - UITextViewDelegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
 @end
