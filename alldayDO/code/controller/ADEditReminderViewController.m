@@ -386,7 +386,7 @@
         self.viewModel.descricao = self.descriptionTextField.text;
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"HH:mm a"];
+        [df setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"hh:mm a" options:0 locale:[NSLocale currentLocale]]];
         NSDate *hour = [df dateFromString:self.horaTextField.text];
         self.viewModel.data = hour;
         
