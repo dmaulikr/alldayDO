@@ -199,7 +199,8 @@
     if (!_horaPicker) {
         _horaPicker = [[UIDatePicker alloc] init];
         _horaPicker.datePickerMode = UIDatePickerModeTime;
-        _horaPicker.locale = [NSLocale autoupdatingCurrentLocale];
+        _horaPicker.locale = [NSLocale currentLocale];
+        _horaPicker.timeZone = [NSTimeZone defaultTimeZone];
         _horaPicker.backgroundColor = [UIColor whiteColor];
         [_horaPicker addTarget:self
                        action:@selector(_refreshTimeLabel:)
@@ -386,14 +387,16 @@
         self.viewModel.descricao = self.descriptionTextField.text;
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"hh:mm a" options:0 locale:[NSLocale currentLocale]]];
+        [df setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"HH:mm" options:0 locale:[NSLocale currentLocale]]];
+        [df setTimeZone:[NSTimeZone defaultTimeZone]];
         NSDate *hour = [df dateFromString:self.horaTextField.text];
+        
         self.viewModel.data = hour;
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateStyle:NSDateFormatterFullStyle];
         self.viewModel.dataInicial = [formatter dateFromString:self.dataTextField.text];
-        for (ADCategoria *categoria in self.viewModel.categorias) {
+        for (ADCategoria *categoria  in self.viewModel.categorias) {
             if ([categoria.descricao isEqualToString:self.categoriaTextField.text]) {
                 self.viewModel.categoria = categoria;
             }
@@ -455,10 +458,7 @@
     [outputFormatter setDateFormat:@"mm"];
     NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
-    [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
-    
-    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@", horaFormated, minutosFormated];
     
     self.categoriaTextField.text = self.viewModel.categoriaEdit.descricao;
     
@@ -519,11 +519,8 @@
     
     [outputFormatter setDateFormat:@"mm"];
     NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
-
-    [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
     
-    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@", horaFormated, minutosFormated];
 }
 
 - (void)_refreshDataInicialLabel:(UIDatePicker *)datePicker {
@@ -532,7 +529,8 @@
         date = datePicker.date;
     }
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.locale = [NSLocale autoupdatingCurrentLocale];
+    formatter.locale = [NSLocale currentLocale];
+    formatter.timeZone = [NSTimeZone defaultTimeZone];
     [formatter setDateStyle:NSDateFormatterFullStyle];
     self.dataTextField.text = [formatter stringFromDate:date];
 }
