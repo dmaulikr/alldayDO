@@ -61,6 +61,7 @@
 @property (nonatomic, strong) UIToolbar *toolbar;
 
 
+- (BOOL)_is24HourTime;
 - (void)_salvarTouched;
 
 - (void)_addBlurView;
@@ -378,6 +379,18 @@
 
 #pragma mark - Private Methods -
 
+- (BOOL)_is24HourTime {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setLocale:[NSLocale currentLocale]];
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
+    NSString *dateString = [formatter stringFromDate:[NSDate date]];
+    NSRange amRange = [dateString rangeOfString:[formatter AMSymbol]];
+    NSRange pmRange = [dateString rangeOfString:[formatter PMSymbol]];
+    BOOL is24hTime = !(amRange.location == NSNotFound && pmRange.location == NSNotFound);
+    return is24hTime;
+}
+
 - (void)_salvarTouched {
     [[GAI sharedInstance] sendAction:@"saveActivity" withCategory:@"Action"];
     if ([self _requiredValidation]) {
@@ -386,8 +399,16 @@
         self.viewModel.descricao = self.descriptionTextField.text;
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"HH:mm a"];
-        NSDate *hour = [df dateFromString:self.horaTextField.text];
+        [df setDateFormat:@"yyyy-MM-dd"];
+        NSString *todayString = [df stringFromDate:[NSDate date]];
+        
+        [df setDateFormat:@"yyyy-MM-dd hh:mm"];
+        if ([self _is24HourTime]) {
+            df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+            [df setDateFormat:@"yyyy-MM-dd hh:mm a"];
+        }
+
+        NSDate *hour = [df dateFromString:[NSString stringWithFormat:@"%@ %@", todayString, self.horaTextField.text]];
         self.viewModel.data = hour;
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -455,10 +476,15 @@
     [outputFormatter setDateFormat:@"mm"];
     NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
     
-    [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
+    NSString *finalStringDate = [NSString stringWithFormat:@"%@:%@", horaFormated, minutosFormated];
+    if ([self _is24HourTime]) {
+        [outputFormatter setDateFormat:@"a"];
+        NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:self.viewModel.dataEdit]];
+        
+        finalStringDate = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    }
     
-    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    self.horaTextField.text = finalStringDate;
     
     self.categoriaTextField.text = self.viewModel.categoriaEdit.descricao;
     
@@ -520,10 +546,15 @@
     [outputFormatter setDateFormat:@"mm"];
     NSString *minutosFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
 
-    [outputFormatter setDateFormat:@"a"];
-    NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
+    NSString *finalStringDate = [NSString stringWithFormat:@"%@:%@", horaFormated, minutosFormated];
+    if ([self _is24HourTime]) {
+        [outputFormatter setDateFormat:@"a"];
+        NSString *periodoFormated = [NSString stringWithFormat:@"%@", [outputFormatter stringFromDate:date]];
+        
+        finalStringDate = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    }
     
-    self.horaTextField.text = [NSString stringWithFormat:@"%@:%@ %@", horaFormated, minutosFormated, periodoFormated];
+    self.horaTextField.text = finalStringDate;
 }
 
 - (void)_refreshDataInicialLabel:(UIDatePicker *)datePicker {

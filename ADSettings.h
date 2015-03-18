@@ -12,5 +12,4 @@
 
 // Classe criada para gerenciar informações de settings
 // Usar bastante a widget
-
 @end

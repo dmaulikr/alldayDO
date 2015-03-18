@@ -1028,7 +1028,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_DISPLAY_NAME_SUFFIX = "-Dev";
-				BUNDLE_ID_SUFFIX = dev.;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1052,7 +1051,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_DISPLAY_NAME_SUFFIX = "";
-				BUNDLE_ID_SUFFIX = "";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
