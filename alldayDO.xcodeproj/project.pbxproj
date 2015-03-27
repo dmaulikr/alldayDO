@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C342DAE7F9404DE4B305DC50 /* libPods.a */; };
+		7010BA451AC5EB2800B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
+		7010BA461AC5EDBA00B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
+		7010BA471AC5EDBB00B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
+		7010BA481AC5EE4D00B6F66A /* alldayDO-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 70BDEDB71A9EA903006CAAA2 /* alldayDO-Prefix.pch */; };
 		701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
 		701F65731A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
 		701F65741A9EB4C0005E3EB6 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
@@ -149,6 +153,7 @@
 
 /* Begin PBXFileReference section */
 		7004620F1AA23C41009EB035 /* alldayDO 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "alldayDO 2.xcdatamodel"; sourceTree = "<group>"; };
+		7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bitrise-CI.entitlements"; sourceTree = "<group>"; };
 		701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = alldayDOToday.entitlements; sourceTree = "<group>"; };
 		705952AE1AA924190018385B /* ADSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSettings.h; sourceTree = SOURCE_ROOT; };
 		705952AF1AA924190018385B /* ADSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSettings.m; sourceTree = SOURCE_ROOT; };
@@ -485,6 +490,7 @@
 				71D28B36192950480047F291 /* Code */,
 				71D28B1819294F970047F291 /* Images.xcassets */,
 				71D28B0A19294F970047F291 /* Supporting Files */,
+				7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */,
 			);
 			path = alldayDO;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010BA461AC5EDBA00B6F66A /* Bitrise-CI.entitlements in Resources */,
 				70F106041A9E9EB00042EBD5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +839,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010BA451AC5EB2800B6F66A /* Bitrise-CI.entitlements in Resources */,
 				71D28B1919294F970047F291 /* Images.xcassets in Resources */,
 				701F65731A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */,
 				71CC1D9B1A5C9B7600FC3E5B /* alldayDO.entitlements in Resources */,
@@ -844,6 +852,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010BA471AC5EDBB00B6F66A /* Bitrise-CI.entitlements in Resources */,
 				71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */,
 				710D9C861A60B6D100433069 /* Localizable.strings in Resources */,
 				701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */,
@@ -934,6 +943,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010BA481AC5EE4D00B6F66A /* alldayDO-Prefix.pch in Sources */,
 				711F9846198DAB310097AA22 /* NSDateComponents+ADToolkitAdditions.m in Sources */,
 				711F9840198DA9700097AA22 /* NSDateFormatter+ADToolkitAdditions.m in Sources */,
 				71A2A7A61A43B5F20026F01B /* ADDetailReminderViewModel.m in Sources */,
@@ -1027,6 +1037,7 @@
 		70F106091A9E9EB00042EBD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_ID_SUFFIX = .Test;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1049,6 +1060,7 @@
 		70F1060A1A9E9EB00042EBD5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_ID_SUFFIX = "";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1166,6 +1178,7 @@
 				INFOPLIST_FILE = "alldayDO/alldayDO-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "alldayDO/Bitrise-CI.entitlements";
 				PRODUCT_NAME = alldayDO;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "alldayDO/code/others/alldayDO-Bridging-Header.h";
@@ -1210,6 +1223,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

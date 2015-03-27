@@ -7,13 +7,13 @@
 	<key>CFBundleDisplayName</key>
 	<string>alldayDO</string>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<string>$(EXECUTABLE_NAME)${BUNDLE_ID_SUFFIX}</string>
 	<key>CFBundleIdentifier</key>
-	<string>mobi.fabionogueira.alldayDO.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>mobi.fabionogueira.alldayDO${BUNDLE_ID_SUFFIX}.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>$(PRODUCT_NAME)${BUNDLE_ID_SUFFIX}</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
