@@ -87,8 +87,6 @@
 		71D28B1019294F970047F291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B0F19294F970047F291 /* main.m */; };
 		71D28B1919294F970047F291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
 		71D8E66A1A45057200A5B9BC /* alldayDOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D8E6691A45057200A5B9BC /* alldayDOKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71D8E6701A45057200A5B9BC /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
-		71D8E6791A45057200A5B9BC /* alldayDOKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D8E6781A45057200A5B9BC /* alldayDOKitTests.m */; };
 		71D8E67D1A45057200A5B9BC /* alldayDOKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71DD14E9197DD46C003F9059 /* ADReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD14E8197DD46C003F9059 /* ADReminderCell.m */; };
 		71E18B93198C59E2007C7467 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E18B92198C59E2007C7467 /* Crashlytics.framework */; };
@@ -109,20 +107,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 71D8E6641A45057200A5B9BC;
 			remoteInfo = alldayDOKit;
-		};
-		71D8E6711A45057200A5B9BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71D28AF619294F970047F291 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71D8E6641A45057200A5B9BC;
-			remoteInfo = alldayDOKit;
-		};
-		71D8E6731A45057200A5B9BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71D28AF619294F970047F291 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71D28AFD19294F970047F291;
-			remoteInfo = alldayDO;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -255,7 +239,6 @@
 		71D8E6651A45057200A5B9BC /* alldayDOKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = alldayDOKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D8E6681A45057200A5B9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71D8E6691A45057200A5B9BC /* alldayDOKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alldayDOKit.h; sourceTree = "<group>"; };
-		71D8E66F1A45057200A5B9BC /* alldayDOKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldayDOKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D8E6771A45057200A5B9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71D8E6781A45057200A5B9BC /* alldayDOKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alldayDOKitTests.m; sourceTree = "<group>"; };
 		71DD14E8197DD46C003F9059 /* ADReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReminderCell.m; sourceTree = "<group>"; };
@@ -309,14 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7066170D1A644BD9006C936E /* CoreData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71D8E66C1A45057200A5B9BC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71D8E6701A45057200A5B9BC /* alldayDOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +424,6 @@
 			children = (
 				71D28AFE19294F970047F291 /* alldayDO.app */,
 				71D8E6651A45057200A5B9BC /* alldayDOKit.framework */,
-				71D8E66F1A45057200A5B9BC /* alldayDOKitTests.xctest */,
 				70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */,
 			);
 			name = Products;
@@ -742,25 +716,6 @@
 			productReference = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		71D8E66E1A45057200A5B9BC /* alldayDOKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 71D8E6811A45057200A5B9BC /* Build configuration list for PBXNativeTarget "alldayDOKitTests" */;
-			buildPhases = (
-				71D8E66B1A45057200A5B9BC /* Sources */,
-				71D8E66C1A45057200A5B9BC /* Frameworks */,
-				71D8E66D1A45057200A5B9BC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				71D8E6721A45057200A5B9BC /* PBXTargetDependency */,
-				71D8E6741A45057200A5B9BC /* PBXTargetDependency */,
-			);
-			name = alldayDOKitTests;
-			productName = alldayDOKitTests;
-			productReference = 71D8E66F1A45057200A5B9BC /* alldayDOKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -795,10 +750,6 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = C7Q44C43S9;
 					};
-					71D8E66E1A45057200A5B9BC = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 71D28AFD19294F970047F291;
-					};
 				};
 			};
 			buildConfigurationList = 71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */;
@@ -820,7 +771,6 @@
 				71D28AFD19294F970047F291 /* alldayDO */,
 				70F105FB1A9E9EB00042EBD5 /* alldayDOToday */,
 				71D8E6641A45057200A5B9BC /* alldayDOKit */,
-				71D8E66E1A45057200A5B9BC /* alldayDOKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -856,13 +806,6 @@
 				71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */,
 				710D9C861A60B6D100433069 /* Localizable.strings in Resources */,
 				701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71D8E66D1A45057200A5B9BC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,14 +931,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71D8E66B1A45057200A5B9BC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71D8E6791A45057200A5B9BC /* alldayDOKitTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1008,16 +943,6 @@
 			isa = PBXTargetDependency;
 			target = 71D8E6641A45057200A5B9BC /* alldayDOKit */;
 			targetProxy = 7134B6371A7B036E00018621 /* PBXContainerItemProxy */;
-		};
-		71D8E6721A45057200A5B9BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 71D8E6641A45057200A5B9BC /* alldayDOKit */;
-			targetProxy = 71D8E6711A45057200A5B9BC /* PBXContainerItemProxy */;
-		};
-		71D8E6741A45057200A5B9BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 71D28AFD19294F970047F291 /* alldayDO */;
-			targetProxy = 71D8E6731A45057200A5B9BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1277,45 +1202,6 @@
 			};
 			name = Release;
 		};
-		71D8E6821A45057200A5B9BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = alldayDOKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = alldayDOKitTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
-			};
-			name = Debug;
-		};
-		71D8E6831A45057200A5B9BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = alldayDOKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = alldayDOKitTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alldayDO.app/alldayDO";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1351,15 +1237,6 @@
 			buildConfigurations = (
 				71D8E67F1A45057200A5B9BC /* Debug */,
 				71D8E6801A45057200A5B9BC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		71D8E6811A45057200A5B9BC /* Build configuration list for PBXNativeTarget "alldayDOKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				71D8E6821A45057200A5B9BC /* Debug */,
-				71D8E6831A45057200A5B9BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
