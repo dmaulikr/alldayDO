@@ -6,13 +6,13 @@ PODS:
     - GoogleAnalytics-iOS-SDK/Core (= 3.10)
   - GoogleAnalytics-iOS-SDK/Core (3.10)
   - HexColors (2.2.1)
-  - INSPullToRefresh (1.0.2)
+  - INSPullToRefresh (1.0.3)
   - iOS-blur (0.0.5)
   - iRate (1.11.3)
   - JVFloatLabeledTextField (1.0.2)
   - MALazykit (HEAD based on 0.1.10)
   - NGAParallaxMotion (1.1.0)
-  - PNChart (0.7.5):
+  - PNChart (0.8.2):
     - UICountingLabel (~> 1.0.0)
   - pop (1.0.7)
   - SAMAddressBar (0.1.0)
@@ -65,13 +65,13 @@ SPEC CHECKSUMS:
   EARestrictedScrollView: 6023847998f13e2d80dff2d575181c2598349507
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
-  INSPullToRefresh: e34bc80efc480f748ea8b0647974cb8fe7ffe4a0
+  INSPullToRefresh: 2d14685ead74d29e1adc47e4c6989e966ebac23e
   iOS-blur: 5ec57b4a72e57a4f8f5f47ff3f59e56c0690b761
   iRate: 5e1978bac8b3f3f0296dbeccc0dd7b50e6e50657
   JVFloatLabeledTextField: c1ad6b4b5bd77115cfe6c71ba4c023866df5c4cf
   MALazykit: fcbe3df40f58c4755a07141543aed4b2fd9de4a8
   NGAParallaxMotion: 62644b783178f75a234f458270f416afee89877c
-  PNChart: 18d4c57f43df3357ab14b3847a930f36d1fbce48
+  PNChart: 32b4ffa1ca525e255083204a3601447e85367321
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
   SAMAddressBar: 5880d7cc6fea49e7371b8183924b59cdd14b82fe
   SAMBadgeView: 56c54bb74bb0af743de1cc788aaacd38b31030af
@@ -90,4 +90,4 @@ SPEC CHECKSUMS:
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
   uiview-frame-helpers: 68ff15193c81e40695cb50f7eedee88e57077efc
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.1

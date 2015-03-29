@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "PNChartDelegate.h"
+#import "PNGenericChart.h"
 #import "PNScatterChartData.h"
 #import "PNScatterChartDataItem.h"
 
-@interface PNScatterChart : UIView
+@interface PNScatterChart : PNGenericChart
 
 @property (nonatomic, retain) id<PNChartDelegate> delegate;
 
@@ -24,7 +25,8 @@
 @property (nonatomic) UIColor *axisColor;
 @property (nonatomic) CGFloat axisWidth;
 
-/** String formatter for float values in y-axis labels. If not set, defaults to @"%1.f" */
+/** String formatter for float values in x-axis/y-axis labels. If not set, defaults to @"%1.f" */
+@property (nonatomic, strong) NSString *xLabelFormat;
 @property (nonatomic, strong) NSString *yLabelFormat;
 
 /** Default is true. */
@@ -53,6 +55,8 @@
 
 - (void) setAxisXWithMinimumValue:(CGFloat)minVal andMaxValue:(CGFloat)maxVal toTicks:(int)numberOfTicks;
 - (void) setAxisYWithMinimumValue:(CGFloat)minVal andMaxValue:(CGFloat)maxVal toTicks:(int)numberOfTicks;
+- (void) setAxisXLabel:(NSArray *)array;
+- (void) setAxisYLabel:(NSArray *)array;
 - (void) setup;
 - (void) drawLineFromPoint : (CGPoint) startPoint ToPoint : (CGPoint) endPoint WithLineWith : (CGFloat) lineWidth AndWithColor : (UIColor*) color;
 

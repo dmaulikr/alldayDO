@@ -19,8 +19,7 @@
 
 @property (nonatomic) NSMutableArray *chartPath;       // Array of line path, one for each line.
 @property (nonatomic) NSMutableArray *pointPath;       // Array of point path, one for each line
-
-- (void)setDefaultValues;
+@property (nonatomic) NSMutableArray *endPointsOfPath;      // Array of start and end points of each line path, one for each line
 
 @end
 
@@ -33,7 +32,7 @@
     self = [super initWithCoder:coder];
 
     if (self) {
-        [self setDefaultValues];
+        [self setupDefaultValues];
     }
 
     return self;
@@ -44,15 +43,16 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        [self setDefaultValues];
+        [self setupDefaultValues];
     }
 
     return self;
 }
 
+
 #pragma mark instance methods
 
-- (void)setYLabels:(NSArray *)yLabels
+- (void)setYLabels
 {
     CGFloat yStep = (_yValueMax - _yValueMin) / _yLabelNum;
     CGFloat yStepHeight = _chartCavanHeight / _yLabelNum;
@@ -102,6 +102,67 @@
         }
     }
 }
+
+- (void)setYLabels:(NSArray *)yLabels
+{
+    _showGenYLabels = NO;
+    _yLabelNum = yLabels.count - 1;
+    
+    CGFloat yLabelHeight;
+    if (_showLabel) {
+        yLabelHeight = _chartCavanHeight / [yLabels count];
+    } else {
+        yLabelHeight = (self.frame.size.height) / [yLabels count];
+    }
+    
+    return [self setYLabels:yLabels withHeight:yLabelHeight];
+}
+
+- (void)setYLabels:(NSArray *)yLabels withHeight:(CGFloat)height
+{
+    _yLabels = yLabels;
+    _yLabelHeight = height;
+    if (_yChartLabels) {
+        for (PNChartLabel * label in _yChartLabels) {
+            [label removeFromSuperview];
+        }
+    }else{
+        _yChartLabels = [NSMutableArray new];
+    }
+    
+    NSString *labelText;
+    
+    if (_showLabel) {
+        CGFloat yStepHeight = _chartCavanHeight / _yLabelNum;
+        
+        for (int index = 0; index < yLabels.count; index++) {
+            labelText = yLabels[index];
+            
+            NSInteger y = (NSInteger)(_chartCavanHeight - index * yStepHeight);
+            
+            PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, y, (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
+            [label setTextAlignment:NSTextAlignmentRight];
+            label.text = labelText;
+            [self setCustomStyleForYLabel:label];
+            [self addSubview:label];
+            [_yChartLabels addObject:label];
+        }
+    }
+}
+
+- (CGFloat)computeEqualWidthForXLabels:(NSArray *)xLabels
+{
+    CGFloat xLabelWidth;
+
+    if (_showLabel) {
+        xLabelWidth = _chartCavanWidth / [xLabels count];
+    } else {
+        xLabelWidth = (self.frame.size.width) / [xLabels count];
+    }
+
+    return xLabelWidth;
+}
+
 
 - (void)setXLabels:(NSArray *)xLabels
 {
@@ -186,64 +247,64 @@
 
 - (void)touchPoint:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    // Get the point user touched
-//    UITouch *touch = [touches anyObject];
-//    CGPoint touchPoint = [touch locationInView:self];
-//
-//    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
-//        NSArray *linePointsArray = _pathPoints[p];
-//
-//        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
-//            CGPoint p1 = [linePointsArray[i] CGPointValue];
-//            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
-//
-//            // Closest distance from point to line
-//            float distance = fabsf(((p2.x - p1.x) * (touchPoint.y - p1.y)) - ((p1.x - touchPoint.x) * (p1.y - p2.y)));
-//            distance /= hypot(p2.x - p1.x, p1.y - p2.y);
-//
-//            if (distance <= 5.0) {
-//                // Conform to delegate parameters, figure out what bezier path this CGPoint belongs to.
-//                for (UIBezierPath *path in _chartPath) {
-//                    BOOL pointContainsPath = CGPathContainsPoint(path.CGPath, NULL, p1, NO);
-//
-//                    if (pointContainsPath) {
-//                        [_delegate userClickedOnLinePoint:touchPoint lineIndex:[_chartPath indexOfObject:path]];
-//
-//                        return;
-//                    }
-//                }
-//            }
-//        }
-//    }
+    // Get the point user touched
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self];
+
+    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
+        NSArray *linePointsArray = _endPointsOfPath[p];
+
+        for (int i = 0; i < linePointsArray.count - 1; i += 2) {
+            CGPoint p1 = [linePointsArray[i] CGPointValue];
+            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
+
+            // Closest distance from point to line
+            float distance = fabs(((p2.x - p1.x) * (touchPoint.y - p1.y)) - ((p1.x - touchPoint.x) * (p1.y - p2.y)));
+            distance /= hypot(p2.x - p1.x, p1.y - p2.y);
+
+            if (distance <= 5.0) {
+                // Conform to delegate parameters, figure out what bezier path this CGPoint belongs to.
+                for (UIBezierPath *path in _chartPath) {
+                    BOOL pointContainsPath = CGPathContainsPoint(path.CGPath, NULL, p1, NO);
+
+                    if (pointContainsPath) {
+                        [_delegate userClickedOnLinePoint:touchPoint lineIndex:[_chartPath indexOfObject:path]];
+
+                        return;
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (void)touchKeyPoint:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    // Get the point user touched
-//    UITouch *touch = [touches anyObject];
-//    CGPoint touchPoint = [touch locationInView:self];
-//
-//    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
-//        NSArray *linePointsArray = _pathPoints[p];
-//
-//        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
-//            CGPoint p1 = [linePointsArray[i] CGPointValue];
-//            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
-//
-//            float distanceToP1 = fabsf(hypot(touchPoint.x - p1.x, touchPoint.y - p1.y));
-//            float distanceToP2 = hypot(touchPoint.x - p2.x, touchPoint.y - p2.y);
-//
-//            float distance = MIN(distanceToP1, distanceToP2);
-//
-//            if (distance <= 10.0) {
-//                [_delegate userClickedOnLineKeyPoint:touchPoint
-//                                           lineIndex:p
-//                                          pointIndex:(distance == distanceToP2 ? i + 1 : i)];
-//
-//                return;
-//            }
-//        }
-//    }
+    // Get the point user touched
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self];
+
+    for (NSInteger p = _pathPoints.count - 1; p >= 0; p--) {
+        NSArray *linePointsArray = _pathPoints[p];
+
+        for (int i = 0; i < linePointsArray.count - 1; i += 1) {
+            CGPoint p1 = [linePointsArray[i] CGPointValue];
+            CGPoint p2 = [linePointsArray[i + 1] CGPointValue];
+
+            float distanceToP1 = fabs(hypot(touchPoint.x - p1.x, touchPoint.y - p1.y));
+            float distanceToP2 = hypot(touchPoint.x - p2.x, touchPoint.y - p2.y);
+
+            float distance = MIN(distanceToP1, distanceToP2);
+
+            if (distance <= 10.0) {
+                [_delegate userClickedOnLineKeyPoint:touchPoint
+                                           lineIndex:p
+                                          pointIndex:(distance == distanceToP2 ? i + 1 : i)];
+
+                return;
+            }
+        }
+    }
 }
 
 #pragma mark - Draw Chart
@@ -253,7 +314,7 @@
     _chartPath = [[NSMutableArray alloc] init];
     _pointPath = [[NSMutableArray alloc] init];
 
-    [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints];
+    [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints andPathStartEndPoints:_endPointsOfPath];
     // Draw each line
     for (NSUInteger lineIndex = 0; lineIndex < self.chartData.count; lineIndex++) {
         PNLineChartData *chartData = self.chartData[lineIndex];
@@ -296,7 +357,7 @@
 }
 
 
-- (void)calculateChartPath:(NSMutableArray *)chartPath andPointsPath:(NSMutableArray *)pointsPath andPathKeyPoints:(NSMutableArray *)pathPoints
+- (void)calculateChartPath:(NSMutableArray *)chartPath andPointsPath:(NSMutableArray *)pointsPath andPathKeyPoints:(NSMutableArray *)pathPoints andPathStartEndPoints:(NSMutableArray *)pointsOfPath
 {
     
     // Draw each line
@@ -322,7 +383,7 @@
         }
         
         NSMutableArray *linePointsArray = [[NSMutableArray alloc] init];
-        
+        NSMutableArray *lineStartEndPointsArray = [[NSMutableArray alloc] init];
         int last_x = 0;
         int last_y = 0;
         CGFloat inflexionWidth = chartData.inflexionPointWidth;
@@ -338,7 +399,7 @@
             }
             
             CGFloat offSetX = (_chartCavanWidth) / (chartData.itemCount);
-            
+
             int x = 2 * _chartMargin +  (i * offSetX);
             int y = _chartCavanHeight - (innerGrade * _chartCavanHeight) + (_yLabelHeight / 2);
             
@@ -362,6 +423,9 @@
                     
                     [progressline moveToPoint:CGPointMake(last_x1, last_y1)];
                     [progressline addLineToPoint:CGPointMake(x1, y1)];
+                    
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(last_x1, last_y1)]];
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x1, y1)]];
                 }
                 
                 last_x = x;
@@ -390,6 +454,9 @@
                     
                     [progressline moveToPoint:CGPointMake(last_x1, last_y1)];
                     [progressline addLineToPoint:CGPointMake(x1, y1)];
+                    
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(last_x1, last_y1)]];
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x1, y1)]];
                 }
                 
                 last_x = x;
@@ -419,6 +486,9 @@
                     
                     [progressline moveToPoint:CGPointMake(last_x1, last_y1)];
                     [progressline addLineToPoint:CGPointMake(x1, y1)];
+                    
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(last_x1, last_y1)]];
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x1, y1)]];
                 }
                 
                 last_x = x;
@@ -428,16 +498,20 @@
                 
                 if ( i != 0 ) {
                     [progressline addLineToPoint:CGPointMake(x, y)];
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
                 }
                 
                 [progressline moveToPoint:CGPointMake(x, y)];
+                if(i != chartData.itemCount - 1){
+                    [lineStartEndPointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
+                }
             }
             
             [linePointsArray addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
         }
         
         [pathPoints addObject:[linePointsArray copy]];
-        
+        [pointsOfPath addObject:[lineStartEndPointsArray copy]];
     }
 }
 
@@ -518,8 +592,8 @@
     _yValueMin = _yFixedValueMin ? _yFixedValueMin : yMin ;
     _yValueMax = _yFixedValueMax ? _yFixedValueMax : yMax + yMax / 10.0;
     
-    if (_showLabel) {
-        [self setYLabels:yLabelsArray];
+    if (_showGenYLabels) {
+        [self setYLabels];
     }
     
 }
@@ -532,7 +606,7 @@
     
     [self prepareYLabelsWithData:data];
     
-    [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints];
+    [self calculateChartPath:_chartPath andPointsPath:_pointPath andPathKeyPoints:_pathPoints andPathStartEndPoints:_endPointsOfPath];
     
     for (NSUInteger lineIndex = 0; lineIndex < self.chartData.count; lineIndex++) {
 
@@ -574,7 +648,6 @@
 - (void)drawRect:(CGRect)rect
 {
     if (self.isShowCoordinateAxis) {
-
         CGFloat yAxisOffset = 10.f;
 
         CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -628,14 +701,14 @@
 
         // draw y unit
         if ([self.yUnit length]) {
-            CGFloat height = [PNLineChart heightOfString:self.yUnit withWidth:30.f font:font];
+            CGFloat height = [PNLineChart sizeOfString:self.yUnit withWidth:30.f font:font].height;
             CGRect drawRect = CGRectMake(_chartMargin + 10 + 5, 0, 30.f, height);
             [self drawTextInContext:ctx text:self.yUnit inRect:drawRect font:font];
         }
 
         // draw x unit
         if ([self.xUnit length]) {
-            CGFloat height = [PNLineChart heightOfString:self.xUnit withWidth:30.f font:font];
+            CGFloat height = [PNLineChart sizeOfString:self.xUnit withWidth:30.f font:font].height;
             CGRect drawRect = CGRectMake(CGRectGetWidth(rect) - _chartMargin + 5, _chartMargin + _chartCavanHeight - height / 2, 25.f, height);
             [self drawTextInContext:ctx text:self.xUnit inRect:drawRect font:font];
         }
@@ -646,14 +719,17 @@
 
 #pragma mark private methods
 
-- (void)setDefaultValues
+- (void)setupDefaultValues
 {
+    [super setupDefaultValues];
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
     self.clipsToBounds   = YES;
     self.chartLineArray  = [NSMutableArray new];
-    _showLabel           = YES;
-    _pathPoints = [[NSMutableArray alloc] init];
+    _showLabel            = YES;
+    _showGenYLabels        = YES;
+    _pathPoints          = [[NSMutableArray alloc] init];
+    _endPointsOfPath     = [[NSMutableArray alloc] init];
     self.userInteractionEnabled = YES;
 
     _yLabelNum = 5.0;
@@ -672,7 +748,7 @@
 
 #pragma mark - tools
 
-+ (float)heightOfString:(NSString *)text withWidth:(float)width font:(UIFont *)font
++ (CGSize)sizeOfString:(NSString *)text withWidth:(float)width font:(UIFont *)font
 {
     NSInteger ch;
     CGSize size = CGSizeMake(width, MAXFLOAT);
@@ -691,7 +767,7 @@
     }
     ch = size.height;
 
-    return ch;
+    return size;
 }
 
 - (void)drawTextInContext:(CGContextRef )ctx text:(NSString *)text inRect:(CGRect)rect font:(UIFont *)font
@@ -712,6 +788,157 @@
                alignment:NSTextAlignmentLeft];
 #pragma clang diagnostic pop
     }
+}
+
+
+- (UIView*) getLegendWithMaxWidth:(CGFloat)mWidth{
+    if ([self.chartData count] < 1) {
+        return nil;
+    }
+    
+    /* This is a short line that refers to the chart data */
+    CGFloat legendLineWidth = 40;
+    
+    /* x and y are the coordinates of the starting point of each legend item */
+    CGFloat x = 0;
+    CGFloat y = 0;
+    
+    /* accumulated height */
+    CGFloat totalHeight = 0;
+    
+    NSMutableArray *legendViews = [[NSMutableArray alloc] init];
+    
+    NSUInteger numLabelsPerRow = ceil((float)[self.chartData count] / self.labelRowsInSerialMode);
+
+    /* Determine the max width of each legend item */
+    CGFloat maxLabelWidth = self.legendStyle == PNLegendItemStyleStacked ? (mWidth - legendLineWidth) : (mWidth / numLabelsPerRow - legendLineWidth);
+    
+    /* this is used when labels wrap text and the line 
+     * should be in the middle of the first row */
+    CGFloat singleRowHeight = [PNLineChart sizeOfString:@"Test"
+                                              withWidth:MAXFLOAT
+                                                   font:self.legendFont ? self.legendFont : [UIFont systemFontOfSize:12.0f]].height;
+
+    NSUInteger counter = 0;
+    NSUInteger rowMaxHeight = 0;
+    
+    for (PNLineChartData *pdata in self.chartData) {
+        /* Expected label size*/
+        CGSize labelsize = [PNLineChart sizeOfString:pdata.dataTitle
+                                           withWidth:maxLabelWidth
+                                                font:self.legendFont ? self.legendFont : [UIFont systemFontOfSize:12.0f]];
+        
+        /* draw lines */
+        
+        if (counter != 0 && counter % numLabelsPerRow == 0) {
+            x = 0;
+            y += rowMaxHeight;
+            rowMaxHeight = 0;
+        }
+        
+        /* If there is inflection decorator, the line is composed of two lines 
+         * and this is the space that separates two lines in order to put inflection
+         * decorator */
+        
+        CGFloat inflexionWidthSpacer = pdata.inflexionPointStyle == PNLineChartPointStyleTriangle ? pdata.inflexionPointWidth / 2 : pdata.inflexionPointWidth;
+        
+        CGFloat halfLineLength;
+        
+        if (pdata.inflexionPointStyle != PNLineChartPointStyleNone) {
+            halfLineLength = (legendLineWidth * 0.8 - inflexionWidthSpacer)/2;
+        }else{
+            halfLineLength = legendLineWidth * 0.8;
+        }
+        
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(x + legendLineWidth * 0.1, y + (singleRowHeight - pdata.lineWidth) / 2, halfLineLength, pdata.lineWidth)];
+        
+        line.backgroundColor = pdata.color;
+        line.alpha = pdata.alpha;
+        [legendViews addObject:line];
+        
+        if (pdata.inflexionPointStyle != PNLineChartPointStyleNone) {
+            line = [[UIView alloc] initWithFrame:CGRectMake(x + legendLineWidth * 0.1 + halfLineLength + inflexionWidthSpacer, y + (singleRowHeight - pdata.lineWidth) / 2, halfLineLength, pdata.lineWidth)];
+            line.backgroundColor = pdata.color;
+            line.alpha = pdata.alpha;
+            [legendViews addObject:line];
+        }
+
+        // Add inflexion type
+        [legendViews addObject:[self drawInflexion:pdata.inflexionPointWidth
+                                                center:CGPointMake(x + legendLineWidth / 2, y + singleRowHeight / 2)
+                                           strokeWidth:pdata.lineWidth
+                                        inflexionStyle:pdata.inflexionPointStyle
+                                              andColor:pdata.color
+                                              andAlpha:pdata.alpha]];
+
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x + legendLineWidth, y, maxLabelWidth, labelsize.height)];
+        label.text = pdata.dataTitle;
+        label.textColor = self.legendFontColor ? self.legendFontColor : [UIColor blackColor];
+        label.font = self.legendFont ? self.legendFont : [UIFont systemFontOfSize:12.0f];
+        label.lineBreakMode = NSLineBreakByWordWrapping;
+        label.numberOfLines = 0;
+        
+        rowMaxHeight = fmaxf(rowMaxHeight, labelsize.height);
+        x += self.legendStyle == PNLegendItemStyleStacked ? 0 : labelsize.width + legendLineWidth;
+        y += self.legendStyle == PNLegendItemStyleStacked ? labelsize.height : 0;
+        
+
+        totalHeight = self.legendStyle == PNLegendItemStyleStacked ? fmaxf(totalHeight, rowMaxHeight + y) : totalHeight + labelsize.height;
+        [legendViews addObject:label];
+        counter++;
+    }
+    
+    UIView *legend = [[UIView alloc] initWithFrame:CGRectMake(0, 0, mWidth, totalHeight)];
+
+    for (UIView* v in legendViews) {
+        [legend addSubview:v];
+    }
+    return legend;
+}
+
+
+- (UIImageView*)drawInflexion:(CGFloat)size center:(CGPoint)center strokeWidth: (CGFloat)sw inflexionStyle:(PNLineChartPointStyle)type andColor:(UIColor*)color andAlpha:(CGFloat) alfa
+{
+    //Make the size a little bigger so it includes also border stroke
+    CGSize aSize = CGSizeMake(size + sw, size + sw);
+    
+
+    UIGraphicsBeginImageContextWithOptions(aSize, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+
+    if (type == PNLineChartPointStyleCircle) {
+        CGContextAddArc(context, (size + sw)/2, (size + sw) / 2, size/2, 0, M_PI*2, YES);
+    }else if (type == PNLineChartPointStyleSquare){
+        CGContextAddRect(context, CGRectMake(sw/2, sw/2, size, size));
+    }else if (type == PNLineChartPointStyleTriangle){
+        CGContextMoveToPoint(context, sw/2, size + sw/2);
+        CGContextAddLineToPoint(context, size + sw/2, size + sw/2);
+        CGContextAddLineToPoint(context, size/2 + sw/2, sw/2);
+        CGContextAddLineToPoint(context, sw/2, size + sw/2);
+        CGContextClosePath(context);
+    }
+    
+    //Set some stroke properties
+    CGContextSetLineWidth(context, sw);
+    CGContextSetAlpha(context, alfa);
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    
+    //Finally draw
+    CGContextDrawPath(context, kCGPathStroke);
+
+    //now get the image from the context
+    UIImage *squareImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    //// Translate origin
+    CGFloat originX = center.x - (size + sw) / 2.0;
+    CGFloat originY = center.y - (size + sw) / 2.0;
+    
+    UIImageView *squareImageView = [[UIImageView alloc]initWithImage:squareImage];
+    [squareImageView setFrame:CGRectMake(originX, originY, size + sw, size + sw)];
+    return squareImageView;
 }
 
 @end

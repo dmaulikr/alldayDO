@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F16F1EF4A62CDB59ABE25F44"
+               BlueprintIdentifier = "B3EA6CAC1759D1E068D33CD3"
                BuildableName = "libPods-NGAParallaxMotion.a"
                BlueprintName = "Pods-NGAParallaxMotion"
                ReferencedContainer = "container:Pods.xcodeproj">

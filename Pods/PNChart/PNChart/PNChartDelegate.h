@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol PNChartDelegate <NSObject>
-
+@optional
 /**
  * Callback method that gets invoked when the user taps on the chart line.
  */
@@ -27,4 +27,7 @@
  */
 - (void)userClickedOnBarAtIndex:(NSInteger)barIndex;
 
+
+- (void)userClickedOnPieIndexItem:(NSInteger)pieIndex;
+- (void)didUnselectPieItem;
 @end

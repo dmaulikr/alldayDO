@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "298217E19F9B101A119824AD"
+               BlueprintIdentifier = "FC193018B8D1F90597D0DBA7"
                BuildableName = "libPods-EARestrictedScrollView.a"
                BlueprintName = "Pods-EARestrictedScrollView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "93FA5F89328F04FF12EE33E0"
+               BlueprintIdentifier = "E952DB2C8AFD058C488C1D91"
                BuildableName = "libPods-uiview-frame-helpers.a"
                BlueprintName = "Pods-uiview-frame-helpers"
                ReferencedContainer = "container:Pods.xcodeproj">

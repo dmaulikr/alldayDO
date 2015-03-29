@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED27C59372FD36506FA699A0"
+               BlueprintIdentifier = "73EA98787D30A45583EADFA2"
                BuildableName = "libPods-MALazykit.a"
                BlueprintName = "Pods-MALazykit"
                ReferencedContainer = "container:Pods.xcodeproj">
