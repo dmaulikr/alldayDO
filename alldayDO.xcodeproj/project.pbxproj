@@ -61,6 +61,9 @@
 		70F106071A9E9EB00042EBD5 /* alldayDOToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		70F1060B1A9E9F830042EBD5 /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
 		70F1060C1A9EA02E0042EBD5 /* ADTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D9ED11A43717A00E900D1 /* ADTodayCell.swift */; };
+		70F68D5A1ACDE85800C048CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
+		70F68D5B1ACDE85C00C048CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
+		70F68D5C1ACDE8AB00C048CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		70F88D7B1AA006A100BAEF33 /* INSLabelPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F88D7A1AA006A000BAEF33 /* INSLabelPullToRefresh.m */; };
 		71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADEditReminderViewController.m */; };
 		710D9C861A60B6D100433069 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
@@ -780,6 +783,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F68D5A1ACDE85800C048CB /* Images.xcassets in Resources */,
+				70F68D5C1ACDE8AB00C048CB /* Localizable.strings in Resources */,
 				7010BA461AC5EDBA00B6F66A /* Bitrise-CI.entitlements in Resources */,
 				70F106041A9E9EB00042EBD5 /* MainInterface.storyboard in Resources */,
 			);
@@ -803,6 +808,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7010BA471AC5EDBB00B6F66A /* Bitrise-CI.entitlements in Resources */,
+				70F68D5B1ACDE85C00C048CB /* Images.xcassets in Resources */,
 				71CC1D991A5C9B7500FC3E5B /* alldayDO.entitlements in Resources */,
 				710D9C861A60B6D100433069 /* Localizable.strings in Resources */,
 				701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */,
