@@ -21,6 +21,7 @@
 
 - (void)_setupAnalytics;
 - (void)_setupCrashlytics;
+- (void)_setupPushNotification;
 - (void)_setupRate;
 - (void)_walkthrough;
 
@@ -116,6 +117,8 @@
     [self _setupCrashlytics];
     [self _setupRate];
     [self _setupPushNotification];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     [self _walkthrough];
     [self _updateDB];
