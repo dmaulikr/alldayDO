@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D426D31DE0E46E59F50DDC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C342DAE7F9404DE4B305DC50 /* libPods.a */; };
 		7010BA451AC5EB2800B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
-		7010BA461AC5EDBA00B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
 		7010BA471AC5EDBB00B6F66A /* Bitrise-CI.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7010BA441AC5EB2800B6F66A /* Bitrise-CI.entitlements */; };
 		7010BA481AC5EE4D00B6F66A /* alldayDO-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 70BDEDB71A9EA903006CAAA2 /* alldayDO-Prefix.pch */; };
 		701F65721A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
 		701F65731A9EB35E005E3EB6 /* alldayDOToday.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 701F65711A9EB2FC005E3EB6 /* alldayDOToday.entitlements */; };
-		701F65741A9EB4C0005E3EB6 /* alldayDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71D28B1519294F970047F291 /* alldayDO.xcdatamodeld */; };
 		705952B01AA924190018385B /* ADSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 705952AE1AA924190018385B /* ADSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		705952B11AA924190018385B /* ADSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 705952AF1AA924190018385B /* ADSettings.m */; };
 		705952B71AA929220018385B /* ADSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705952B61AA929220018385B /* ADSettingsTableViewController.m */; };
@@ -55,15 +53,7 @@
 		70E33B891AA54E4B0084C3C1 /* ADLembreteConfirmado.h in Headers */ = {isa = PBXBuildFile; fileRef = 70E33B831AA54E4B0084C3C1 /* ADLembreteConfirmado.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70E33B8A1AA54E4B0084C3C1 /* ADLembreteConfirmado.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E33B841AA54E4B0084C3C1 /* ADLembreteConfirmado.m */; };
 		70E6FBF619BF30E000AF3CF8 /* ADAuthorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6FBF519BF30E000AF3CF8 /* ADAuthorsViewController.m */; };
-		70F105FD1A9E9EB00042EBD5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718D9EC01A436C8400E900D1 /* NotificationCenter.framework */; };
-		70F106021A9E9EB00042EBD5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F106011A9E9EB00042EBD5 /* TodayViewController.swift */; };
-		70F106041A9E9EB00042EBD5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F106031A9E9EB00042EBD5 /* MainInterface.storyboard */; };
-		70F106071A9E9EB00042EBD5 /* alldayDOToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		70F1060B1A9E9F830042EBD5 /* alldayDOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D8E6651A45057200A5B9BC /* alldayDOKit.framework */; };
-		70F1060C1A9EA02E0042EBD5 /* ADTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D9ED11A43717A00E900D1 /* ADTodayCell.swift */; };
-		70F68D5A1ACDE85800C048CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
 		70F68D5B1ACDE85C00C048CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D28B1819294F970047F291 /* Images.xcassets */; };
-		70F68D5C1ACDE8AB00C048CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
 		70F88D7B1AA006A100BAEF33 /* INSLabelPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F88D7A1AA006A000BAEF33 /* INSLabelPullToRefresh.m */; };
 		71018AA3192960C000660C17 /* ADEditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71018AA2192960C000660C17 /* ADEditReminderViewController.m */; };
 		710D9C861A60B6D100433069 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71ABE85D19BA7C4800161DE3 /* Localizable.strings */; };
@@ -97,13 +87,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		70F106051A9E9EB00042EBD5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71D28AF619294F970047F291 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 70F105FB1A9E9EB00042EBD5;
-			remoteInfo = alldayDOToday;
-		};
 		7134B6371A7B036E00018621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71D28AF619294F970047F291 /* Project object */;
@@ -114,17 +97,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		718D9ECF1A436C8400E900D1 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				70F106071A9E9EB00042EBD5 /* alldayDOToday.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71A2A7931A43B2A50026F01B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,7 +159,6 @@
 		70E33B841AA54E4B0084C3C1 /* ADLembreteConfirmado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADLembreteConfirmado.m; path = alldayDO/code/model/ADLembreteConfirmado.m; sourceTree = SOURCE_ROOT; };
 		70E6FBF419BF30E000AF3CF8 /* ADAuthorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthorsViewController.h; sourceTree = "<group>"; };
 		70E6FBF519BF30E000AF3CF8 /* ADAuthorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADAuthorsViewController.m; sourceTree = "<group>"; };
-		70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = alldayDOToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F106001A9E9EB00042EBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F106011A9E9EB00042EBD5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		70F106031A9E9EB00042EBD5 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
@@ -254,15 +225,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		70F105F91A9E9EB00042EBD5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				70F1060B1A9E9F830042EBD5 /* alldayDOKit.framework in Frameworks */,
-				70F105FD1A9E9EB00042EBD5 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71D28AFB19294F970047F291 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,7 +389,6 @@
 			children = (
 				71D28AFE19294F970047F291 /* alldayDO.app */,
 				71D8E6651A45057200A5B9BC /* alldayDOKit.framework */,
-				70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -659,23 +620,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		70F105FB1A9E9EB00042EBD5 /* alldayDOToday */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70F106081A9E9EB00042EBD5 /* Build configuration list for PBXNativeTarget "alldayDOToday" */;
-			buildPhases = (
-				70F105F81A9E9EB00042EBD5 /* Sources */,
-				70F105F91A9E9EB00042EBD5 /* Frameworks */,
-				70F105FA1A9E9EB00042EBD5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = alldayDOToday;
-			productName = alldayDOToday;
-			productReference = 70F105FC1A9E9EB00042EBD5 /* alldayDOToday.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		71D28AFD19294F970047F291 /* alldayDO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71D28B3019294F980047F291 /* Build configuration list for PBXNativeTarget "alldayDO" */;
@@ -687,14 +631,12 @@
 				CB0FBEA6EA74429898023F2A /* Copy Pods Resources */,
 				711F983A198D9E7D0097AA22 /* ShellScript */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
-				718D9ECF1A436C8400E900D1 /* Embed App Extensions */,
 				71A2A7931A43B2A50026F01B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				7134B6381A7B036E00018621 /* PBXTargetDependency */,
-				70F106061A9E9EB00042EBD5 /* PBXTargetDependency */,
 			);
 			name = alldayDO;
 			productName = alldayDO;
@@ -729,15 +671,6 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Fábio Nogueira ";
 				TargetAttributes = {
-					70F105FB1A9E9EB00042EBD5 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = C7Q44C43S9;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					71D28AFD19294F970047F291 = {
 						DevelopmentTeam = C7Q44C43S9;
 						SystemCapabilities = {
@@ -772,24 +705,12 @@
 			projectRoot = "";
 			targets = (
 				71D28AFD19294F970047F291 /* alldayDO */,
-				70F105FB1A9E9EB00042EBD5 /* alldayDOToday */,
 				71D8E6641A45057200A5B9BC /* alldayDOKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		70F105FA1A9E9EB00042EBD5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				70F68D5A1ACDE85800C048CB /* Images.xcassets in Resources */,
-				70F68D5C1ACDE8AB00C048CB /* Localizable.strings in Resources */,
-				7010BA461AC5EDBA00B6F66A /* Bitrise-CI.entitlements in Resources */,
-				70F106041A9E9EB00042EBD5 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71D28AFC19294F970047F291 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -878,16 +799,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		70F105F81A9E9EB00042EBD5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				701F65741A9EB4C0005E3EB6 /* alldayDO.xcdatamodeld in Sources */,
-				70F1060C1A9EA02E0042EBD5 /* ADTodayCell.swift in Sources */,
-				70F106021A9E9EB00042EBD5 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71D28AFA19294F970047F291 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -940,11 +851,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		70F106061A9E9EB00042EBD5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 70F105FB1A9E9EB00042EBD5 /* alldayDOToday */;
-			targetProxy = 70F106051A9E9EB00042EBD5 /* PBXContainerItemProxy */;
-		};
 		7134B6381A7B036E00018621 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 71D8E6641A45057200A5B9BC /* alldayDOKit */;
@@ -965,48 +871,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		70F106091A9E9EB00042EBD5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_ID_SUFFIX = .Test;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = alldayDOToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				OTHER_CODE_SIGN_FLAGS = "alldayDO/Bitrise-CI.entitlements";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		70F1060A1A9E9EB00042EBD5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_ID_SUFFIX = "";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = alldayDOToday/alldayDOToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = alldayDOToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		71D28B2E19294F980047F291 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1100,7 +964,6 @@
 				CODE_SIGN_ENTITLEMENTS = alldayDO/alldayDO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1131,7 +994,6 @@
 				CODE_SIGN_ENTITLEMENTS = alldayDO/alldayDO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1212,15 +1074,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70F106081A9E9EB00042EBD5 /* Build configuration list for PBXNativeTarget "alldayDOToday" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				70F106091A9E9EB00042EBD5 /* Debug */,
-				70F1060A1A9E9EB00042EBD5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		71D28AF919294F970047F291 /* Build configuration list for PBXProject "alldayDO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
