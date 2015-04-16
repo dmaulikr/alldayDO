@@ -166,7 +166,6 @@
 		70436C3364D2BEA1728D3807 /* PNLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B7EEA4F963F44C46EA162D /* PNLineChart.h */; };
 		73F4C96B0AEC381F821EFECF /* UISegmentedControl+MALazykit.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F50357C9603085E9230D94 /* UISegmentedControl+MALazykit.h */; };
 		751F5FF41063B25F4BD0173F /* POPBasicAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = EB267A9A509202B2D929DF13 /* POPBasicAnimationInternal.h */; };
-		75FE3F144CFC9B6250C87B70 /* PNGenericChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A547F64928A080B3A760DE8 /* PNGenericChart.h */; };
 		76F2687E555FE4C81C8EE2DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297E8CFFC59A1B6972B265EE /* Foundation.framework */; };
 		77BD33642F5C4DD2AD14BF0B /* Pods-PNChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F27BB74B0976B7D656F500 /* Pods-PNChart-dummy.m */; };
 		77F5868472B4728B9B02DC17 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80267C4E02722F9E8E0EE2D7 /* JVFloatLabeledTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -315,7 +314,6 @@
 		DDCEC74CA2D7B52CDA671883 /* POPGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = D694F6CC45F4EFD40D1C2385 /* POPGeometry.mm */; };
 		DE64D630711F83C0FB24527F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297E8CFFC59A1B6972B265EE /* Foundation.framework */; };
 		E19BF4488081281DC4B79373 /* POPCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7845C2473A4281BF667AC330 /* POPCustomAnimation.h */; };
-		E1FB575AF354ED5881A49A34 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = AF789F724D0C15BAF8111BD5 /* PNGenericChart.m */; };
 		E21785B036F83EB5134F9DBE /* NSArray+SAMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A510EE38BDA03C04BC5E669A /* NSArray+SAMAdditions.h */; };
 		E266E35F8D01B16909911DE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297E8CFFC59A1B6972B265EE /* Foundation.framework */; };
 		E303A718154C82F7D0A54E0A /* SAMPersistentRateLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB857BC0444852D7AAB10ED /* SAMPersistentRateLimit.h */; };
@@ -708,7 +706,6 @@
 		19FB383A8B5D2DB9739E9C5A /* Pods-pop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-pop.xcconfig"; sourceTree = "<group>"; };
 		19FE1E385F6938D008DEE17E /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartDataItem.m; path = PNChart/PNScatterChartDataItem.m; sourceTree = "<group>"; };
 		1A3F69F7324ECF830116E315 /* POP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POP.h; path = pop/POP.h; sourceTree = "<group>"; };
-		1A547F64928A080B3A760DE8 /* PNGenericChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNGenericChart.h; path = PNChart/PNGenericChart.h; sourceTree = "<group>"; };
 		1C0F0299ECB04BD4C51AD498 /* Pods-SAMCategories.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SAMCategories.xcconfig"; sourceTree = "<group>"; };
 		1C383891EB8A0E0298A8D27F /* UINavigationController+MALazykit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+MALazykit.h"; path = "MALazykit/categories/ui/UINavigationController+MALazykit.h"; sourceTree = "<group>"; };
 		1C78D132A431185DC2C984F0 /* Pods-SAMTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SAMTextField-Private.xcconfig"; sourceTree = "<group>"; };
@@ -967,7 +964,6 @@
 		ADD15D03E1DA3ECEF408CEC8 /* SAMWebView-reload-button-mini.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SAMWebView-reload-button-mini.png"; path = "Resources/SAMWebView-reload-button-mini.png"; sourceTree = "<group>"; };
 		AE553967FDC909744E501E07 /* POPSpringSolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringSolver.h; path = pop/POPSpringSolver.h; sourceTree = "<group>"; };
 		AEE7FC48BEE0BA5079741A81 /* Pods-SAMLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SAMLabel.xcconfig"; sourceTree = "<group>"; };
-		AF789F724D0C15BAF8111BD5 /* PNGenericChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNGenericChart.m; path = PNChart/PNGenericChart.m; sourceTree = "<group>"; };
 		B0464540757A114600D073B6 /* UINavigationController+MALazykit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+MALazykit.m"; path = "MALazykit/categories/ui/UINavigationController+MALazykit.m"; sourceTree = "<group>"; };
 		B2EE53EE26C2A548C26728FC /* Pods-GoogleAnalytics-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleAnalytics-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		B3A56F9BCAADF2F873CE9A63 /* SAMBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMBadgeView.h; path = SAMBadgeView/SAMBadgeView.h; sourceTree = "<group>"; };
@@ -1970,8 +1966,6 @@
 				E785FEDFE250EFDD810351AA /* PNCircleChart.m */,
 				253119A00EB07C3C127BBE55 /* PNColor.h */,
 				5506AC088F54F813DC781EB3 /* PNColor.m */,
-				1A547F64928A080B3A760DE8 /* PNGenericChart.h */,
-				AF789F724D0C15BAF8111BD5 /* PNGenericChart.m */,
 				40B7EEA4F963F44C46EA162D /* PNLineChart.h */,
 				AAD4C92877CA1FEB5068E3B0 /* PNLineChart.m */,
 				C999F2CD012134C3736E3CD3 /* PNLineChartData.h */,
@@ -2687,7 +2681,6 @@
 				E748C1BE03B40FD7F7B6DCFB /* PNChartLabel.h in Headers */,
 				01B859459C251058ED1491A5 /* PNCircleChart.h in Headers */,
 				0C9C04639C016FE61B9F7283 /* PNColor.h in Headers */,
-				75FE3F144CFC9B6250C87B70 /* PNGenericChart.h in Headers */,
 				70436C3364D2BEA1728D3807 /* PNLineChart.h in Headers */,
 				4FB1D7C06A8164601FC840C5 /* PNLineChartData.h in Headers */,
 				0B5720A2A4FEDC34986F1C8E /* PNLineChartDataItem.h in Headers */,
@@ -3685,7 +3678,6 @@
 				47FC1E52597D2803F714E7C6 /* PNChartLabel.m in Sources */,
 				2DB93B308181A19CFD27F4B0 /* PNCircleChart.m in Sources */,
 				81B47D55FDDFD7CF9F38803C /* PNColor.m in Sources */,
-				E1FB575AF354ED5881A49A34 /* PNGenericChart.m in Sources */,
 				C2AFA74A1388738FAB53E4E8 /* PNLineChart.m in Sources */,
 				EE7C22C44C66C1D155310215 /* PNLineChartData.m in Sources */,
 				2A04E7719153F8AF4C1235A1 /* PNLineChartDataItem.m in Sources */,
