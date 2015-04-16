@@ -46,6 +46,8 @@
 
 @property (nonatomic) BOOL isForUpdate;
 
+- (void)setDefaultValues;
+
 @end
 
 
@@ -58,7 +60,7 @@
     self = [super initWithCoder:coder];
     
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
     return self;
 }
@@ -68,7 +70,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self setupDefaultValues];
+        [self setDefaultValues];
     }
     return self;
 }
@@ -79,7 +81,7 @@
     [self vectorYSetup];
 }
 
-- (void)setupDefaultValues
+- (void)setDefaultValues
 {
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
@@ -123,7 +125,7 @@
     _AxisX_partNumber = numberOfTicks - 1;
     _AxisX_step = (float)((maxVal - minVal)/_AxisX_partNumber);
     
-    NSString *LabelFormat = self.xLabelFormat ? : @"%1.f";
+    NSString *LabelFormat = self.yLabelFormat ? : @"%1.f";
     CGFloat tempValue = minVal ;
     UILabel *label = [[UILabel alloc] init];
     label.text = [NSString stringWithFormat:LabelFormat,minVal] ;
@@ -153,46 +155,6 @@
         UILabel *tempLabel = [[UILabel alloc] init];
         tempLabel.text = [NSString stringWithFormat:LabelFormat,tempValue] ;
         [_axisY_labels addObject:tempLabel];
-    }
-}
-
-- (NSArray*) getAxisMinMax:(NSArray*)xValues
-{
-    float min = [xValues[0] floatValue];
-    float max = [xValues[0] floatValue];
-    for (NSNumber *number in xValues)
-    {
-        if ([number floatValue] > max)
-            max = [number floatValue];
-        
-        if ([number floatValue] < min)
-            min = [number floatValue];
-    }
-    NSArray *result = @[[NSNumber numberWithFloat:min], [NSNumber numberWithFloat:max]];
-   
-    
-    return result;
-}
-
-- (void)setAxisXLabel:(NSArray *)array {
-    if(array.count == ++_AxisX_partNumber){
-        [_axisX_labels removeAllObjects];
-        for(int i=0;i<array.count;i++){
-            UILabel *label = [[UILabel alloc] init];
-            label.text = [array objectAtIndex:i];
-            [_axisX_labels addObject:label];
-        }
-    }
-}
-
-- (void)setAxisYLabel:(NSArray *)array {
-    if(array.count == ++_AxisY_partNumber){
-        [_axisY_labels removeAllObjects];
-        for(int i=0;i<array.count;i++){
-            UILabel *label = [[UILabel alloc] init];
-            label.text = [array objectAtIndex:i];
-            [_axisY_labels addObject:label];
-        }
     }
 }
 
@@ -316,6 +278,7 @@
         }
     
     if (_showLabel) {
+        NSString *str;
         //drawing x steps vector and putting axis x labels
         float temp = _startPointVectorX.x + (_vectorX_Steps / 2) ;
         for (int i = 0; i < _axisX_labels.count; i++) {
@@ -330,6 +293,7 @@
             [self.horizentalLinepathLayer addObject:shapeLayer];
             [self.layer addSublayer:shapeLayer];
             UILabel *lb = [_axisX_labels objectAtIndex:i] ;
+            str = lb.text;
             [self showXLabel:lb InPosition:CGPointMake(temp - 15, _startPointVectorX.y + 10 )];
             temp = temp + _vectorX_Steps ;
         }
@@ -347,6 +311,7 @@
             [self.verticalLineLayer addObject:shapeLayer];
             [self.layer addSublayer:shapeLayer];
             UILabel *lb = [_axisY_labels objectAtIndex:i];
+            str = lb.text;
             [self showXLabel:lb InPosition:CGPointMake(_startPointVectorY.x - 30, temp - 5)];
             temp = temp - _vectorY_Steps ;
         }

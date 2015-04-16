@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "PNChartDelegate.h"
-#import "PNGenericChart.h"
 
-@interface PNLineChart : PNGenericChart
+@interface PNLineChart : UIView
 
 /**
  * Draws the chart in an animated fashion.
  */
 - (void)strokeChart;
 
-@property (nonatomic, weak) id<PNChartDelegate> delegate;
+@property (nonatomic, retain) id<PNChartDelegate> delegate;
 
 @property (nonatomic) NSArray *xLabels;
 @property (nonatomic) NSArray *yLabels;
@@ -47,8 +46,6 @@
 @property (nonatomic) CGFloat chartCavanWidth;
 @property (nonatomic) CGFloat chartMargin;
 @property (nonatomic) BOOL showLabel;
-@property (nonatomic) BOOL showGenYLabels;
-
 
 /**
  * Controls whether to show the coordinate axis. Default is NO.
@@ -73,17 +70,4 @@
 
 - (void)updateChartData:(NSArray *)data;
 
-
-/**
- *  returns the Legend View, or nil if no chart data is present. 
- *  The origin of the legend frame is 0,0 but you can set it with setFrame:(CGRect)
- *
- *  @param mWidth Maximum width of legend. Height will depend on this and font size
- *
- *  @return UIView of Legend
- */
-- (UIView*) getLegendWithMaxWidth:(CGFloat)mWidth;
-
-
-+ (CGSize)sizeOfString:(NSString *)text withWidth:(float)width font:(UIFont *)font;
 @end
