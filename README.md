@@ -1,4 +1,5 @@
 # alldayDO
+
  Daily Reminders and Task List
 
 alldayDO was made for you to remember all your activities, shopping lists, travels and more in the easiest and practice way.
@@ -17,3 +18,16 @@ alldayDO main advantages:
 - In a irreverent way, we will remember all, from your gym, your shopping time to all your work appointments.
 
 If you feel you need more productivity in your day, alldayDO is here to help you!
+
+![](readme/1.png)
+![](readme/2.png)
+![](readme/3.png)
+
+##Contact
+
+Follow @fabintk on Twitter or mail me at fna.contact@gmail.com.
+
+##Licence
+
+Days Until Seasons is available under MIT licence.
+Copyright (c) 2015 Fábio Nogueira.
